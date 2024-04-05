@@ -1,0 +1,53 @@
+module.exports = {
+	env: {
+		browser: true,
+		es2021: true,
+	},
+	extends: [
+		'plugin:react-hooks/recommended',
+		'plugin:react/recommended',
+		'standard-with-typescript',
+		'prettier',
+	],
+	settings: {
+		react: {
+			version: 'detect',
+		},
+	},
+	overrides: [],
+	parserOptions: {
+		ecmaFeatures: {
+			jsx: true,
+		},
+		ecmaVersion: 'latest',
+		sourceType: 'module',
+	},
+	plugins: ['react', 'react-hooks', 'prettier'],
+	rules: {
+		camelcase: 'off',
+		'no-unused-vars': 'warn',
+		'spaced-comment': 'error',
+		'no-useless-escape': 'off',
+		quotes: ['error', 'single'],
+		'react/display-name': 'off',
+		'prettier/prettier': 'error',
+		'no-duplicate-imports': 'error',
+		'react/react-in-jsx-scope': 'off',
+		'react/no-unescaped-entities': 'off',
+		'react-hooks/rules-of-hooks': 'error',
+		'react-hooks/exhaustive-deps': 'warn',
+		'@typescript-eslint/unbound-method': 'off',
+		'@typescript-eslint/ban-ts-comment': 'off',
+		'@typescript-eslint/naming-convention': 'off',
+		'@typescript-eslint/no-unused-vars': 'off',
+		'@typescript-eslint/no-misused-promises': 'off',
+		'@typescript-eslint/triple-slash-reference': 'off',
+		'@typescript-eslint/prefer-nullish-coalescing': 'off',
+		'@typescript-eslint/consistent-type-imports': 'error',
+		'@typescript-eslint/strict-boolean-expressions': 'off',
+		'@typescript-eslint/explicit-function-return-type': 'off',
+		'@typescript-eslint/restrict-template-expressions': 'off',
+		'@typescript-eslint/no-confusing-void-expression': 'off',
+		'@typescript-eslint/non-nullable-type-assertion-style': 'off',
+	},
+}
