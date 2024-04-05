@@ -1,12 +1,12 @@
 import { Wrapper, Container } from './style'
 import Typography from '@mui/material/Typography'
 
-export const Plans = () => {
+export const FlexibleDesign = () => {
 	return (
 		<Container>
 			<Wrapper>
-				<Typography variant='title30' component='h2'>
-					Our Plans
+				<Typography variant='title20' component='h2'>
+					Moslashuvchan Dizayn
 				</Typography>
 			</Wrapper>
 		</Container>

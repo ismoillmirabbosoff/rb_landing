@@ -1,0 +1,1 @@
+export { WebappRestaurant } from './webapp'

@@ -18,7 +18,10 @@ interface TypographyProps {
 	title30: React.CSSProperties
 	title40: React.CSSProperties
 	title50: React.CSSProperties
+	title60: React.CSSProperties
 	text: React.CSSProperties
+	text10: React.CSSProperties
+	text20: React.CSSProperties
 }
 
 declare module '@mui/material/Typography' {
@@ -29,7 +32,10 @@ declare module '@mui/material/Typography' {
 		title30: true
 		title40: true
 		title50: true
+		title60: true
 		text: true
+		text10: true
+		text20: true
 	}
 }
 
@@ -48,6 +54,9 @@ export const theme = createTheme({
 			main: COLORS.PURPLE,
 		},
 		colors: COLORS,
+		text: {
+			primary: COLORS.BLACK,
+		},
 	},
 	typography: palette => ({
 		fontFamily: gilroy.style.fontFamily,
@@ -57,14 +66,12 @@ export const theme = createTheme({
 			lineHeight: '73px',
 			textAlign: 'center',
 			letterSpacing: '0.564px',
-			color: palette.colors.BLACK,
 		},
 		title10: {
 			fontSize: '42px',
 			fontWeight: 500,
 			lineHeight: '73px',
 			letterSpacing: '0.564px',
-			color: palette.colors.BLACK,
 		},
 		title20: {
 			fontSize: '52px',
@@ -80,7 +87,6 @@ export const theme = createTheme({
 			lineHeight: '73px',
 			textAlign: 'center',
 			letterSpacing: '0.564px',
-			color: palette.colors.BLACK,
 		},
 		title40: {
 			textAlign: 'center',
@@ -103,6 +109,11 @@ export const theme = createTheme({
 			WebkitBackgroundClip: 'text',
 			WebkitTextFillColor: 'transparent',
 		},
+		title60: {
+			fontWeight: 500,
+			fontSize: '16px',
+			lineHeight: 'normal',
+		},
 		text: {
 			fontWeight: 400,
 			fontSize: '24px',
@@ -110,6 +121,18 @@ export const theme = createTheme({
 			textAlign: 'center',
 			letterSpacing: '0.324px',
 			color: palette.colors.GRAY,
+		},
+		text10: {
+			fontWeight: 300,
+			fontSize: '22px',
+			lineHeight: '32px',
+			color: palette.colors.GRAY10,
+		},
+		text20: {
+			fontWeight: 300,
+			fontSize: '14px',
+			lineHeight: 'normal',
+			color: palette.colors.GRAY10,
 		},
 	}),
 	components: {

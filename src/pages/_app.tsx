@@ -3,6 +3,7 @@ import { Layout } from '@/layout'
 import type { AppProps } from 'next/app'
 import { theme } from '@/configs/material'
 import NextNProgress from 'nextjs-progressbar'
+import { AnimatePresence } from 'framer-motion'
 import CssBaseline from '@mui/material/CssBaseline'
 import { ThemeProvider } from '@mui/material/styles'
 import createEmotionCache from '@/utils/create-emotion-cache'
@@ -42,9 +43,11 @@ export default function App(props: ServiceAppProps) {
 						}}
 					/>
 					<CssBaseline />
-					<Layout>
-						<Component {...pageProps} />
-					</Layout>
+					<AnimatePresence mode='wait' initial={false}>
+						<Layout>
+							<Component {...pageProps} />
+						</Layout>
+					</AnimatePresence>
 				</ThemeProvider>
 			</CacheProvider>
 		</>

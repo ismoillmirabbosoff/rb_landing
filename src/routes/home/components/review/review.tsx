@@ -1,12 +1,12 @@
 import { Wrapper, Container } from './style'
 import Typography from '@mui/material/Typography'
 
-export const Plans = () => {
+export const Review = () => {
 	return (
 		<Container>
 			<Wrapper>
-				<Typography variant='title30' component='h2'>
-					Our Plans
+				<Typography variant='title' component='h2' lineHeight='67px'>
+					What are they saying about us?
 				</Typography>
 			</Wrapper>
 		</Container>
