@@ -15,11 +15,11 @@ import '@/styles/globals.css'
 
 const clientSideEmotionCache = createEmotionCache()
 
-export interface ServiceAppProps extends AppProps {
+export interface RbLandingAppProps extends AppProps {
 	emotionCache?: EmotionCache
 }
 
-function App(props: ServiceAppProps) {
+function App(props: RbLandingAppProps) {
 	const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 
 	return (
