@@ -19,6 +19,7 @@
 		"@mui/lab": "^5.0.0-alpha.158",
 		"@mui/material": "^5.15.2",
 		"framer-motion": "^11.0.25",
+		"keen-slider": "^6.8.6",
 		"next": "14.0.4",
 		"nextjs-progressbar": "^0.0.16",
 		"react": "^18",

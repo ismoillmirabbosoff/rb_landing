@@ -1,4 +1,7 @@
 export const COLORS = {
+	RED: '#EB5769',
+	GREEN: '#5DC983',
+	ORANGE: '#F2AF4C',
 	WHITE: '#FFFFFF',
 	TRANSPARENT: 'transparent',
 	PURPLE: '#7D79FF',
@@ -7,6 +10,9 @@ export const COLORS = {
 	BLACK10: '#000211',
 	GRAY: '#CACACA',
 	GRAY10: '#788089',
+	GRAY20: '#EFF0F6',
+	GRAY30: '#1b214980',
+	GRAY40: '#00000014',
 	LINEAR_GRADIENT: 'linear-gradient(91deg, #FEFEFE 2.38%, #FFD1C2 64.26%, #D594DD 100%)',
 }
 

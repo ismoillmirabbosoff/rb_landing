@@ -22,6 +22,7 @@ interface TypographyProps {
 	text: React.CSSProperties
 	text10: React.CSSProperties
 	text20: React.CSSProperties
+	text30: React.CSSProperties
 }
 
 declare module '@mui/material/Typography' {
@@ -36,6 +37,7 @@ declare module '@mui/material/Typography' {
 		text: true
 		text10: true
 		text20: true
+		text30: true
 	}
 }
 
@@ -132,6 +134,13 @@ export const theme = createTheme({
 			fontWeight: 300,
 			fontSize: '14px',
 			lineHeight: 'normal',
+			color: palette.colors.GRAY10,
+		},
+		text30: {
+			fontWeight: 400,
+			fontSize: '18px',
+			lineHeight: '35px',
+			letterSpacing: '0.063px',
 			color: palette.colors.GRAY10,
 		},
 	}),
