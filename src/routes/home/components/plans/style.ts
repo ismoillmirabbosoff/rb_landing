@@ -25,9 +25,11 @@ export const Cards = styled('ul')`
 `
 
 export const Card = styled('li')`
+	display: flex;
 	padding: 28px 30px;
 	border-radius: 5px;
 	border-top-width: 4px;
+	flex-direction: column;
 	border-top-style: solid;
 	background: ${({ theme }) => theme.palette.colors.WHITE};
 	box-shadow: 0px 2px 100px 0px ${({ theme }) => theme.palette.colors.GRAY40};

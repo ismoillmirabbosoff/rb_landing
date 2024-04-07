@@ -19,10 +19,13 @@ interface TypographyProps {
 	title40: React.CSSProperties
 	title50: React.CSSProperties
 	title60: React.CSSProperties
+	title70: React.CSSProperties
 	text: React.CSSProperties
 	text10: React.CSSProperties
 	text20: React.CSSProperties
 	text30: React.CSSProperties
+	text40: React.CSSProperties
+	text50: React.CSSProperties
 }
 
 declare module '@mui/material/Typography' {
@@ -34,10 +37,13 @@ declare module '@mui/material/Typography' {
 		title40: true
 		title50: true
 		title60: true
+		title70: true
 		text: true
 		text10: true
 		text20: true
 		text30: true
+		text40: true
+		text50: true
 	}
 }
 
@@ -116,6 +122,12 @@ export const theme = createTheme({
 			fontSize: '16px',
 			lineHeight: 'normal',
 		},
+		title70: {
+			fontWeight: 500,
+			fontSize: '22px',
+			lineHeight: '24px',
+			color: palette.colors.BLACK20,
+		},
 		text: {
 			fontWeight: 400,
 			fontSize: '24px',
@@ -142,6 +154,17 @@ export const theme = createTheme({
 			lineHeight: '35px',
 			letterSpacing: '0.063px',
 			color: palette.colors.GRAY10,
+		},
+		text40: {
+			fontWeight: 400,
+			fontSize: '14px',
+			lineHeight: 'normal',
+			color: palette.colors.BLACK20,
+		},
+		text50: {
+			fontWeight: 500,
+			fontSize: '14px',
+			lineHeight: 'normal',
 		},
 	}),
 	components: {

@@ -2,19 +2,19 @@ import type { TabPlanProps, PricingPlanProps } from '@/types/plan'
 
 export const TAB_PLANS: TabPlanProps = {
 	monthly: {
-		label: '1 Oylik',
+		label: 'one_month',
 		months: 1,
 		discount: 0,
 		value: 'monthly',
 	},
 	halfYearly: {
-		label: '6 oylik',
+		label: 'six_month',
 		discount: 15,
 		value: 'halfYearly',
 		months: 6,
 	},
 	yearly: {
-		label: '1 yillik',
+		label: 'one_yearly',
 		discount: 20,
 		value: 'yearly',
 		months: 12,
@@ -23,9 +23,9 @@ export const TAB_PLANS: TabPlanProps = {
 
 export const PRICING_PLANS: PricingPlanProps = {
 	BASIC: {
-		title: 'Basic Plan',
+		title: 'Basic',
 		isPopular: false,
-		desc: 'Perfect plan for starters',
+		desc: 'perfect_plan_for_starters',
 		banner: 1,
 		promocode: false,
 		source: true,
@@ -42,9 +42,9 @@ export const PRICING_PLANS: PricingPlanProps = {
 		color: 'PURPLE',
 	},
 	PROFESSIONAL: {
-		title: 'Professional Plan',
+		title: 'Professional',
 		isPopular: true,
-		desc: 'For companies want to do more',
+		desc: 'for_companies_want_to_do_more',
 		banner: 5,
 		promocode: true,
 		source: true,
@@ -61,9 +61,9 @@ export const PRICING_PLANS: PricingPlanProps = {
 		color: 'GREEN',
 	},
 	ENTERPRISE: {
-		title: 'Enterprise Plan',
+		title: 'Enterprise',
 		isPopular: false,
-		desc: 'Run your company on your termns',
+		desc: 'run_your_company_on_your_termns',
 		banner: 10,
 		promocode: true,
 		source: true,

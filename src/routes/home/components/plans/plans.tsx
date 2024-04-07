@@ -4,6 +4,7 @@ import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 import TabContext from '@mui/lab/TabContext'
+import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
 import type { PlanTypeProps } from '@/types/plan'
 import { IconRemove } from '@/assets/icons/remove'
@@ -16,6 +17,7 @@ import { IconLinearGradient } from '@/assets/icons/linear-gradient'
 import { Card, Cards, TabList, Wrapper, Container, WrapDiscount } from './style'
 
 export const Plans = () => {
+	const { t } = useTranslation('common')
 	const [plan, setPlan] = useState<PlanTypeProps>('monthly')
 
 	const handleChangePlan = (_: SyntheticEvent, plan: PlanTypeProps) => {
@@ -31,10 +33,14 @@ export const Plans = () => {
 		return (
 			<Stack component='li'>
 				<Stack py='10px' direction='row' alignItems='center' justifyContent='space-between'>
-					<Typography textTransform='capitalize'>{title}</Typography>
+					<Typography variant='text40' component='h6'>
+						{t(title)}
+					</Typography>
 					{type === 'full' ? (
-						<Typography color={theme => (!value ? theme.palette.colors.RED : undefined)}>
-							{value ? 'full' : 'incomplete'}
+						<Typography
+							color={theme => (!value ? theme.palette.colors.RED : theme.palette.colors.GREEN)}
+						>
+							{t(value ? 'full' : 'incomplete')}
 						</Typography>
 					) : type === 'access' ? (
 						<Stack
@@ -51,7 +57,9 @@ export const Plans = () => {
 							{value ? <IconTickSolid /> : <IconRemove />}
 						</Stack>
 					) : typeof value === 'number' && value > 0 ? (
-						<Typography>{value}</Typography>
+						<Typography variant='text50' color='colors.GREEN'>
+							{value}
+						</Typography>
 					) : (
 						<IconInfinity />
 					)}
@@ -69,17 +77,18 @@ export const Plans = () => {
 						<IconLinearGradient />
 					</Stack>
 					<Typography variant='title30' component='h2'>
-						Our Plans
+						{t('our_plans')}
 					</Typography>
 					<Typography
 						mb='56px'
 						variant='text'
 						component='h3'
-						color='colors.GRAY10'
 						maxWidth='871px'
+						color='colors.GRAY10'
 					>
-						Check what plan is best for You. We care about your convenience in using the
-						application, so you can update your plan up or down at any time
+						{t(
+							'check_what_plan_is_best_for_you_we_care_about_your_convenience_in_using_the_application_so_you_can_update_your_plan_up_or_down_at_any_time',
+						)}
 					</Typography>
 				</Stack>
 				<TabContext value={plan}>
@@ -97,7 +106,7 @@ export const Plans = () => {
 									value={value}
 									label={
 										<Stack gap='5px' direction='row' alignItems='center'>
-											<Typography>{label}</Typography>
+											<Typography component='h4'>{t(label)}</Typography>
 											{discount > 0 && <WrapDiscount>-{discount} %</WrapDiscount>}
 										</Stack>
 									}
@@ -112,23 +121,45 @@ export const Plans = () => {
 
 							return (
 								<Card key={index} sx={theme => ({ borderColor: theme.palette.colors[p.color] })}>
-									<Stack mb='14px'>
-										<Stack direction='row'>
-											{plan !== 'monthly' && (
-												<Typography>
-													{numberFormat(price)}{' '}
-													<Typography variant='inherit' component='span'>
-														So’m
+									<Stack mb='14px' flexGrow={1}>
+										<Stack flexGrow={1}>
+											<Stack direction='row' alignItems='flex-end'>
+												{plan !== 'monthly' && (
+													<Typography
+														mr='5px'
+														variant='title60'
+														sx={theme => ({
+															color: theme.palette.colors.GRAY50,
+															textDecorationLine: 'line-through',
+														})}
+													>
+														{numberFormat(price)}{' '}
+														<Typography
+															fontSize='14px'
+															fontWeight='400'
+															component='span'
+															variant='inherit'
+														>
+															{t('soum')}
+														</Typography>
 													</Typography>
+												)}
+												<Typography variant='title70' component='h5'>
+													{numberFormat(discountPrice)}
 												</Typography>
-											)}
-											<Typography>{numberFormat(discountPrice)}</Typography>
-											<Typography>So’m</Typography>
+												<Typography ml='5px' variant='text40'>
+													{t('soum')}
+												</Typography>
+											</Stack>
+											<Typography mt='19px' variant='title60' color='colors.BLACK20'>
+												{t(p.title)}
+											</Typography>
+											<Typography m='3px 0 18px' variant='text40' color='colors.BLACK30'>
+												{t(p.desc)}
+											</Typography>
 										</Stack>
-										<Typography mt='19px'>{p.title}</Typography>
-										<Typography m='3px 0 18px'>{p.desc}</Typography>
 										<Button href={`${p.type}?plan=${plan}`} component={Link} size='small'>
-											Get Started
+											{t('get_started')}
 										</Button>
 									</Stack>
 									<Stack component='ul'>

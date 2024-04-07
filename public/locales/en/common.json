@@ -1,4 +1,27 @@
 {
 	"enter": "Enter",
-	"copyright_year_robosell_all_rights_reserved": "Copyright © {{year}} RoboSell | All Rights Reserved"
+	"copyright_year_robosell_all_rights_reserved": "Copyright © {{year}} RoboSell | All Rights Reserved",
+	"our_plans": "Our Plans",
+	"banner": "Banner",
+	"promocode": "Promocode",
+	"source": "Source",
+	"product": "Product",
+	"discount": "Discount",
+	"branch": "Branch",
+	"mailing": "Mailing",
+	"chat": "Chat",
+	"stock": "Stock",
+	"analytics": "Analytics",
+	"export": "Export",
+	"incomplete": "Incomplete",
+	"full": "Full",
+	"get_started": "Get Started",
+	"perfect_plan_for_starters": "Perfect plan for starters",
+	"for_companies_want_to_do_more": "For companies want to do more",
+	"run_your_company_on_your_termns": "Run your company on your termns",
+	"soum": "Soum",
+	"one_month": "1 Month",
+	"six_month": "6 Months",
+	"one_yearly": "1 Yearly",
+	"check_what_plan_is_best_for_you_we_care_about_your_convenience_in_using_the_application_so_you_can_update_your_plan_up_or_down_at_any_time": "Check what plan is best for You. We care about your convenience in using the application, so you can update your plan up or down at any time"
 }
