@@ -9,7 +9,13 @@ export const Main = () => {
 	return (
 		<Container>
 			<Wrapper>
-				<Stack gap='18px' alignItems='center' position='relative'>
+				<Stack
+					gap='18px'
+					flexGrow={1}
+					alignItems='center'
+					position='relative'
+					justifyContent='center'
+				>
 					<Typography variant='title50' component='h1' maxWidth='921px'>
 						15 minut ichida Biznesingizni Avtomatlashtiring.
 					</Typography>

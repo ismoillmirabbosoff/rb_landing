@@ -148,6 +148,42 @@ export const theme = createTheme({
 		MuiCssBaseline: {
 			styleOverrides: theme => ({}),
 		},
+		MuiInputBase: {
+			styleOverrides: {
+				root: ({ theme }) => ({
+					height: 52,
+				}),
+			},
+		},
+		MuiOutlinedInput: {
+			styleOverrides: {
+				root: ({ theme }) => ({
+					borderRadius: '14px',
+					'& fieldset': {
+						borderWidth: '1px',
+						borderColor: theme.palette.colors.TRANSPARENT,
+					},
+					'&:hover .MuiOutlinedInput-notchedOutline': {
+						borderColor: `${theme.palette.colors.PURPLE} !important`,
+					},
+					'&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+						borderWidth: '1px',
+						borderColor: `${theme.palette.colors.PURPLE} !important`,
+					},
+					'&.Mui-error .MuiOutlinedInput-notchedOutline': {
+						borderWidth: '1px',
+						borderColor: `${theme.palette.colors.RED} !important`,
+					},
+				}),
+			},
+		},
+		MuiSelect: {
+			styleOverrides: {
+				select: {
+					padding: '14.5px 18px',
+				},
+			},
+		},
 		MuiButton: {
 			defaultProps: {
 				variant: 'contained',

@@ -2,9 +2,9 @@ import { Hoc } from './hoc'
 import Link from 'next/link'
 import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
-import Select from '@mui/material/Select'
 import { Iconlogo } from '@/assets/icons/logo'
 import { Container, WrapDesktop } from './style'
+import { SelectI18nLanguage } from '@/components/select-i18n-language'
 
 export const Header = () => {
 	return (
@@ -15,9 +15,10 @@ export const Header = () => {
 						<Iconlogo />
 					</Link>
 					<Stack gap='10px' direction='row'>
-						<Select />
-						<Button variant='text'>Kirish</Button>
-						<Button variant='contained'>Start free trial</Button>
+						<SelectI18nLanguage />
+						<Button variant='contained' sx={{ minWidth: '105px' }}>
+							Kirish
+						</Button>
 					</Stack>
 				</WrapDesktop>
 			</Hoc>

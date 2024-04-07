@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app'
 import { theme } from '@/configs/material'
 import NextNProgress from 'nextjs-progressbar'
 import { AnimatePresence } from 'framer-motion'
+import { appWithTranslation } from 'next-i18next'
 import CssBaseline from '@mui/material/CssBaseline'
 import { ThemeProvider } from '@mui/material/styles'
 import createEmotionCache from '@/utils/create-emotion-cache'
@@ -18,7 +19,7 @@ export interface ServiceAppProps extends AppProps {
 	emotionCache?: EmotionCache
 }
 
-export default function App(props: ServiceAppProps) {
+function App(props: ServiceAppProps) {
 	const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 
 	return (
@@ -54,3 +55,5 @@ export default function App(props: ServiceAppProps) {
 		</>
 	)
 }
+
+export default appWithTranslation(App)
