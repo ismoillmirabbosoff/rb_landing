@@ -1,6 +1,6 @@
 import { gilroy } from '@/utils/fonts'
 import { type AppType } from 'next/app'
-import { type ServiceAppProps } from './_app'
+import { type RbLandingAppProps } from './_app'
 import createEmotionCache from '@/utils/create-emotion-cache'
 import { type ComponentType, type ComponentProps } from 'react'
 import createEmotionServer from '@emotion/server/create-instance'
@@ -36,7 +36,7 @@ MyDocument.getInitialProps = async (ctx: DocumentContext) => {
 
 	ctx.renderPage = async () =>
 		await originalRenderPage({
-			enhanceApp: (App: ComponentType<ComponentProps<AppType> & ServiceAppProps>) =>
+			enhanceApp: (App: ComponentType<ComponentProps<AppType> & RbLandingAppProps>) =>
 				function EnhanceApp(props) {
 					return <App emotionCache={cache} {...props} />
 				},

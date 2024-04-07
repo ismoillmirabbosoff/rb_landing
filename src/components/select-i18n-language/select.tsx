@@ -12,19 +12,19 @@ export const SelectI18nLanguage = () => {
 	const { push, query, asPath, locale, pathname } = useRouter()
 	const [value, setValue] = useState(locale)
 
-	const handleChange = (e: SelectChangeEvent<string>) => {
+	const handleChange = (e: SelectChangeEvent<unknown>) => {
 		void push({ pathname, query }, asPath, {
-			locale: e.target.value,
+			locale: e.target.value as string,
 		})
-		setValue(e.target.value)
+		setValue(e.target.value as string)
 	}
 
 	return (
 		<Select
 			onChange={handleChange}
 			value={value as LanguageTypes}
-			renderValue={(selected: LanguageTypes) => {
-				const option = LANGUAGE_OPTIONS[selected]
+			renderValue={(selected: unknown) => {
+				const option = LANGUAGE_OPTIONS[selected as LanguageTypes]
 				const Icon = option.Icon
 				const label = option.shortLabel
 				return (

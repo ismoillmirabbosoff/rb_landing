@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { Layout } from '@/layout'
 import type { AppProps } from 'next/app'
+import { COLORS } from '@/constants/css'
 import { theme } from '@/configs/material'
 import NextNProgress from 'nextjs-progressbar'
 import { AnimatePresence } from 'framer-motion'
@@ -12,7 +13,6 @@ import { CacheProvider, type EmotionCache } from '@emotion/react'
 
 import 'keen-slider/keen-slider.min.css'
 import '@/styles/globals.css'
-import { COLORS } from '@/constants/css'
 
 const clientSideEmotionCache = createEmotionCache()
 
