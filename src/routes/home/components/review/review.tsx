@@ -3,7 +3,7 @@ import Avatar from '@mui/material/Avatar'
 import { IconQuote } from '@/assets/icons/quote'
 import Typography from '@mui/material/Typography'
 import { useKeenSlider } from 'keen-slider/react'
-import { Card, Wrapper, Container, Slider } from './style'
+import { Card, Slider, Wrapper, WrapUser, Container } from './style'
 
 const animation = { duration: 40000, easing: (t: number) => t }
 
@@ -38,20 +38,27 @@ export const Review = () => {
 					<div ref={sliderRef} className='keen-slider'>
 						{Array.from({ length: 6 }, (_, i: number) => (
 							<Card className='keen-slider__slide' key={i}>
-								<Stack mb='10px'>
-									<IconQuote />
-								</Stack>
-								<Typography maxWidth='440px'>
-									Exceptional service! I couldn't be happier with the results. The team went above
-									and beyond to meet my needs and deliver outstanding outcomes.
-								</Typography>
-								<Stack gap='12px' direction='row'>
-									<Avatar />
-									<Stack>
-										<Typography>Sarvarbek Erkinjonov</Typography>
-										<Typography>Marketolog of XonXonim</Typography>
+								<Stack>
+									<Stack mb='10px'>
+										<IconQuote />
 									</Stack>
+									<Typography maxWidth='440px' variant='text60'>
+										Exceptional service! I couldnt be happier with the results. The team went above
+										and beyond to meet my needs and deliver outstanding outcomes.Exceptional
+										service! I couldnt be happier with the results. The team went
+									</Typography>
 								</Stack>
+								<WrapUser>
+									<Avatar sx={{ width: 48, height: 48 }} />
+									<Stack justifyContent='center'>
+										<Typography variant='text60' fontWeight='400'>
+											Sarvarbek Erkinjonov
+										</Typography>
+										<Typography variant='text60' color='colors.GRAY70'>
+											Marketolog of XonXonim
+										</Typography>
+									</Stack>
+								</WrapUser>
 							</Card>
 						))}
 					</div>

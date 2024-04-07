@@ -12,6 +12,7 @@ import { CacheProvider, type EmotionCache } from '@emotion/react'
 
 import 'keen-slider/keen-slider.min.css'
 import '@/styles/globals.css'
+import { COLORS } from '@/constants/css'
 
 const clientSideEmotionCache = createEmotionCache()
 
@@ -32,9 +33,9 @@ function App(props: RbLandingAppProps) {
 				<link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
 				<link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
 				<link rel='manifest' href='/site.webmanifest' />
-				<link rel='mask-icon' href='/safari-pinned-tab.svg' color='#7d79ff' />
-				<meta name='msapplication-TileColor' content='#7d79ff' />
-				<meta name='theme-color' content='#ffffff' />
+				<link rel='mask-icon' href='/safari-pinned-tab.svg' color={COLORS.PURPLE} />
+				<meta name='msapplication-TileColor' content={COLORS.PURPLE} />
+				<meta name='theme-color' content={COLORS.WHITE} />
 			</Head>
 			<CacheProvider value={emotionCache}>
 				<ThemeProvider theme={theme}>

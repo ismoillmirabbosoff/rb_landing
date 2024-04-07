@@ -17,6 +17,12 @@ export const COLORS = {
 	GRAY30: '#1b214980',
 	GRAY40: '#00000014',
 	GRAY50: '#8393A6',
+	GRAY60: '#E9E9E9',
+	GRAY70: '#0f0a1b80',
+	GRAY80: '#0000001a',
+	GRAY90: '#f9f9fc',
+	GRAY100: '#8393a633',
+	GRAY110: '#00000012',
 	LINEAR_GRADIENT: 'linear-gradient(91deg, #FEFEFE 2.38%, #FFD1C2 64.26%, #D594DD 100%)',
 }
 

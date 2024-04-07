@@ -18,13 +18,17 @@ export const Wrapper = styled('div')`
 `
 
 export const Card = styled('div')`
+	gap: 40px;
 	width: 100%;
-	padding: 24px;
+	display: flex;
 	min-width: 488px;
 	border-radius: 6px;
-	border: 1px solid #e9e9e9;
-	box-shadow: 0px 2px 50px 0px rgba(0, 0, 0, 0.1);
+	flex-direction: column;
+	padding: 23px 24px 20px;
+	justify-content: space-between;
 	background: ${({ theme }) => theme.palette.colors.WHITE};
+	border: 1px solid ${({ theme }) => theme.palette.colors.GRAY60};
+	box-shadow: 0px 2px 50px 0px ${({ theme }) => theme.palette.colors.GRAY80};
 `
 
 export const Slider = styled('div')`
@@ -47,7 +51,7 @@ export const Slider = styled('div')`
 		border-radius: 12px;
 		position: absolute;
 		background: transparent;
-		box-shadow: 0px 2px 50px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 2px 50px 0px ${({ theme }) => theme.palette.colors.GRAY80};
 	}
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
@@ -55,4 +59,12 @@ export const Slider = styled('div')`
 			paddingLeft: '18px',
 		},
 	})}
+`
+
+export const WrapUser = styled('div')`
+	gap: 12px;
+	display: flex;
+	padding-top: 12px;
+	align-items: center;
+	border-top: 1px solid ${({ theme }) => theme.palette.colors.GRAY60};
 `

@@ -7,11 +7,10 @@ export const Container = styled('section')`
 `
 
 export const Wrapper = styled('div')`
+	gap: 40px;
 	width: 100%;
-	display: flex;
-	align-items: center;
+	display: grid;
 	padding-bottom: 120px;
-	flex-direction: column;
-	justify-content: space-between;
+	grid-template-columns: 1fr 1fr;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
 `

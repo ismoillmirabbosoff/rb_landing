@@ -10,8 +10,8 @@ export const Container = styled('section')`
 export const Wrapper = styled('div')`
 	width: 100%;
 	display: flex;
+	padding: 70px 0;
 	align-items: center;
-	padding-bottom: 120px;
 	flex-direction: column;
 	justify-content: space-between;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;

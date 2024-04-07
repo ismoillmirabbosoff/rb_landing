@@ -39,8 +39,8 @@ export const TabList = styled(MuiTabList)`
 	min-height: 44px;
 	width: fit-content;
 	border-radius: 9px;
-	border: 1px solid rgba(131, 147, 166, 0.2);
-	background: #f9f9fc;
+	background: ${({ theme }) => theme.palette.colors.GRAY90};
+	border: 1px solid ${({ theme }) => theme.palette.colors.GRAY100};
 
 	::after {
 		display: none;
@@ -72,7 +72,7 @@ export const TabList = styled(MuiTabList)`
 				borderRadius: '7px',
 				color: theme.palette.colors.BLACK,
 				backgroundColor: theme.palette.colors.WHITE,
-				boxShadow: '0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 3px 8px 0px rgba(0, 0, 0, 0.07)',
+				boxShadow: `0px 1px 3px 0px ${theme.palette.colors.GRAY80}, 0px 3px 8px 0px ${theme.palette.colors.GRAY110}`,
 			},
 		})}
 	}
