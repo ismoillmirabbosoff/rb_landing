@@ -2,15 +2,19 @@ import Link from 'next/link'
 import Stack from '@mui/material/Stack'
 import { Wrapper, Container } from './style'
 import { SOCIALS } from '@/constants/social'
+import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 
 export const Footer = () => {
+	const date = new Date()
+	const { t } = useTranslation('common')
+
 	return (
 		<Container>
 			<Wrapper>
 				<Typography variant='text30' component='h2'>
-					Copyright © 2024 RoboSell | All Rights Reserved
+					{t('copyright_year_robosell_all_rights_reserved', { year: date.getFullYear() })}
 				</Typography>
 				<Stack
 					gap='10px'
@@ -21,7 +25,12 @@ export const Footer = () => {
 				>
 					{SOCIALS.map(({ Icon, href }, i: number) => (
 						<Stack component='li' key={i} justifyContent='center'>
-							<IconButton sx={{ p: '6px' }} component={Link} href={href} target='_blank'>
+							<IconButton
+								href={href}
+								target='_blank'
+								component={Link}
+								sx={{ p: '6px', minWidth: '31px' }}
+							>
 								<Icon />
 							</IconButton>
 						</Stack>
