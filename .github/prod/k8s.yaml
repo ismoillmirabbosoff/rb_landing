@@ -1,0 +1,49 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prodlanding
+  namespace: prod
+  labels:
+    app: prodlanding
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prodlanding
+  template:
+    metadata:
+      labels:
+        app: prodlanding
+    spec:
+      containers:
+        - name: prodlanding
+          image: ghcr.io/robosell-organization/rb-landing:main
+          ports:
+            - containerPort: 3000
+          
+
+
+          imagePullPolicy: Always
+
+      imagePullSecrets:
+        - name: ghcr-login-secret
+      
+  revisionHistoryLimit: 1
+
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prodlanding
+  namespace: prod
+spec:
+  selector:
+    app: prodlanding
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000

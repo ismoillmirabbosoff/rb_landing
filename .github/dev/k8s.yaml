@@ -1,0 +1,47 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devlanding
+  namespace: dev
+  labels:
+    app: devlanding
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devlanding
+  template:
+    metadata:
+      labels:
+        app: devlanding
+    spec:
+      containers:
+        - name: devlanding
+          image: ghcr.io/robosell-organization/rb-landing:dev
+          ports:
+            - containerPort: 3000
+          
+          imagePullPolicy: Always
+
+      imagePullSecrets:
+        - name: ghcr-login-secret
+      
+  revisionHistoryLimit: 1
+
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: devlanding
+  namespace: dev
+spec:
+  selector:
+    app: devlanding
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
