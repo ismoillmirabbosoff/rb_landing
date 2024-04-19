@@ -4,6 +4,7 @@ export const COLORS = {
 	ORANGE: '#F2AF4C',
 	WHITE: '#FFFFFF',
 	WHITE10: '#ffffff12',
+	WHITE20: '#ffffff1f',
 	TRANSPARENT: 'transparent',
 	PURPLE: '#7D79FF',
 	PURPLE10: '#5D59F0',
@@ -23,6 +24,8 @@ export const COLORS = {
 	GRAY90: '#f9f9fc',
 	GRAY100: '#8393a633',
 	GRAY110: '#00000012',
+	GRAY120: '#787C8F',
+	GRAY130: '#F7F8FB',
 	LINEAR_GRADIENT: 'linear-gradient(91deg, #FEFEFE 2.38%, #FFD1C2 64.26%, #D594DD 100%)',
 }
 

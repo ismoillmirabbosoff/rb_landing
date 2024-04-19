@@ -1,8 +1,9 @@
 import { IconYoutube } from '@/assets/icons/youtube'
+import { IconTwitter } from '@/assets/icons/twitter'
 import { IconLinkedin } from '@/assets/icons/linkedin'
 import { IconFacebook } from '@/assets/icons/facebook'
+import { IconTelegram } from '@/assets/icons/telegram'
 import { IconInstagram } from '@/assets/icons/instagram'
-import { IconTwitter } from '@/assets/icons/twitter'
 
 export const SOCIALS = [
 	{
@@ -24,5 +25,9 @@ export const SOCIALS = [
 	{
 		Icon: IconYoutube,
 		href: 'https://www.youtube.com/@roboselluz',
+	},
+	{
+		Icon: IconTelegram,
+		href: 'https://t.me/roboselluz',
 	},
 ]

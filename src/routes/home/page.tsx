@@ -1,5 +1,7 @@
+import { Faq } from './components/faq'
 import { Main } from './components/main'
 import { Plans } from './components/plans'
+import { Blogs } from './components/blogs'
 import { Brands } from './components/brands'
 import { Review } from './components/review'
 import { Chat } from './components/chat/chat'
@@ -21,7 +23,9 @@ export const Home = () => {
 			<Chat />
 			<Review />
 			<Brands />
+			<Blogs />
 			<Plans />
+			<Faq />
 		</>
 	)
 }
