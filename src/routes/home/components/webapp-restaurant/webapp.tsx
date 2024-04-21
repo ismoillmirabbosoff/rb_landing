@@ -4,33 +4,15 @@ import { motion } from 'framer-motion'
 import { FEATURES } from './constants'
 import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
-import { useEffect, useState } from 'react'
 import { IconTick } from '@/assets/icons/tick'
 import Typography from '@mui/material/Typography'
 import { Content, Wrapper, Container } from './style'
 import ImageIphone from '@/assets/images/iphone.webp'
+import { useInView } from 'react-intersection-observer'
 import { IconLinearGradient } from '@/assets/icons/linear-gradient'
 
 export const WebappRestaurant = () => {
-	const [isVisible, setIsVisible] = useState(false)
-
-	useEffect(() => {
-		const handleScroll = () => {
-			const scrollPosition = window.scrollY + window.innerHeight
-			const elementPosition = document.getElementById('trigger-element')?.offsetTop ?? 0
-			if (scrollPosition - 200 > elementPosition) {
-				setIsVisible(true)
-			} else {
-				setIsVisible(false)
-			}
-		}
-
-		window.addEventListener('scroll', handleScroll, { passive: true })
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll)
-		}
-	}, [])
+	const mobile = useInView({ triggerOnce: true, threshold: 0.2 })
 
 	return (
 		<Container>
@@ -52,13 +34,12 @@ export const WebappRestaurant = () => {
 						<Button sx={{ minWidth: '183px' }}>Sinab Ko’rish</Button>
 					</Box>
 				</Content>
-				<div>
-					<div id='trigger-element' />
+				<div ref={mobile.ref}>
 					<div style={{ display: 'flex' }}>
 						<motion.div
 							style={{
 								marginRight: '20px',
-								width: isVisible ? '50%' : '100%',
+								width: mobile.inView ? '50%' : '100%',
 								transition: 'width 0.5s ease-in-out',
 							}}
 						>
@@ -68,8 +49,8 @@ export const WebappRestaurant = () => {
 							component={motion.div}
 							sx={{
 								pt: '60px',
-								opacity: isVisible ? '1' : '0',
-								width: isVisible ? '50%' : '0%',
+								opacity: mobile.inView ? '1' : '0',
+								width: mobile.inView ? '50%' : '0%',
 								transition: 'width 1s ease-in-out',
 							}}
 						>

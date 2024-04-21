@@ -4,7 +4,6 @@ export const Container = styled('section')`
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	background-color: ${({ theme }) => theme.palette.colors.BLACK10};
 `
 
 export const Wrapper = styled('div')`

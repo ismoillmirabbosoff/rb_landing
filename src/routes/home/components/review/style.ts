@@ -53,12 +53,6 @@ export const Slider = styled('div')`
 		background: transparent;
 		box-shadow: 0px 2px 50px 0px ${({ theme }) => theme.palette.colors.GRAY80};
 	}
-	${({ theme }) => ({
-		[theme.breakpoints.down('md')]: {
-			marginTop: '34px',
-			paddingLeft: '18px',
-		},
-	})}
 `
 
 export const WrapUser = styled('div')`

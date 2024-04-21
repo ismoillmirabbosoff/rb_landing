@@ -1,10 +1,12 @@
 import { Hoc } from './hoc'
+import { Menu } from '../menu'
+import { Navbar } from '../navbar'
 import Stack from '@mui/material/Stack'
 import { Logo } from '@/components/logo'
 import Button from '@mui/material/Button'
 import { useTranslation } from 'next-i18next'
-import { Container, WrapDesktop } from './style'
 import { SelectI18nLanguage } from '@/components/select-i18n-language'
+import { Wrap, WrapNav, WrapMenu, WrapRight, Container } from './style'
 
 export const Header = () => {
 	const { t } = useTranslation('common')
@@ -12,15 +14,23 @@ export const Header = () => {
 	return (
 		<Container>
 			<Hoc>
-				<WrapDesktop>
-					<Logo variant='logo' />
-					<Stack gap='10px' direction='row'>
+				<Wrap>
+					<Stack flexGrow={1} direction='row' alignItems='center'>
+						<Logo variant='logo' />
+						<WrapNav>
+							<Navbar />
+						</WrapNav>
+					</Stack>
+					<WrapRight>
 						<SelectI18nLanguage />
 						<Button variant='contained' sx={{ minWidth: '105px' }}>
 							{t('enter')}
 						</Button>
-					</Stack>
-				</WrapDesktop>
+					</WrapRight>
+					<WrapMenu>
+						<Menu />
+					</WrapMenu>
+				</Wrap>
 			</Hoc>
 		</Container>
 	)

@@ -27,7 +27,9 @@ export const InputPhone = <T extends FieldValues>(props: InputPhoneProps<T>) => 
 							>
 								<IconFlagUz />
 							</Stack>
-							<Typography>+998</Typography>
+							<Typography variant='text50' lineHeight='27px' color='colors.BLACK'>
+								+998
+							</Typography>
 						</Stack>
 					</InputAdornment>
 				),

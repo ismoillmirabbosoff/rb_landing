@@ -23,10 +23,50 @@ export const Wrapper = styled('header')`
 	background-color: ${({ theme }) => theme.palette.colors.BLACK10};
 `
 
-export const WrapDesktop = styled('div')`
+export const Wrap = styled('div')`
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			padding: '7px 8px',
+			borderRadius: '10px',
+			backdropFilter: 'blur(25px)',
+			background: theme.palette.colors.WHITE10,
+		},
+	})}
+`
+
+export const WrapNav = styled('div')`
+	flex-grow: 1;
+	display: flex;
+	margin: 0 20px;
+	justify-content: center;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			display: 'none',
+		},
+	})}
+`
+
+export const WrapRight = styled('div')`
+	gap: 10px;
+	display: flex;
+	align-items: center;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			display: 'none',
+		},
+	})}
+`
+
+export const WrapMenu = styled('div')`
+	display: none;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			display: 'flex',
+		},
+	})};
 `
