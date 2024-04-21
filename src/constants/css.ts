@@ -26,7 +26,11 @@ export const COLORS = {
 	GRAY110: '#00000012',
 	GRAY120: '#787C8F',
 	GRAY130: '#F7F8FB',
+	GRAY140: '#e9e9e980',
+	GRAY150: '#0000000a',
+	GRAY160: '#EAECF0',
 	LINEAR_GRADIENT: 'linear-gradient(91deg, #FEFEFE 2.38%, #FFD1C2 64.26%, #D594DD 100%)',
+	LINEAR_GRADIENT10: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%)',
 }
 
 export const BREAKPOINTS = {

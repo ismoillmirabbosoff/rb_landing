@@ -1,4 +1,5 @@
 import { gilroy } from '@/utils/fonts'
+import { IconPlus } from '@/assets/icons/plus'
 import { createTheme } from '@mui/material/styles'
 import { COLORS, BREAKPOINTS } from '@/constants/css'
 
@@ -21,6 +22,8 @@ interface TypographyProps {
 	title60: React.CSSProperties
 	title70: React.CSSProperties
 	title80: React.CSSProperties
+	title90: React.CSSProperties
+	title100: React.CSSProperties
 	text: React.CSSProperties
 	text10: React.CSSProperties
 	text20: React.CSSProperties
@@ -29,6 +32,10 @@ interface TypographyProps {
 	text50: React.CSSProperties
 	text60: React.CSSProperties
 	text70: React.CSSProperties
+	text80: React.CSSProperties
+	text90: React.CSSProperties
+	text100: React.CSSProperties
+	text110: React.CSSProperties
 }
 
 declare module '@mui/material/Typography' {
@@ -42,6 +49,8 @@ declare module '@mui/material/Typography' {
 		title60: true
 		title70: true
 		title80: true
+		title90: true
+		title100: true
 		text: true
 		text10: true
 		text20: true
@@ -50,6 +59,10 @@ declare module '@mui/material/Typography' {
 		text50: true
 		text60: true
 		text70: true
+		text80: true
+		text90: true
+		text100: true
+		text110: true
 	}
 }
 
@@ -123,7 +136,6 @@ export const theme = createTheme({
 			WebkitBackgroundClip: 'text',
 			WebkitTextFillColor: 'transparent',
 		},
-
 		title60: {
 			fontWeight: 500,
 			fontSize: '16px',
@@ -140,6 +152,18 @@ export const theme = createTheme({
 			fontWeight: 700,
 			lineHeight: 'normal',
 			color: palette.colors.GRAY130,
+		},
+		title90: {
+			fontSize: '28px',
+			fontWeight: 500,
+			lineHeight: '73px',
+			textAlign: 'center',
+			letterSpacing: '0.564px',
+		},
+		title100: {
+			fontSize: '22px',
+			fontWeight: 500,
+			lineHeight: '32px',
 		},
 		text: {
 			fontWeight: 400,
@@ -190,40 +214,33 @@ export const theme = createTheme({
 			lineHeight: '29.08px',
 			color: palette.colors.PURPLE,
 		},
+		text80: {
+			fontWeight: 400,
+			fontSize: '18px',
+			lineHeight: '25px',
+			letterSpacing: '0.243px',
+			color: palette.colors.GRAY10,
+		},
+		text90: {
+			fontWeight: 300,
+			fontSize: '16px',
+			lineHeight: '27px',
+			color: palette.colors.GRAY10,
+		},
+		text100: {
+			fontWeight: 500,
+			fontSize: '18px',
+			lineHeight: '26px',
+			color: palette.colors.GRAY130,
+		},
+		text110: {
+			fontWeight: 400,
+			fontSize: '14px',
+			lineHeight: '32px',
+			color: palette.colors.GRAY120,
+		},
 	}),
 	components: {
-		MuiCssBaseline: {
-			styleOverrides: theme => ({}),
-		},
-		MuiInputBase: {
-			styleOverrides: {
-				root: ({ theme }) => ({
-					height: 52,
-				}),
-			},
-		},
-		MuiOutlinedInput: {
-			styleOverrides: {
-				root: ({ theme }) => ({
-					borderRadius: '14px',
-					'& fieldset': {
-						borderWidth: '1px',
-						borderColor: theme.palette.colors.TRANSPARENT,
-					},
-					'&:hover .MuiOutlinedInput-notchedOutline': {
-						borderColor: `${theme.palette.colors.PURPLE} !important`,
-					},
-					'&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-						borderWidth: '1px',
-						borderColor: `${theme.palette.colors.PURPLE} !important`,
-					},
-					'&.Mui-error .MuiOutlinedInput-notchedOutline': {
-						borderWidth: '1px',
-						borderColor: `${theme.palette.colors.RED} !important`,
-					},
-				}),
-			},
-		},
 		MuiSelect: {
 			styleOverrides: {
 				select: {
@@ -272,7 +289,167 @@ export const theme = createTheme({
 						color: theme.palette.colors.WHITE,
 					}),
 				},
+				{
+					props: { variant: 'outlined' },
+					style: ({ theme }) => ({
+						border: `1.5px solid ${theme.palette.colors.PURPLE}`,
+					}),
+				},
 			],
+		},
+		MuiFormControlLabel: {
+			styleOverrides: {
+				root: {
+					marginLeft: 0,
+					marginRight: 0,
+				},
+				label: ({ theme }) => ({
+					fontSize: '16px',
+					fontWeight: '400',
+					lineHeight: '27px',
+					color: theme.palette.colors.BLACK,
+				}),
+			},
+		},
+		MuiInputLabel: {
+			styleOverrides: {
+				root: {
+					transform: 'translate(0, -25px) scale(1)',
+				},
+			},
+		},
+		MuiFormControl: {
+			styleOverrides: {
+				root: {
+					':has(label.MuiInputLabel-root)': {
+						marginTop: '25px  !important',
+					},
+				},
+			},
+		},
+		MuiInputBase: {
+			styleOverrides: {
+				root: ({ theme }) => ({
+					height: 52,
+					backgroundColor: theme.palette.colors.GRAY90,
+					'input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,input:-webkit-autofill:active':
+						{
+							fontWeight: 500,
+							fontSize: '16px',
+							borderRadius: '0 9px 9px 0',
+							WebkitTextFillColor: `${theme.palette.colors.BLACK} !important`,
+							WebkitBoxShadow: `0 0 0 30px ${theme.palette.colors.GRAY90} inset !important`,
+							boxShadow: `0 0 0 30px ${theme.palette.colors.GRAY90} inset !important`,
+							backgroundColor: theme.palette.colors.GRAY90,
+						},
+					':has(.MuiInputAdornment-positionStart)': {
+						paddingLeft: '20px !important',
+						input: {
+							paddingLeft: '0 !important',
+						},
+					},
+					':has(.MuiInputAdornment-positionEnd)': {
+						paddingRight: '9px !important',
+						input: {
+							paddingRight: '0 !important',
+						},
+					},
+					fieldset: {
+						top: 0,
+						height: 52,
+						legend: {
+							display: 'none',
+						},
+					},
+					input: {
+						fontSize: '16px',
+						fontWeight: '500',
+						lineHeight: '27px',
+						padding: '0 20px !important',
+						color: `${theme.palette.colors.BLACK} !important`,
+					},
+				}),
+			},
+		},
+		MuiFormHelperText: {
+			styleOverrides: {
+				root: ({ theme }) => ({
+					marginLeft: 0,
+					fontSize: '12px',
+					fontWeight: 400,
+					color: theme.palette.colors.RED,
+				}),
+			},
+		},
+		MuiOutlinedInput: {
+			styleOverrides: {
+				root: ({ theme }) => ({
+					borderRadius: '9px',
+					'& fieldset': {
+						borderWidth: '1px',
+						borderColor: theme.palette.colors.TRANSPARENT,
+					},
+					'&:hover .MuiOutlinedInput-notchedOutline': {
+						borderColor: `${theme.palette.colors.PURPLE} !important`,
+					},
+					'&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+						borderWidth: '1px',
+						borderColor: `${theme.palette.colors.PURPLE} !important`,
+					},
+					'&.Mui-error .MuiOutlinedInput-notchedOutline': {
+						borderWidth: '1px',
+						borderColor: `${theme.palette.colors.RED} !important`,
+					},
+				}),
+			},
+		},
+		MuiAccordion: {
+			styleOverrides: {
+				root: ({ theme }) => ({
+					borderWidth: '1px',
+					borderRadius: '8px',
+					borderStyle: 'solid',
+					borderColor: theme.palette.colors.GRAY140,
+					backgroundColor: theme.palette.colors.WHITE,
+					boxShadow: `0px 0px 56px 0px ${theme.palette.colors.GRAY150}`,
+					'::before': {
+						height: 0,
+					},
+					// '&.Mui-expanded': {
+					// 	margin: 0,
+					// 	overflow: 'hidden',
+					// 	position: 'relative',
+					// 	borderColor: theme.palette.colors.BLUE40,
+					// 	boxShadow: `0px 8px 16px 0px ${theme.palette.colors.GRAY40}`,
+					// 	'::after': {
+					// 		top: 0,
+					// 		left: 0,
+					// 		width: '3px',
+					// 		content: '""',
+					// 		height: '100%',
+					// 		position: 'absolute',
+					// 		background: theme.palette.colors.BLUE,
+					// 	},
+					// },
+				}),
+			},
+		},
+		MuiAccordionDetails: {
+			styleOverrides: {
+				root: {
+					padding: '0 40px 33px',
+				},
+			},
+		},
+		MuiAccordionSummary: {
+			defaultProps: {
+				expandIcon: <IconPlus />,
+			},
+			styleOverrides: {
+				root: {
+					padding: '14px 14px 14px 40px',
+				},
+			},
 		},
 	},
 })
