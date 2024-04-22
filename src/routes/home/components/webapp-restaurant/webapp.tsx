@@ -51,7 +51,7 @@ export const WebappRestaurant = () => {
 								pt: '60px',
 								opacity: mobile.inView ? '1' : '0',
 								width: mobile.inView ? '50%' : '0%',
-								transition: 'width 1s ease-in-out',
+								transition: 'all 1s ease-in-out',
 							}}
 						>
 							<Typography variant='title10' component='h2'>

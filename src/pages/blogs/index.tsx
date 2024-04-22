@@ -1,10 +1,10 @@
-import { AboutUs } from '@/routes/about-us'
+import { Blogs } from '@/routes/blogs'
 import type { GetServerSideProps } from 'next'
 import type { LanguageTypes } from '@/types/language'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 export default function Page() {
-	return <AboutUs />
+	return <Blogs />
 }
 
 export const getStaticProps: GetServerSideProps = async ({ locale }) => {

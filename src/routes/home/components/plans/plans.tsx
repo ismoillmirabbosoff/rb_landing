@@ -73,7 +73,7 @@ export const Plans = () => {
 		<Container>
 			<Wrapper>
 				<Stack mb='9px' position='relative' width='100%' alignItems='center'>
-					<Stack top='-90%' position='absolute' alignItems='center'>
+					<Stack top='-90%' position='absolute' alignItems='center' zIndex='-1'>
 						<IconLinearGradient />
 					</Stack>
 					<Typography variant='title30' component='h2'>

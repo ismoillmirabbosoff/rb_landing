@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import { Wrapper } from './style'
+import Stack from '@mui/material/Stack'
+import { ROUTER } from '@/constants/router'
 import { Iconlogo } from '@/assets/icons/logo'
 import { IconLogoText } from '@/assets/icons/logo-text'
-import { Stack } from '@mui/material'
 
 interface LogoProps {
 	variant: 'logo' | 'text'
@@ -10,7 +11,7 @@ interface LogoProps {
 
 export const Logo = ({ variant }: LogoProps) => {
 	return (
-		<Link href=''>
+		<Link href={ROUTER.HOME}>
 			<Wrapper>
 				{variant === 'logo' ? (
 					<Stack id='logo' justifyContent='center'>

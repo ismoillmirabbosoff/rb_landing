@@ -25,6 +25,8 @@ interface TypographyProps {
 	title90: React.CSSProperties
 	title100: React.CSSProperties
 	title110: React.CSSProperties
+	title120: React.CSSProperties
+	title130: React.CSSProperties
 	text: React.CSSProperties
 	text10: React.CSSProperties
 	text20: React.CSSProperties
@@ -53,6 +55,8 @@ declare module '@mui/material/Typography' {
 		title90: true
 		title100: true
 		title110: true
+		title120: true
+		title130: true
 		text: true
 		text10: true
 		text20: true
@@ -71,6 +75,12 @@ declare module '@mui/material/Typography' {
 declare module '@mui/material/styles' {
 	interface TypographyVariants extends TypographyProps {}
 	interface TypographyVariantsOptions extends TypographyProps {}
+}
+
+declare module '@mui/material/Button' {
+	interface ButtonPropsVariantOverrides {
+		'text-gray': true
+	}
 }
 
 export const theme = createTheme({
@@ -173,6 +183,17 @@ export const theme = createTheme({
 			lineHeight: 'normal',
 			color: palette.colors.WHITE,
 		},
+		title120: {
+			fontSize: '24px',
+			fontWeight: 500,
+			lineHeight: 'normal',
+		},
+		title130: {
+			fontSize: '24px',
+			fontWeight: 700,
+			lineHeight: '30px',
+			letterSpacing: '0.564px',
+		},
 		text: {
 			fontWeight: 400,
 			fontSize: '24px',
@@ -254,6 +275,9 @@ export const theme = createTheme({
 				select: {
 					padding: '14.5px 18px',
 				},
+				root: {
+					borderRadius: '14px',
+				},
 			},
 		},
 		MuiButton: {
@@ -301,6 +325,16 @@ export const theme = createTheme({
 					props: { variant: 'outlined' },
 					style: ({ theme }) => ({
 						border: `1.5px solid ${theme.palette.colors.PURPLE}`,
+					}),
+				},
+				{
+					props: { variant: 'text-gray' },
+					style: ({ theme }) => ({
+						fontSize: '16px',
+						fontWeight: 400,
+						lineHeight: '35px',
+						letterSpacing: '0.216px,',
+						color: theme.palette.colors.GRAY50,
 					}),
 				},
 			],

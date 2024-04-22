@@ -1,3 +1,4 @@
+import { Try } from './components/try'
 import Stack from '@mui/material/Stack'
 import { Footer } from './components/footer'
 import { Header } from './components/header'
@@ -9,6 +10,7 @@ export const Layout = ({ children }: ChildrenProps) => {
 		<>
 			<Header />
 			<Stack flexGrow={1}>{children}</Stack>
+			<Try />
 			<Contact />
 			<Footer />
 		</>
