@@ -3,9 +3,7 @@ import type { GetServerSideProps } from 'next'
 import type { LanguageTypes } from '@/types/language'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-export default function Page() {
-	return <Home />
-}
+export default Home
 
 export const getStaticProps: GetServerSideProps = async ({ locale }) => {
 	return {
