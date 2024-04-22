@@ -24,6 +24,7 @@ interface TypographyProps {
 	title80: React.CSSProperties
 	title90: React.CSSProperties
 	title100: React.CSSProperties
+	title110: React.CSSProperties
 	text: React.CSSProperties
 	text10: React.CSSProperties
 	text20: React.CSSProperties
@@ -51,6 +52,7 @@ declare module '@mui/material/Typography' {
 		title80: true
 		title90: true
 		title100: true
+		title110: true
 		text: true
 		text10: true
 		text20: true
@@ -164,6 +166,12 @@ export const theme = createTheme({
 			fontSize: '22px',
 			fontWeight: 500,
 			lineHeight: '32px',
+		},
+		title110: {
+			fontSize: '18px',
+			fontWeight: 500,
+			lineHeight: 'normal',
+			color: palette.colors.WHITE,
 		},
 		text: {
 			fontWeight: 400,
@@ -415,22 +423,6 @@ export const theme = createTheme({
 					'::before': {
 						height: 0,
 					},
-					// '&.Mui-expanded': {
-					// 	margin: 0,
-					// 	overflow: 'hidden',
-					// 	position: 'relative',
-					// 	borderColor: theme.palette.colors.BLUE40,
-					// 	boxShadow: `0px 8px 16px 0px ${theme.palette.colors.GRAY40}`,
-					// 	'::after': {
-					// 		top: 0,
-					// 		left: 0,
-					// 		width: '3px',
-					// 		content: '""',
-					// 		height: '100%',
-					// 		position: 'absolute',
-					// 		background: theme.palette.colors.BLUE,
-					// 	},
-					// },
 				}),
 			},
 		},
@@ -449,6 +441,34 @@ export const theme = createTheme({
 				root: {
 					padding: '14px 14px 14px 40px',
 				},
+			},
+		},
+		MuiToggleButtonGroup: {
+			styleOverrides: {
+				root: {
+					gap: '23px',
+				},
+				grouped: ({ theme }) => ({
+					borderRadius: '12px',
+					'&.Mui-selected': {
+						color: theme.palette.colors.GRAY130,
+						border: `1px solid ${theme.palette.colors.GREEN}`,
+					},
+				}),
+			},
+		},
+		MuiToggleButton: {
+			styleOverrides: {
+				root: ({ theme }) => ({
+					fontWeight: 300,
+					fontSize: '16px',
+					minHeight: '50px',
+					padding: '0 11px',
+					lineHeight: '16.6px',
+					textTransform: 'unset',
+					color: theme.palette.colors.GRAY120,
+					background: theme.palette.colors.WHITE30,
+				}),
 			},
 		},
 	},
