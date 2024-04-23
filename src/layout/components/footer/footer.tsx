@@ -23,7 +23,12 @@ export const Footer = () => {
 				<Image fill alt='bg-footer' src={ImageBgFooter.src} />
 			</WrapImage>
 			<Wrapper>
-				<Stack p='50px 0 65px' gap='20px' direction='row' justifyContent='space-between'>
+				<Stack
+					p='50px 0 65px'
+					gap='20px'
+					direction={{ xs: 'column', md: 'row' }}
+					justifyContent='space-between'
+				>
 					<Stack>
 						<Stack justifyContent='center'>
 							<Logo variant='text' />

@@ -11,7 +11,7 @@ import { IconMacbookBody } from '@/assets/icons/macbook-body'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import { IconMacbookFooter } from '@/assets/icons/macbook-footer'
 import ImageWebappWebsiteShop from '@/assets/images/webapp-website-shop.webp'
-import { Wrapper, Container, WrapCamera, WrapImage, WrapImageBody } from './style'
+import { Cards, Wrapper, Container, WrapCamera, WrapImage, WrapImageBody, Wrap } from './style'
 import ImageWebappWebsiteRestaurant from '@/assets/images/webapp-website-restaurant.webp'
 
 export const FlexibleDesign = () => {
@@ -32,11 +32,11 @@ export const FlexibleDesign = () => {
 				<Typography mb='16px' variant='title20' component='h2'>
 					Moslashuvchan Dizayn
 				</Typography>
-				<Typography mb='80px' variant='text' component='h3' maxWidth='707px'>
+				<Typography mb={{ md: '80px' }} variant='text' component='h3' maxWidth='707px'>
 					If you receive an order by phone, you can also manage those orders by entering them into
 					the system.
 				</Typography>
-				<Stack width='100%' direction='row'>
+				<Wrap>
 					<Stack width='100%' flexGrow={1} alignItems='center'>
 						{device === 'mobile' ? (
 							<IconIphone />
@@ -65,7 +65,7 @@ export const FlexibleDesign = () => {
 							</Stack>
 						)}
 					</Stack>
-					<Stack pt='50px' gap='50px' component='ul' minWidth='390px'>
+					<Cards>
 						<Stack gap='14px' width='100%' component='li'>
 							<Typography variant='title110' component='h3'>
 								Web app turi
@@ -123,8 +123,8 @@ export const FlexibleDesign = () => {
 								</ToggleButtonGroup>
 							</Stack>
 						</Stack>
-					</Stack>
-				</Stack>
+					</Cards>
+				</Wrap>
 			</Wrapper>
 		</Container>
 	)

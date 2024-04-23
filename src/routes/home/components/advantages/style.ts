@@ -22,6 +22,15 @@ export const Card = styled('div')`
 	border-radius: 20px;
 	flex-direction: column;
 	background: ${({ theme }) => theme.palette.colors.GRAY90};
+
+	&.order {
+		width: 40%;
+		${({ theme }) => ({
+			[theme.breakpoints.down('md')]: {
+				width: '100%',
+			},
+		})};
+	}
 `
 
 export const WrapIconPieChart = styled('div')`
@@ -56,4 +65,56 @@ export const WrapIconPieChart = styled('div')`
 			transform: rotate(360deg);
 		}
 	}
+`
+
+export const Wrap = styled('div')`
+	gap: 20px;
+	width: 100%;
+	display: flex;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			flexDirection: 'column',
+		},
+	})};
+`
+
+export const WrapUp = styled('div')`
+	gap: 20px;
+	height: 50%;
+	display: grid;
+	grid-template-columns: 0.4fr 0.6fr;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			height: 'fit-content',
+			gridTemplateColumns: '100%',
+		},
+	})};
+`
+
+export const WrapDown = styled('div')`
+	gap: 20px;
+	width: 100%;
+	height: 50%;
+	display: grid;
+	grid-template-columns: 0.6fr 0.4fr;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			height: 'fit-content',
+			gridTemplateColumns: '100%',
+		},
+	})};
+`
+
+export const WrapLeft = styled('div')`
+	gap: 20px;
+	width: 60%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			width: '100%',
+			gridTemplateColumns: '100%',
+		},
+	})};
 `

@@ -42,3 +42,31 @@ export const WrapCamera = styled('div')`
 	position: absolute;
 	justify-content: center;
 `
+
+export const Wrap = styled('div')`
+	display: flex;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			gap: '60px',
+			display: 'grid',
+			gridTemplateColumns: '1fr',
+		},
+	})};
+`
+
+export const Cards = styled('ul')`
+	gap: 50px;
+	display: flex;
+	min-width: 390px;
+	padding-top: 50px;
+	flex-direction: column;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			gridRowEnd: 2,
+			gridRowStart: 1,
+			li: {
+				alignItems: 'center',
+			},
+		},
+	})};
+`

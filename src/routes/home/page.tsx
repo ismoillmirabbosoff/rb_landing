@@ -1,18 +1,22 @@
+import dynamic from 'next/dynamic'
 import { Faq } from './components/faq'
 import { AnimationBack } from './style'
-import { Main } from './components/main'
 import Stack from '@mui/material/Stack'
+import { Main } from './components/main'
 import { Plans } from './components/plans'
 import { Blogs } from './components/blogs'
 import { Brands } from './components/brands'
 import { Review } from './components/review'
 import { Chat } from './components/chat/chat'
-import { Advantages } from './components/advantages'
 import { WebappShop } from './components/webapp-shop'
 import { useInView } from 'react-intersection-observer'
 import { Instructions } from './components/instructions'
 import { FlexibleDesign } from './components/flexible-design'
 import { WebappRestaurant } from './components/webapp-restaurant'
+
+const Advantages = dynamic(async () => (await import('./components/advantages')).Advantages, {
+	ssr: false,
+})
 
 export const Home = () => {
 	const advantagesAndInstructions = useInView({ threshold: 0.3 })

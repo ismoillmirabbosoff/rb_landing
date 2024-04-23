@@ -42,7 +42,16 @@ export const Contact = () => {
 				<Typography align='center' variant='text80' component='h3'>
 					Can’t find the answer you’re looking for? Please chat to our friendly team.
 				</Typography>
-				<Stack mt='27px' gap='28px' width='100%' display='grid' gridTemplateColumns='1fr 1fr 1fr'>
+				<Stack
+					mt='27px'
+					gap='28px'
+					width='100%'
+					display='grid'
+					gridTemplateColumns={{
+						xs: '1fr',
+						md: '1fr 1fr 1fr',
+					}}
+				>
 					<Input
 						fullWidth
 						name='name'

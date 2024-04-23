@@ -22,6 +22,11 @@ export const Cards = styled('ul')`
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			gridTemplateColumns: '1fr',
+		},
+	})};
 `
 
 export const Card = styled('li')`

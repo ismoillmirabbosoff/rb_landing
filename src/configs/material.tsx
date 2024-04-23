@@ -87,7 +87,7 @@ declare module '@mui/material/Button' {
 	}
 }
 
-export const theme = createTheme({
+const defaultCreateTheme = createTheme({
 	breakpoints: BREAKPOINTS,
 	shape: {
 		borderRadius: 8,
@@ -101,6 +101,12 @@ export const theme = createTheme({
 			primary: COLORS.BLACK,
 		},
 	},
+})
+
+export const theme = createTheme({
+	shape: defaultCreateTheme.shape,
+	palette: defaultCreateTheme.palette,
+	breakpoints: defaultCreateTheme.breakpoints,
 	typography: palette => ({
 		fontFamily: gilroy.style.fontFamily,
 		title: {
@@ -109,12 +115,18 @@ export const theme = createTheme({
 			lineHeight: '73px',
 			textAlign: 'center',
 			letterSpacing: '0.564px',
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '22px',
+			},
 		},
 		title10: {
 			fontSize: '42px',
 			fontWeight: 500,
 			lineHeight: '73px',
 			letterSpacing: '0.564px',
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '17px',
+			},
 		},
 		title20: {
 			fontSize: '52px',
@@ -123,6 +135,10 @@ export const theme = createTheme({
 			textalign: 'center',
 			letterSpacing: '0.564px',
 			color: palette.colors.WHITE,
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '22px',
+				lineHeight: '33px',
+			},
 		},
 		title30: {
 			fontSize: '64px',
@@ -130,6 +146,10 @@ export const theme = createTheme({
 			lineHeight: '73px',
 			textAlign: 'center',
 			letterSpacing: '0.564px',
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '22px',
+				lineHeight: '30px',
+			},
 		},
 		title40: {
 			textAlign: 'center',
@@ -140,6 +160,10 @@ export const theme = createTheme({
 			background: palette.colors.LINEAR_GRADIENT,
 			WebkitBackgroundClip: 'text',
 			WebkitTextFillColor: 'transparent',
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '22px',
+				lineHeight: '33px',
+			},
 		},
 		title50: {
 			fontSize: '64px',
@@ -151,6 +175,10 @@ export const theme = createTheme({
 			background: palette.colors.LINEAR_GRADIENT,
 			WebkitBackgroundClip: 'text',
 			WebkitTextFillColor: 'transparent',
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '22px',
+				lineHeight: '33px',
+			},
 		},
 		title60: {
 			fontWeight: 500,
@@ -175,6 +203,10 @@ export const theme = createTheme({
 			lineHeight: '73px',
 			textAlign: 'center',
 			letterSpacing: '0.564px',
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '22px',
+				lineHeight: '30px',
+			},
 		},
 		title100: {
 			fontSize: '22px',
@@ -210,12 +242,21 @@ export const theme = createTheme({
 			textAlign: 'center',
 			letterSpacing: '0.324px',
 			color: palette.colors.GRAY,
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '14px',
+				lineHeight: '20px',
+				letterSpacing: '0.049px',
+			},
 		},
 		text10: {
 			fontWeight: 300,
 			fontSize: '22px',
 			lineHeight: '32px',
 			color: palette.colors.GRAY10,
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '14px',
+				lineHeight: '21px',
+			},
 		},
 		text20: {
 			fontWeight: 300,
@@ -517,6 +558,9 @@ export const theme = createTheme({
 					textTransform: 'unset',
 					color: theme.palette.colors.GRAY120,
 					background: theme.palette.colors.WHITE30,
+					[defaultCreateTheme.breakpoints.down('md')]: {
+						fontSize: '14px',
+					},
 				}),
 			},
 		},

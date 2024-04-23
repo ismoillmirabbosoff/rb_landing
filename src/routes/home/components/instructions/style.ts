@@ -13,4 +13,9 @@ export const Wrapper = styled('div')`
 	padding-bottom: 120px;
 	grid-template-columns: 1fr 1fr;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			gridTemplateColumns: '100%',
+		},
+	})};
 `
