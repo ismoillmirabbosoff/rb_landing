@@ -27,7 +27,7 @@ export const Main = () => {
 						<Image fill alt='main-back' src={ImageMainBack.src} />
 					</WrapImage>
 				</Stack>
-				<Image fill alt='robosell-dark' src={ImageRobosellDark.src} />
+				<Image fill alt='robosell-dark' priority src={ImageRobosellDark.src} />
 			</Wrapper>
 		</Container>
 	)
