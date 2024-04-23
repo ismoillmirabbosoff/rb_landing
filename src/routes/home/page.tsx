@@ -17,7 +17,7 @@ import { WebappRestaurant } from './components/webapp-restaurant'
 export const Home = () => {
 	const advantagesAndInstructions = useInView({ threshold: 0.3 })
 	const flexibleDesign = useInView({ threshold: 0.3 })
-	const webappRestaurantAndWebappShop = useInView({ threshold: 0.3 })
+	const webappRestaurantAndWebappShop = useInView({ threshold: 0.1 })
 	const chat = useInView({ threshold: 0.3 })
 
 	return (

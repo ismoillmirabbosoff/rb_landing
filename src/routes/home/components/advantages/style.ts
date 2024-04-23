@@ -15,3 +15,9 @@ export const Wrapper = styled('div')`
 	justify-content: space-between;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
 `
+
+export const Card = styled('div')`
+	padding: 20px 24px;
+	border-radius: 20px;
+	background: ${({ theme }) => theme.palette.colors.GRAY90};
+`

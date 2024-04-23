@@ -1,46 +1,90 @@
-import { Wrapper, Container } from './style'
+import { useRef } from 'react'
+import Stack from '@mui/material/Stack'
+import { Waypoint } from 'react-waypoint'
+import { useCountUp } from 'react-countup'
 import Typography from '@mui/material/Typography'
+import { Card, Wrapper, Container } from './style'
+import { IconPieChart } from '@/assets/icons/pie-chart'
 
 export const Advantages = () => {
+	const countUpRef = useRef(null)
+	const { start, reset } = useCountUp({
+		start: 0,
+		end: 709,
+		ref: countUpRef,
+	})
+
 	return (
 		<Container>
 			<Wrapper>
-				<Typography variant='title' component='h2'>
+				<Typography mb='17px' variant='title' component='h2'>
 					Robosell Afzalliklari
 				</Typography>
-				<div>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna aliqua. Ac ut consequat semper viverra nam libero justo laoreet.
-					Sodales ut etiam sit amet. Augue mauris augue neque gravida in. Ut placerat orci nulla
-					pellentesque dignissim enim sit amet venenatis. Nunc mattis enim ut tellus elementum
-					sagittis vitae. Sed felis eget velit aliquet sagittis id. Molestie at elementum eu
-					facilisis. Dictum non consectetur a erat nam at lectus urna. Pretium lectus quam id leo in
-					vitae turpis. Donec et odio pellentesque diam volutpat commodo sed egestas egestas. Metus
-					aliquam eleifend mi in nulla. Ullamcorper eget nulla facilisi etiam dignissim diam quis
-					enim. Lectus mauris ultrices eros in cursus. Feugiat in ante metus dictum at tempor
-					commodo. Laoreet non curabitur gravida arcu ac. Malesuada pellentesque elit eget gravida.
-					At risus viverra adipiscing at in tellus integer. Dui faucibus in ornare quam viverra
-					orci. Sagittis id consectetur purus ut faucibus pulvinar elementum. Urna duis convallis
-					convallis tellus id interdum velit laoreet id. Dolor morbi non arcu risus quis varius.
-					Risus sed vulputate odio ut enim blandit volutpat maecenas volutpat. Dui sapien eget mi
-					proin sed libero enim sed. Eget duis at tellus at urna. Faucibus et molestie ac feugiat
-					sed. Nunc id cursus metus aliquam eleifend mi in nulla. Potenti nullam ac tortor vitae
-					purus faucibus ornare. Morbi non arcu risus quis varius quam quisque id diam. Auctor urna
-					nunc id cursus metus aliquam eleifend mi. Et molestie ac feugiat sed lectus. Nisi vitae
-					suscipit tellus mauris a diam maecenas sed. Dictum sit amet justo donec enim diam
-					vulputate ut pharetra. Nibh praesent tristique magna sit amet purus gravida quis blandit.
-					Curabitur gravida arcu ac tortor dignissim. Sed viverra ipsum nunc aliquet bibendum.
-					Laoreet suspendisse interdum consectetur libero id. Dapibus ultrices in iaculis nunc sed
-					augue. Felis eget velit aliquet sagittis. Pellentesque habitant morbi tristique senectus
-					et. Diam in arcu cursus euismod quis viverra. Neque gravida in fermentum et. Non odio
-					euismod lacinia at quis risus. Nisl rhoncus mattis rhoncus urna neque viverra justo. Sit
-					amet dictum sit amet justo. Lacus luctus accumsan tortor posuere ac ut consequat. Dui
-					vivamus arcu felis bibendum ut tristique et egestas quis. Quis risus sed vulputate odio ut
-					enim blandit volutpat maecenas. Aliquet nibh praesent tristique magna sit amet purus.
-					Viverra mauris in aliquam sem fringilla. Enim sed faucibus turpis in eu mi bibendum neque.
-					Nulla pharetra diam sit amet. Facilisi nullam vehicula ipsum a arcu cursus vitae congue
-					mauris. Habitasse platea dictumst vestibulum rhoncus. Nisi lacus sed viverra tellus in
-				</div>
+				<Stack gap='20px' width='100%' direction='row'>
+					<Stack gap='20px' width='60%'>
+						<Stack gap='20px' display='grid' gridTemplateColumns='0.4fr 0.6fr'>
+							<Card>
+								<Typography mb='6px' variant='title60' component='h5'>
+									Источник трафика
+								</Typography>
+								<Typography variant='text120' component='h6'>
+									Lorem ipsum dolor sit amet consectetur. Quis fermentum accumsan a lectus.
+								</Typography>
+								<Stack
+									mt='25px'
+									direction='row'
+									alignItems='flex-start'
+									justifyContent='space-between'
+								>
+									<Stack direction='row' alignItems='flex-end'>
+										<Waypoint onEnter={start} onLeave={reset}>
+											<Typography variant='title140' ref={countUpRef} minWidth='60px' />
+										</Waypoint>
+										<Typography variant='text40'>Users</Typography>
+									</Stack>
+									<Stack justifyContent='center'>
+										<IconPieChart />
+									</Stack>
+								</Stack>
+							</Card>
+							<Card>
+								<Typography mb='6px' variant='title60' component='h5'>
+									Savdo Statistikalari
+								</Typography>
+								<Typography variant='text120' component='h6'>
+									Lorem ipsum dolor sit amet consectetur. Quis fermentum a lectus.
+								</Typography>
+							</Card>
+						</Stack>
+						<Stack gap='20px' display='grid' gridTemplateColumns='0.6fr 0.4fr'>
+							<Card>
+								<Typography mb='6px' variant='title60' component='h5'>
+									Top 10 products
+								</Typography>
+								<Typography variant='text120' component='h6'>
+									Lorem ipsum dolor sit amet consectetur. Quis fermentum a lectus.
+								</Typography>
+							</Card>
+							<Card>
+								<Typography mb='6px' variant='title60' component='h5'>
+									Earning Statistics
+								</Typography>
+								<Typography variant='text120' component='h6'>
+									Lorem ipsum dolor sit amet consectetur. Quis fermentum accumsan a lectus.
+								</Typography>
+							</Card>
+						</Stack>
+					</Stack>
+					<Card sx={{ width: '40%' }}>
+						<Typography mb='6px' variant='title60' component='h5'>
+							Order Statistics
+						</Typography>
+						<Typography variant='text120' component='h6'>
+							Lorem ipsum dolor sit amet consectetur. Quis fermentum accumsan a lectus. Lorem ipsum
+							dolor sit amet consectetur. Quis fermentum accumsan a lectus.
+						</Typography>
+					</Card>
+				</Stack>
 			</Wrapper>
 		</Container>
 	)
