@@ -17,7 +17,43 @@ export const Wrapper = styled('div')`
 `
 
 export const Card = styled('div')`
+	display: flex;
 	padding: 20px 24px;
 	border-radius: 20px;
+	flex-direction: column;
 	background: ${({ theme }) => theme.palette.colors.GRAY90};
+`
+
+export const WrapIconPieChart = styled('div')`
+	animation: rotate 15s linear infinite;
+	-moz-animation: rotate 15s linear infinite;
+	-webkit-animation: rotate 15s linear infinite;
+
+	@-moz-keyframes rotate {
+		from {
+			-moz-transform: rotate(-360deg);
+		}
+		to {
+			-moz-transform: rotate(360deg);
+		}
+	}
+	@-webkit-keyframes rotate {
+		from {
+			-webkit-transform: rotate(-360deg);
+		}
+		to {
+			-webkit-transform: rotate(360deg);
+		}
+	}
+
+	@keyframes rotate {
+		from {
+			-webkit-transform: rotate(-360deg);
+			transform: rotate(-360deg);
+		}
+		to {
+			-webkit-transform: rotate(360deg);
+			transform: rotate(360deg);
+		}
+	}
 `

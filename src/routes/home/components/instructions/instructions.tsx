@@ -1,20 +1,16 @@
+import Image from 'next/image'
 import Stack from '@mui/material/Stack'
 import { INSTRUCTIONS } from './constants'
 import { Wrapper, Container } from './style'
 import Typography from '@mui/material/Typography'
+import ImageHowWorksInstruction from '@/assets/images/how-works-instruction.webp'
 
 export const Instructions = () => {
 	return (
 		<Container>
 			<Wrapper>
 				<Stack pt='18px'>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna aliqua. Maecenas sed enim ut sem viverra aliquet eget. Pharetra
-					vel turpis nunc eget. Risus at ultrices mi tempus imperdiet. Ac orci phasellus egestas
-					tellus rutrum tellus. Congue nisi vitae suscipit tellus. Id semper risus in hendrerit
-					gravida rutrum quisque. Dis parturient montes nascetur ridiculus. Neque ornare aenean
-					euismod elementum nisi. Pellentesque pulvinar pellentesque habitant morbi. Volutpat diam
-					ut venenatis tellus in metus.
+					<Image fill src={ImageHowWorksInstruction.src} alt='res' />
 				</Stack>
 				<Stack>
 					<Typography variant='title10' component='h2'>
