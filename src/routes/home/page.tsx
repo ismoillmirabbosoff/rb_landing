@@ -7,7 +7,6 @@ import { Plans } from './components/plans'
 import { Blogs } from './components/blogs'
 import { Brands } from './components/brands'
 import { Review } from './components/review'
-import { Chat } from './components/chat/chat'
 import { WebappShop } from './components/webapp-shop'
 import { useInView } from 'react-intersection-observer'
 import { Instructions } from './components/instructions'
@@ -22,7 +21,6 @@ export const Home = () => {
 	const advantagesAndInstructions = useInView({ threshold: 0.3 })
 	const flexibleDesign = useInView({ threshold: 0.3 })
 	const webappRestaurantAndWebappShop = useInView({ threshold: 0.1 })
-	const chat = useInView({ threshold: 0.3 })
 
 	return (
 		<>
@@ -59,14 +57,9 @@ export const Home = () => {
 				<WebappRestaurant />
 				<WebappShop />
 			</Stack>
-			<Stack ref={chat.ref} position='relative'>
-				<AnimationBack
-					sx={theme => ({
-						background: chat.inView ? theme.palette.colors.BLACK10 : theme.palette.colors.WHITE,
-					})}
-				/>
-				<Chat />
-			</Stack>
+			<video autoPlay loop muted>
+				<source src='/chat.mp4' type='video/mp4' />
+			</video>
 			<Review />
 			<Brands />
 			<Blogs />
