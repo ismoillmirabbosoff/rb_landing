@@ -3,9 +3,13 @@ import Image from 'next/image'
 import Stack from '@mui/material/Stack'
 import { Waypoint } from 'react-waypoint'
 import { useCountUp } from 'react-countup'
+import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
 import { IconPieChart } from '@/assets/icons/pie-chart'
 import ImageAdvantagesTopProducts from '@/assets/images/advantages-top-products.webp'
+import { IconAdvantagesSalesStatistics } from '@/assets/icons/advantages-sales-statistics'
+import { IconAdvantagesOrderStatistics } from '@/assets/icons/advantages-order-statistics'
+import ImageAdvantagesEarningStatistics from '@/assets/images/advantages-earning-statistics.webp'
 import {
 	Card,
 	Wrap,
@@ -16,12 +20,10 @@ import {
 	Container,
 	WrapIconPieChart,
 } from './style'
-import { IconAdvantagesSalesStatistics } from '@/assets/icons/advantages-sales-statistics'
-import { IconAdvantagesOrderStatistics } from '@/assets/icons/advantages-order-statistics'
-import ImageAdvantagesEarningStatistics from '@/assets/images/advantages-earning-statistics.webp'
 
 export const Advantages = () => {
 	const countUpRef = useRef(null)
+	const { t } = useTranslation('common')
 	const { start, reset } = useCountUp({
 		start: 0,
 		end: 709,
@@ -29,10 +31,10 @@ export const Advantages = () => {
 	})
 
 	return (
-		<Container>
+		<Container id='advantages'>
 			<Wrapper>
 				<Typography mb='17px' variant='title' component='h2'>
-					Robosell Afzalliklari
+					{t('robosell_advantages')}
 				</Typography>
 				<Wrap>
 					<WrapLeft>

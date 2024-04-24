@@ -70,7 +70,7 @@ export const Plans = () => {
 	}
 
 	return (
-		<Container>
+		<Container id='plans'>
 			<Wrapper>
 				<Stack mb='9px' position='relative' width='100%' alignItems='center'>
 					<Stack top='-90%' position='absolute' alignItems='center' zIndex='-1'>

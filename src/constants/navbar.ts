@@ -1,22 +1,24 @@
+import { ROUTER } from './router'
+
 export const NAVBAR = [
 	{
-		href: '',
-		title: 'Imkoniyatlar',
+		href: '/#advantages',
+		title: 'opportunities',
 	},
 	{
-		href: '',
-		title: 'Tariflar',
+		href: '/#plans',
+		title: 'tariffs',
 	},
 	{
-		href: '',
-		title: 'Aloqa',
+		href: '/#contact',
+		title: 'contact',
 	},
 	{
-		href: '',
-		title: 'Yangiliklar',
+		href: '/#blogs',
+		title: 'news',
 	},
 	{
-		href: '',
-		title: 'Biz haqimizda',
+		href: ROUTER.ABOUT_US,
+		title: 'about_us',
 	},
 ]

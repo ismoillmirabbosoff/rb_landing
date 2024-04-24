@@ -1,11 +1,13 @@
 import Image from 'next/image'
 import Stack from '@mui/material/Stack'
+import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
 import { Wrapper, WrapImage, Container } from './style'
 import ImageMainBack from '@/assets/images/main-back.webp'
 import ImageRobosellDark from '@/assets/images/robosell-dark.webp'
 
 export const Main = () => {
+	const { t } = useTranslation('common')
 	return (
 		<Container>
 			<Wrapper>
@@ -17,11 +19,12 @@ export const Main = () => {
 					justifyContent='center'
 				>
 					<Typography variant='title50' component='h1' maxWidth='921px'>
-						15 minut ichida Biznesingizni Avtomatlashtiring.
+						{t('automate_your_business_in_15_minutes')}
 					</Typography>
 					<Typography variant='text' maxWidth='707px'>
-						If you receive an order by phone, you can also manage those orders by entering them into
-						the system.
+						{t(
+							'if_you_receive_an_order_by_phone_you_can_also_manage_those_orders_by_entering_them_into_the_system',
+						)}
 					</Typography>
 					<WrapImage>
 						<Image fill alt='main-back' src={ImageMainBack.src} />

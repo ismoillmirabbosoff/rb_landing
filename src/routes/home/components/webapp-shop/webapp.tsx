@@ -15,7 +15,7 @@ export const WebappShop = () => {
 				<Stack width='100%' direction='row' justifyContent='space-between'>
 					<Stack pt='60px' maxWidth='580px'>
 						<Typography variant='title10' component='h2'>
-							Robo Market
+							Robo Shop
 						</Typography>
 						<Typography component='h3' variant='text10'>
 							It takes only{' '}

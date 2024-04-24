@@ -9,7 +9,7 @@ import { IconArrowRight } from '@/assets/icons/arrow-right'
 
 export const Blogs = () => {
 	return (
-		<Container>
+		<Container id='blogs'>
 			<Wrapper>
 				<Typography variant='title30' component='h2'>
 					Read our blog

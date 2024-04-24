@@ -31,7 +31,7 @@ export const Contact = () => {
 	})
 
 	return (
-		<Container>
+		<Container id='contact'>
 			<WrapLinearGradientContact>
 				<IconLinearGradientContact />
 			</WrapLinearGradientContact>
