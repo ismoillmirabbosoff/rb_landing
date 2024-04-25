@@ -44,6 +44,7 @@ export const WrapCamera = styled('div')`
 `
 
 export const Wrap = styled('div')`
+	width: 100%;
 	display: flex;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
@@ -69,4 +70,21 @@ export const Cards = styled('ul')`
 			},
 		},
 	})};
+`
+
+export const WrapIcon = styled('div')`
+	width: 42px;
+	height: 42px;
+	display: flex;
+	border-radius: 50%;
+	align-items: center;
+	justify-content: center;
+	background: ${({ theme }) => theme.palette.colors.WHITE40};
+	svg {
+		width: 24px;
+		height: 24px;
+		path {
+			fill: ${({ theme }) => theme.palette.colors.GRAY120};
+		}
+	}
 `

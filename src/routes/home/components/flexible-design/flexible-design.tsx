@@ -3,27 +3,36 @@ import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import { useState, type MouseEvent } from 'react'
 import { IconCamera } from '@/assets/icons/camera'
-import { IconLaptop } from '@/assets/icons/laptop'
-import { IconMobile } from '@/assets/icons/mobile'
 import { IconIphone } from '@/assets/icons/iphone'
+import { IconGlobal } from '@/assets/icons/global'
 import ToggleButton from '@mui/material/ToggleButton'
+import { IconTelegram } from '@/assets/icons/telegram'
 import { IconMacbookBody } from '@/assets/icons/macbook-body'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import { IconMacbookFooter } from '@/assets/icons/macbook-footer'
 import ImageWebappWebsiteShop from '@/assets/images/webapp-website-shop.webp'
-import { Cards, Wrapper, Container, WrapCamera, WrapImage, WrapImageBody, Wrap } from './style'
 import ImageWebappWebsiteRestaurant from '@/assets/images/webapp-website-restaurant.webp'
+import {
+	Cards,
+	Wrapper,
+	Container,
+	WrapCamera,
+	WrapImage,
+	WrapImageBody,
+	Wrap,
+	WrapIcon,
+} from './style'
 
 export const FlexibleDesign = () => {
-	const [device, setDevice] = useState('laptop')
-	const [platform, setPlatform] = useState('restaurant')
+	const [platform, setPlatform] = useState('website')
+	const [business, setBusiness] = useState('restaurant')
 
-	const handleChangePlatform = (_: MouseEvent<HTMLElement>, device: string) => {
-		setPlatform(device)
+	const handleChangePlatform = (_: MouseEvent<HTMLElement>, platform: string) => {
+		setPlatform(platform)
 	}
 
-	const handleChangeDevice = (_: MouseEvent<HTMLElement>, platform: string) => {
-		setDevice(platform)
+	const handleChangeBusiness = (_: MouseEvent<HTMLElement>, business: string) => {
+		setBusiness(business)
 	}
 
 	return (
@@ -38,7 +47,7 @@ export const FlexibleDesign = () => {
 				</Typography>
 				<Wrap>
 					<Stack width='100%' flexGrow={1} alignItems='center'>
-						{device === 'mobile' ? (
+						{platform === 'telegram' ? (
 							<IconIphone />
 						) : (
 							<Stack alignItems='center'>
@@ -74,9 +83,9 @@ export const FlexibleDesign = () => {
 								<ToggleButtonGroup
 									exclusive
 									fullWidth
-									value={platform}
-									aria-label='Platform'
-									onChange={handleChangePlatform}
+									value={business}
+									aria-label='Business'
+									onChange={handleChangeBusiness}
 								>
 									<ToggleButton value='restaurant'>Restaurant</ToggleButton>
 									<ToggleButton value='shop'>Shop</ToggleButton>
@@ -85,15 +94,15 @@ export const FlexibleDesign = () => {
 						</Stack>
 						<Stack gap='14px' width='100%' component='li'>
 							<Typography variant='title110' component='h3'>
-								Device
+								Platform
 							</Typography>
 							<Stack width='100%' maxWidth='390px'>
 								<ToggleButtonGroup
 									exclusive
 									fullWidth
-									value={device}
-									aria-label='Device'
-									onChange={handleChangeDevice}
+									value={platform}
+									aria-label='Platform'
+									onChange={handleChangePlatform}
 									sx={theme => ({
 										'.MuiToggleButtonGroup-grouped': {
 											py: '8px',
@@ -108,17 +117,17 @@ export const FlexibleDesign = () => {
 										},
 									})}
 								>
-									<ToggleButton value='laptop'>
-										<Stack justifyContent='center'>
-											<IconLaptop />
-										</Stack>
-										Laptop
+									<ToggleButton value='website'>
+										<WrapIcon>
+											<IconGlobal />
+										</WrapIcon>
+										Website
 									</ToggleButton>
-									<ToggleButton value='mobile'>
-										<Stack justifyContent='center'>
-											<IconMobile />
-										</Stack>
-										Mobile
+									<ToggleButton value='telegram'>
+										<WrapIcon>
+											<IconTelegram />
+										</WrapIcon>
+										Telegram
 									</ToggleButton>
 								</ToggleButtonGroup>
 							</Stack>

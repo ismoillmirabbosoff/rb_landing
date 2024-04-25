@@ -6,6 +6,7 @@ export const COLORS = {
 	WHITE10: '#ffffff12',
 	WHITE20: '#ffffff1f',
 	WHITE30: '#ffffff0f',
+	WHITE40: '#ffffff14',
 	TRANSPARENT: 'transparent',
 	PURPLE: '#7D79FF',
 	PURPLE10: '#5D59F0',
