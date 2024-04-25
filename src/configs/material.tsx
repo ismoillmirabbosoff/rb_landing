@@ -41,6 +41,7 @@ interface TypographyProps {
 	text100: React.CSSProperties
 	text110: React.CSSProperties
 	text120: React.CSSProperties
+	text130: React.CSSProperties
 }
 
 declare module '@mui/material/Typography' {
@@ -73,6 +74,7 @@ declare module '@mui/material/Typography' {
 		text100: true
 		text110: true
 		text120: true
+		text130: true
 	}
 }
 
@@ -324,6 +326,12 @@ export const theme = createTheme({
 			lineHeight: '16.6px',
 			color: palette.colors.GRAY10,
 		},
+		text130: {
+			fontWeight: 400,
+			fontSize: '12.541px',
+			lineHeight: 'normal',
+			color: palette.colors.BLACK40,
+		},
 	}),
 	components: {
 		MuiSelect: {
@@ -567,6 +575,17 @@ export const theme = createTheme({
 					},
 				}),
 			},
+		},
+		MuiLinearProgress: {
+			variants: [
+				{
+					props: { variant: 'determinate' },
+					style: {
+						height: 4,
+						borderRadius: 12,
+					},
+				},
+			],
 		},
 	},
 })

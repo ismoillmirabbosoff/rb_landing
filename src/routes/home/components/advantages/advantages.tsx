@@ -1,15 +1,12 @@
-import { useRef } from 'react'
 import Image from 'next/image'
 import Stack from '@mui/material/Stack'
-import { Waypoint } from 'react-waypoint'
-import { useCountUp } from 'react-countup'
 import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
-import { IconPieChart } from '@/assets/icons/pie-chart'
-import ImageAdvantagesTopProducts from '@/assets/images/advantages-top-products.webp'
-import { IconAdvantagesSalesStatistics } from '@/assets/icons/advantages-sales-statistics'
-import { IconAdvantagesOrderStatistics } from '@/assets/icons/advantages-order-statistics'
+import { TrafficSource } from './components/traffic-source'
+import { OrderStatistics } from './components/order-statistics'
 import ImageAdvantagesEarningStatistics from '@/assets/images/advantages-earning-statistics.webp'
+import { IconAdvantagesSalesStatisticsOrders } from '@/assets/icons/advantages-sales-statistics-orders'
+import { IconAdvantagesSalesStatisticsEarning } from '@/assets/icons/advantages-sales-statistics-earning'
 import {
 	Card,
 	Wrap,
@@ -18,17 +15,13 @@ import {
 	WrapDown,
 	WrapLeft,
 	Container,
-	WrapIconPieChart,
+	WrapIconAdvantage,
 } from './style'
+import { IconAdvantagesSalesStatisticsTotalclients } from '@/assets/icons/advantages-sales-statistics-total-clients'
+import { TopProducts } from './components/top-products'
 
 export const Advantages = () => {
-	const countUpRef = useRef(null)
 	const { t } = useTranslation('common')
-	const { start, reset } = useCountUp({
-		start: 0,
-		end: 709,
-		ref: countUpRef,
-	})
 
 	return (
 		<Container id='advantages'>
@@ -40,28 +33,7 @@ export const Advantages = () => {
 					<WrapLeft>
 						<WrapUp>
 							<Card>
-								<Typography mb='6px' variant='title60' component='h5'>
-									Источник трафика
-								</Typography>
-								<Typography variant='text120' component='h6'>
-									Lorem ipsum dolor sit amet consectetur. Quis fermentum accumsan a lectus.
-								</Typography>
-								<Stack
-									mt='25px'
-									direction='row'
-									alignItems='flex-start'
-									justifyContent='space-between'
-								>
-									<Stack direction='row' alignItems='flex-end'>
-										<Waypoint onEnter={start} onLeave={reset}>
-											<Typography mt='7px' variant='title140' ref={countUpRef} minWidth='60px' />
-										</Waypoint>
-										<Typography variant='text40'>Users</Typography>
-									</Stack>
-									<WrapIconPieChart>
-										<IconPieChart />
-									</WrapIconPieChart>
-								</Stack>
+								<TrafficSource />
 							</Card>
 							<Card>
 								<Typography mb='6px' variant='title60' component='h5'>
@@ -70,30 +42,40 @@ export const Advantages = () => {
 								<Typography variant='text120' component='h6'>
 									Lorem ipsum dolor sit amet consectetur. Quis fermentum a lectus.
 								</Typography>
-								<Stack
-									alignItems='center'
-									sx={{
-										svg: {
-											width: '100%',
-											height: '100%',
-										},
-									}}
-								>
-									<IconAdvantagesSalesStatistics />
+								<Stack gap='7px' mt='23px' width='100%' alignItems='center'>
+									<Stack gap='30px' display='grid' direction='row' gridTemplateColumns='1fr 1fr'>
+										<WrapIconAdvantage rotate={5}>
+											<IconAdvantagesSalesStatisticsEarning />
+										</WrapIconAdvantage>
+										<WrapIconAdvantage
+											rotate={-5}
+											sx={{
+												svg: {
+													transform: 'rotate(4.592deg)',
+												},
+											}}
+										>
+											<IconAdvantagesSalesStatisticsTotalclients />
+										</WrapIconAdvantage>
+									</Stack>
+									<Stack width='50%'>
+										<WrapIconAdvantage
+											rotate={5}
+											sx={{
+												svg: {
+													transform: 'rotate(-2.818deg)',
+												},
+											}}
+										>
+											<IconAdvantagesSalesStatisticsOrders />
+										</WrapIconAdvantage>
+									</Stack>
 								</Stack>
 							</Card>
 						</WrapUp>
 						<WrapDown>
 							<Card>
-								<Typography mb='6px' variant='title60' component='h5'>
-									Top 10 products
-								</Typography>
-								<Typography variant='text120' component='h6'>
-									Lorem ipsum dolor sit amet consectetur. Quis fermentum a lectus.
-								</Typography>
-								<Stack mb='-20px'>
-									<Image fill src={ImageAdvantagesTopProducts.src} alt='res' />
-								</Stack>
+								<TopProducts />
 							</Card>
 							<Card>
 								<Stack flexGrow={1}>
@@ -111,27 +93,7 @@ export const Advantages = () => {
 						</WrapDown>
 					</WrapLeft>
 					<Card className='order'>
-						<Stack flexGrow={1}>
-							<Typography mb='6px' variant='title60' component='h5'>
-								Order Statistics
-							</Typography>
-							<Typography variant='text120' component='h6'>
-								Lorem ipsum dolor sit amet consectetur. Quis fermentum accumsan a lectus. Lorem
-								ipsum dolor sit amet consectetur. Quis fermentum accumsan a lectus.
-							</Typography>
-						</Stack>
-						<Stack
-							alignItems='center'
-							justifyContent='flex-end'
-							sx={{
-								svg: {
-									width: '100%',
-									height: '100%',
-								},
-							}}
-						>
-							<IconAdvantagesOrderStatistics />
-						</Stack>
+						<OrderStatistics />
 					</Card>
 				</Wrap>
 			</Wrapper>

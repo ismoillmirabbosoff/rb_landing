@@ -33,40 +33,6 @@ export const Card = styled('div')`
 	}
 `
 
-export const WrapIconPieChart = styled('div')`
-	animation: rotate 15s linear infinite;
-	-moz-animation: rotate 15s linear infinite;
-	-webkit-animation: rotate 15s linear infinite;
-
-	@-moz-keyframes rotate {
-		from {
-			-moz-transform: rotate(-360deg);
-		}
-		to {
-			-moz-transform: rotate(360deg);
-		}
-	}
-	@-webkit-keyframes rotate {
-		from {
-			-webkit-transform: rotate(-360deg);
-		}
-		to {
-			-webkit-transform: rotate(360deg);
-		}
-	}
-
-	@keyframes rotate {
-		from {
-			-webkit-transform: rotate(-360deg);
-			transform: rotate(-360deg);
-		}
-		to {
-			-webkit-transform: rotate(360deg);
-			transform: rotate(360deg);
-		}
-	}
-`
-
 export const Wrap = styled('div')`
 	gap: 20px;
 	width: 100%;
@@ -117,4 +83,55 @@ export const WrapLeft = styled('div')`
 			gridTemplateColumns: '100%',
 		},
 	})};
+`
+
+interface WrapIconAdvantageProps {
+	rotate: number
+}
+
+export const WrapIconAdvantage = styled('div')<WrapIconAdvantageProps>`
+	width: 100%;
+	animation: rotate 2s linear infinite;
+	-moz-animation: rotate 2s linear infinite;
+	-webkit-animation: rotate 2s linear infinite;
+	svg {
+		width: 100%;
+		height: fit-content;
+		border-radius: 7.073px;
+		box-shadow: 0px 0px 28.292px 0px ${({ theme }) => theme.palette.colors.GRAY110};
+	}
+	@-moz-keyframes rotate {
+		0% {
+			-moz-transform: rotate(0deg);
+		}
+		50% {
+			-moz-transform: rotate(${({ rotate }) => rotate}deg);
+		}
+		100% {
+			-moz-transform: rotate(0deg);
+		}
+	}
+	@-webkit-keyframes rotate {
+		0% {
+			-webkit-transform: rotate(0deg);
+		}
+		50% {
+			-webkit-transform: rotate(${({ rotate }) => rotate}deg);
+		}
+		100% {
+			-webkit-transform: rotate(0deg);
+		}
+	}
+
+	@keyframes rotate {
+		0% {
+			transform: rotate(0deg);
+		}
+		50% {
+			transform: rotate(${({ rotate }) => rotate}deg);
+		}
+		100% {
+			transform: rotate(0deg);
+		}
+	}
 `
