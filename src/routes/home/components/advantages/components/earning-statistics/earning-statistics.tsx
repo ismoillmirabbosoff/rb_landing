@@ -3,20 +3,22 @@ import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import { motion, useInView } from 'framer-motion'
 import { useRef, type RefObject, type LegacyRef } from 'react'
-import ImageAdvantagesTopProducts from '@/assets/images/advantages-top-products.webp'
+import ImageAdvantagesEarningStatistics from '@/assets/images/advantages-earning-statistics.webp'
 
-export const TopProducts = () => {
+export const EarningStatistics = () => {
 	const ref = useRef() as LegacyRef<HTMLDivElement>
 	const isInView = useInView(ref as RefObject<Element>)
 
 	return (
 		<>
-			<Typography mb='6px' variant='title60' component='h5'>
-				Top 10 products
-			</Typography>
-			<Typography variant='text120' component='h6'>
-				Lorem ipsum dolor sit amet consectetur. Quis fermentum a lectus.
-			</Typography>
+			<Stack flexGrow={1}>
+				<Typography mb='6px' variant='title60' component='h5'>
+					Earning Statistics
+				</Typography>
+				<Typography variant='text120' component='h6'>
+					Lorem ipsum dolor sit amet consectetur. Quis fermentum accumsan a lectus.
+				</Typography>
+			</Stack>
 			<Stack mb='-20px'>
 				<motion.div
 					ref={ref}
@@ -26,7 +28,7 @@ export const TopProducts = () => {
 						transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
 					}}
 				>
-					<Image fill src={ImageAdvantagesTopProducts.src} alt='res' />
+					<Image fill src={ImageAdvantagesEarningStatistics.src} alt='res' />
 				</motion.div>
 			</Stack>
 		</>

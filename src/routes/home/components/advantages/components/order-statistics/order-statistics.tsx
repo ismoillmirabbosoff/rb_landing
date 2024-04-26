@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next'
 import { PLATFORMS } from '@/constants/platform'
 import { IconDaily } from '@/assets/icons/daily'
 import Typography from '@mui/material/Typography'
-import { Linearprogress } from '../linear-progress/linear-progress'
+import { Linearprogress } from '../linear-progress'
 
 export const OrderStatistics = () => {
 	const countUpRef = useRef(null)

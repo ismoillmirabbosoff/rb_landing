@@ -1,18 +1,19 @@
 import Image from 'next/image'
 import Box from '@mui/material/Box'
-import { motion } from 'framer-motion'
 import { FEATURES } from './constants'
 import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
 import { IconTick } from '@/assets/icons/tick'
+import { motion, useInView } from 'framer-motion'
 import Typography from '@mui/material/Typography'
 import { Content, Wrapper, Container } from './style'
 import ImageIphone from '@/assets/images/iphone.webp'
-import { useInView } from 'react-intersection-observer'
+import { useRef, type RefObject, type LegacyRef } from 'react'
 import { IconLinearGradient } from '@/assets/icons/linear-gradient'
 
 export const WebappRestaurant = () => {
-	const mobile = useInView({ triggerOnce: true, threshold: 0.2 })
+	const ref = useRef() as LegacyRef<HTMLDivElement>
+	const isInView = useInView(ref as RefObject<Element>)
 
 	return (
 		<Container>
@@ -34,24 +35,25 @@ export const WebappRestaurant = () => {
 						<Button sx={{ minWidth: '183px' }}>Sinab Ko’rish</Button>
 					</Box>
 				</Content>
-				<div ref={mobile.ref}>
+				<div ref={ref}>
 					<div style={{ display: 'flex' }}>
 						<motion.div
 							style={{
 								marginRight: '20px',
-								width: mobile.inView ? '50%' : '100%',
-								transition: 'width 0.5s ease-in-out',
+								width: isInView ? '50%' : '100%',
+								transition: 'all 0.5s ease-in-out',
+								transform: isInView ? 'none' : 'translateY(-120px)',
 							}}
 						>
 							<Image fill alt='iphone-restaurant' src={ImageIphone.src} />
 						</motion.div>
-						<Stack
-							component={motion.div}
-							sx={{
-								pt: '60px',
-								opacity: mobile.inView ? '1' : '0',
-								width: mobile.inView ? '50%' : '0%',
-								transition: 'all 1s ease-in-out',
+						<motion.div
+							style={{
+								paddingTop: '60px',
+								opacity: isInView ? '1' : '0',
+								width: isInView ? '50%' : '0',
+								transform: isInView ? 'none' : 'translateX(2000px)',
+								transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
 							}}
 						>
 							<Typography variant='title10' component='h2'>
@@ -89,7 +91,7 @@ export const WebappRestaurant = () => {
 							<Box>
 								<Button sx={{ minWidth: '183px' }}>Sinab Ko’rish</Button>
 							</Box>
-						</Stack>
+						</motion.div>
 					</div>
 				</div>
 			</Wrapper>

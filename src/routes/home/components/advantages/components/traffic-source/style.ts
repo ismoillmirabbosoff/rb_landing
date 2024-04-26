@@ -1,11 +1,11 @@
 import { styled } from '@mui/material/styles'
 
 export const WrapIconPieChart = styled('div')`
-	animation: rotate 15s linear infinite;
-	-moz-animation: rotate 15s linear infinite;
-	-webkit-animation: rotate 15s linear infinite;
+	animation: traffic 15s linear infinite;
+	-moz-animation: traffic 15s linear infinite;
+	-webkit-animation: traffic 15s linear infinite;
 
-	@-moz-keyframes rotate {
+	@-moz-keyframes traffic {
 		from {
 			-moz-transform: rotate(-360deg);
 		}
@@ -13,7 +13,7 @@ export const WrapIconPieChart = styled('div')`
 			-moz-transform: rotate(360deg);
 		}
 	}
-	@-webkit-keyframes rotate {
+	@-webkit-keyframes traffic {
 		from {
 			-webkit-transform: rotate(-360deg);
 		}
@@ -22,7 +22,7 @@ export const WrapIconPieChart = styled('div')`
 		}
 	}
 
-	@keyframes rotate {
+	@keyframes traffic {
 		from {
 			-webkit-transform: rotate(-360deg);
 			transform: rotate(-360deg);
