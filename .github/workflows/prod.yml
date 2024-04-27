@@ -35,15 +35,29 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Set up kubectl
-        uses: azure/k8s-set-context@v1
-        with:
-          kubeconfig: ${{ secrets.KUBE_CONFIG_DATA }}
+      # - name: Set up kubectl
+      #   uses: azure/k8s-set-context@v1
+      #   with:
+      #     kubeconfig: ${{ secrets.KUBE_CONFIG_DATA }}
 
-      - name: List Pods
-        run: |
-          kubectl get pods -n prod
-          kubectl rollout restart deployment -n prod prodlanding
+      # - name: List Pods
+      #   run: |
+      #     kubectl get pods -n prod
+      #     kubectl rollout restart deployment -n prod prodlanding
+
+      - name: Log in to Server and Restarting Kubernetes
+        uses: appleboy/ssh-action@master
+        with:
+          host: 167.71.175.66
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /root/Projects/robosell/prod/landing
+            ls
+            kubectl delete -f k8s.yaml
+            kubectl apply -f k8s.yaml
+
 
       - name: Telegram Notifications on Success
         if: ${{ success() }}
