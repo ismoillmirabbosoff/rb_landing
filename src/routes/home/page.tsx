@@ -58,7 +58,10 @@ export const Home = () => {
 				<WebappShop />
 			</Stack>
 			<video autoPlay loop muted>
-				<source src='/chat.mp4' type='video/mp4' />
+				<source
+					src='https://robosell.ams3.digitaloceanspaces.com/landing/chat.webm'
+					type='video/mp4'
+				/>
 			</video>
 			<Review />
 			<Brands />
