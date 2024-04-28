@@ -30,7 +30,9 @@ export const Main = () => {
 						<Image fill alt='main-back' src={ImageMainBack.src} />
 					</WrapImage>
 				</Stack>
-				<Image fill alt='robosell-dark' priority src={ImageRobosellDark.src} />
+				<Stack flexGrow={1} sx={{ color: 'white' }} justifyContent='flex-end'>
+					<Image fill alt='robosell-dark' priority src={ImageRobosellDark.src} />
+				</Stack>
 			</Wrapper>
 		</Container>
 	)

@@ -1,17 +1,16 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import Stack from '@mui/material/Stack'
+import { Logo } from '@/components/logo'
 import Divider from '@mui/material/Divider'
-import { Wrapper, Container, WrapImage } from './style'
+import { NAVBAR } from '@/constants/navbar'
 import { SOCIALS } from '@/constants/social'
 import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
-import { FOOTER_LINKS } from '@/constants/footer'
 import { IconCalling } from '@/assets/icons/calling'
-import { IconLogoText } from '@/assets/icons/logo-text'
+import { Wrapper, Container, WrapImage } from './style'
 import ImageBgFooter from '@/assets/images/bg-footer.webp'
-import Image from 'next/image'
-import { Logo } from '@/components/logo'
 
 export const Footer = () => {
 	const date = new Date()
@@ -79,26 +78,12 @@ export const Footer = () => {
 							))}
 						</Stack>
 					</Stack>
-					<Stack gap='30px' display='grid' component='ul' gridTemplateColumns='1fr 1fr 1fr'>
-						{FOOTER_LINKS.map((f, i: number) => (
-							<Stack gap='20px' key={i} component='li'>
-								<Typography variant='title80' component='h3'>
-									{f.title}
+					<Stack gap='20px' component='ul'>
+						{NAVBAR.map((f, i: number) => (
+							<Stack key={i} component='li'>
+								<Typography href={f.href} variant='text40' component={Link} color='colors.GRAY120'>
+									{t(f.title)}
 								</Typography>
-								<Stack gap='20px' component='ul'>
-									{f.list.map((l, j: number) => (
-										<Stack key={j} component='li'>
-											<Typography
-												href={l.href}
-												variant='text40'
-												component={Link}
-												color='colors.GRAY120'
-											>
-												{l.title}
-											</Typography>
-										</Stack>
-									))}
-								</Stack>
 							</Stack>
 						))}
 					</Stack>

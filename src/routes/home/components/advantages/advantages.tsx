@@ -16,6 +16,7 @@ export const Advantages = () => {
 				<Typography mb='17px' variant='title' component='h2'>
 					{t('robosell_advantages')}
 				</Typography>
+
 				<Wrap>
 					<WrapLeft>
 						<WrapUp>

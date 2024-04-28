@@ -13,14 +13,14 @@ import { IconMacbookFooter } from '@/assets/icons/macbook-footer'
 import ImageWebappWebsiteShop from '@/assets/images/webapp-website-shop.webp'
 import ImageWebappWebsiteRestaurant from '@/assets/images/webapp-website-restaurant.webp'
 import {
+	Wrap,
 	Cards,
 	Wrapper,
-	Container,
-	WrapCamera,
-	WrapImage,
-	WrapImageBody,
-	Wrap,
 	WrapIcon,
+	Container,
+	WrapImage,
+	WrapCamera,
+	WrapImageBody,
 } from './style'
 
 export const FlexibleDesign = () => {
@@ -77,23 +77,6 @@ export const FlexibleDesign = () => {
 					<Cards>
 						<Stack gap='14px' width='100%' component='li'>
 							<Typography variant='title110' component='h3'>
-								Web app turi
-							</Typography>
-							<Stack width='100%' maxWidth='390px'>
-								<ToggleButtonGroup
-									exclusive
-									fullWidth
-									value={business}
-									aria-label='Business'
-									onChange={handleChangeBusiness}
-								>
-									<ToggleButton value='restaurant'>Restaurant</ToggleButton>
-									<ToggleButton value='shop'>Shop</ToggleButton>
-								</ToggleButtonGroup>
-							</Stack>
-						</Stack>
-						<Stack gap='14px' width='100%' component='li'>
-							<Typography variant='title110' component='h3'>
 								Platform
 							</Typography>
 							<Stack width='100%' maxWidth='390px'>
@@ -129,6 +112,23 @@ export const FlexibleDesign = () => {
 										</WrapIcon>
 										Telegram
 									</ToggleButton>
+								</ToggleButtonGroup>
+							</Stack>
+						</Stack>
+						<Stack gap='14px' width='100%' component='li'>
+							<Typography variant='title110' component='h3'>
+								Web app turi
+							</Typography>
+							<Stack width='100%' maxWidth='390px'>
+								<ToggleButtonGroup
+									exclusive
+									fullWidth
+									value={business}
+									aria-label='Business'
+									onChange={handleChangeBusiness}
+								>
+									<ToggleButton value='restaurant'>Restaurant</ToggleButton>
+									<ToggleButton value='shop'>Shop</ToggleButton>
 								</ToggleButtonGroup>
 							</Stack>
 						</Stack>
