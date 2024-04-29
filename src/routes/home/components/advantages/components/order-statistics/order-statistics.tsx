@@ -23,11 +23,13 @@ export const OrderStatistics = () => {
 		<>
 			<Stack flexGrow={1}>
 				<Typography mb='6px' variant='title60' component='h5'>
-					Order Statistics
+					{t('platform_report')}
 				</Typography>
 				<Typography variant='text120' component='h6'>
-					Lorem ipsum dolor sit amet consectetur. Quis fermentum accumsan a lectus. Lorem ipsum
-					dolor sit amet consectetur. Quis fermentum accumsan a lectus.
+					{t('each_platform_will_bring_you_customers_on_its_own')}
+				</Typography>
+				<Typography variant='text120' component='h6'>
+					{t('you_will_also_find_out_which_platform_receives_the_most_orders')}
 				</Typography>
 			</Stack>
 			<WrapOrders>

@@ -1,20 +1,22 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Stack from '@mui/material/Stack'
+import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
 import { useInView } from 'react-intersection-observer'
 import ImageAdvantagesTopProducts from '@/assets/images/advantages-top-products.webp'
 
 export const TopProducts = () => {
 	const view = useInView()
+	const { t } = useTranslation('common')
 
 	return (
 		<>
 			<Typography ref={view.ref} mb='6px' variant='title60' component='h5'>
-				Top 10 products
+				{t('top_10_products')}
 			</Typography>
 			<Typography variant='text120' component='h6'>
-				Lorem ipsum dolor sit amet consectetur. Quis fermentum a lectus.
+				{t('view_top_selling_products')}
 			</Typography>
 			<Stack mb='-20px'>
 				<motion.div

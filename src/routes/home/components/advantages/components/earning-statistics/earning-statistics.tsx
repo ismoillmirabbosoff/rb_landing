@@ -1,21 +1,23 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Stack from '@mui/material/Stack'
+import { useTranslation } from 'react-i18next'
 import Typography from '@mui/material/Typography'
 import { useInView } from 'react-intersection-observer'
 import ImageAdvantagesEarningStatistics from '@/assets/images/advantages-earning-statistics.webp'
 
 export const EarningStatistics = () => {
 	const view = useInView()
+	const { t } = useTranslation('common')
 
 	return (
 		<>
 			<Stack flexGrow={1}>
 				<Typography ref={view.ref} mb='6px' variant='title60' component='h5'>
-					Earning Statistics
+					{t('sales_dynamics')}
 				</Typography>
 				<Typography variant='text120' component='h6'>
-					Lorem ipsum dolor sit amet consectetur. Quis fermentum accumsan a lectus.
+					{t('dont_forget_monitor_and_manage_the_revenue_of_your_business')}
 				</Typography>
 			</Stack>
 			<Stack mb='-20px'>

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Stack from '@mui/material/Stack'
 import Dialog from '@mui/material/Dialog'
 import { INSTRUCTIONS } from './constants'
+import { Trans, useTranslation } from 'next-i18next'
 import { IconPlay } from '@/assets/icons/play'
 import { useBoolean } from '@/hooks/useBoolean'
 import Typography from '@mui/material/Typography'
@@ -11,6 +12,7 @@ import ImageHowWorksInstruction from '@/assets/images/how-works-instruction.webp
 export const Instructions = () => {
 	const mouse = useBoolean()
 	const modal = useBoolean()
+	const { t } = useTranslation('common')
 
 	return (
 		<>
@@ -30,7 +32,7 @@ export const Instructions = () => {
 							onClick={modal.setTrue}
 							style={{
 								bottom: mouse.value || modal.value ? 'calc(50% - 75px)' : '30px',
-								right: mouse.value || modal.value ? 'calc(50% - 130px)' : '-40px',
+								right: mouse.value || modal.value ? 'calc(50% - 130px)' : '-20px',
 							}}
 						>
 							<Stack>
@@ -43,14 +45,22 @@ export const Instructions = () => {
 					</Stack>
 					<Stack>
 						<Typography variant='title10' component='h2'>
-							How It Works
+							{t('how_does_it_work')}
 						</Typography>
 						<Typography mb='24px' component='h3' variant='text10'>
-							It takes only{' '}
-							<Typography component='span' fontWeight='500' variant='inherit' color='colors.BLACK'>
-								15 minutes
-							</Typography>{' '}
-							to create a store and you can start selling
+							<Trans
+								i18nKey='it_takes_only_15_minutes_to_launch_your_business_platform'
+								components={{
+									linkTag: (
+										<Typography
+											component='span'
+											fontWeight='500'
+											variant='inherit'
+											color='colors.BLACK'
+										/>
+									),
+								}}
+							/>
 						</Typography>
 						<Stack component='ul'>
 							{INSTRUCTIONS.map((instruction, i: number) => (
@@ -58,10 +68,10 @@ export const Instructions = () => {
 									<Typography>{i + 1}</Typography>
 									<Stack>
 										<Typography variant='title60' lineHeight='32px'>
-											{instruction.title}
+											{t(instruction.title)}
 										</Typography>
 										<Typography variant='text20' lineHeight='20px'>
-											{instruction.text}
+											{t(instruction.text)}
 										</Typography>
 									</Stack>
 								</Stack>

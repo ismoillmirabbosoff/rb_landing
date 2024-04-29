@@ -19,12 +19,10 @@ export const Main = () => {
 					justifyContent='center'
 				>
 					<Typography variant='title50' component='h1' maxWidth='921px'>
-						{t('automate_your_business_in_15_minutes')}
+						{t('launch_your_online_business_in_just_15_minutes')}
 					</Typography>
 					<Typography variant='text' maxWidth='707px'>
-						{t(
-							'if_you_receive_an_order_by_phone_you_can_also_manage_those_orders_by_entering_them_into_the_system',
-						)}
+						{t('start_selling_online_today_and_get_a_business_management_platform')}
 					</Typography>
 					<WrapImage>
 						<Image fill alt='main-back' src={ImageMainBack.src} />

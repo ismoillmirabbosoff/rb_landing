@@ -3,11 +3,13 @@ import Stack from '@mui/material/Stack'
 import { Waypoint } from 'react-waypoint'
 import { useCountUp } from 'react-countup'
 import { WrapIconPieChart } from './style'
+import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
 import { IconPieChart } from '@/assets/icons/pie-chart'
 
 export const TrafficSource = () => {
 	const countUpRef = useRef(null)
+	const { t } = useTranslation('common')
 	const { start, reset } = useCountUp({
 		start: 0,
 		end: 709,
@@ -17,10 +19,10 @@ export const TrafficSource = () => {
 	return (
 		<>
 			<Typography mb='6px' variant='title60' component='h5'>
-				Источник трафика
+				{t('traffic_sources')}
 			</Typography>
 			<Typography variant='text120' component='h6'>
-				Lorem ipsum dolor sit amet consectetur. Quis fermentum accumsan a lectus.
+				{t('track_all_traffic_sources_in_one_dashboard')}
 			</Typography>
 			<Stack
 				gap='20px'

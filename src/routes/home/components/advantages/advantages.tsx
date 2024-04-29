@@ -14,9 +14,8 @@ export const Advantages = () => {
 		<Container id='advantages'>
 			<Wrapper>
 				<Typography mb='17px' variant='title' component='h2'>
-					{t('robosell_advantages')}
+					{t('advantages_of_robosell')}
 				</Typography>
-
 				<Wrap>
 					<WrapLeft>
 						<WrapUp>

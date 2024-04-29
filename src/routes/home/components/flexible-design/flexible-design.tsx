@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Stack from '@mui/material/Stack'
+import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
 import { useState, type MouseEvent } from 'react'
 import { IconCamera } from '@/assets/icons/camera'
@@ -24,6 +25,7 @@ import {
 } from './style'
 
 export const FlexibleDesign = () => {
+	const { t } = useTranslation('common')
 	const [platform, setPlatform] = useState('website')
 	const [business, setBusiness] = useState('restaurant')
 
@@ -39,11 +41,12 @@ export const FlexibleDesign = () => {
 		<Container>
 			<Wrapper>
 				<Typography mb='16px' variant='title20' component='h2'>
-					Moslashuvchan Dizayn
+					{t('adaptive_design')}
 				</Typography>
 				<Typography mb={{ md: '80px' }} variant='text' component='h3' maxWidth='707px'>
-					If you receive an order by phone, you can also manage those orders by entering them into
-					the system.
+					{t(
+						'flexible_and_convenient_design_for_your_customers_visibility_of_large_number_of_products_on_one_page_and_advertising_banners',
+					)}
 				</Typography>
 				<Wrap>
 					<Stack width='100%' flexGrow={1} alignItems='center'>
@@ -77,7 +80,7 @@ export const FlexibleDesign = () => {
 					<Cards>
 						<Stack gap='14px' width='100%' component='li'>
 							<Typography variant='title110' component='h3'>
-								Platform
+								{t('platforms')}:
 							</Typography>
 							<Stack width='100%' maxWidth='390px'>
 								<ToggleButtonGroup
@@ -104,20 +107,20 @@ export const FlexibleDesign = () => {
 										<WrapIcon>
 											<IconGlobal />
 										</WrapIcon>
-										Website
+										{t('web_site')}
 									</ToggleButton>
 									<ToggleButton value='telegram'>
 										<WrapIcon>
 											<IconTelegram />
 										</WrapIcon>
-										Telegram
+										{t('telegram')}
 									</ToggleButton>
 								</ToggleButtonGroup>
 							</Stack>
 						</Stack>
 						<Stack gap='14px' width='100%' component='li'>
 							<Typography variant='title110' component='h3'>
-								Web app turi
+								{t('design_types')}:
 							</Typography>
 							<Stack width='100%' maxWidth='390px'>
 								<ToggleButtonGroup
@@ -127,8 +130,8 @@ export const FlexibleDesign = () => {
 									aria-label='Business'
 									onChange={handleChangeBusiness}
 								>
-									<ToggleButton value='restaurant'>Restaurant</ToggleButton>
-									<ToggleButton value='shop'>Shop</ToggleButton>
+									<ToggleButton value='restaurant'>{t('restaurant')}</ToggleButton>
+									<ToggleButton value='shop'>{t('online_store')}</ToggleButton>
 								</ToggleButtonGroup>
 							</Stack>
 						</Stack>
