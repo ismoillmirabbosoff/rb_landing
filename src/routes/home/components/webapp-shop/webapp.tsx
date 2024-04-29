@@ -1,19 +1,33 @@
 import Image from 'next/image'
 import Box from '@mui/material/Box'
+import { motion } from 'framer-motion'
 import { FEATURES } from './constants'
 import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
 import { Wrapper, Container } from './style'
 import { IconTick } from '@/assets/icons/tick'
 import Typography from '@mui/material/Typography'
+import { useInView } from 'react-intersection-observer'
 import ImageIphoneShop from '@/assets/images/iphone-shop.webp'
 
 export const WebappShop = () => {
+	const view = useInView({ threshold: 0 })
+
 	return (
 		<Container>
 			<Wrapper>
-				<Stack width='100%' direction='row' justifyContent='space-between'>
-					<Stack pt='60px' maxWidth='580px'>
+				<Stack ref={view.ref} width='100%' direction='row' justifyContent='space-between'>
+					<Stack
+						pt='60px'
+						width='100%'
+						maxWidth='580px'
+						component={motion.div}
+						style={{
+							opacity: view.inView ? '1' : '0',
+							transform: view.inView ? 'none' : 'translateX(-100vw)',
+							transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+						}}
+					>
 						<Typography variant='title10' component='h2'>
 							Robo Shop
 						</Typography>

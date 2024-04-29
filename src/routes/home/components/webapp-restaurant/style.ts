@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { styled } from '@mui/material/styles'
 
 export const Container = styled('section')`
@@ -27,4 +28,34 @@ export const Content = styled('div')`
 	margin-bottom: 141px;
 	flex-direction: column;
 	justify-content: center;
+`
+
+export const WrapImage = styled('div')`
+	width: 100%;
+	display: flex;
+	position: relative;
+	.scroll {
+		top: 10%;
+		width: 100%;
+		z-index: -1;
+		height: 2000px;
+		position: absolute;
+	}
+`
+
+export const WrapCircle = styled(motion.div)`
+	display: flex;
+	position: relative;
+	justify-content: center;
+	::after {
+		left: 0;
+		bottom: 0;
+		z-index: -1;
+		width: 100%;
+		content: '';
+		height: 570px;
+		border-radius: 50%;
+		position: absolute;
+		background: linear-gradient(180deg, #5d59f01a, #5d59f000);
+	}
 `

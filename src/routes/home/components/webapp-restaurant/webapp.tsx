@@ -1,19 +1,23 @@
 import Image from 'next/image'
 import Box from '@mui/material/Box'
 import { FEATURES } from './constants'
+import { motion } from 'framer-motion'
 import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
 import { IconTick } from '@/assets/icons/tick'
-import { motion, useInView } from 'framer-motion'
 import Typography from '@mui/material/Typography'
-import { Content, Wrapper, Container } from './style'
 import ImageIphone from '@/assets/images/iphone.webp'
-import { useRef, type RefObject, type LegacyRef } from 'react'
+import { useInView } from 'react-intersection-observer'
 import { IconLinearGradient } from '@/assets/icons/linear-gradient'
+import { Content, Wrapper, Container, WrapImage, WrapCircle } from './style'
+
+const variants = {
+	closed: { width: '100%', marginRight: 0 },
+	open: { width: '50%', marginRight: '50px' },
+}
 
 export const WebappRestaurant = () => {
-	const ref = useRef() as LegacyRef<HTMLDivElement>
-	const isInView = useInView(ref as RefObject<Element>)
+	const view = useInView({ threshold: 0 })
 
 	return (
 		<Container>
@@ -35,24 +39,35 @@ export const WebappRestaurant = () => {
 						<Button sx={{ minWidth: '183px' }}>Sinab Ko’rish</Button>
 					</Box>
 				</Content>
-				<div ref={ref}>
-					<div style={{ display: 'flex' }}>
+				<Box width='100%'>
+					<WrapImage>
+						<div ref={view.ref} className='scroll' />
 						<motion.div
+							variants={variants}
+							animate={view.inView ? 'open' : 'closed'}
 							style={{
-								marginRight: '20px',
-								width: isInView ? '50%' : '100%',
 								transition: 'all 0.5s ease-in-out',
-								transform: isInView ? 'none' : 'translateY(-120px)',
 							}}
 						>
-							<Image fill alt='iphone-restaurant' src={ImageIphone.src} />
+							<WrapCircle
+								style={{
+									padding: view.inView ? '0 130px' : 0,
+								}}
+							>
+								<Image
+									fill
+									src={ImageIphone.src}
+									alt='iphone-restaurant'
+									style={{ minHeight: '680px' }}
+								/>
+							</WrapCircle>
 						</motion.div>
 						<motion.div
 							style={{
 								paddingTop: '60px',
-								opacity: isInView ? '1' : '0',
-								width: isInView ? '50%' : '0',
-								transform: isInView ? 'none' : 'translateX(2000px)',
+								opacity: view.inView ? '1' : '0',
+								width: view.inView ? '50%' : '0',
+								transform: view.inView ? 'none' : 'translateX(2000px)',
 								transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
 							}}
 						>
@@ -92,8 +107,8 @@ export const WebappRestaurant = () => {
 								<Button sx={{ minWidth: '183px' }}>Sinab Ko’rish</Button>
 							</Box>
 						</motion.div>
-					</div>
-				</div>
+					</WrapImage>
+				</Box>
 			</Wrapper>
 		</Container>
 	)
