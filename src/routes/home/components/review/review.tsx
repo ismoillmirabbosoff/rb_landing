@@ -1,5 +1,6 @@
 import Stack from '@mui/material/Stack'
 import Avatar from '@mui/material/Avatar'
+import { useTranslation } from 'next-i18next'
 import { IconQuote } from '@/assets/icons/quote'
 import Typography from '@mui/material/Typography'
 import { useKeenSlider } from 'keen-slider/react'
@@ -8,6 +9,7 @@ import { Card, Slider, Wrapper, WrapUser, Container } from './style'
 const animation = { duration: 40000, easing: (t: number) => t }
 
 export const Review = () => {
+	const { t } = useTranslation('common')
 	const [sliderRef] = useKeenSlider({
 		loop: true,
 		renderMode: 'performance',
@@ -32,7 +34,7 @@ export const Review = () => {
 		<Container>
 			<Wrapper>
 				<Typography mb='56px' variant='title' component='h2' lineHeight='67px' maxWidth='652px'>
-					What are they saying about us?
+					{t('feedback_from_our_partners')}
 				</Typography>
 				<Slider>
 					<div ref={sliderRef} className='keen-slider'>

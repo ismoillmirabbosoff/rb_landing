@@ -22,7 +22,7 @@ export const Wrapper = styled('div')`
 export const Content = styled('div')`
 	flex-grow: 1;
 	display: flex;
-	max-width: 750px;
+	max-width: 850px;
 	padding-top: 145px;
 	align-items: center;
 	margin-bottom: 141px;

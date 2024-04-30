@@ -1,14 +1,18 @@
 export const FEATURES = [
 	{
-		title: 'Chat funksiyasi',
-		text: 'Sign up with your email in seconds and create a shop',
+		title: 'advertising_banners',
+		text: 'banners_that_your_guests_will_definitely_see',
 	},
 	{
-		title: 'Reklama uchun banner',
-		text: 'Sign up with your email in seconds and create a shop',
+		title: 'promo_codes',
+		text: 'give_promo_codes_to_regular_guests',
 	},
 	{
-		title: 'Promokod funksiyasi',
-		text: 'Sign up with your email in seconds and create a shop',
+		title: 'discounts_promotions',
+		text: 'organize_discounts_promotions_for_all_guests',
+	},
+	{
+		title: 'search_form',
+		text: 'quickly_find_the_desired_dish',
 	},
 ]

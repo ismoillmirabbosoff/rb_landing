@@ -5,6 +5,7 @@ import { FEATURES } from './constants'
 import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
 import { Wrapper, Container } from './style'
+import { useTranslation } from 'next-i18next'
 import { IconTick } from '@/assets/icons/tick'
 import Typography from '@mui/material/Typography'
 import { useInView } from 'react-intersection-observer'
@@ -12,6 +13,7 @@ import ImageIphoneShop from '@/assets/images/iphone-shop.webp'
 
 export const WebappShop = () => {
 	const view = useInView({ threshold: 0 })
+	const { t } = useTranslation('common')
 
 	return (
 		<Container>
@@ -29,14 +31,10 @@ export const WebappShop = () => {
 						}}
 					>
 						<Typography variant='title10' component='h2'>
-							Robo Shop
+							{t('robo_shop')}
 						</Typography>
 						<Typography component='h3' variant='text10'>
-							It takes only{' '}
-							<Typography component='span' fontWeight='500' variant='inherit' color='colors.BLACK'>
-								15 minutes
-							</Typography>{' '}
-							to create a store and you can start selling
+							{t('sell_products_online_and_via_messenger')}
 						</Typography>
 						<Stack gap='26px' m='28px 0 48px' component='ul'>
 							{FEATURES.map((f, i: number) => (
@@ -46,17 +44,17 @@ export const WebappShop = () => {
 									</Stack>
 									<Stack>
 										<Typography component='h4' variant='title60'>
-											{f.title}
+											{t(f.title)}
 										</Typography>
 										<Typography component='h5' variant='text20'>
-											{f.text}
+											{t(f.text)}
 										</Typography>
 									</Stack>
 								</Stack>
 							))}
 						</Stack>
 						<Box>
-							<Button sx={{ minWidth: '183px' }}>Sinab Ko’rish</Button>
+							<Button sx={{ minWidth: '183px' }}>{t('try_it_out')}</Button>
 						</Box>
 					</Stack>
 					<Stack maxWidth='477px'>

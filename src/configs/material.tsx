@@ -194,10 +194,11 @@ export const theme = createTheme({
 			color: palette.colors.BLACK20,
 		},
 		title80: {
-			fontSize: '18px',
+			fontSize: '20px',
 			fontWeight: 700,
-			lineHeight: 'normal',
-			color: palette.colors.GRAY130,
+			lineHeight: '22px',
+			letterSpacing: '0.35px',
+			color: palette.colors.BLACK,
 		},
 		title90: {
 			fontSize: '28px',

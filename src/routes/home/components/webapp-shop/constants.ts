@@ -1,14 +1,22 @@
 export const FEATURES = [
 	{
-		title: 'Chat funksiyasi',
-		text: 'Sign up with your email in seconds and create a shop',
+		title: 'product_attributes',
+		text: 'set_product_characteristics_based_on_any_criteria_color_size_etc',
 	},
 	{
-		title: 'Reklama uchun banner',
-		text: 'Sign up with your email in seconds and create a shop',
+		title: 'multiple_product_images',
+		text: 'download_multiple_images_from_different_angles',
 	},
 	{
-		title: 'Promokod funksiyasi',
-		text: 'Sign up with your email in seconds and create a shop',
+		title: 'payment_methods',
+		text: 'accept_payment_in_cash_or_through_payment_systems',
+	},
+	{
+		title: 'employees',
+		text: 'add_managers_to_the_platform_to_control_products_and_prices',
+	},
+	{
+		title: 'chat',
+		text: 'communicate_with_customers_directly_from_the_platform',
 	},
 ]

@@ -1,28 +1,43 @@
-import { Wrapper, Container } from './style'
+import { BRANDS } from './constants'
+import Stack from '@mui/material/Stack'
+import Avatar from '@mui/material/Avatar'
+import { useTranslation } from 'next-i18next'
+import { stringAvatar } from '@/utils/avatar'
 import Typography from '@mui/material/Typography'
+import { Wrapper, Container, Card } from './style'
 
 export const Brands = () => {
+	const { t } = useTranslation('common')
+
 	return (
 		<Container>
 			<Wrapper>
 				<Typography mb='39px' variant='title' component='h2' lineHeight='67px'>
-					Popular brands use Robosell
+					{t('companies_using_the_robosell_platform')}
 				</Typography>
-				<div>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-					ut labore et dolore magna aliqua. Maecenas sed enim ut sem viverra aliquet eget. Pharetra
-					vel turpis nunc eget. Risus at ultrices mi tempus imperdiet. Ac orci phasellus egestas
-					tellus rutrum tellus. Congue nisi vitae suscipit tellus. Id semper risus in hendrerit
-					gravida rutrum quisque. Dis parturient montes nascetur ridiculus. Neque ornare aenean
-					euismod elementum nisi. Pellentesque pulvinar pellentesque habitant morbi. Volutpat diam
-					ut venenatis tellus in metus. Consectetur a erat nam at lectus urna duis. Tristique
-					senectus et netus et. Non tellus orci ac auctor augue mauris augue neque gravida. Sed
-					tempus urna et pharetra pharetra massa. Scelerisque varius morbi enim nunc faucibus a
-					pellentesque sit. Mauris vitae ultricies leo integer malesuada. Nunc lobortis mattis
-					aliquam faucibus purus in massa tempor nec. Orci phasellus egestas tellus rutrum tellus.
-					Ipsum suspendisse ultrices gravida dictum fusce. Est lorem ipsum dolor sit amet
-					consectetur adipiscing. Viverra maecenas accumsan lacus vel facilisis volutpat.
-				</div>
+				<Stack
+					width='100%'
+					gap='20px'
+					component='ul'
+					display='grid'
+					gridTemplateColumns='repeat(4,1fr)'
+				>
+					{BRANDS.map((b, i) => (
+						<Card key={i} whileHover={{ scale: 0.9 }}>
+							<Avatar
+								alt={b.title}
+								src={b?.logo?.src ?? ''}
+								{...stringAvatar(b.title ?? '', {
+									width: 60,
+									height: 60,
+								})}
+							/>
+							<Typography variant='title80' component='h4'>
+								{b.title}
+							</Typography>
+						</Card>
+					))}
+				</Stack>
 			</Wrapper>
 		</Container>
 	)

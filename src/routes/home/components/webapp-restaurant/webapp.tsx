@@ -4,6 +4,7 @@ import { FEATURES } from './constants'
 import { motion } from 'framer-motion'
 import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
+import { useTranslation } from 'next-i18next'
 import { IconTick } from '@/assets/icons/tick'
 import Typography from '@mui/material/Typography'
 import ImageIphone from '@/assets/images/iphone.webp'
@@ -18,6 +19,7 @@ const variants = {
 
 export const WebappRestaurant = () => {
 	const view = useInView({ threshold: 0 })
+	const { t } = useTranslation('common')
 
 	return (
 		<Container>
@@ -28,15 +30,14 @@ export const WebappRestaurant = () => {
 							<IconLinearGradient />
 						</Stack>
 						<Typography align='center' variant='title30'>
-							Webapp - Sizning mobile yordamchingiz.
+							{t('robosell_is_your_reliable_business_partner')}
 						</Typography>
 					</Stack>
 					<Typography p='36px 24px 24px' align='center' variant='text' color='colors.GRAY10'>
-						If you receive an order by phone, you can also manage those orders by entering them into
-						the system.
+						{t('simplify_your_life_and_increase_your_business_income_with_robosell')}
 					</Typography>
 					<Box>
-						<Button sx={{ minWidth: '183px' }}>Sinab Ko’rish</Button>
+						<Button sx={{ minWidth: '183px' }}>{t('try_it_out')}</Button>
 					</Box>
 				</Content>
 				<Box width='100%'>
@@ -58,7 +59,7 @@ export const WebappRestaurant = () => {
 									fill
 									src={ImageIphone.src}
 									alt='iphone-restaurant'
-									style={{ minHeight: '680px' }}
+									style={{ minHeight: '680px', minWidth: '306px' }}
 								/>
 							</WrapCircle>
 						</motion.div>
@@ -72,19 +73,10 @@ export const WebappRestaurant = () => {
 							}}
 						>
 							<Typography variant='title10' component='h2'>
-								Robo Restoran
+								{t('robo_restaurant')}
 							</Typography>
 							<Typography component='h3' variant='text10'>
-								It takes only{' '}
-								<Typography
-									component='span'
-									fontWeight='500'
-									variant='inherit'
-									color='colors.BLACK'
-								>
-									15 minutes
-								</Typography>{' '}
-								to create a store and you can start selling
+								{t('create_convenience_for_your_guests_and_increase_your_sales')}
 							</Typography>
 							<Stack gap='26px' m='28px 0 48px' component='ul'>
 								{FEATURES.map((f, i: number) => (
@@ -94,17 +86,17 @@ export const WebappRestaurant = () => {
 										</Stack>
 										<Stack>
 											<Typography component='h4' variant='title60'>
-												{f.title}
+												{t(f.title)}
 											</Typography>
 											<Typography component='h5' variant='text20'>
-												{f.text}
+												{t(f.text)}
 											</Typography>
 										</Stack>
 									</Stack>
 								))}
 							</Stack>
 							<Box>
-								<Button sx={{ minWidth: '183px' }}>Sinab Ko’rish</Button>
+								<Button sx={{ minWidth: '183px' }}>{t('try_it_out')}</Button>
 							</Box>
 						</motion.div>
 					</WrapImage>
