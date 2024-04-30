@@ -2,6 +2,8 @@ import { gilroy } from '@/utils/fonts'
 import { IconPlus } from '@/assets/icons/plus'
 import { createTheme } from '@mui/material/styles'
 import { COLORS, BREAKPOINTS } from '@/constants/css'
+import { IconRadioTrue } from '@/assets/icons/radio-true'
+import { IconRadioFalse } from '@/assets/icons/radio-false'
 
 declare module '@mui/material/styles/createPalette' {
 	interface Palette {
@@ -416,6 +418,12 @@ export const theme = createTheme({
 					lineHeight: '27px',
 					color: theme.palette.colors.BLACK,
 				}),
+			},
+		},
+		MuiRadio: {
+			defaultProps: {
+				icon: <IconRadioFalse />,
+				checkedIcon: <IconRadioTrue />,
 			},
 		},
 		MuiInputLabel: {

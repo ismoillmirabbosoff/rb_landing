@@ -1,13 +1,13 @@
 import { FAQ } from '@/constants/faq'
 import Stack from '@mui/material/Stack'
+import Divider from '@mui/material/Divider'
 import { Wrapper, Container } from './style'
 import Accordion from '@mui/material/Accordion'
+import { IconMinus } from '@/assets/icons/minus'
 import Typography from '@mui/material/Typography'
 import { useState, type SyntheticEvent } from 'react'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
-import { IconMinus } from '@/assets/icons/minus'
-import { Divider } from '@mui/material'
 
 export const Faq = () => {
 	const [expanded, setExpanded] = useState<number | false>(false)

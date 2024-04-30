@@ -1,27 +1,36 @@
 import Link from 'next/link'
 import Tab from '@mui/material/Tab'
 import Stack from '@mui/material/Stack'
+import Radio from '@mui/material/Radio'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
+import Tooltip from '@mui/material/Tooltip'
 import TabContext from '@mui/lab/TabContext'
 import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
 import type { PlanTypeProps } from '@/types/plan'
+import RadioGroup from '@mui/material/RadioGroup'
 import { IconRemove } from '@/assets/icons/remove'
 import { numberFormat } from '@/utils/number-format'
 import { useState, type SyntheticEvent } from 'react'
 import { IconInfinity } from '@/assets/icons/infinity'
 import { IconTickSolid } from '@/assets/icons/tick-solid'
-import { TAB_PLANS, PRICING_PLANS } from '@/constants/plan'
+import FormControlLabel from '@mui/material/FormControlLabel'
 import { IconLinearGradient } from '@/assets/icons/linear-gradient'
+import { TAB_PLANS, PRICING_PLANS, PLAN_PLATFORMS } from '@/constants/plan'
 import { Card, Cards, TabList, Wrapper, Container, WrapDiscount } from './style'
 
 export const Plans = () => {
 	const { t } = useTranslation('common')
 	const [plan, setPlan] = useState<PlanTypeProps>('monthly')
+	const [platform, setPlatform] = useState('TELEGREM')
 
 	const handleChangePlan = (_: SyntheticEvent, plan: PlanTypeProps) => {
 		setPlan(plan)
+	}
+
+	const handleChangePlatform = (_: SyntheticEvent, platform: string) => {
+		setPlatform(platform)
 	}
 
 	const content = (
@@ -72,24 +81,45 @@ export const Plans = () => {
 	return (
 		<Container id='plans'>
 			<Wrapper>
-				<Stack mb='9px' position='relative' width='100%' alignItems='center'>
+				<Stack position='relative' width='100%' alignItems='center'>
 					<Stack top='-90%' position='absolute' alignItems='center' zIndex='-1'>
 						<IconLinearGradient />
 					</Stack>
 					<Typography variant='title30' component='h2'>
 						{t('our_plans')}
 					</Typography>
-					<Typography
-						mb='56px'
-						variant='text'
-						component='h3'
-						maxWidth='871px'
-						color='colors.GRAY10'
-					>
+					<Typography variant='text' component='h3' maxWidth='871px' color='colors.GRAY10'>
 						{t(
 							'check_what_plan_is_best_for_you_we_care_about_your_convenience_in_using_the_application_so_you_can_update_your_plan_up_or_down_at_any_time',
 						)}
 					</Typography>
+				</Stack>
+				<Stack my='29px' width='100%' maxWidth='780px'>
+					<RadioGroup
+						row
+						value={platform}
+						onChange={handleChangePlatform}
+						sx={{
+							width: '100%',
+							justifyContent: 'space-between',
+						}}
+					>
+						{Object.values(PLAN_PLATFORMS).map((p, i) => (
+							<Tooltip key={i} title={p.disabled ? t('coming_soon') : ''}>
+								<FormControlLabel
+									value={p.platform}
+									control={<Radio />}
+									disabled={p.disabled}
+									label={
+										<Stack gap='9px' direction='row' alignItems='center'>
+											{p.icon}
+											{p.title}
+										</Stack>
+									}
+								/>
+							</Tooltip>
+						))}
+					</RadioGroup>
 				</Stack>
 				<TabContext value={plan}>
 					<Stack alignItems='center'>

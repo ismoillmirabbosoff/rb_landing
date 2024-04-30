@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Stack } from '@mui/material'
+import Stack from '@mui/material/Stack'
 import { Card, Content } from './style'
 import { BLOGS } from '@/constants/blog'
 import Typography from '@mui/material/Typography'

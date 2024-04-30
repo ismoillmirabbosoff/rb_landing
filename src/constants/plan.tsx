@@ -1,4 +1,6 @@
-import type { TabPlanProps, PricingPlanProps } from '@/types/plan'
+import { IconGlobal } from '@/assets/icons/global'
+import type { TabPlanProps, PricingPlanProps, PlatformProps } from '@/types/plan'
+import { IconTelegramOutline } from '@/assets/icons/telegram-outline'
 
 export const TAB_PLANS: TabPlanProps = {
 	monthly: {
@@ -78,5 +80,31 @@ export const PRICING_PLANS: PricingPlanProps = {
 		price: 700000,
 		type: 'ENTERPRISE',
 		color: 'ORANGE',
+	},
+}
+
+export const PLAN_PLATFORMS: PlatformProps = {
+	TELEGREM: {
+		disabled: false,
+		title: 'Telegram',
+		icon: <IconTelegramOutline />,
+		platform: 'TELEGREM',
+	},
+	WEBSITE: {
+		disabled: true,
+		title: 'Website',
+		icon: <IconGlobal />,
+		platform: 'WEBSITE',
+	},
+	TELEGREM_WEBSITE: {
+		disabled: true,
+		title: 'Telegram + Website',
+		icon: (
+			<>
+				<IconTelegramOutline />
+				<IconGlobal />
+			</>
+		),
+		platform: 'TELEGREM_WEBSITE',
 	},
 }

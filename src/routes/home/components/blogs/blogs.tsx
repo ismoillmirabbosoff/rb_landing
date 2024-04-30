@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Stack } from '@mui/material'
+import Stack from '@mui/material/Stack'
 import { Blog } from '@/components/blog'
 import Button from '@mui/material/Button'
 import { ROUTER } from '@/constants/router'
