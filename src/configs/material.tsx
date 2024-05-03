@@ -577,7 +577,7 @@ export const theme = createTheme({
 					background: theme.palette.colors.WHITE30,
 					':hover': {
 						color: theme.palette.colors.GRAY130,
-						border: `1px solid ${theme.palette.colors.GREEN}`,
+						border: `1px solid ${theme.palette.colors.GREEN} !important`,
 					},
 					[defaultCreateTheme.breakpoints.down('md')]: {
 						fontSize: '14px',
