@@ -40,6 +40,7 @@ export const COLORS = {
 	GRAY170: '#0000000f',
 	GRAY180: '#e3eaf4cc',
 	GRAY190: '#e8e8e8',
+	GRAY200: '#00000030',
 	LINEAR_GRADIENT: 'linear-gradient(91deg, #FEFEFE 2.38%, #FFD1C2 64.26%, #D594DD 100%)',
 	LINEAR_GRADIENT10: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%)',
 }

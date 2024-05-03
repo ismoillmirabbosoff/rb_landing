@@ -2,12 +2,20 @@ import Image from 'next/image'
 import Stack from '@mui/material/Stack'
 import Dialog from '@mui/material/Dialog'
 import { INSTRUCTIONS } from './constants'
-import { Trans, useTranslation } from 'next-i18next'
 import { IconPlay } from '@/assets/icons/play'
 import { useBoolean } from '@/hooks/useBoolean'
 import Typography from '@mui/material/Typography'
-import { Wrapper, WrapPlay, Container } from './style'
-import ImageHowWorksInstruction from '@/assets/images/how-works-instruction.webp'
+import { Trans, useTranslation } from 'next-i18next'
+import ImageDisplay from '@/assets/images/display.webp'
+import {
+	List,
+	Wrapper,
+	WrapPlay,
+	Container,
+	WrapImage,
+	WrapNumber,
+	WrapImageContent,
+} from './style'
 
 export const Instructions = () => {
 	const mouse = useBoolean()
@@ -20,18 +28,24 @@ export const Instructions = () => {
 				<Wrapper>
 					<Stack
 						pt='18px'
+						width='100%'
+						height='100%'
 						position='relative'
 						onMouseEnter={mouse.setTrue}
 						onMouseLeave={mouse.setFalse}
 					>
-						<Image fill src={ImageHowWorksInstruction.src} alt='res' />
+						<WrapImage>
+							<WrapImageContent open={modal.value || mouse.value}>
+								<Image fill src={ImageDisplay.src} alt='' />
+							</WrapImageContent>
+						</WrapImage>
 						<WrapPlay
 							whileHover={{
 								scale: '1.1',
 							}}
 							onClick={modal.setTrue}
 							style={{
-								bottom: mouse.value || modal.value ? 'calc(50% - 75px)' : '30px',
+								bottom: mouse.value || modal.value ? 'calc(50% - 30px)' : '30px',
 								right: mouse.value || modal.value ? 'calc(50% - 130px)' : '-20px',
 							}}
 						>
@@ -62,10 +76,10 @@ export const Instructions = () => {
 								}}
 							/>
 						</Typography>
-						<Stack component='ul'>
+						<List>
 							{INSTRUCTIONS.map((instruction, i: number) => (
 								<Stack gap='16px' key={i} component='li' direction='row' alignItems='center'>
-									<Typography>{i + 1}</Typography>
+									<WrapNumber>0{i + 1}</WrapNumber>
 									<Stack>
 										<Typography variant='title60' lineHeight='32px'>
 											{t(instruction.title)}
@@ -76,7 +90,7 @@ export const Instructions = () => {
 									</Stack>
 								</Stack>
 							))}
-						</Stack>
+						</List>
 					</Stack>
 				</Wrapper>
 			</Container>
