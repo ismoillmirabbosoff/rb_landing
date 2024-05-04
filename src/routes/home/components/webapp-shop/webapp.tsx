@@ -27,7 +27,7 @@ export const WebappShop = () => {
 						style={{
 							opacity: view.inView ? '1' : '0',
 							transform: view.inView ? 'none' : 'translateX(-100vw)',
-							transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+							transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
 						}}
 					>
 						<Typography variant='title10' component='h2'>
