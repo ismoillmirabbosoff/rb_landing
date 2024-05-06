@@ -39,19 +39,32 @@ export const WrapPlay = styled(motion.div)`
 	box-shadow: 0px 7.091px 44.909px ${({ theme }) => theme.palette.colors.GRAY200};
 `
 
+export const WrapContent = styled('div')`
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	position: relative;
+	border-radius: 20px;
+	transition: box-shadow 0.3s;
+	:hover {
+		box-shadow: 4.639px -4.639px 28.995px ${({ theme }) => theme.palette.colors.GRAY210};
+	}
+`
+
 interface WrapImageContentProps {
 	open: boolean
 }
 
 export const WrapImageContent = styled(motion.div)<WrapImageContentProps>`
+	top: 35px;
+	left: -35px;
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	border-radius: 20px;
 	transition: all 0.5s ease-in-out;
-	top: ${({ open }) => (open ? 0 : '35px')};
-	left: ${({ open }) => (open ? 0 : '-35px')};
-	box-shadow: 4.639px -4.639px 28.995px rgba(0, 0, 0, 0.3);
+	transform: ${({ open }) => (open ? 'scale(1.11, 1.15)' : 'scale(1)')};
+	box-shadow: 4.639px -4.639px 28.995px ${({ theme }) => theme.palette.colors.GRAY210};
 `
 
 export const WrapImage = styled('div')`
@@ -63,8 +76,7 @@ export const WrapImage = styled('div')`
 	background: ${({ theme }) => theme.palette.colors.GRAY90};
 	&:hover {
 		& > div:first-child {
-			top: 0;
-			left: 0;
+			transform: scale(1.11, 1.15);
 		}
 	}
 `

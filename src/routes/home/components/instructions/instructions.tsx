@@ -14,6 +14,7 @@ import {
 	Container,
 	WrapImage,
 	WrapNumber,
+	WrapContent,
 	WrapImageContent,
 } from './style'
 
@@ -26,11 +27,8 @@ export const Instructions = () => {
 		<>
 			<Container>
 				<Wrapper>
-					<Stack
-						pt='18px'
-						width='100%'
-						height='100%'
-						position='relative'
+					<WrapContent
+						onClick={modal.setTrue}
 						onMouseEnter={mouse.setTrue}
 						onMouseLeave={mouse.setFalse}
 					>
@@ -43,7 +41,6 @@ export const Instructions = () => {
 							whileHover={{
 								scale: '1.1',
 							}}
-							onClick={modal.setTrue}
 							style={{
 								bottom: mouse.value || modal.value ? 'calc(50% - 30px)' : '30px',
 								right: mouse.value || modal.value ? 'calc(50% - 130px)' : '-20px',
@@ -56,7 +53,7 @@ export const Instructions = () => {
 								Introduction
 							</Typography>
 						</WrapPlay>
-					</Stack>
+					</WrapContent>
 					<Stack>
 						<Typography variant='title10' component='h2'>
 							{t('how_does_it_work')}
