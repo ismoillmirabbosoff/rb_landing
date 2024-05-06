@@ -23,7 +23,7 @@ export const TopProducts = () => {
 					style={{
 						opacity: view.inView ? 1 : 0,
 						transform: view.inView ? 'none' : 'translateY(200px)',
-						transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+						transition: 'all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s',
 					}}
 				>
 					<Image fill src={ImageAdvantagesTopProducts.src} alt='res' />
