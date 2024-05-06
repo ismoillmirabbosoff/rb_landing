@@ -1,7 +1,7 @@
 {
 	"enter": "Enter",
 	"copyright_year_robosell_all_rights_reserved": "Copyright © {{year}} RoboSell | All Rights Reserved",
-	"our_plans": "Our Plans",
+	"tariff_plans": "Tariff plans",
 	"banner": "Banner",
 	"promocode": "Promocode",
 	"source": "Source",
@@ -17,13 +17,13 @@
 	"full": "Full",
 	"get_started": "Get Started",
 	"perfect_plan_for_starters": "Perfect plan for starters",
-	"for_companies_want_to_do_more": "For companies want to do more",
-	"run_your_company_on_your_termns": "Run your company on your termns",
-	"soum": "Soum",
+	"for_companies_want_to_do_more": "For companies wanting to do more",
+	"run_your_company_on_your_termns": "Run your company on your terms",
+	"soum": "sums",
 	"one_month": "1 Month",
 	"six_month": "6 Months",
 	"one_yearly": "1 Yearly",
-	"check_what_plan_is_best_for_you_we_care_about_your_convenience_in_using_the_application_so_you_can_update_your_plan_up_or_down_at_any_time": "Check what plan is best for You. We care about your convenience in using the application, so you can update your plan up or down at any time",
+	"check_what_plan_is_best_for_you_we_care_about_your_convenience_in_using_the_application_so_you_can_update_your_plan_up_or_down_at_any_time": "Explore what plan is best for You. We care about your convenience in using the application, so you can update your plan up or down at any time",
 	"opportunities": "Opportunities",
 	"tariffs": "Tariffs",
 	"contact": "Contact",
@@ -92,5 +92,5 @@
 	"communicate_with_customers_directly_from_the_platform": "Communicate with customers directly from the platform",
 	"feedback_from_our_partners": "Feedback from our partners",
 	"companies_using_the_robosell_platform": "Companies using the Robosell platform",
-	"coming_soon": "Coming Soon..."
+	"robosell_is_your_reliable_partner_in_creating_and_managing_your_online_business_our_goal_is_to_make_the_process_of_starting_an_internet_business_fast_simple_and_efficient_for_entrepreneurs": "ROBOSELL is your reliable partner in creating and managing your online business. Our goal is to make the process of starting an internet business fast, simple and efficient for entrepreneurs."
 }

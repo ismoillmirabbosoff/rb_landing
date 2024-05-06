@@ -24,7 +24,7 @@ export const Try = () => {
 					<Typography variant='title130' component='h3'>
 						Robosell orqali
 						<Typography px='5px' component='span' color='colors.PURPLE' variant='inherit'>
-							15 minut
+							15 daqiqa
 						</Typography>
 						ichida o’z internet do’koningizni yarating
 					</Typography>

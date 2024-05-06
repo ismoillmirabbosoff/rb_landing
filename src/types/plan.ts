@@ -42,7 +42,6 @@ export type PlatformProps = Record<
 	PlatformTypeProps,
 	{
 		title: string
-		disabled: boolean
 		icon: ReactElement
 		platform: PlatformTypeProps
 	}

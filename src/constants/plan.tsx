@@ -1,6 +1,6 @@
 import { IconGlobal } from '@/assets/icons/global'
-import type { TabPlanProps, PricingPlanProps, PlatformProps } from '@/types/plan'
 import { IconTelegramOutline } from '@/assets/icons/telegram-outline'
+import type { TabPlanProps, PricingPlanProps, PlatformProps } from '@/types/plan'
 
 export const TAB_PLANS: TabPlanProps = {
 	monthly: {
@@ -85,19 +85,16 @@ export const PRICING_PLANS: PricingPlanProps = {
 
 export const PLAN_PLATFORMS: PlatformProps = {
 	TELEGREM: {
-		disabled: false,
 		title: 'Telegram',
 		icon: <IconTelegramOutline />,
 		platform: 'TELEGREM',
 	},
 	WEBSITE: {
-		disabled: true,
 		title: 'Website',
 		icon: <IconGlobal />,
 		platform: 'WEBSITE',
 	},
 	TELEGREM_WEBSITE: {
-		disabled: true,
 		title: 'Telegram + Website',
 		icon: (
 			<>

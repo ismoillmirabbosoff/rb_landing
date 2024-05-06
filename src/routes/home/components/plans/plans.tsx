@@ -4,7 +4,6 @@ import Stack from '@mui/material/Stack'
 import Radio from '@mui/material/Radio'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
-import Tooltip from '@mui/material/Tooltip'
 import TabContext from '@mui/lab/TabContext'
 import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
@@ -86,7 +85,7 @@ export const Plans = () => {
 						<IconLinearGradient />
 					</Stack>
 					<Typography variant='title30' component='h2'>
-						{t('our_plans')}
+						{t('tariff_plans')}
 					</Typography>
 					<Typography variant='text' component='h3' maxWidth='871px' color='colors.GRAY10'>
 						{t(
@@ -105,19 +104,17 @@ export const Plans = () => {
 						}}
 					>
 						{Object.values(PLAN_PLATFORMS).map((p, i) => (
-							<Tooltip key={i} title={p.disabled ? t('coming_soon') : ''}>
-								<FormControlLabel
-									value={p.platform}
-									control={<Radio />}
-									disabled={p.disabled}
-									label={
-										<Stack gap='9px' direction='row' alignItems='center'>
-											{p.icon}
-											{p.title}
-										</Stack>
-									}
-								/>
-							</Tooltip>
+							<FormControlLabel
+								key={i}
+								value={p.platform}
+								control={<Radio />}
+								label={
+									<Stack gap='9px' direction='row' alignItems='center'>
+										{p.icon}
+										{p.title}
+									</Stack>
+								}
+							/>
 						))}
 					</RadioGroup>
 				</Stack>

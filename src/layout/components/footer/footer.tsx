@@ -39,8 +39,9 @@ export const Footer = () => {
 							maxWidth='457px'
 							color='colors.GRAY120'
 						>
-							We ara a lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-							tempor incididunt.
+							{t(
+								'robosell_is_your_reliable_partner_in_creating_and_managing_your_online_business_our_goal_is_to_make_the_process_of_starting_an_internet_business_fast_simple_and_efficient_for_entrepreneurs',
+							)}
 						</Typography>
 						<Stack
 							gap='14px'
@@ -81,7 +82,7 @@ export const Footer = () => {
 					<Stack gap='20px' component='ul'>
 						{NAVBAR.map((f, i: number) => (
 							<Stack key={i} component='li'>
-								<Typography href={f.href} variant='text40' component={Link} color='colors.GRAY120'>
+								<Typography href={f.href} component={Link} variant='title110' fontWeight='700'>
 									{t(f.title)}
 								</Typography>
 							</Stack>
