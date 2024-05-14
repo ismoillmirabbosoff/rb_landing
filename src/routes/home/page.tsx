@@ -7,17 +7,21 @@ import { Plans } from './components/plans'
 import { Blogs } from './components/blogs'
 import { Brands } from './components/brands'
 import { Review } from './components/review'
+import { useTranslation } from 'next-i18next'
 import { WebappShop } from './components/webapp-shop'
 import { useInView } from 'react-intersection-observer'
 import { Instructions } from './components/instructions'
 import { FlexibleDesign } from './components/flexible-design'
 import { WebappRestaurant } from './components/webapp-restaurant'
 
+const mediaBaseURL = process.env.NEXT_PUBLIC_MEDIA_BASE_URL
+
 const Advantages = dynamic(async () => (await import('./components/advantages')).Advantages, {
 	ssr: false,
 })
 
 export const Home = () => {
+	const { t } = useTranslation('common')
 	const advantagesAndInstructions = useInView({ threshold: 0.3 })
 	const flexibleDesign = useInView({ threshold: 0.3 })
 	const webappRestaurantAndWebappShop = useInView({ threshold: 0.1 })
@@ -58,10 +62,7 @@ export const Home = () => {
 				<WebappShop />
 			</Stack>
 			<video autoPlay loop muted>
-				<source
-					src='https://robosell.ams3.digitaloceanspaces.com/landing/chat.webm'
-					type='video/mp4'
-				/>
+				<source src={`${mediaBaseURL}/${t('chat_video')}`} type='video/mp4' />
 			</video>
 			<Review />
 			<Brands />
