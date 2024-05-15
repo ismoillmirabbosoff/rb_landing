@@ -13,7 +13,7 @@ export const Navbar = ({ variant }: NavbarProps) => {
 					<li key={i}>
 						<Link href={n.href}>
 							{t(n.title)}
-							<IconDirectionDown />
+							{variant === 'menu' && <IconDirectionDown />}
 						</Link>
 					</li>
 				))}
