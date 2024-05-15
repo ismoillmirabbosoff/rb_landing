@@ -13,6 +13,15 @@ export const Review = () => {
 	const [sliderRef] = useKeenSlider({
 		loop: true,
 		renderMode: 'performance',
+		breakpoints: {
+			'(max-width: 500px)': {
+				slides: {
+					origin: 'center',
+					perView: 1.5,
+					spacing: 12,
+				},
+			},
+		},
 		slides: {
 			origin: 'center',
 			perView: 3,
