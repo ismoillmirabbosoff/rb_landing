@@ -1,16 +1,20 @@
 import Link from 'next/link'
-import { Nav } from './style'
 import { NAVBAR } from '@/constants/navbar'
 import { useTranslation } from 'next-i18next'
+import { Nav, type NavbarProps } from './style'
+import { IconDirectionDown } from '@/assets/icons/direction-down'
 
-export const Navbar = () => {
+export const Navbar = ({ variant }: NavbarProps) => {
 	const { t } = useTranslation('common')
 	return (
-		<Nav>
+		<Nav variant={variant}>
 			<ul>
 				{NAVBAR.map((n, i: number) => (
 					<li key={i}>
-						<Link href={n.href}>{t(n.title)}</Link>
+						<Link href={n.href}>
+							{t(n.title)}
+							<IconDirectionDown />
+						</Link>
 					</li>
 				))}
 			</ul>

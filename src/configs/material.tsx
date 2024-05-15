@@ -275,6 +275,11 @@ export const theme = createTheme({
 			lineHeight: '35px',
 			letterSpacing: '0.063px',
 			color: palette.colors.GRAY10,
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '10px',
+				lineHeight: '35px',
+				letterSpacing: '0.035px',
+			},
 		},
 		text40: {
 			fontWeight: 400,
@@ -291,6 +296,10 @@ export const theme = createTheme({
 			fontWeight: 300,
 			fontSize: '16px',
 			lineHeight: '22px',
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '14px',
+				lineHeight: '19.641px',
+			},
 		},
 		text70: {
 			fontWeight: 500,
@@ -304,6 +313,11 @@ export const theme = createTheme({
 			lineHeight: '25px',
 			letterSpacing: '0.243px',
 			color: palette.colors.GRAY10,
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '14px',
+				lineHeight: '22px',
+				letterSpacing: '0.189px',
+			},
 		},
 		text90: {
 			fontWeight: 300,
@@ -337,6 +351,16 @@ export const theme = createTheme({
 		},
 	}),
 	components: {
+		MuiSwipeableDrawer: {
+			defaultProps: {
+				PaperProps: {
+					sx: theme => ({
+						backdropFilter: 'blur(50px)',
+						backgroundColor: theme.palette.colors.BLACK50,
+					}),
+				},
+			},
+		},
 		MuiSelect: {
 			styleOverrides: {
 				select: {
@@ -355,6 +379,9 @@ export const theme = createTheme({
 				sizeMedium: {
 					height: 52,
 					borderRadius: '14px',
+					[defaultCreateTheme.breakpoints.down('md')]: {
+						height: 48,
+					},
 				},
 				sizeSmall: {
 					height: 38,
@@ -417,6 +444,9 @@ export const theme = createTheme({
 					fontWeight: '400',
 					lineHeight: '27px',
 					color: theme.palette.colors.BLACK,
+					[defaultCreateTheme.breakpoints.down('md')]: {
+						fontSize: '14px',
+					},
 				}),
 			},
 		},
@@ -446,6 +476,9 @@ export const theme = createTheme({
 			styleOverrides: {
 				root: ({ theme }) => ({
 					height: 52,
+					[defaultCreateTheme.breakpoints.down('md')]: {
+						height: 48,
+					},
 					backgroundColor: theme.palette.colors.GRAY90,
 					'input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,input:-webkit-autofill:active':
 						{
@@ -456,6 +489,9 @@ export const theme = createTheme({
 							WebkitBoxShadow: `0 0 0 30px ${theme.palette.colors.GRAY90} inset !important`,
 							boxShadow: `0 0 0 30px ${theme.palette.colors.GRAY90} inset !important`,
 							backgroundColor: theme.palette.colors.GRAY90,
+							[defaultCreateTheme.breakpoints.down('md')]: {
+								fontSize: '14px',
+							},
 						},
 					':has(.MuiInputAdornment-positionStart)': {
 						paddingLeft: '20px !important',
@@ -472,6 +508,9 @@ export const theme = createTheme({
 					fieldset: {
 						top: 0,
 						height: 52,
+						[defaultCreateTheme.breakpoints.down('md')]: {
+							height: 48,
+						},
 						legend: {
 							display: 'none',
 						},
@@ -482,6 +521,9 @@ export const theme = createTheme({
 						lineHeight: '27px',
 						padding: '0 20px !important',
 						color: `${theme.palette.colors.BLACK} !important`,
+						[defaultCreateTheme.breakpoints.down('md')]: {
+							fontSize: '14px',
+						},
 					},
 				}),
 			},

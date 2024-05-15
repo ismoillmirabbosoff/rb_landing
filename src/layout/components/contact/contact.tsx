@@ -36,15 +36,20 @@ export const Contact = () => {
 				<IconLinearGradientContact />
 			</WrapLinearGradientContact>
 			<Wrapper>
-				<Typography variant='title90' component='h2'>
-					Still have questions?
-				</Typography>
-				<Typography align='center' variant='text80' component='h3'>
-					Can’t find the answer you’re looking for? Please chat to our friendly team.
-				</Typography>
+				<Stack p={{ xs: '0 9px', md: 0 }}>
+					<Typography variant='title90' component='h2'>
+						Still have questions?
+					</Typography>
+					<Typography align='center' variant='text80' component='h3'>
+						Can’t find the answer you’re looking for? Please chat to our friendly team.
+					</Typography>
+				</Stack>
 				<Stack
 					mt='27px'
-					gap='28px'
+					gap={{
+						xs: '12px',
+						md: '28px',
+					}}
 					width='100%'
 					display='grid'
 					gridTemplateColumns={{
@@ -81,7 +86,7 @@ export const Contact = () => {
 					/>
 				</Stack>
 				<Stack mt='23px' width='100%' alignItems='flex-end'>
-					<Button sx={{ minWidth: '183px', borderRadius: '9px' }}>Send</Button>
+					<Button sx={{ minWidth: { xs: '100%', md: '183px' }, borderRadius: '9px' }}>Send</Button>
 				</Stack>
 			</Wrapper>
 		</Container>

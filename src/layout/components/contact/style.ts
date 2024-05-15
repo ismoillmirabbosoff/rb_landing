@@ -6,19 +6,30 @@ export const Container = styled('footer')`
 	position: relative;
 	padding-bottom: 118px;
 	justify-content: center;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			padding: '0 18px 33px',
+		},
+	})}
 `
 
 export const Wrapper = styled('div')`
-	width: 100%;
 	z-index: 0;
+	width: 100%;
 	display: flex;
-	border-radius: 20px;
 	align-items: center;
 	flex-direction: column;
-	padding: 34px 50px 50px;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
 	background-color: ${({ theme }) => theme.palette.colors.WHITE};
 	box-shadow: 0px 0px 50px 0px ${({ theme }) => theme.palette.colors.GRAY150};
+	${({ theme }) => ({
+		borderRadius: '20px',
+		padding: '34px 50px 50px',
+		[theme.breakpoints.down('md')]: {
+			borderRadius: '8px',
+			padding: '30px 16px 16px',
+		},
+	})}
 `
 
 export const WrapLinearGradientContact = styled('div')`

@@ -13,6 +13,11 @@ export const Wrapper = styled('div')`
 	display: flex;
 	flex-direction: column;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			padding: '0 18px',
+		},
+	})}
 `
 
 export const WrapImage = styled('div')`

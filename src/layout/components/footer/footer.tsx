@@ -1,32 +1,39 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Phone } from '../phone'
+import { Social } from '../social'
 import Stack from '@mui/material/Stack'
 import { Logo } from '@/components/logo'
 import Divider from '@mui/material/Divider'
 import { NAVBAR } from '@/constants/navbar'
-import { SOCIALS } from '@/constants/social'
 import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
-import { IconCalling } from '@/assets/icons/calling'
 import { Wrapper, Container, WrapImage } from './style'
 import ImageBgFooter from '@/assets/images/bg-footer.webp'
+import ImageBgFooterMb from '@/assets/images/bg-footer-mb.webp'
+import { useTheme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 
 export const Footer = () => {
 	const date = new Date()
+	const theme = useTheme()
 	const { t } = useTranslation('common')
+	const matches = useMediaQuery(theme.breakpoints.down('md'))
 
 	return (
 		<Container>
 			<WrapImage>
-				<Image fill alt='bg-footer' src={ImageBgFooter.src} />
+				<Image fill alt='bg-footer' src={matches ? ImageBgFooterMb.src : ImageBgFooter.src} />
 			</WrapImage>
 			<Wrapper>
 				<Stack
-					p='50px 0 65px'
 					gap='20px'
-					direction={{ xs: 'column', md: 'row' }}
 					justifyContent='space-between'
+					direction={{ xs: 'column', md: 'row' }}
+					p={{
+						md: '50px 0 65px',
+						xs: '32px 0 36px',
+					}}
 				>
 					<Stack>
 						<Stack justifyContent='center'>
@@ -43,41 +50,8 @@ export const Footer = () => {
 								'robosell_is_your_reliable_partner_in_creating_and_managing_your_online_business_our_goal_is_to_make_the_process_of_starting_an_internet_business_fast_simple_and_efficient_for_entrepreneurs',
 							)}
 						</Typography>
-						<Stack
-							gap='14px'
-							component='a'
-							direction='row'
-							alignItems='center'
-							href='tel:+998711234567'
-						>
-							<Stack justifyContent='center'>
-								<IconCalling />
-							</Stack>
-							<Typography variant='text70' component='h4'>
-								+998(71) 123 45 67
-							</Typography>
-						</Stack>
-						<Stack pt='21px' gap='12px' component='ul' direction='row'>
-							{SOCIALS.map(({ Icon, href }, i: number) => (
-								<Stack component='li' key={i} justifyContent='center'>
-									<IconButton
-										href={href}
-										target='_blank'
-										component={Link}
-										sx={{
-											p: '6px',
-											minWidth: '31px',
-											svg: {
-												width: '24px',
-												height: '24px',
-											},
-										}}
-									>
-										<Icon />
-									</IconButton>
-								</Stack>
-							))}
-						</Stack>
+						<Phone />
+						<Social />
 					</Stack>
 					<Stack gap='20px' component='ul'>
 						{NAVBAR.map((f, i: number) => (
@@ -91,7 +65,7 @@ export const Footer = () => {
 				</Stack>
 				<Divider sx={theme => ({ borderColor: theme.palette.colors.WHITE20 })} />
 				<Stack p='15px 15px 17px' alignItems='center'>
-					<Typography variant='text30' component='h2'>
+					<Typography variant='text30' align='center' component='h2'>
 						{t('copyright_year_robosell_all_rights_reserved', { year: date.getFullYear() })}
 					</Typography>
 				</Stack>

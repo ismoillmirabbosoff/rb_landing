@@ -18,7 +18,7 @@ export const Header = () => {
 					<Stack flexGrow={1} direction='row' alignItems='center'>
 						<Logo variant='logo' />
 						<WrapNav>
-							<Navbar />
+							<Navbar variant='header' />
 						</WrapNav>
 					</Stack>
 					<WrapRight>
