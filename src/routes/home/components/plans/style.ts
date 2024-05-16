@@ -1,5 +1,6 @@
 import MuiTabList from '@mui/lab/TabList'
 import { styled } from '@mui/material/styles'
+import MuiFormControlLabel from '@mui/material/FormControlLabel'
 
 export const Container = styled('section')`
 	width: 100%;
@@ -15,6 +16,11 @@ export const Wrapper = styled('div')`
 	flex-direction: column;
 	justify-content: space-between;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			padding: '0 18px 64px',
+		},
+	})}
 `
 
 export const Cards = styled('ul')`
@@ -24,6 +30,7 @@ export const Cards = styled('ul')`
 	grid-template-columns: 1fr 1fr 1fr;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
+			gap: '16px',
 			gridTemplateColumns: '1fr',
 		},
 	})};
@@ -46,7 +53,12 @@ export const TabList = styled(MuiTabList)`
 	border-radius: 9px;
 	background: ${({ theme }) => theme.palette.colors.GRAY90};
 	border: 1px solid ${({ theme }) => theme.palette.colors.GRAY100};
-
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			minHeight: '37px',
+			borderRadius: '7.5px',
+		},
+	})}
 	::after {
 		display: none;
 	}
@@ -55,6 +67,11 @@ export const TabList = styled(MuiTabList)`
 	}
 	.MuiTabs-flexContainer {
 		gap: 10px;
+		${({ theme }) => ({
+			[theme.breakpoints.down('md')]: {
+				gap: '5px',
+			},
+		})}
 	}
 
 	.MuiTab-root {
@@ -63,6 +80,12 @@ export const TabList = styled(MuiTabList)`
 		padding: 0 20px;
 		min-height: 38px;
 		text-transform: unset;
+		${({ theme }) => ({
+			[theme.breakpoints.down('md')]: {
+				margin: '2.5px',
+				minHeight: '31px',
+			},
+		})}
 		.MuiTab-iconWrapper {
 			margin-right: 4px;
 		}
@@ -92,4 +115,32 @@ export const WrapDiscount = styled('div')`
 	border-radius: 24px;
 	color: ${({ theme }) => theme.palette.colors.WHITE};
 	background: ${({ theme }) => theme.palette.colors.PURPLE};
+`
+
+export const FormControlLabel = styled(MuiFormControlLabel)`
+	.MuiButtonBase-root {
+		svg {
+			${({ theme }) => ({
+				[theme.breakpoints.down('md')]: {
+					width: '25px',
+					height: '25px',
+				},
+			})};
+		}
+	}
+`
+
+export const WrapLabel = styled('div')`
+	display: flex;
+	align-items: center;
+	${({ theme }) => ({
+		gap: '9px',
+		[theme.breakpoints.down('md')]: {
+			gap: '6px',
+			svg: {
+				width: '20px',
+				height: '20px',
+			},
+		},
+	})};
 `

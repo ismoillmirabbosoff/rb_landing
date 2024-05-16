@@ -2,7 +2,7 @@ import type { ReactElement } from 'react'
 import type { COLORS } from '@/constants/css'
 
 export type PricingPlanTypeProps = 'BASIC' | 'PROFESSIONAL' | 'ENTERPRISE'
-export type PlatformTypeProps = 'TELEGREM' | 'WEBSITE' | 'TELEGREM_WEBSITE'
+export type PlatformTypeProps = 'TELEGRAM' | 'WEBSITE' | 'TELEGRAM_WEBSITE'
 export type PlanTypeProps = 'monthly' | 'halfYearly' | 'yearly'
 
 export type TabPlanProps = Record<
@@ -28,13 +28,14 @@ export type PricingPlanProps = Record<
 		discount: boolean
 		branch: number
 		mailing: number
+		employee: number
 		chat: boolean
 		stock: boolean
 		analytics: boolean
 		export: boolean
-		price: number
 		type: PricingPlanTypeProps
 		color: keyof typeof COLORS
+		price: Record<PlatformTypeProps, number>
 	}
 >
 

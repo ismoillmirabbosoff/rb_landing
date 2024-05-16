@@ -7,29 +7,37 @@ import Divider from '@mui/material/Divider'
 import TabContext from '@mui/lab/TabContext'
 import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
-import type { PlanTypeProps } from '@/types/plan'
+import type { PlanTypeProps, PlatformTypeProps } from '@/types/plan'
 import RadioGroup from '@mui/material/RadioGroup'
 import { IconRemove } from '@/assets/icons/remove'
 import { numberFormat } from '@/utils/number-format'
 import { useState, type SyntheticEvent } from 'react'
 import { IconInfinity } from '@/assets/icons/infinity'
 import { IconTickSolid } from '@/assets/icons/tick-solid'
-import FormControlLabel from '@mui/material/FormControlLabel'
 import { IconLinearGradient } from '@/assets/icons/linear-gradient'
 import { TAB_PLANS, PRICING_PLANS, PLAN_PLATFORMS } from '@/constants/plan'
-import { Card, Cards, TabList, Wrapper, Container, WrapDiscount } from './style'
+import {
+	Card,
+	Cards,
+	TabList,
+	Wrapper,
+	Container,
+	WrapLabel,
+	WrapDiscount,
+	FormControlLabel,
+} from './style'
 
 export const Plans = () => {
 	const { t } = useTranslation('common')
 	const [plan, setPlan] = useState<PlanTypeProps>('monthly')
-	const [platform, setPlatform] = useState('TELEGREM')
+	const [platform, setPlatform] = useState<PlatformTypeProps>(PLAN_PLATFORMS.TELEGRAM.platform)
 
 	const handleChangePlan = (_: SyntheticEvent, plan: PlanTypeProps) => {
 		setPlan(plan)
 	}
 
 	const handleChangePlatform = (_: SyntheticEvent, platform: string) => {
-		setPlatform(platform)
+		setPlatform(platform as PlatformTypeProps)
 	}
 
 	const content = (
@@ -100,7 +108,8 @@ export const Plans = () => {
 						onChange={handleChangePlatform}
 						sx={{
 							width: '100%',
-							justifyContent: 'space-between',
+							gap: { xs: '0 30px', md: 0 },
+							justifyContent: { xs: 'center', md: 'space-between' },
 						}}
 					>
 						{Object.values(PLAN_PLATFORMS).map((p, i) => (
@@ -109,10 +118,10 @@ export const Plans = () => {
 								value={p.platform}
 								control={<Radio />}
 								label={
-									<Stack gap='9px' direction='row' alignItems='center'>
+									<WrapLabel>
 										{p.icon}
 										{p.title}
-									</Stack>
+									</WrapLabel>
 								}
 							/>
 						))}
@@ -124,7 +133,7 @@ export const Plans = () => {
 							aria-label='plans'
 							onChange={handleChangePlan}
 							sx={{
-								marginBottom: '47px',
+								mb: { xs: '28px', md: '47px' },
 							}}
 						>
 							{Object.values(TAB_PLANS).map(({ label, value, discount }) => (
@@ -133,7 +142,9 @@ export const Plans = () => {
 									value={value}
 									label={
 										<Stack gap='5px' direction='row' alignItems='center'>
-											<Typography component='h4'>{t(label)}</Typography>
+											<Typography variant='inherit' component='h4'>
+												{t(label)}
+											</Typography>
 											{discount > 0 && <WrapDiscount>-{discount} %</WrapDiscount>}
 										</Stack>
 									}
@@ -143,7 +154,7 @@ export const Plans = () => {
 					</Stack>
 					<Cards>
 						{Object.values(PRICING_PLANS).map((p, index: number) => {
-							const price = p.price
+							const price = p.price[platform]
 							const discountPrice = (price * (100 - TAB_PLANS[plan].discount)) / 100
 
 							return (
@@ -197,6 +208,7 @@ export const Plans = () => {
 										{content('access', p.discount, 'discount')}
 										{content('count', p.branch, 'branch')}
 										{content('count', p.mailing, 'mailing')}
+										{content('count', p.employee, 'employee')}
 										{content('access', p.chat, 'chat')}
 										{content('access', p.stock, 'stock')}
 										{content('full', p.analytics, 'analytics')}

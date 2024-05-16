@@ -38,9 +38,14 @@ export const PRICING_PLANS: PricingPlanProps = {
 		chat: true,
 		stock: false,
 		analytics: false,
+		employee: 2,
 		export: false,
-		price: 200000,
 		type: 'BASIC',
+		price: {
+			TELEGRAM: 200000,
+			WEBSITE: 200000,
+			TELEGRAM_WEBSITE: 300000,
+		},
 		color: 'PURPLE',
 	},
 	PROFESSIONAL: {
@@ -58,8 +63,13 @@ export const PRICING_PLANS: PricingPlanProps = {
 		stock: true,
 		analytics: true,
 		export: false,
-		price: 400000,
 		type: 'PROFESSIONAL',
+		employee: 5,
+		price: {
+			TELEGRAM: 400000,
+			WEBSITE: 400000,
+			TELEGRAM_WEBSITE: 600000,
+		},
 		color: 'GREEN',
 	},
 	ENTERPRISE: {
@@ -77,24 +87,29 @@ export const PRICING_PLANS: PricingPlanProps = {
 		stock: true,
 		analytics: true,
 		export: true,
-		price: 700000,
+		employee: -1,
 		type: 'ENTERPRISE',
+		price: {
+			TELEGRAM: 700000,
+			WEBSITE: 700000,
+			TELEGRAM_WEBSITE: 900000,
+		},
 		color: 'ORANGE',
 	},
 }
 
 export const PLAN_PLATFORMS: PlatformProps = {
-	TELEGREM: {
+	TELEGRAM: {
 		title: 'Telegram',
 		icon: <IconTelegramOutline />,
-		platform: 'TELEGREM',
+		platform: 'TELEGRAM',
 	},
 	WEBSITE: {
 		title: 'Website',
 		icon: <IconGlobal />,
 		platform: 'WEBSITE',
 	},
-	TELEGREM_WEBSITE: {
+	TELEGRAM_WEBSITE: {
 		title: 'Telegram + Website',
 		icon: (
 			<>
@@ -102,6 +117,6 @@ export const PLAN_PLATFORMS: PlatformProps = {
 				<IconGlobal />
 			</>
 		),
-		platform: 'TELEGREM_WEBSITE',
+		platform: 'TELEGRAM_WEBSITE',
 	},
 }

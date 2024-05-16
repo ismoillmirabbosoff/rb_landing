@@ -217,6 +217,10 @@ export const theme = createTheme({
 			fontSize: '22px',
 			fontWeight: 500,
 			lineHeight: '32px',
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '14px',
+				fontWeight: 400,
+			},
 		},
 		title110: {
 			fontSize: '18px',
@@ -286,6 +290,9 @@ export const theme = createTheme({
 			fontSize: '14px',
 			lineHeight: 'normal',
 			color: palette.colors.BLACK20,
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '13px',
+			},
 		},
 		text50: {
 			fontWeight: 500,
@@ -324,6 +331,10 @@ export const theme = createTheme({
 			fontSize: '16px',
 			lineHeight: '27px',
 			color: palette.colors.GRAY10,
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '12px',
+				lineHeight: '17px',
+			},
 		},
 		text100: {
 			fontWeight: 500,
@@ -386,6 +397,9 @@ export const theme = createTheme({
 				sizeSmall: {
 					height: 38,
 					borderRadius: '4px',
+					[defaultCreateTheme.breakpoints.down('md')]: {
+						height: 35,
+					},
 				},
 				root: ({ theme }) => ({
 					fontWeight: 500,
@@ -572,6 +586,9 @@ export const theme = createTheme({
 					'::before': {
 						height: 0,
 					},
+					[defaultCreateTheme.breakpoints.down('md')]: {
+						borderRadius: '4px',
+					},
 				}),
 			},
 		},
@@ -579,6 +596,9 @@ export const theme = createTheme({
 			styleOverrides: {
 				root: {
 					padding: '0 40px 33px',
+					[defaultCreateTheme.breakpoints.down('md')]: {
+						padding: '0px 14px 13px 14px',
+					},
 				},
 			},
 		},
@@ -589,6 +609,24 @@ export const theme = createTheme({
 			styleOverrides: {
 				root: {
 					padding: '14px 14px 14px 40px',
+					[defaultCreateTheme.breakpoints.down('md')]: {
+						padding: '9px 14px',
+						minHeight: '10px !important',
+					},
+				},
+				expandIconWrapper: {
+					svg: {
+						[defaultCreateTheme.breakpoints.down('md')]: {
+							width: '24px',
+							height: '24px',
+						},
+					},
+				},
+				content: {
+					margin: '0 !important',
+					'.Mui-expanded': {
+						margin: '0 !important',
+					},
 				},
 			},
 		},

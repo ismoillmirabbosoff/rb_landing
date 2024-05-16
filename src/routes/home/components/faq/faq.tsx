@@ -19,39 +19,52 @@ export const Faq = () => {
 	return (
 		<Container>
 			<Wrapper>
-				<Typography mb='15px' variant='title30' component='h2'>
+				<Typography
+					component='h2'
+					variant='title30'
+					mb={{
+						xs: '7px',
+						md: '15px',
+					}}
+				>
 					Frequently asked questions
 				</Typography>
-				<Typography mb='70px' variant='text' component='h3' color='colors.GRAY10'>
+				<Typography
+					variant='text'
+					component='h3'
+					color='colors.GRAY10'
+					mb={{ xs: '30px', md: '70px' }}
+				>
 					Everything you need to know about the product and billing.
 				</Typography>
-				<Stack gap='40px' direction='row'>
-					<Stack gap='15px'>
-						{FAQ.map(({ text, title }, i: number) => {
-							const isExpanded = expanded === i
-							return (
-								<Accordion key={i} expanded={isExpanded} onChange={handleChange(i)}>
-									<AccordionSummary
-										id={`${i}-header`}
-										aria-controls={`${i}-content`}
-										expandIcon={isExpanded ? <IconMinus /> : undefined}
-									>
-										<Typography variant='title100' component='h4'>
-											{title}
-										</Typography>
-									</AccordionSummary>
-									<AccordionDetails>
-										<Divider
-											sx={theme => ({ mb: '17px', borderColor: theme.palette.colors.GRAY160 })}
-										/>
-										<Typography variant='text90' component='p' pr='50px'>
-											{text}
-										</Typography>
-									</AccordionDetails>
-								</Accordion>
-							)
-						})}
-					</Stack>
+				<Stack gap={{ xs: '8px', md: '15px' }}>
+					{FAQ.map(({ text, title }, i: number) => {
+						const isExpanded = expanded === i
+						return (
+							<Accordion key={i} expanded={isExpanded} onChange={handleChange(i)}>
+								<AccordionSummary
+									id={`${i}-header`}
+									aria-controls={`${i}-content`}
+									expandIcon={isExpanded ? <IconMinus /> : undefined}
+								>
+									<Typography variant='title100' component='h4'>
+										{title}
+									</Typography>
+								</AccordionSummary>
+								<AccordionDetails>
+									<Divider
+										sx={theme => ({
+											mb: { xs: '9px', md: '17px' },
+											borderColor: theme.palette.colors.GRAY160,
+										})}
+									/>
+									<Typography variant='text90' component='p' pr={{ xs: '0', md: '50px' }}>
+										{text}
+									</Typography>
+								</AccordionDetails>
+							</Accordion>
+						)
+					})}
 				</Stack>
 			</Wrapper>
 		</Container>
