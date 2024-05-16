@@ -201,6 +201,10 @@ export const theme = createTheme({
 			lineHeight: '22px',
 			letterSpacing: '0.35px',
 			color: palette.colors.BLACK,
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '11px',
+				lineHeight: '11px',
+			},
 		},
 		title90: {
 			fontSize: '28px',

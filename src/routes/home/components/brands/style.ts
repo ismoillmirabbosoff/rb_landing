@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import MuiAvatar from '@mui/material/Avatar'
 import { styled } from '@mui/material/styles'
 
 export const Container = styled('section')`
@@ -15,6 +16,24 @@ export const Wrapper = styled('div')`
 	flex-direction: column;
 	justify-content: space-between;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			padding: '0 18px 80px',
+		},
+	})}
+`
+
+export const Cards = styled('ul')`
+	gap: 20px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			gap: '8px',
+			gridTemplateColumns: 'repeat(3, 1fr)',
+		},
+	})}
 `
 
 export const Card = styled(motion.li)`
@@ -27,4 +46,23 @@ export const Card = styled(motion.li)`
 	background: ${({ theme }) => theme.palette.colors.WHITE};
 	border: 1px solid ${({ theme }) => theme.palette.colors.GRAY60};
 	box-shadow: 0px 2px 50px 0px ${({ theme }) => theme.palette.colors.GRAY80};
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			gap: '4px',
+			padding: '9px 18px',
+			borderRadius: '4px',
+		},
+	})}
+`
+
+export const Avatar = styled(MuiAvatar)`
+	width: 60px;
+	height: 60px;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			width: '24px',
+			height: '24px',
+			fontSize: '11px',
+		},
+	})}
 `
