@@ -14,6 +14,11 @@ export const Wrapper = styled('div')`
 	flex-direction: column;
 	justify-content: space-between;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			padding: '13px 18px 24px',
+		},
+	})}
 `
 
 export const Card = styled('div')`
@@ -29,6 +34,7 @@ export const Card = styled('div')`
 		${({ theme }) => ({
 			[theme.breakpoints.down('md')]: {
 				width: '100%',
+				minHeight: '460px',
 			},
 		})};
 	}

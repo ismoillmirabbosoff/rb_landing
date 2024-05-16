@@ -16,6 +16,7 @@ export const Wrapper = styled('div')`
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
+			padding: '0 18px 60px',
 			gridTemplateColumns: '100%',
 		},
 	})};
@@ -43,6 +44,7 @@ export const WrapContent = styled('div')`
 	width: 100%;
 	height: 100%;
 	cursor: pointer;
+	min-height: 350px;
 	position: relative;
 	border-radius: 20px;
 	transition: box-shadow 0.3s;
