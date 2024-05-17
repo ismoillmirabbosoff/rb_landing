@@ -12,4 +12,22 @@ export const Wrapper = styled('div')`
 	display: flex;
 	flex-direction: column;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			padding: '0 18px',
+		},
+	})}
+`
+
+export const Cards = styled('div')`
+	gap: 20px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			gap: '10px',
+			gridTemplateColumns: '1fr',
+		},
+	})};
 `

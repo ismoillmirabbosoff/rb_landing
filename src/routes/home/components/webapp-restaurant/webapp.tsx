@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography'
 import ImageIphone from '@/assets/images/iphone.webp'
 import { useInView } from 'react-intersection-observer'
 import { IconLinearGradient } from '@/assets/icons/linear-gradient'
-import { Content, Wrapper, Container, WrapImage, WrapCircle } from './style'
+import { Content, Wrapper, Container, WrapImage, WrapCircle, WrapContent } from './style'
 
 const variants = {
 	closed: { width: '100%', marginRight: 0 },
@@ -63,15 +63,7 @@ export const WebappRestaurant = () => {
 								/>
 							</WrapCircle>
 						</motion.div>
-						<motion.div
-							style={{
-								paddingTop: '60px',
-								opacity: view.inView ? '1' : '0',
-								width: view.inView ? '50%' : '0',
-								transform: view.inView ? 'none' : 'translateX(2000px)',
-								transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
-							}}
-						>
+						<WrapContent isView={view.inView}>
 							<Typography variant='title10' component='h2'>
 								{t('robo_restaurant')}
 							</Typography>
@@ -98,7 +90,7 @@ export const WebappRestaurant = () => {
 							<Box>
 								<Button sx={{ minWidth: '183px' }}>{t('try_it_out')}</Button>
 							</Box>
-						</motion.div>
+						</WrapContent>
 					</WrapImage>
 				</Box>
 			</Wrapper>

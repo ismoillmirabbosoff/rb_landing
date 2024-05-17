@@ -16,4 +16,9 @@ export const Wrapper = styled('div')`
 	flex-direction: column;
 	justify-content: space-between;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			padding: '66px 18px 26px',
+		},
+	})}
 `

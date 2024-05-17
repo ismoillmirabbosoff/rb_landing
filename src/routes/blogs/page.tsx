@@ -1,10 +1,11 @@
 import Link from 'next/link'
-import { Blog } from '@/components/blog'
+import { BLOGS } from '@/constants/blog'
 import Button from '@mui/material/Button'
 import { ROUTER } from '@/constants/router'
-import { Wrapper, Container } from './style'
 import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
+import { CardBlog } from '@/components/card-blog'
+import { Cards, Wrapper, Container } from './style'
 import { IconArrowLeft } from '@/assets/icons/arrow-left'
 
 export const Blogs = () => {
@@ -26,7 +27,11 @@ export const Blogs = () => {
 				<Typography m='3px 0 12px' variant='title120' component='h2'>
 					{t('blogs')}
 				</Typography>
-				<Blog />
+				<Cards>
+					{BLOGS.map((b, i: number) => (
+						<CardBlog key={i} {...b} />
+					))}
+				</Cards>
 			</Wrapper>
 		</Container>
 	)

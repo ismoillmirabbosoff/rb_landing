@@ -7,12 +7,12 @@ import { Logo } from '@/components/logo'
 import Divider from '@mui/material/Divider'
 import { NAVBAR } from '@/constants/navbar'
 import { useTranslation } from 'next-i18next'
+import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import { Wrapper, Container, WrapImage } from './style'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import ImageBgFooter from '@/assets/images/bg-footer.webp'
 import ImageBgFooterMb from '@/assets/images/bg-footer-mb.webp'
-import { useTheme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
 
 export const Footer = () => {
 	const date = new Date()

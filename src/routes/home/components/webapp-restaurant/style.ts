@@ -17,6 +17,11 @@ export const Wrapper = styled('div')`
 	flex-direction: column;
 	justify-content: space-between;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			padding: '0 18px',
+		},
+	})}
 `
 
 export const Content = styled('div')`
@@ -34,6 +39,12 @@ export const WrapImage = styled('div')`
 	width: 100%;
 	display: flex;
 	position: relative;
+	flex-direction: column;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			flexDirection: 'column',
+		},
+	})}
 	.scroll {
 		top: 10%;
 		width: 100%;
@@ -58,4 +69,20 @@ export const WrapCircle = styled(motion.div)`
 		position: absolute;
 		background: linear-gradient(180deg, #5d59f01a, #5d59f000);
 	}
+`
+interface WrapContentProps {
+	isView: boolean
+}
+
+export const WrapContent = styled(motion.div)<WrapContentProps>`
+	${({ theme, isView }) => ({
+		paddingTop: '60px',
+		opacity: isView ? '1' : '0',
+		width: isView ? '50%' : '0',
+		transform: isView ? 'none' : 'translateX(2000px)',
+		transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+		[theme.breakpoints.down('md')]: {
+			width: isView ? '100%' : '0',
+		},
+	})}
 `

@@ -18,7 +18,12 @@ export const WebappShop = () => {
 	return (
 		<Container>
 			<Wrapper>
-				<Stack ref={view.ref} width='100%' direction='row' justifyContent='space-between'>
+				<Stack
+					ref={view.ref}
+					width='100%'
+					justifyContent='space-between'
+					direction={{ xs: 'column-reverse', md: 'row' }}
+				>
 					<Stack
 						pt='60px'
 						width='100%'

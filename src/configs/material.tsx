@@ -236,6 +236,9 @@ export const theme = createTheme({
 			fontSize: '24px',
 			fontWeight: 500,
 			lineHeight: 'normal',
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '16px',
+			},
 		},
 		title130: {
 			fontSize: '24px',
@@ -345,12 +348,19 @@ export const theme = createTheme({
 			fontSize: '18px',
 			lineHeight: '26px',
 			color: palette.colors.GRAY130,
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '14px',
+				lineHeight: '17px',
+			},
 		},
 		text110: {
 			fontWeight: 400,
 			fontSize: '14px',
 			lineHeight: '32px',
 			color: palette.colors.GRAY120,
+			[defaultCreateTheme.breakpoints.down('md')]: {
+				fontSize: '12px',
+			},
 		},
 		text120: {
 			fontWeight: 300,
@@ -445,8 +455,12 @@ export const theme = createTheme({
 						fontSize: '16px',
 						fontWeight: 400,
 						lineHeight: '35px',
-						letterSpacing: '0.216px,',
+						letterSpacing: '0.216px',
 						color: theme.palette.colors.GRAY50,
+						[defaultCreateTheme.breakpoints.down('md')]: {
+							fontSize: '14px',
+							letterSpacing: '0.189px',
+						},
 					}),
 				},
 			],
