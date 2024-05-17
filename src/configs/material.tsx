@@ -652,9 +652,15 @@ export const theme = createTheme({
 			styleOverrides: {
 				root: {
 					gap: '23px',
+					[defaultCreateTheme.breakpoints.down('md')]: {
+						justifyContent: 'space-between',
+					},
 				},
 				grouped: ({ theme }) => ({
 					borderRadius: '12px',
+					[defaultCreateTheme.breakpoints.down('md')]: {
+						borderRadius: '8px',
+					},
 					'&.Mui-selected': {
 						color: theme.palette.colors.GRAY130,
 						border: `1px solid ${theme.palette.colors.GREEN}`,

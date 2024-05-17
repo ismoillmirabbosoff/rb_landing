@@ -33,6 +33,11 @@ export const Content = styled('div')`
 	margin-bottom: 141px;
 	flex-direction: column;
 	justify-content: center;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			marginBottom: '72px',
+		},
+	})}
 `
 
 export const WrapImage = styled('div')`
@@ -58,6 +63,17 @@ export const WrapCircle = styled(motion.div)`
 	display: flex;
 	position: relative;
 	justify-content: center;
+	img {
+		min-width: 306px;
+		min-height: 680px;
+		${({ theme }) => ({
+			[theme.breakpoints.down('md')]: {
+				minWidth: '200px',
+				minHeight: '400px',
+				maxWidth: '200px !important',
+			},
+		})}
+	}
 	::after {
 		left: 0;
 		bottom: 0;
@@ -68,6 +84,13 @@ export const WrapCircle = styled(motion.div)`
 		border-radius: 50%;
 		position: absolute;
 		background: linear-gradient(180deg, #5d59f01a, #5d59f000);
+		${({ theme }) => ({
+			[theme.breakpoints.down('md')]: {
+				left: '45px',
+				height: '330px',
+				maxWidth: '330px',
+			},
+		})}
 	}
 `
 interface WrapContentProps {
@@ -83,6 +106,16 @@ export const WrapContent = styled(motion.div)<WrapContentProps>`
 		transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
 		[theme.breakpoints.down('md')]: {
 			width: isView ? '100%' : '0',
+		},
+	})}
+`
+
+export const WrapMobile = styled(motion.div)`
+	transition: all 0.5s ease-in-out;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			width: '100% !important',
+			marginRight: '0 !important',
 		},
 	})}
 `

@@ -62,7 +62,7 @@ export const WebappShop = () => {
 							<Button sx={{ minWidth: '183px' }}>{t('try_it_out')}</Button>
 						</Box>
 					</Stack>
-					<Stack maxWidth='477px'>
+					<Stack width='100%' maxWidth={{ xs: '100%', md: '477px' }}>
 						<Image fill alt='iphone-shop' src={ImageIphoneShop.src} />
 					</Stack>
 				</Stack>

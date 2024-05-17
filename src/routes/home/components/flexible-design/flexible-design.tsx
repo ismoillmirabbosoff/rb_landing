@@ -43,7 +43,7 @@ export const FlexibleDesign = () => {
 				<Typography mb='16px' variant='title20' component='h2'>
 					{t('adaptive_design')}
 				</Typography>
-				<Typography mb={{ md: '80px' }} variant='text' component='h3' maxWidth='707px'>
+				<Typography mb={{ xs: '50px', md: '80px' }} variant='text' component='h3' maxWidth='707px'>
 					{t(
 						'flexible_and_convenient_design_for_your_customers_visibility_of_large_number_of_products_on_one_page_and_advertising_banners',
 					)}
@@ -53,8 +53,17 @@ export const FlexibleDesign = () => {
 						{platform === 'telegram' ? (
 							<IconIphone />
 						) : (
-							<Stack alignItems='center'>
-								<Stack display='block' position='relative'>
+							<Stack
+								width='100%'
+								alignItems='center'
+								sx={{
+									'& > div > svg, & > svg': {
+										width: '100%',
+										height: '100%',
+									},
+								}}
+							>
+								<Stack width={{ xs: '100%', md: 'unset' }} display='block' position='relative'>
 									<IconMacbookBody />
 									<WrapImageBody>
 										<WrapImage>
@@ -79,10 +88,10 @@ export const FlexibleDesign = () => {
 					</Stack>
 					<Cards>
 						<Stack gap='14px' width='100%' component='li'>
-							<Typography variant='title110' component='h3'>
+							<Typography width='100%' variant='title110' component='h3'>
 								{t('platforms')}:
 							</Typography>
-							<Stack width='100%' maxWidth='390px'>
+							<Stack width='100%' maxWidth={{ xs: '100%', md: '390px' }}>
 								<ToggleButtonGroup
 									exclusive
 									fullWidth
@@ -119,10 +128,10 @@ export const FlexibleDesign = () => {
 							</Stack>
 						</Stack>
 						<Stack gap='14px' width='100%' component='li'>
-							<Typography variant='title110' component='h3'>
+							<Typography width='100%' variant='title110' component='h3'>
 								{t('design_types')}:
 							</Typography>
-							<Stack width='100%' maxWidth='390px'>
+							<Stack width='100%' maxWidth={{ xs: '100%', md: '390px' }}>
 								<ToggleButtonGroup
 									exclusive
 									fullWidth

@@ -14,6 +14,11 @@ export const Wrapper = styled('div')`
 	flex-direction: column;
 	justify-content: space-between;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			padding: '22px 18px 40px',
+		},
+	})}
 `
 
 export const WrapImageBody = styled('div')`
@@ -23,6 +28,11 @@ export const WrapImageBody = styled('div')`
 	height: 100%;
 	position: absolute;
 	padding: 15px 15px 35px;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			padding: '12px 12px 25px',
+		},
+	})};
 `
 
 export const WrapImage = styled('div')`
@@ -32,6 +42,12 @@ export const WrapImage = styled('div')`
 	position: relative;
 	border-radius: 10px 10px 0 0;
 	background: ${({ theme }) => theme.palette.colors.WHITE};
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			paddingTop: '10px',
+			borderRadius: '5px 5px 0 0',
+		},
+	})};
 `
 
 export const WrapCamera = styled('div')`
@@ -41,6 +57,14 @@ export const WrapCamera = styled('div')`
 	display: flex;
 	position: absolute;
 	justify-content: center;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			svg: {
+				width: '75px',
+				height: '12px',
+			},
+		},
+	})};
 `
 
 export const Wrap = styled('div')`
@@ -49,8 +73,7 @@ export const Wrap = styled('div')`
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
 			gap: '60px',
-			display: 'grid',
-			gridTemplateColumns: '1fr',
+			flexDirection: 'column-reverse',
 		},
 	})};
 `
@@ -63,8 +86,7 @@ export const Cards = styled('ul')`
 	flex-direction: column;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
-			gridRowEnd: 2,
-			gridRowStart: 1,
+			paddingTop: '0',
 			li: {
 				alignItems: 'center',
 			},

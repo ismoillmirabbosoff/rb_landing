@@ -10,7 +10,15 @@ import Typography from '@mui/material/Typography'
 import ImageIphone from '@/assets/images/iphone.webp'
 import { useInView } from 'react-intersection-observer'
 import { IconLinearGradient } from '@/assets/icons/linear-gradient'
-import { Content, Wrapper, Container, WrapImage, WrapCircle, WrapContent } from './style'
+import {
+	Content,
+	Wrapper,
+	Container,
+	WrapImage,
+	WrapCircle,
+	WrapContent,
+	WrapMobile,
+} from './style'
 
 const variants = {
 	closed: { width: '100%', marginRight: 0 },
@@ -43,26 +51,15 @@ export const WebappRestaurant = () => {
 				<Box width='100%'>
 					<WrapImage>
 						<div ref={view.ref} className='scroll' />
-						<motion.div
-							variants={variants}
-							animate={view.inView ? 'open' : 'closed'}
-							style={{
-								transition: 'all 0.5s ease-in-out',
-							}}
-						>
+						<WrapMobile variants={variants} animate={view.inView ? 'open' : 'closed'}>
 							<WrapCircle
 								style={{
 									padding: view.inView ? '0 130px' : 0,
 								}}
 							>
-								<Image
-									fill
-									src={ImageIphone.src}
-									alt='iphone-restaurant'
-									style={{ minHeight: '680px', minWidth: '306px' }}
-								/>
+								<Image fill src={ImageIphone.src} alt='iphone-restaurant' />
 							</WrapCircle>
-						</motion.div>
+						</WrapMobile>
 						<WrapContent isView={view.inView}>
 							<Typography variant='title10' component='h2'>
 								{t('robo_restaurant')}
