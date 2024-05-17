@@ -99,5 +99,9 @@
 	"view_all": "Посмотреть Все",
 	"back": "Назад",
 	"blogs": "Блоги",
-	"employee": "Сотрудник"
+	"employee": "Сотрудник",
+	"name_is_a_required_field": "Имя – обязательное поле",
+	"company_is_a_required_field": "Компания – обязательное поле",
+	"phone_number_is_invalid": "Номер телефона недействителен",
+	"phone_is_a_required_field": "Телефон – обязательное поле"
 }

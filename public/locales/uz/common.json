@@ -99,5 +99,9 @@
 	"view_all": "Hammasini Ko'rish",
 	"back": "Orqaga",
 	"blogs": "Bloglar",
-	"employee": "Xodim"
+	"employee": "Xodim",
+	"name_is_a_required_field": "Ism - majburiy maydon",
+	"company_is_a_required_field": "Kompaniya - bu majburiy maydon",
+	"phone_number_is_invalid": "Telefon raqami yaroqsiz",
+	"phone_is_a_required_field": "Telefon - bu majburiy maydon"
 }

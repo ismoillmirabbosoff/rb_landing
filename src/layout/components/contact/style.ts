@@ -13,7 +13,7 @@ export const Container = styled('footer')`
 	})}
 `
 
-export const Wrapper = styled('div')`
+export const Wrapper = styled('form')`
 	z-index: 0;
 	width: 100%;
 	display: flex;

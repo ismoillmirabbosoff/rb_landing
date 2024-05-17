@@ -1,41 +1,21 @@
 import Stack from '@mui/material/Stack'
-import { useForm } from 'react-hook-form'
 import Button from '@mui/material/Button'
+import { useContact } from './useContact'
 import Typography from '@mui/material/Typography'
 import { Input } from '@/components/inputs/input'
-import { object, string, type InferType } from 'yup'
-import { yupResolver } from '@hookform/resolvers/yup'
 import { InputPhone } from '@/components/inputs/input-phone'
 import { Wrapper, Container, WrapLinearGradientContact } from './style'
 import { IconLinearGradientContact } from '@/assets/icons/linear-gradient-contact'
 
-const schema = object().shape({
-	name: string().required().default(''),
-	company: string().required().default(''),
-	phone: string()
-		.test({
-			name: 'min length',
-			message: 'contact_number_is_invalid',
-			test: val => (val?.length === 0 ? true : val ? !val.includes('_') : undefined),
-		})
-		.default(''),
-})
-
-type SchemaType = InferType<typeof schema>
-
 export const Contact = () => {
-	const form = useForm<SchemaType>({
-		mode: 'onChange',
-		resolver: yupResolver(schema),
-		defaultValues: schema.cast({}),
-	})
+	const { form, onSubmit } = useContact()
 
 	return (
 		<Container id='contact'>
 			<WrapLinearGradientContact>
 				<IconLinearGradientContact />
 			</WrapLinearGradientContact>
-			<Wrapper>
+			<Wrapper onSubmit={form.handleSubmit(onSubmit)}>
 				<Stack p={{ xs: '0 9px', md: 0 }}>
 					<Typography variant='title90' component='h2'>
 						Still have questions?
@@ -86,7 +66,9 @@ export const Contact = () => {
 					/>
 				</Stack>
 				<Stack mt='23px' width='100%' alignItems='flex-end'>
-					<Button sx={{ minWidth: { xs: '100%', md: '183px' }, borderRadius: '9px' }}>Send</Button>
+					<Button type='submit' sx={{ minWidth: { xs: '100%', md: '183px' }, borderRadius: '9px' }}>
+						Send
+					</Button>
 				</Stack>
 			</Wrapper>
 		</Container>
