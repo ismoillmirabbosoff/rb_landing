@@ -39,7 +39,7 @@ export const WrapImage = styled('div')`
 	width: 100%;
 	display: flex;
 	position: relative;
-	flex-direction: column;
+	flex-direction: row;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
 			flexDirection: 'column',
