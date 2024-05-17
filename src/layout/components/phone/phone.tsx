@@ -4,12 +4,12 @@ import { IconCalling } from '@/assets/icons/calling'
 
 export const Phone = () => {
 	return (
-		<Stack gap='14px' component='a' direction='row' alignItems='center' href='tel:+998711234567'>
+		<Stack gap='14px' component='a' direction='row' alignItems='center' href='tel:+998781138212'>
 			<Stack justifyContent='center'>
 				<IconCalling />
 			</Stack>
 			<Typography variant='text70' component='h4'>
-				+998(71) 123 45 67
+				+998(78) 113 82 12
 			</Typography>
 		</Stack>
 	)
