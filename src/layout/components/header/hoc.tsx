@@ -2,11 +2,15 @@ import { Wrapper } from './style'
 import { useState, useEffect } from 'react'
 import { isServer } from '@/utils/is-server'
 import { useBoolean } from '@/hooks/useBoolean'
+import { useTheme } from '@mui/material/styles'
 import type { ChildrenProps } from '@/types/common'
+import useMediaQuery from '@mui/material/useMediaQuery'
 
 export const Hoc = ({ children }: ChildrenProps) => {
 	const { value, setValue } = useBoolean()
 	const [position, setPosition] = useState(isServer() ? 0 : window.pageYOffset)
+	const theme = useTheme()
+	const matches = useMediaQuery(theme.breakpoints.up('md'))
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -23,7 +27,7 @@ export const Hoc = ({ children }: ChildrenProps) => {
 	return (
 		<Wrapper
 			sx={{
-				top: value ? '-94px' : 0,
+				top: value && matches ? '-94px' : 0,
 			}}
 		>
 			{children}
