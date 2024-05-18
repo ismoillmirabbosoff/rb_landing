@@ -434,6 +434,9 @@ export const theme = createTheme({
 							height: '18px !important',
 						},
 					},
+					'.MuiLoadingButton-loadingIndicator': {
+						color: `${theme.palette.colors.WHITE}`,
+					},
 				}),
 			},
 			variants: [

@@ -1,5 +1,7 @@
 import dayjs from 'dayjs'
 import { useForm } from 'react-hook-form'
+import { useBoolean } from '@/hooks/useBoolean'
+import { phoneFormat } from '@/utils/format'
 import { object, string, type InferType } from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 
@@ -18,9 +20,11 @@ const schema = object().shape({
 
 type SchemaType = InferType<typeof schema>
 
-const URL = 'https://api.telegram.org/bot5863453084:AAFe57oruCXVUMacRlp2OfXTGDQeXhvABPw/sendMessage'
+const URL = 'https://api.telegram.org/bot6517679915:AAEbhiGxDM37BrlrHDfQCwieqxA1pHkPEnQ/sendMessage'
 
 export const useContact = () => {
+	const modal = useBoolean()
+	const { value, setTrue, setFalse } = useBoolean()
 	const form = useForm<SchemaType>({
 		mode: 'onChange',
 		resolver: yupResolver(schema),
@@ -28,25 +32,26 @@ export const useContact = () => {
 	})
 
 	const onSubmit = async (data: SchemaType) => {
-		const text = `Ismi: ${data.name}, Kompaniya: ${data.company},Telefon: ${data.phone},Sana: ${dayjs().format()}`
+		setTrue()
+		const text = `Ismi: ${data.name} \nKompaniya: ${data.company}\nTelefon: ${phoneFormat(data.phone)}\nSana: ${dayjs().format('YYYY-MM-DD HH:mm')}`
 		const body = { chat_id: -1002105690785, text }
 
 		try {
-			const res = await fetch(URL, {
+			await fetch(URL, {
 				method: 'POST',
-				body: JSON.stringify(body),
 				headers: {
 					'Content-Type': 'application/json',
-					'cache-control': 'no-cache',
 				},
+				body: JSON.stringify(body),
 			})
-			if (res.status === 200) {
-				console.log(res)
-			}
+
+			setFalse()
+			modal.setTrue()
+			form.reset(schema.cast({}))
 		} catch (error) {
-			console.log(error)
+			setFalse()
 		}
 	}
 
-	return { form, onSubmit }
+	return { form, value, modal, onSubmit }
 }
