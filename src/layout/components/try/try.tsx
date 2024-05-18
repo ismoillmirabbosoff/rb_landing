@@ -1,14 +1,19 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import Stack from '@mui/material/Stack'
 import { useRouter } from 'next/router'
 import Button from '@mui/material/Button'
 import { ROUTER } from '@/constants/router'
+import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
 import { IconTryBack } from '@/assets/icons/try-back'
 import { Wrapper, Container, WrapImage } from './style'
 import ImageProductTry from '@/assets/images/product-try.webp'
 
+const adminBaseURL = process.env.NEXT_PUBLIC_ADMIN_BASE_URL
+
 export const Try = () => {
+	const { t } = useTranslation('common')
 	const { pathname } = useRouter()
 	if (pathname === ROUTER.HOME) {
 		return null
@@ -33,7 +38,9 @@ export const Try = () => {
 						dolor sit amet consectetur. Quis fermentum accumsan a lectus.
 					</Typography>
 					<div>
-						<Button sx={{ minWidth: '183px' }}>Sinab Ko’rish</Button>
+						<Button target='_blank' component={Link} href={adminBaseURL} sx={{ minWidth: '183px' }}>
+							{t('try_it_out')}
+						</Button>
 					</div>
 				</Stack>
 				<WrapImage>

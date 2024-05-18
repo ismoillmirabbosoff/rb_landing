@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import Box from '@mui/material/Box'
 import { motion } from 'framer-motion'
@@ -10,6 +11,8 @@ import { IconTick } from '@/assets/icons/tick'
 import Typography from '@mui/material/Typography'
 import { useInView } from 'react-intersection-observer'
 import ImageIphoneShop from '@/assets/images/iphone-shop.webp'
+
+const adminBaseURL = process.env.NEXT_PUBLIC_ADMIN_BASE_URL
 
 export const WebappShop = () => {
 	const view = useInView({ threshold: 0 })
@@ -59,7 +62,14 @@ export const WebappShop = () => {
 							))}
 						</Stack>
 						<Box>
-							<Button sx={{ minWidth: '183px' }}>{t('try_it_out')}</Button>
+							<Button
+								target='_blank'
+								component={Link}
+								href={adminBaseURL}
+								sx={{ minWidth: '183px' }}
+							>
+								{t('try_it_out')}
+							</Button>
 						</Box>
 					</Stack>
 					<Stack width='100%' maxWidth={{ xs: '100%', md: '477px' }}>

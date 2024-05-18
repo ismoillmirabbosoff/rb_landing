@@ -27,6 +27,8 @@ import {
 	FormControlLabel,
 } from './style'
 
+const adminBaseURL = process.env.NEXT_PUBLIC_ADMIN_BASE_URL
+
 export const Plans = () => {
 	const { t } = useTranslation('common')
 	const [plan, setPlan] = useState<PlanTypeProps>('monthly')
@@ -196,7 +198,7 @@ export const Plans = () => {
 												{t(p.desc)}
 											</Typography>
 										</Stack>
-										<Button href={`${p.type}?plan=${plan}`} component={Link} size='small'>
+										<Button target='_blank' component={Link} href={adminBaseURL} size='small'>
 											{t('get_started')}
 										</Button>
 									</Stack>

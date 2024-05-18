@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Header } from './style'
 import { Phone } from '../phone'
 import { Navbar } from '../navbar'
@@ -12,6 +13,8 @@ import IconButton from '@mui/material/IconButton'
 import { IconRemove } from '@/assets/icons/remove'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import { SelectI18nLanguage } from '@/components/select-i18n-language'
+
+const adminBaseURL = process.env.NEXT_PUBLIC_ADMIN_BASE_URL
 
 export const Menu = () => {
 	const { t } = useTranslation('common')
@@ -49,7 +52,13 @@ export const Menu = () => {
 						<Phone />
 						<Social />
 					</Stack>
-					<Button variant='contained' sx={{ minWidth: '105px' }}>
+					<Button
+						target='_blank'
+						component={Link}
+						href={adminBaseURL}
+						variant='contained'
+						sx={{ minWidth: '105px' }}
+					>
 						{t('enter')}
 					</Button>
 				</Stack>

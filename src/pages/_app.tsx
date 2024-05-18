@@ -26,7 +26,7 @@ function App(props: RbLandingAppProps) {
 	return (
 		<>
 			<Head>
-				<title>Robosell</title>
+				<title>Robo</title>
 				<link rel='shortcut icon' href='/logo.svg' />
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 				<link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />

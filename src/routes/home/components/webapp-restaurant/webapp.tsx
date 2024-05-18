@@ -1,7 +1,7 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import Box from '@mui/material/Box'
 import { FEATURES } from './constants'
-import { motion } from 'framer-motion'
 import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
 import { useTranslation } from 'next-i18next'
@@ -19,6 +19,8 @@ import {
 	WrapContent,
 	WrapMobile,
 } from './style'
+
+const adminBaseURL = process.env.NEXT_PUBLIC_ADMIN_BASE_URL
 
 const variants = {
 	closed: { width: '100%', marginRight: 0 },
@@ -45,7 +47,9 @@ export const WebappRestaurant = () => {
 						{t('simplify_your_life_and_increase_your_business_income_with_robosell')}
 					</Typography>
 					<Box>
-						<Button sx={{ minWidth: '183px' }}>{t('try_it_out')}</Button>
+						<Button target='_blank' component={Link} href={adminBaseURL} sx={{ minWidth: '183px' }}>
+							{t('try_it_out')}
+						</Button>
 					</Box>
 				</Content>
 				<Box width='100%'>
