@@ -18,7 +18,7 @@ export const Wrapper = styled('div')`
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
-			padding: '0 18px 64px',
+			padding: '0 0 64px',
 		},
 	})}
 `
@@ -84,6 +84,7 @@ export const TabList = styled(MuiTabList)`
 			[theme.breakpoints.down('md')]: {
 				margin: '2.5px',
 				minHeight: '31px',
+				padding: '0 10px',
 			},
 		})}
 		.MuiTab-iconWrapper {
@@ -143,4 +144,11 @@ export const WrapLabel = styled('div')`
 			},
 		},
 	})};
+`
+
+export const Slider = styled('div')`
+	width: 100%;
+	display: flex;
+	position: relative;
+	flex-direction: column;
 `

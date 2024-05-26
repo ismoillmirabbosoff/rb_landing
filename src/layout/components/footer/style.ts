@@ -5,6 +5,7 @@ export const Container = styled('footer')`
 	display: flex;
 	position: relative;
 	justify-content: center;
+	background-color: ${({ theme }) => theme.palette.colors.BLACK};
 `
 
 export const Wrapper = styled('div')`
@@ -18,13 +19,4 @@ export const Wrapper = styled('div')`
 			padding: '0 18px',
 		},
 	})}
-`
-
-export const WrapImage = styled('div')`
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	position: absolute;
 `

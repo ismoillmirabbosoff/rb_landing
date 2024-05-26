@@ -91,7 +91,7 @@ export const FlexibleDesign = () => {
 							<Typography width='100%' variant='title110' component='h3'>
 								{t('platforms')}:
 							</Typography>
-							<Stack width='100%' maxWidth={{ xs: '100%', md: '390px' }}>
+							<Stack width='100%'>
 								<ToggleButtonGroup
 									exclusive
 									fullWidth
@@ -102,6 +102,9 @@ export const FlexibleDesign = () => {
 										'.MuiToggleButtonGroup-grouped': {
 											py: '8px',
 											gap: '12px',
+											[theme.breakpoints.down('md')]: {
+												gap: '4px',
+											},
 										},
 										'.MuiToggleButtonGroup-grouped.Mui-selected': {
 											svg: {

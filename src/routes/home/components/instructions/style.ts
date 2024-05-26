@@ -24,8 +24,8 @@ export const Wrapper = styled('div')`
 
 export const WrapPlay = styled(motion.div)`
 	gap: 12px;
+	z-index: 998;
 	display: flex;
-	z-index: 999;
 	padding: 0 22px;
 	cursor: pointer;
 	min-width: 260px;
@@ -85,8 +85,8 @@ export const WrapImage = styled('div')`
 
 export const WrapNumber = styled('div')`
 	z-index: 1;
-	width: 42px;
-	height: 42px;
+	min-width: 42px;
+	min-height: 42px;
 	display: flex;
 	font-size: 16px;
 	font-weight: 400;

@@ -44,6 +44,7 @@ interface TypographyProps {
 	text110: React.CSSProperties
 	text120: React.CSSProperties
 	text130: React.CSSProperties
+	text140: React.CSSProperties
 }
 
 declare module '@mui/material/Typography' {
@@ -77,6 +78,7 @@ declare module '@mui/material/Typography' {
 		text110: true
 		text120: true
 		text130: true
+		text140: true
 	}
 }
 
@@ -374,6 +376,12 @@ export const theme = createTheme({
 			lineHeight: 'normal',
 			color: palette.colors.BLACK40,
 		},
+		text140: {
+			fontWeight: 400,
+			fontSize: '16px',
+			lineHeight: '26px',
+			color: palette.colors.GRAY10,
+		},
 	}),
 	components: {
 		MuiSwipeableDrawer: {
@@ -656,6 +664,7 @@ export const theme = createTheme({
 				root: {
 					gap: '23px',
 					[defaultCreateTheme.breakpoints.down('md')]: {
+						gap: '10px',
 						justifyContent: 'space-between',
 					},
 				},
@@ -688,6 +697,7 @@ export const theme = createTheme({
 					},
 					[defaultCreateTheme.breakpoints.down('md')]: {
 						fontSize: '14px',
+						padding: '0 5px',
 					},
 				}),
 			},

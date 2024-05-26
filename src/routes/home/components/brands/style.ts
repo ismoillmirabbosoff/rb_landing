@@ -34,6 +34,9 @@ export const Cards = styled('ul')`
 			gridTemplateColumns: 'repeat(3, 1fr)',
 		},
 	})}
+	@media only screen and (max-width: 430px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
 `
 
 export const Card = styled(motion.li)`

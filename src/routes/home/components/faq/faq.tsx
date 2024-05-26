@@ -2,6 +2,7 @@ import { FAQ } from '@/constants/faq'
 import Stack from '@mui/material/Stack'
 import Divider from '@mui/material/Divider'
 import { Wrapper, Container } from './style'
+import { useTranslation } from 'next-i18next'
 import Accordion from '@mui/material/Accordion'
 import { IconMinus } from '@/assets/icons/minus'
 import Typography from '@mui/material/Typography'
@@ -10,6 +11,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 
 export const Faq = () => {
+	const { t } = useTranslation('common')
 	const [expanded, setExpanded] = useState<number | false>(false)
 
 	const handleChange = (panel: number) => (_: SyntheticEvent, isExpanded: boolean) => {
@@ -27,7 +29,7 @@ export const Faq = () => {
 						md: '15px',
 					}}
 				>
-					Frequently asked questions
+					{t('frequently_asked_questions')}
 				</Typography>
 				<Typography
 					variant='text'
@@ -35,7 +37,7 @@ export const Faq = () => {
 					color='colors.GRAY10'
 					mb={{ xs: '30px', md: '70px' }}
 				>
-					Everything you need to know about the product and billing.
+					{t('everything_you_need_to_know_about_the_product_and_billing')}
 				</Typography>
 				<Stack gap={{ xs: '8px', md: '15px' }}>
 					{FAQ.map(({ text, title }, i: number) => {

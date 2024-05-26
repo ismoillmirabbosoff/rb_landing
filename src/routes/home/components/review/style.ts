@@ -9,7 +9,7 @@ export const Container = styled('section')`
 	align-items: center;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
-			padding: '40px 18px 80px',
+			padding: '40px 0 80px',
 		},
 	})}
 `

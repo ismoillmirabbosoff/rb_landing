@@ -1,30 +1,20 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { Phone } from '../phone'
 import { Social } from '../social'
 import Stack from '@mui/material/Stack'
 import { Logo } from '@/components/logo'
 import Divider from '@mui/material/Divider'
 import { NAVBAR } from '@/constants/navbar'
+import { Wrapper, Container } from './style'
 import { useTranslation } from 'next-i18next'
-import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
-import { Wrapper, Container, WrapImage } from './style'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import ImageBgFooter from '@/assets/images/bg-footer.webp'
-import ImageBgFooterMb from '@/assets/images/bg-footer-mb.webp'
 
 export const Footer = () => {
 	const date = new Date()
-	const theme = useTheme()
 	const { t } = useTranslation('common')
-	const matches = useMediaQuery(theme.breakpoints.down('md'))
 
 	return (
 		<Container>
-			<WrapImage>
-				<Image fill alt='bg-footer' src={matches ? ImageBgFooterMb.src : ImageBgFooter.src} />
-			</WrapImage>
 			<Wrapper>
 				<Stack
 					gap='20px'

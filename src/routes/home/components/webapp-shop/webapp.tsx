@@ -24,6 +24,7 @@ export const WebappShop = () => {
 				<Stack
 					ref={view.ref}
 					width='100%'
+					alignItems='center'
 					justifyContent='space-between'
 					direction={{ xs: 'column-reverse', md: 'row' }}
 				>
@@ -42,7 +43,7 @@ export const WebappShop = () => {
 							{t('robo_shop')}
 						</Typography>
 						<Typography component='h3' variant='text10'>
-							{t('sell_products_online_and_via_messenger')}
+							{t('sell_products_on_your_own_website_and_through_the_telegram_messenger')}
 						</Typography>
 						<Stack gap='26px' m='28px 0 48px' component='ul'>
 							{FEATURES.map((f, i: number) => (
@@ -72,7 +73,7 @@ export const WebappShop = () => {
 							</Button>
 						</Box>
 					</Stack>
-					<Stack width='100%' maxWidth={{ xs: '100%', md: '477px' }}>
+					<Stack width='100%' maxWidth={{ xs: '339px', md: '477px' }}>
 						<Image fill alt='iphone-shop' src={ImageIphoneShop.src} />
 					</Stack>
 				</Stack>

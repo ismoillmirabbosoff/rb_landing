@@ -1,5 +1,5 @@
 import MaskedInput from 'react-text-mask'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import TextField from '@mui/material/TextField'
 import { type InputMaskProps } from '@/types/components'
 import { useController, type FieldValues } from 'react-hook-form'
@@ -17,7 +17,7 @@ export const InputMask = <T extends FieldValues>({
 	keepCharPositions,
 	...rest
 }: InputMaskProps<T>) => {
-	const { t } = useTranslation()
+	const { t } = useTranslation('common')
 
 	const {
 		field,

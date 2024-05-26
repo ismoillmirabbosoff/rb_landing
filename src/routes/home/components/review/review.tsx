@@ -23,7 +23,7 @@ export const Review = () => {
 			},
 			[`(max-width: ${theme.breakpoints.values.md}px)`]: {
 				slides: {
-					perView: 1.5,
+					perView: 1.2,
 					spacing: 12,
 				},
 			},

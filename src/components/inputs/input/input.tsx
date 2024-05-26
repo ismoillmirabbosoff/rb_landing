@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import TextField from '@mui/material/TextField'
 import { type InputProps } from '@/types/components'
 import { type FieldValues, useController } from 'react-hook-form'
@@ -10,7 +10,7 @@ export const Input = <T extends FieldValues>({
 	placeholder,
 	...props
 }: InputProps<T>) => {
-	const { t } = useTranslation()
+	const { t } = useTranslation('common')
 	const {
 		field: { ref, disabled, onChange, ...inputProps },
 		fieldState: { invalid, error },

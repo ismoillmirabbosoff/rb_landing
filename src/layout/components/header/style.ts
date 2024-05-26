@@ -12,7 +12,7 @@ export const Container = styled('div')`
 export const Wrapper = styled('header')`
 	top: 0;
 	width: 100%;
-	z-index: 999;
+	z-index: 1000;
 	height: 100%;
 	display: flex;
 	position: fixed;

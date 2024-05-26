@@ -4,8 +4,8 @@ import Stack from '@mui/material/Stack'
 import { useRouter } from 'next/router'
 import Button from '@mui/material/Button'
 import { ROUTER } from '@/constants/router'
-import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
+import { Trans, useTranslation } from 'next-i18next'
 import { IconTryBack } from '@/assets/icons/try-back'
 import { Wrapper, Container, WrapImage } from './style'
 import ImageProductTry from '@/assets/images/product-try.webp'
@@ -27,15 +27,19 @@ export const Try = () => {
 				</Stack>
 				<Stack gap='16px' p='57px 60px' width='50%'>
 					<Typography variant='title130' component='h3'>
-						Robosell orqali
-						<Typography px='5px' component='span' color='colors.PURPLE' variant='inherit'>
-							15 daqiqa
-						</Typography>
-						ichida o’z internet do’koningizni yarating
+						<Trans
+							i18nKey='create_your_online_store_with_robosell_in_just_15_minutes'
+							components={{
+								linkTag: (
+									<Typography px='5px' component='span' color='colors.PURPLE' variant='inherit' />
+								),
+							}}
+						/>
 					</Typography>
 					<Typography variant='text60' component='h4' color='colors.GRAY10'>
-						Lorem ipsum dolor sit amet consectetur. Quis fermentum accumsan a lectus. Lorem ipsum
-						dolor sit amet consectetur. Quis fermentum accumsan a lectus.
+						{t(
+							'become_the_new_model_of_online_business_success_by_selling_products_or_services_anywhere_and_to_any_audience',
+						)}
 					</Typography>
 					<div>
 						<Button target='_blank' component={Link} href={adminBaseURL} sx={{ minWidth: '183px' }}>

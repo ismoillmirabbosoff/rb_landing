@@ -86,7 +86,7 @@ export const WrapCircle = styled(motion.div)`
 		background: linear-gradient(180deg, #5d59f01a, #5d59f000);
 		${({ theme }) => ({
 			[theme.breakpoints.down('md')]: {
-				left: '45px',
+				left: 'unset',
 				height: '330px',
 				maxWidth: '330px',
 			},

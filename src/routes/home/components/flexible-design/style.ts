@@ -87,6 +87,7 @@ export const Cards = styled('ul')`
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
 			paddingTop: '0',
+			minWidth: '100%',
 			li: {
 				alignItems: 'center',
 			},

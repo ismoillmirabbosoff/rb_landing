@@ -3,6 +3,7 @@ import Stack from '@mui/material/Stack'
 import { useContact } from './useContact'
 import Dialog from '@mui/material/Dialog'
 import Button from '@mui/material/Button'
+import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
 import { Input } from '@/components/inputs/input'
 import LoadingButton from '@mui/lab/LoadingButton'
@@ -11,6 +12,7 @@ import { Wrapper, Container, WrapLinearGradientContact } from './style'
 import { IconLinearGradientContact } from '@/assets/icons/linear-gradient-contact'
 
 export const Contact = () => {
+	const { t } = useTranslation('common')
 	const { form, value, modal, onSubmit } = useContact()
 
 	return (
@@ -22,10 +24,12 @@ export const Contact = () => {
 				<Wrapper onSubmit={form.handleSubmit(onSubmit)}>
 					<Stack p={{ xs: '0 9px', md: 0 }}>
 						<Typography variant='title90' component='h2'>
-							Still have questions?
+							{t('do_you_still_have_questions')}
 						</Typography>
 						<Typography align='center' variant='text80' component='h3'>
-							Can’t find the answer you’re looking for? Please chat to our friendly team.
+							{t(
+								'can_t_find_the_answer_you_are_looking_for_contact_our_responsive_team_for_support',
+							)}
 						</Typography>
 					</Stack>
 					<Stack
@@ -44,23 +48,23 @@ export const Contact = () => {
 						<Input
 							fullWidth
 							name='name'
-							label='Name'
+							label='name'
 							control={form.control}
-							placeholder='Enter name'
+							placeholder='enter_name'
 						/>
 						<Input
 							fullWidth
 							name='company'
-							label='Company'
+							label='company'
 							control={form.control}
-							placeholder='Enter company'
+							placeholder='enter_company'
 						/>
 						<InputPhone
 							fullWidth
 							name='phone'
-							label='Phone number'
+							label='phone_number'
 							control={form.control}
-							placeholder='Enter phone number'
+							placeholder='enter_phone_number'
 							onPaste={async () => {
 								await navigator.clipboard.readText().then((number: string) => {
 									const phone = number.replace(/\s/g, '').replace(/^\+998/, '')
@@ -76,7 +80,7 @@ export const Contact = () => {
 							variant='contained'
 							sx={{ minWidth: { xs: '100%', md: '183px' }, borderRadius: '9px' }}
 						>
-							Send
+							{t('send')}
 						</LoadingButton>
 					</Stack>
 				</Wrapper>

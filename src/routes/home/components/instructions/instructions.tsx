@@ -50,13 +50,13 @@ export const Instructions = () => {
 								<IconPlay />
 							</Stack>
 							<Typography fontWeight='400' variant='title90' component='h5'>
-								Introduction
+								{t('instruction')}
 							</Typography>
 						</WrapPlay>
 					</WrapContent>
 					<Stack>
 						<Typography variant='title10' component='h2'>
-							{t('how_does_it_work')}
+							{t('how_does_robosell_work')}
 						</Typography>
 						<Typography mb='24px' component='h3' variant='text10'>
 							<Trans
@@ -96,7 +96,7 @@ export const Instructions = () => {
 					frameBorder='0'
 					title='YouTube video player'
 					referrerPolicy='strict-origin-when-cross-origin'
-					src='https://www.youtube.com/embed/7_N6dy-pHho?si=wmQgUqPexj38Y1BE'
+					src='https://www.youtube.com/embed/XepgHqR7V5o?si=In6kymykr8h86TYX'
 					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
 					style={{
 						width: '100%',

@@ -6,15 +6,18 @@ import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 import TabContext from '@mui/lab/TabContext'
 import { useTranslation } from 'next-i18next'
-import Typography from '@mui/material/Typography'
-import type { PlanTypeProps, PlatformTypeProps } from '@/types/plan'
-import RadioGroup from '@mui/material/RadioGroup'
-import { IconRemove } from '@/assets/icons/remove'
 import { numberFormat } from '@/utils/format'
+import { useTheme } from '@mui/material/styles'
+import Typography from '@mui/material/Typography'
+import RadioGroup from '@mui/material/RadioGroup'
+import { useKeenSlider } from 'keen-slider/react'
+import { IconRemove } from '@/assets/icons/remove'
 import { useState, type SyntheticEvent } from 'react'
 import { IconInfinity } from '@/assets/icons/infinity'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import { IconTickSolid } from '@/assets/icons/tick-solid'
 import { IconLinearGradient } from '@/assets/icons/linear-gradient'
+import type { PlanTypeProps, PlatformTypeProps } from '@/types/plan'
 import { TAB_PLANS, PRICING_PLANS, PLAN_PLATFORMS } from '@/constants/plan'
 import {
 	Card,
@@ -25,15 +28,26 @@ import {
 	WrapLabel,
 	WrapDiscount,
 	FormControlLabel,
+	Slider,
 } from './style'
 
 const adminBaseURL = process.env.NEXT_PUBLIC_ADMIN_BASE_URL
 
 export const Plans = () => {
+	const theme = useTheme()
 	const { t } = useTranslation('common')
+	const matches = useMediaQuery(theme.breakpoints.down('md'))
 	const [plan, setPlan] = useState<PlanTypeProps>('monthly')
 	const [platform, setPlatform] = useState<PlatformTypeProps>(PLAN_PLATFORMS.TELEGRAM.platform)
-
+	const [sliderRef] = useKeenSlider<HTMLDivElement>({
+		loop: true,
+		mode: 'free',
+		slides: { origin: 'center', perView: 1.2, spacing: 10 },
+		range: {
+			min: -5,
+			max: 5,
+		},
+	})
 	const handleChangePlan = (_: SyntheticEvent, plan: PlanTypeProps) => {
 		setPlan(plan)
 	}
@@ -87,50 +101,127 @@ export const Plans = () => {
 		)
 	}
 
+	const list = () => {
+		return (
+			<>
+				{Object.values(PRICING_PLANS).map((p, index: number) => {
+					const price = p.price[platform]
+					const discountPrice = (price * (100 - TAB_PLANS[plan].discount)) / 100
+
+					return (
+						<Card
+							key={index}
+							className='keen-slider__slide'
+							sx={theme => ({ borderColor: theme.palette.colors[p.color] })}
+						>
+							<Stack mb='14px' flexGrow={1}>
+								<Stack flexGrow={1}>
+									<Stack direction='row' alignItems='flex-end'>
+										{plan !== 'monthly' && (
+											<Typography
+												mr='5px'
+												variant='title60'
+												sx={theme => ({
+													color: theme.palette.colors.GRAY50,
+													textDecorationLine: 'line-through',
+												})}
+											>
+												{numberFormat(price)}{' '}
+												<Typography
+													fontSize='14px'
+													fontWeight='400'
+													component='span'
+													variant='inherit'
+												>
+													{t('soum')}
+												</Typography>
+											</Typography>
+										)}
+										<Typography variant='title70' component='h5'>
+											{numberFormat(discountPrice)}
+										</Typography>
+										<Typography ml='5px' variant='text40'>
+											{t('soum')}
+										</Typography>
+									</Stack>
+									<Typography mt='19px' variant='title60' color='colors.BLACK20'>
+										{t(p.title)}
+									</Typography>
+									<Typography m='3px 0 18px' variant='text40' color='colors.BLACK30'>
+										{t(p.desc)}
+									</Typography>
+								</Stack>
+								<Button target='_blank' component={Link} href={adminBaseURL} size='small'>
+									{t('get_started')}
+								</Button>
+							</Stack>
+							<Stack component='ul'>
+								{content('count', p.banner, 'banner')}
+								{content('access', p.promocode, 'promocode')}
+								{content('access', p.source, 'source')}
+								{content('count', p.product, 'product')}
+								{content('access', p.discount, 'discount')}
+								{content('count', p.branch, 'branch')}
+								{content('count', p.mailing, 'mailing')}
+								{content('count', p.employee, 'employee')}
+								{content('access', p.chat, 'chat')}
+								{content('access', p.stock, 'stock')}
+								{content('full', p.analytics, 'analytics')}
+								{content('access', p.export, 'export', true)}
+							</Stack>
+						</Card>
+					)
+				})}
+			</>
+		)
+	}
+
 	return (
 		<Container id='plans'>
 			<Wrapper>
-				<Stack position='relative' width='100%' alignItems='center'>
-					<Stack top='-90%' position='absolute' alignItems='center' zIndex='-1'>
-						<IconLinearGradient />
+				<Stack sx={{ px: { xs: '18px', md: '0' } }}>
+					<Stack position='relative' width='100%' alignItems='center'>
+						<Stack top='-90%' position='absolute' alignItems='center' zIndex='-1'>
+							<IconLinearGradient />
+						</Stack>
+						<Typography variant='title30' component='h2'>
+							{t('tariff_plans')}
+						</Typography>
+						<Typography variant='text' component='h3' maxWidth='871px' color='colors.GRAY10'>
+							{t(
+								'check_what_plan_is_best_for_you_we_care_about_your_convenience_in_using_the_application_so_you_can_update_your_plan_up_or_down_at_any_time',
+							)}
+						</Typography>
 					</Stack>
-					<Typography variant='title30' component='h2'>
-						{t('tariff_plans')}
-					</Typography>
-					<Typography variant='text' component='h3' maxWidth='871px' color='colors.GRAY10'>
-						{t(
-							'check_what_plan_is_best_for_you_we_care_about_your_convenience_in_using_the_application_so_you_can_update_your_plan_up_or_down_at_any_time',
-						)}
-					</Typography>
-				</Stack>
-				<Stack my='29px' width='100%' maxWidth='780px'>
-					<RadioGroup
-						row
-						value={platform}
-						onChange={handleChangePlatform}
-						sx={{
-							width: '100%',
-							gap: { xs: '0 30px', md: 0 },
-							justifyContent: { xs: 'center', md: 'space-between' },
-						}}
-					>
-						{Object.values(PLAN_PLATFORMS).map((p, i) => (
-							<FormControlLabel
-								key={i}
-								value={p.platform}
-								control={<Radio />}
-								label={
-									<WrapLabel>
-										{p.icon}
-										{p.title}
-									</WrapLabel>
-								}
-							/>
-						))}
-					</RadioGroup>
+					<Stack my='29px' width='100%' maxWidth='780px'>
+						<RadioGroup
+							row
+							value={platform}
+							onChange={handleChangePlatform}
+							sx={{
+								width: '100%',
+								gap: { xs: '0 30px', md: 0 },
+								justifyContent: { xs: 'center', md: 'space-between' },
+							}}
+						>
+							{Object.values(PLAN_PLATFORMS).map((p, i) => (
+								<FormControlLabel
+									key={i}
+									value={p.platform}
+									control={<Radio />}
+									label={
+										<WrapLabel>
+											{p.icon}
+											{p.title}
+										</WrapLabel>
+									}
+								/>
+							))}
+						</RadioGroup>
+					</Stack>
 				</Stack>
 				<TabContext value={plan}>
-					<Stack alignItems='center'>
+					<Stack sx={{ px: { xs: '18px', md: '0' } }} alignItems='center'>
 						<TabList
 							aria-label='plans'
 							onChange={handleChangePlan}
@@ -154,72 +245,15 @@ export const Plans = () => {
 							))}
 						</TabList>
 					</Stack>
-					<Cards>
-						{Object.values(PRICING_PLANS).map((p, index: number) => {
-							const price = p.price[platform]
-							const discountPrice = (price * (100 - TAB_PLANS[plan].discount)) / 100
-
-							return (
-								<Card key={index} sx={theme => ({ borderColor: theme.palette.colors[p.color] })}>
-									<Stack mb='14px' flexGrow={1}>
-										<Stack flexGrow={1}>
-											<Stack direction='row' alignItems='flex-end'>
-												{plan !== 'monthly' && (
-													<Typography
-														mr='5px'
-														variant='title60'
-														sx={theme => ({
-															color: theme.palette.colors.GRAY50,
-															textDecorationLine: 'line-through',
-														})}
-													>
-														{numberFormat(price)}{' '}
-														<Typography
-															fontSize='14px'
-															fontWeight='400'
-															component='span'
-															variant='inherit'
-														>
-															{t('soum')}
-														</Typography>
-													</Typography>
-												)}
-												<Typography variant='title70' component='h5'>
-													{numberFormat(discountPrice)}
-												</Typography>
-												<Typography ml='5px' variant='text40'>
-													{t('soum')}
-												</Typography>
-											</Stack>
-											<Typography mt='19px' variant='title60' color='colors.BLACK20'>
-												{t(p.title)}
-											</Typography>
-											<Typography m='3px 0 18px' variant='text40' color='colors.BLACK30'>
-												{t(p.desc)}
-											</Typography>
-										</Stack>
-										<Button target='_blank' component={Link} href={adminBaseURL} size='small'>
-											{t('get_started')}
-										</Button>
-									</Stack>
-									<Stack component='ul'>
-										{content('count', p.banner, 'banner')}
-										{content('access', p.promocode, 'promocode')}
-										{content('access', p.source, 'source')}
-										{content('count', p.product, 'product')}
-										{content('access', p.discount, 'discount')}
-										{content('count', p.branch, 'branch')}
-										{content('count', p.mailing, 'mailing')}
-										{content('count', p.employee, 'employee')}
-										{content('access', p.chat, 'chat')}
-										{content('access', p.stock, 'stock')}
-										{content('full', p.analytics, 'analytics')}
-										{content('access', p.export, 'export', true)}
-									</Stack>
-								</Card>
-							)
-						})}
-					</Cards>
+					{matches ? (
+						<Slider>
+							<div ref={sliderRef} className='keen-slider'>
+								{list()}
+							</div>
+						</Slider>
+					) : (
+						<Cards>{list()}</Cards>
+					)}
 				</TabContext>
 			</Wrapper>
 		</Container>

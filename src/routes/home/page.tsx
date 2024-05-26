@@ -8,8 +8,10 @@ import { Blogs } from './components/blogs'
 import { Brands } from './components/brands'
 import { Review } from './components/review'
 import { useTranslation } from 'next-i18next'
+import { useTheme } from '@mui/material/styles'
 import { WebappShop } from './components/webapp-shop'
 import { useInView } from 'react-intersection-observer'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import { Instructions } from './components/instructions'
 import { FlexibleDesign } from './components/flexible-design'
 import { WebappRestaurant } from './components/webapp-restaurant'
@@ -22,9 +24,12 @@ const Advantages = dynamic(async () => (await import('./components/advantages'))
 
 export const Home = () => {
 	const { t } = useTranslation('common')
-	const advantagesAndInstructions = useInView({ threshold: 0.3 })
-	const flexibleDesign = useInView({ threshold: 0.3 })
-	const webappRestaurantAndWebappShop = useInView({ threshold: 0.1 })
+	const theme = useTheme()
+	const matches = useMediaQuery(theme.breakpoints.down('md'))
+	const threshold = matches ? 0.1 : 0.3
+	const advantagesAndInstructions = useInView({ threshold })
+	const flexibleDesign = useInView({ threshold })
+	const webappRestaurantAndWebappShop = useInView({ threshold })
 
 	return (
 		<>
@@ -61,7 +66,7 @@ export const Home = () => {
 				<WebappRestaurant />
 				<WebappShop />
 			</Stack>
-			<video autoPlay loop muted>
+			<video id='videoID' playsInline autoPlay loop muted>
 				<source src={`${mediaBaseURL}/${t('chat_video')}`} type='video/mp4' />
 			</video>
 			<Review />
