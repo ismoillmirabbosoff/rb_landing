@@ -284,7 +284,7 @@ export const theme = createTheme({
 		},
 		text30: {
 			fontWeight: 400,
-			fontSize: '18px',
+			fontSize: '14px',
 			lineHeight: '35px',
 			letterSpacing: '0.063px',
 			color: palette.colors.GRAY10,
