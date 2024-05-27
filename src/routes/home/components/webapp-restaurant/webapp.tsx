@@ -89,7 +89,7 @@ export const WebappRestaurant = () => {
 								))}
 							</Stack>
 							<Box>
-								<Button sx={{ minWidth: '183px' }}>{t('try_it')}</Button>
+								<Button sx={{ minWidth: '183px' }}>{t('start')}</Button>
 							</Box>
 						</WrapContent>
 					</WrapImage>

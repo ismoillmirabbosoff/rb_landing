@@ -69,7 +69,7 @@ export const WebappShop = () => {
 								href={adminBaseURL}
 								sx={{ minWidth: '183px' }}
 							>
-								{t('try_it')}
+								{t('start')}
 							</Button>
 						</Box>
 					</Stack>
