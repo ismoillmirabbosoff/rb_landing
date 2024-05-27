@@ -96,7 +96,7 @@ export const Instructions = () => {
 					frameBorder='0'
 					title='YouTube video player'
 					referrerPolicy='strict-origin-when-cross-origin'
-					src='https://www.youtube.com/embed/XepgHqR7V5o?si=In6kymykr8h86TYX'
+					src='https://www.youtube.com/embed/XepgHqR7V5o?si=In6kymykr8h86TYX&rel=0'
 					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
 					style={{
 						width: '100%',
