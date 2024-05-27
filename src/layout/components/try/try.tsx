@@ -43,7 +43,7 @@ export const Try = () => {
 					</Typography>
 					<div>
 						<Button target='_blank' component={Link} href={adminBaseURL} sx={{ minWidth: '183px' }}>
-							{t('try_it_out')}
+							{t('try_it')}
 						</Button>
 					</div>
 				</Stack>

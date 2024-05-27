@@ -48,7 +48,7 @@ export const WebappRestaurant = () => {
 					</Typography>
 					<Box>
 						<Button target='_blank' component={Link} href={adminBaseURL} sx={{ minWidth: '183px' }}>
-							{t('try_it_out')}
+							{t('try_it')}
 						</Button>
 					</Box>
 				</Content>
@@ -89,7 +89,7 @@ export const WebappRestaurant = () => {
 								))}
 							</Stack>
 							<Box>
-								<Button sx={{ minWidth: '183px' }}>{t('try_it_out')}</Button>
+								<Button sx={{ minWidth: '183px' }}>{t('try_it')}</Button>
 							</Box>
 						</WrapContent>
 					</WrapImage>

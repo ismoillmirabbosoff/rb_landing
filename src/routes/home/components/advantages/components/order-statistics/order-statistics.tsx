@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { WrapOrders } from './style'
+import { Platform } from '../platform'
 import Stack from '@mui/material/Stack'
 import { Waypoint } from 'react-waypoint'
 import { useCountUp } from 'react-countup'
@@ -8,7 +9,6 @@ import { useTranslation } from 'react-i18next'
 import { PLATFORMS } from '@/constants/platform'
 import { IconDaily } from '@/assets/icons/daily'
 import Typography from '@mui/material/Typography'
-import { Linearprogress } from '../linear-progress'
 
 export const OrderStatistics = () => {
 	const countUpRef = useRef(null)
@@ -52,24 +52,9 @@ export const OrderStatistics = () => {
 					<Typography variant='text40'>Orders</Typography>
 				</Stack>
 				<Stack gap='18px' component='ul' width='100%'>
-					{PLATFORMS.map(({ Icon, value, label, color, bgcolor, percent, platform }) => (
-						<Stack key={platform} gap='13px' direction='row' component='li'>
-							<Stack justifyContent='center'>
-								<Icon />
-							</Stack>
-							<Stack gap='6px' flexGrow={1}>
-								<Stack direction='row' alignItems='center' justifyContent='space-between'>
-									<Typography variant='text130' component='h5'>
-										{t(label)}
-									</Typography>
-									<Typography variant='text130' component='h6' color='colors.GRAY50'>
-										{value}
-									</Typography>
-								</Stack>
-								<Stack>
-									<Linearprogress color={color} value={percent} bgcolor={bgcolor} />
-								</Stack>
-							</Stack>
+					{PLATFORMS.map(platform => (
+						<Stack key={platform.platform} gap='13px' direction='row' component='li'>
+							<Platform {...platform} />
 						</Stack>
 					))}
 				</Stack>

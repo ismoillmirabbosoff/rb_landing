@@ -4,7 +4,7 @@ import type { SVGProps, FunctionComponent } from 'react'
 import { IconTelegramFill } from '@/assets/icons/telegram-fill'
 import { IconInstagramFill } from '@/assets/icons/instagram-fill'
 
-interface PlatformsProps {
+export interface PlatformsProps {
 	label: string
 	value: number
 	percent: number
