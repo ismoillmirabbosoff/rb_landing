@@ -2,9 +2,9 @@ import Image from 'next/image'
 import Stack from '@mui/material/Stack'
 import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
-import { Wrapper, WrapImage, Container } from './style'
 import ImageMainBack from '@/assets/images/main-back.webp'
 import ImageRobosellDark from '@/assets/images/robosell-dark.webp'
+import { Wrapper, WrapImage, Container, WrapImageRobosellDark } from './style'
 
 export const Main = () => {
 	const { t } = useTranslation('common')
@@ -30,9 +30,9 @@ export const Main = () => {
 						<Image fill alt='main-back' src={ImageMainBack.src} />
 					</WrapImage>
 				</Stack>
-				<Stack flexGrow={1} sx={{ color: 'white' }} justifyContent='flex-end'>
+				<WrapImageRobosellDark>
 					<Image fill alt='robosell-dark' priority src={ImageRobosellDark.src} />
-				</Stack>
+				</WrapImageRobosellDark>
 			</Wrapper>
 		</Container>
 	)

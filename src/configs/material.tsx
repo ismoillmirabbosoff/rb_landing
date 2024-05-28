@@ -182,7 +182,7 @@ export const theme = createTheme({
 			WebkitBackgroundClip: 'text',
 			WebkitTextFillColor: 'transparent',
 			[defaultCreateTheme.breakpoints.down('md')]: {
-				fontSize: '22px',
+				fontSize: '24px',
 				lineHeight: '33px',
 			},
 		},
@@ -261,7 +261,7 @@ export const theme = createTheme({
 			letterSpacing: '0.324px',
 			color: palette.colors.GRAY,
 			[defaultCreateTheme.breakpoints.down('md')]: {
-				fontSize: '14px',
+				fontSize: '16px',
 				lineHeight: '20px',
 				letterSpacing: '0.049px',
 			},

@@ -5,6 +5,12 @@ export const Container = styled('div')`
 	& > header {
 		max-height: 94px;
 		min-height: 94px;
+		${({ theme }) => ({
+			[theme.breakpoints.down('md')]: {
+				maxHeight: '64px',
+				minHeight: '64px',
+			},
+		})}
 	}
 	background-color: ${({ theme }) => theme.palette.colors.BLACK10};
 `
@@ -31,7 +37,7 @@ export const Wrap = styled('div')`
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
-			padding: '7px 8px',
+			padding: '3px 8px',
 			borderRadius: '10px',
 			backdropFilter: 'blur(25px)',
 			background: theme.palette.colors.WHITE10,

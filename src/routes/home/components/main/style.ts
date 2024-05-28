@@ -18,7 +18,7 @@ export const Wrapper = styled('div')`
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
-			minHeight: '391px',
+			minHeight: 'calc(100vh - 124px)',
 		},
 	})};
 `
@@ -28,4 +28,12 @@ export const WrapImage = styled('div')`
 	width: 100vw;
 	height: 100%;
 	position: absolute;
+`
+
+export const WrapImageRobosellDark = styled('div')`
+	display: flex;
+	align-items: flex-end;
+	img {
+		min-height: 180px;
+	}
 `
