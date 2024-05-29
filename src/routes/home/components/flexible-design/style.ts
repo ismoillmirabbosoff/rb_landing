@@ -68,6 +68,7 @@ export const WrapCamera = styled('div')`
 `
 
 export const Wrap = styled('div')`
+	gap: 100px;
 	width: 100%;
 	display: flex;
 	${({ theme }) => ({
@@ -110,4 +111,30 @@ export const WrapIcon = styled('div')`
 			fill: ${({ theme }) => theme.palette.colors.GRAY120};
 		}
 	}
+`
+
+export const WrapMac = styled('div')`
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	& > div > svg,
+	& > svg {
+		width: 100%;
+		height: 100%;
+	}
+`
+
+export const WrapMacMobile = styled('div')`
+	right: -50px;
+	width: 250px;
+	position: absolute;
+	height: calc(100% - 25px);
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			right: 0,
+			top: '5px',
+			width: '100px',
+		},
+	})};
 `

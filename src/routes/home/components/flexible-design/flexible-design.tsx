@@ -4,8 +4,8 @@ import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
 import { useState, type MouseEvent } from 'react'
 import { IconCamera } from '@/assets/icons/camera'
-import { IconIphone } from '@/assets/icons/iphone'
 import { IconGlobal } from '@/assets/icons/global'
+import ImageIphone from '@/assets/images/iphone.webp'
 import ToggleButton from '@mui/material/ToggleButton'
 import { IconTelegram } from '@/assets/icons/telegram'
 import { IconMacbookBody } from '@/assets/icons/macbook-body'
@@ -22,6 +22,8 @@ import {
 	WrapImage,
 	WrapCamera,
 	WrapImageBody,
+	WrapMac,
+	WrapMacMobile,
 } from './style'
 
 export const FlexibleDesign = () => {
@@ -51,38 +53,38 @@ export const FlexibleDesign = () => {
 				<Wrap>
 					<Stack width='100%' flexGrow={1} alignItems='center'>
 						{platform === 'telegram' ? (
-							<IconIphone />
-						) : (
 							<Stack
-								width='100%'
-								alignItems='center'
-								sx={{
-									'& > div > svg, & > svg': {
-										width: '100%',
-										height: '100%',
-									},
-								}}
+								sx={{ height: { sx: '400px', md: '600px' }, width: { sx: '200px', md: '300px' } }}
 							>
-								<Stack width={{ xs: '100%', md: 'unset' }} display='block' position='relative'>
-									<IconMacbookBody />
-									<WrapImageBody>
-										<WrapImage>
-											<WrapCamera>
-												<IconCamera />
-											</WrapCamera>
-											<Image
-												fill
-												src={
-													platform === 'shop'
-														? ImageWebappWebsiteShop.src
-														: ImageWebappWebsiteRestaurant.src
-												}
-												alt='res'
-											/>
-										</WrapImage>
-									</WrapImageBody>
-								</Stack>
-								<IconMacbookFooter />
+								<Image fill src={ImageIphone.src} alt='iphone-restaurant' />
+							</Stack>
+						) : (
+							<Stack position='relative'>
+								<WrapMac>
+									<Stack width={{ xs: '100%', md: 'unset' }} display='block' position='relative'>
+										<IconMacbookBody />
+										<WrapImageBody>
+											<WrapImage>
+												<WrapCamera>
+													<IconCamera />
+												</WrapCamera>
+												<Image
+													fill
+													src={
+														platform === 'shop'
+															? ImageWebappWebsiteShop.src
+															: ImageWebappWebsiteRestaurant.src
+													}
+													alt='res'
+												/>
+											</WrapImage>
+										</WrapImageBody>
+									</Stack>
+									<IconMacbookFooter />
+								</WrapMac>
+								<WrapMacMobile>
+									<Image fill src={ImageIphone.src} alt='iphone-restaurant' />
+								</WrapMacMobile>
 							</Stack>
 						)}
 					</Stack>
