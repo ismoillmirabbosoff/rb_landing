@@ -6,8 +6,10 @@ import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
 import { useTranslation } from 'next-i18next'
 import { IconTick } from '@/assets/icons/tick'
+import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import ImageIphone from '@/assets/images/iphone.webp'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import { useInView } from 'react-intersection-observer'
 import { IconLinearGradient } from '@/assets/icons/linear-gradient'
 import {
@@ -28,8 +30,11 @@ const variants = {
 }
 
 export const WebappRestaurant = () => {
-	const view = useInView({ threshold: 0 })
+	const theme = useTheme()
+	const inView = useInView({ threshold: 0 })
 	const { t } = useTranslation('common')
+	const matches = useMediaQuery(theme.breakpoints.down('md'))
+	const view = inView.inView || matches
 
 	return (
 		<Container>
@@ -54,17 +59,17 @@ export const WebappRestaurant = () => {
 				</Content>
 				<Box width='100%'>
 					<WrapImage>
-						<div ref={view.ref} className='scroll' />
-						<WrapMobile variants={variants} animate={view.inView ? 'open' : 'closed'}>
+						<div ref={inView.ref} className='scroll' />
+						<WrapMobile variants={variants} animate={view ? 'open' : 'closed'}>
 							<WrapCircle
 								style={{
-									padding: view.inView ? '0 130px' : 0,
+									padding: view ? '0 130px' : 0,
 								}}
 							>
 								<Image fill src={ImageIphone.src} alt='iphone-restaurant' />
 							</WrapCircle>
 						</WrapMobile>
-						<WrapContent isView={view.inView}>
+						<WrapContent isView={view}>
 							<Typography variant='title10' component='h2'>
 								{t('robo_restaurant')}
 							</Typography>

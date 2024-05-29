@@ -4,9 +4,11 @@ import Dialog from '@mui/material/Dialog'
 import { INSTRUCTIONS } from './constants'
 import { IconPlay } from '@/assets/icons/play'
 import { useBoolean } from '@/hooks/useBoolean'
+import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import { Trans, useTranslation } from 'next-i18next'
 import ImageDisplay from '@/assets/images/display.webp'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import {
 	List,
 	Wrapper,
@@ -19,9 +21,11 @@ import {
 } from './style'
 
 export const Instructions = () => {
+	const theme = useTheme()
 	const mouse = useBoolean()
 	const modal = useBoolean()
 	const { t } = useTranslation('common')
+	const matches = useMediaQuery(theme.breakpoints.down('md'))
 
 	return (
 		<>
@@ -42,8 +46,8 @@ export const Instructions = () => {
 								scale: '1.1',
 							}}
 							style={{
-								bottom: mouse.value || modal.value ? 'calc(50% - 30px)' : '30px',
-								right: mouse.value || modal.value ? 'calc(50% - 130px)' : '-20px',
+								bottom: mouse.value || modal.value || matches ? 'calc(50% - 30px)' : '30px',
+								right: mouse.value || modal.value || matches ? 'calc(50% - 130px)' : '-20px',
 							}}
 						>
 							<Stack>

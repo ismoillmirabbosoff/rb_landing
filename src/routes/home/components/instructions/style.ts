@@ -28,6 +28,7 @@ export const WrapPlay = styled(motion.div)`
 	display: flex;
 	padding: 0 22px;
 	cursor: pointer;
+	min-height: 75px;
 	min-width: 260px;
 	width: fit-content;
 	position: absolute;
@@ -51,6 +52,11 @@ export const WrapContent = styled('div')`
 	:hover {
 		box-shadow: 4.639px -4.639px 28.995px ${({ theme }) => theme.palette.colors.GRAY210};
 	}
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			gridRowStart: 2,
+		},
+	})};
 `
 
 interface WrapImageContentProps {

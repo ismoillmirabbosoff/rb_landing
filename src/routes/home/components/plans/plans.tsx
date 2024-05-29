@@ -36,6 +36,7 @@ const adminBaseURL = process.env.NEXT_PUBLIC_ADMIN_BASE_URL
 export const Plans = () => {
 	const theme = useTheme()
 	const { t } = useTranslation('common')
+	const [currentSlide, setCurrentSlide] = useState(0)
 	const matches = useMediaQuery(theme.breakpoints.down('md'))
 	const [plan, setPlan] = useState<PlanTypeProps>('monthly')
 	const [platform, setPlatform] = useState<PlatformTypeProps>(PLAN_PLATFORMS.TELEGRAM.platform)
@@ -46,6 +47,9 @@ export const Plans = () => {
 		range: {
 			min: -5,
 			max: 5,
+		},
+		slideChanged(s) {
+			setCurrentSlide(s.track.details.rel)
 		},
 	})
 	const handleChangePlan = (_: SyntheticEvent, plan: PlanTypeProps) => {
@@ -109,67 +113,68 @@ export const Plans = () => {
 					const discountPrice = (price * (100 - TAB_PLANS[plan].discount)) / 100
 
 					return (
-						<Card
-							key={index}
-							className='keen-slider__slide'
-							sx={theme => ({ borderColor: theme.palette.colors[p.color] })}
-						>
-							<Stack mb='14px' flexGrow={1}>
-								<Stack flexGrow={1}>
-									<Stack direction='row' alignItems='flex-end'>
-										{plan !== 'monthly' && (
-											<Typography
-												mr='5px'
-												variant='title60'
-												sx={theme => ({
-													color: theme.palette.colors.GRAY50,
-													textDecorationLine: 'line-through',
-												})}
-											>
-												{numberFormat(price)}{' '}
+						<Stack key={index} className='keen-slider__slide'>
+							<Card
+								active={index === currentSlide}
+								sx={theme => ({ borderColor: theme.palette.colors[p.color] })}
+							>
+								<Stack mb='14px' flexGrow={1}>
+									<Stack flexGrow={1}>
+										<Stack direction='row' alignItems='flex-end'>
+											{plan !== 'monthly' && (
 												<Typography
-													fontSize='14px'
-													fontWeight='400'
-													component='span'
-													variant='inherit'
+													mr='5px'
+													variant='title60'
+													sx={theme => ({
+														color: theme.palette.colors.GRAY50,
+														textDecorationLine: 'line-through',
+													})}
 												>
-													{t('soum')}
+													{numberFormat(price)}{' '}
+													<Typography
+														fontSize='14px'
+														fontWeight='400'
+														component='span'
+														variant='inherit'
+													>
+														{t('soum')}
+													</Typography>
 												</Typography>
+											)}
+											<Typography variant='title70' component='h5'>
+												{numberFormat(discountPrice)}
 											</Typography>
-										)}
-										<Typography variant='title70' component='h5'>
-											{numberFormat(discountPrice)}
+											<Typography ml='5px' variant='text40'>
+												{t('soum')}
+											</Typography>
+										</Stack>
+										<Typography mt='19px' variant='title60' color='colors.BLACK20'>
+											{t(p.title)}
 										</Typography>
-										<Typography ml='5px' variant='text40'>
-											{t('soum')}
+										<Typography m='3px 0 18px' variant='text40' color='colors.BLACK30'>
+											{t(p.desc)}
 										</Typography>
 									</Stack>
-									<Typography mt='19px' variant='title60' color='colors.BLACK20'>
-										{t(p.title)}
-									</Typography>
-									<Typography m='3px 0 18px' variant='text40' color='colors.BLACK30'>
-										{t(p.desc)}
-									</Typography>
+									<Button target='_blank' component={Link} href={adminBaseURL} size='small'>
+										{t('get_started')}
+									</Button>
 								</Stack>
-								<Button target='_blank' component={Link} href={adminBaseURL} size='small'>
-									{t('get_started')}
-								</Button>
-							</Stack>
-							<Stack component='ul'>
-								{content('count', p.banner, 'banner')}
-								{content('access', p.promocode, 'promocode')}
-								{content('access', p.source, 'source')}
-								{content('count', p.product, 'product')}
-								{content('access', p.discount, 'discount')}
-								{content('count', p.branch, 'branch')}
-								{content('count', p.mailing, 'mailing')}
-								{content('count', p.employee, 'employee')}
-								{content('access', p.chat, 'chat')}
-								{content('access', p.stock, 'stock')}
-								{content('full', p.analytics, 'analytics')}
-								{content('access', p.export, 'export', true)}
-							</Stack>
-						</Card>
+								<Stack component='ul'>
+									{content('count', p.banner, 'banner')}
+									{content('access', p.promocode, 'promocode')}
+									{content('access', p.source, 'source')}
+									{content('count', p.product, 'product')}
+									{content('access', p.discount, 'discount')}
+									{content('count', p.branch, 'branch')}
+									{content('count', p.mailing, 'mailing')}
+									{content('count', p.employee, 'employee')}
+									{content('access', p.chat, 'chat')}
+									{content('access', p.stock, 'stock')}
+									{content('full', p.analytics, 'analytics')}
+									{content('access', p.export, 'export', true)}
+								</Stack>
+							</Card>
+						</Stack>
 					)
 				})}
 			</>

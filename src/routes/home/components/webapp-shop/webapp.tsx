@@ -8,21 +8,26 @@ import Button from '@mui/material/Button'
 import { Wrapper, Container } from './style'
 import { useTranslation } from 'next-i18next'
 import { IconTick } from '@/assets/icons/tick'
+import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import { useInView } from 'react-intersection-observer'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import ImageIphoneShop from '@/assets/images/iphone-shop.webp'
 
 const adminBaseURL = process.env.NEXT_PUBLIC_ADMIN_BASE_URL
 
 export const WebappShop = () => {
-	const view = useInView({ threshold: 0 })
+	const theme = useTheme()
+	const inView = useInView({ threshold: 0 })
 	const { t } = useTranslation('common')
+	const matches = useMediaQuery(theme.breakpoints.down('md'))
+	const view = inView.inView || matches
 
 	return (
 		<Container>
 			<Wrapper>
 				<Stack
-					ref={view.ref}
+					ref={inView.ref}
 					width='100%'
 					alignItems='center'
 					justifyContent='space-between'
@@ -34,8 +39,8 @@ export const WebappShop = () => {
 						maxWidth='580px'
 						component={motion.div}
 						style={{
-							opacity: view.inView ? '1' : '0',
-							transform: view.inView ? 'none' : 'translateX(-100vw)',
+							opacity: view ? '1' : '0',
+							transform: view ? 'none' : 'translateX(-100vw)',
 							transition: 'all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
 						}}
 					>
