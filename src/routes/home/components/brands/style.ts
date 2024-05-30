@@ -18,7 +18,7 @@ export const Wrapper = styled('div')`
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
-			padding: '0 18px 80px',
+			padding: '0 0 80px',
 		},
 	})}
 `
@@ -68,4 +68,28 @@ export const Avatar = styled(MuiAvatar)`
 			fontSize: '11px',
 		},
 	})}
+`
+
+export const Slider = styled('div')`
+	width: 100%;
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	.keen-slider {
+		padding: 0;
+		z-index: 2;
+		border-radius: 12px;
+	}
+
+	:after {
+		top: 0;
+		z-index: 1;
+		content: '';
+		width: 100%;
+		height: 100%;
+		border-radius: 12px;
+		position: absolute;
+		background: transparent;
+		box-shadow: 0px 2px 50px 0px ${({ theme }) => theme.palette.colors.GRAY80};
+	}
 `

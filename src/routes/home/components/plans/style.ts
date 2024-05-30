@@ -42,6 +42,7 @@ interface CardProps {
 
 export const Card = styled('li')<CardProps>`
 	display: flex;
+	flex-grow: 1;
 	padding: 28px 30px;
 	border-radius: 5px;
 	border-top-width: 4px;
@@ -50,7 +51,12 @@ export const Card = styled('li')<CardProps>`
 	transition: all 0.2s ease-in-out;
 	background: ${({ theme }) => theme.palette.colors.WHITE};
 	box-shadow: 0px 2px 100px 0px ${({ theme }) => theme.palette.colors.GRAY40};
-	transform: ${({ active }) => (active ? 'scale(1, 1)' : 'scale(0.95, 0.95)')};
+	transform: 'scale(1, 1)',
+		${({ theme, active }) => ({
+			[theme.breakpoints.down('md')]: {
+				transform: active ? 'scale(1, 1)' : 'scale(0.95, 0.95)',
+			},
+		})};
 `
 
 export const TabList = styled(MuiTabList)`

@@ -1,39 +1,59 @@
-import ImageBrandMona from '@/assets/images/brand-mona.webp'
-import ImageBrandKaiZen from '@/assets/images/brand-kai-zen.webp'
-import ImageBrandJumanji from '@/assets/images/brand-jumanji.webp'
-import ImageBrandXonXonim from '@/assets/images/brand-xon-xonim.webp'
-import ImageBrandAltinManas from '@/assets/images/brand-altin-manas.webp'
-import ImageBrandCheeseFactory from '@/assets/images/brand-cheese-factory.webp'
+import ImageBrand1 from '@/assets/images/brand-1.webp'
+import ImageBrand2 from '@/assets/images/brand-2.webp'
+import ImageBrand3 from '@/assets/images/brand-3.webp'
+import ImageBrand4 from '@/assets/images/brand-4.webp'
+import ImageBrand5 from '@/assets/images/brand-5.webp'
+import ImageBrand6 from '@/assets/images/brand-6.webp'
+import ImageBrand7 from '@/assets/images/brand-7.webp'
+import ImageBrand8 from '@/assets/images/brand-8.webp'
+import ImageBrand9 from '@/assets/images/brand-9.webp'
+import ImageBrand10 from '@/assets/images/brand-10.webp'
+import ImageBrand11 from '@/assets/images/brand-11.webp'
 
 export const BRANDS = [
 	{
 		title: 'Jumanji',
-		logo: ImageBrandJumanji,
+		logo: ImageBrand8,
 	},
 	{
 		title: 'XonXonim',
-		logo: ImageBrandXonXonim,
+		logo: ImageBrand11,
 	},
 	{
-		title: 'KAI ZEN',
-		logo: ImageBrandKaiZen,
+		title: 'SUSHI BAR',
+		logo: ImageBrand4,
 	},
 	{
 		title: 'Mona',
-		logo: ImageBrandMona,
+		logo: ImageBrand3,
 	},
 	{
-		title: 'Toku',
+		title: 'Bek Osiyo',
+		logo: ImageBrand5,
 	},
 	{
 		title: 'Сыроварня',
-		logo: ImageBrandCheeseFactory,
+		logo: ImageBrand1,
 	},
 	{
-		title: 'Трюфель',
+		title: 'Lago Park',
+		logo: ImageBrand7,
 	},
 	{
-		title: 'ALTIN MANAS',
-		logo: ImageBrandAltinManas,
+		title: 'DI sport',
+		logo: ImageBrand6,
+	},
+	{
+		title: 'Zero',
+		logo: ImageBrand9,
+	},
+	{
+		title: 'LYAGAN',
+		logo: ImageBrand10,
+	},
+	{
+		// eslint-disable-next-line quotes
+		title: "N'Medov",
+		logo: ImageBrand2,
 	},
 ]
