@@ -675,7 +675,7 @@ export const theme = createTheme({
 					},
 					'&.Mui-selected': {
 						color: theme.palette.colors.GRAY130,
-						border: `1px solid ${theme.palette.colors.GREEN}`,
+						border: `1px solid ${theme.palette.colors.GREEN} !important`,
 					},
 				}),
 			},
@@ -691,6 +691,7 @@ export const theme = createTheme({
 					textTransform: 'unset',
 					color: theme.palette.colors.GRAY120,
 					background: theme.palette.colors.WHITE30,
+					border: `1px solid ${theme.palette.colors.TRANSPARENT} !important`,
 					':hover': {
 						color: theme.palette.colors.GRAY130,
 						border: `1px solid ${theme.palette.colors.GREEN} !important`,
