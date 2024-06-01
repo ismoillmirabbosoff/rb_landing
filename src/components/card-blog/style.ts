@@ -6,17 +6,7 @@ export const Card = styled('div')`
 	position: relative;
 	img {
 		max-height: 430px;
-	}
-	::after {
-		left: 0;
-		z-index: 1;
-		bottom: 0;
-		width: 100%;
-		height: 100%;
-		content: '';
-		position: absolute;
-		border-radius: 0px 0px 8px 8px;
-		background: ${({ theme }) => theme.palette.colors.LINEAR_GRADIENT10};
+		border-radius: 8px;
 	}
 `
 
