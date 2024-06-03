@@ -7,7 +7,7 @@ import { ROUTER } from '@/constants/router'
 import Typography from '@mui/material/Typography'
 import { Trans, useTranslation } from 'next-i18next'
 import { IconTryBack } from '@/assets/icons/try-back'
-import { Wrapper, Container, WrapImage } from './style'
+import { Wrapper, Container, WrapImage, Content, WrapperImage } from './style'
 import ImageProductTry from '@/assets/images/product-try.webp'
 
 const adminBaseURL = process.env.NEXT_PUBLIC_ADMIN_BASE_URL
@@ -25,7 +25,7 @@ export const Try = () => {
 				<Stack position='absolute'>
 					<IconTryBack />
 				</Stack>
-				<Stack gap='16px' p='57px 60px' width='50%'>
+				<Content>
 					<Typography variant='title130' component='h3'>
 						<Trans
 							i18nKey='create_your_online_store_with_robosell_in_just_15_minutes'
@@ -41,15 +41,22 @@ export const Try = () => {
 							'become_the_new_model_of_online_business_success_by_selling_products_or_services_anywhere_and_to_any_audience',
 						)}
 					</Typography>
-					<div>
-						<Button target='_blank' component={Link} href={adminBaseURL} sx={{ minWidth: '183px' }}>
+					<Stack>
+						<Button
+							target='_blank'
+							component={Link}
+							href={adminBaseURL}
+							sx={{ minWidth: { sx: '100%', md: '183px' } }}
+						>
 							{t('try_it')}
 						</Button>
-					</div>
-				</Stack>
-				<WrapImage>
-					<Image fill alt='main-back' src={ImageProductTry.src} />
-				</WrapImage>
+					</Stack>
+				</Content>
+				<WrapperImage>
+					<WrapImage>
+						<Image fill alt='main-back' src={ImageProductTry.src} />
+					</WrapImage>
+				</WrapperImage>
 			</Wrapper>
 		</Container>
 	)
