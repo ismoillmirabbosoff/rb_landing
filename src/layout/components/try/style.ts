@@ -52,7 +52,9 @@ export const WrapImage = styled('div')`
 export const Content = styled('div')`
 	gap: 16px;
 	width: 50%;
+	display: flex;
 	padding: 57px 60px;
+	flex-direction: column;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
 			width: '100%',

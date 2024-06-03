@@ -41,13 +41,8 @@ export const Try = () => {
 							'become_the_new_model_of_online_business_success_by_selling_products_or_services_anywhere_and_to_any_audience',
 						)}
 					</Typography>
-					<Stack>
-						<Button
-							target='_blank'
-							component={Link}
-							href={adminBaseURL}
-							sx={{ minWidth: { sx: '100%', md: '183px' } }}
-						>
+					<Stack sx={{ maxWidth: { sx: '100%', md: '183px' } }}>
+						<Button target='_blank' component={Link} href={adminBaseURL}>
 							{t('try_it')}
 						</Button>
 					</Stack>
