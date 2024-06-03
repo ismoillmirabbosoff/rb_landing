@@ -31,6 +31,7 @@ export const WrapImage = styled('div')`
 `
 
 export const WrapImageRobosellDark = styled('div')`
+	width: 100%;
 	display: flex;
 	align-items: flex-end;
 	img {

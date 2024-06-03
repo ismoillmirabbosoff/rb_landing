@@ -72,17 +72,21 @@ export const WrapImage = styled('div')`
 	}
 `
 
+interface WrapContentProps {
+	isView: boolean
+}
+
 export const WrapCircle = styled(motion.div)`
 	display: flex;
 	position: relative;
 	justify-content: center;
 	img {
 		min-width: 306px;
-		max-height: 600px;
+		min-height: 600px;
 		${({ theme }) => ({
 			[theme.breakpoints.down('md')]: {
 				minWidth: '200px',
-				maxHeight: '400px',
+				minHeight: '400px',
 				maxWidth: '200px !important',
 			},
 		})}
@@ -106,9 +110,6 @@ export const WrapCircle = styled(motion.div)`
 		})}
 	}
 `
-interface WrapContentProps {
-	isView: boolean
-}
 
 export const WrapContent = styled(motion.div)<WrapContentProps>`
 	${({ theme, isView }) => ({
