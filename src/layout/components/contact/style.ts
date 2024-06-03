@@ -4,7 +4,7 @@ export const Container = styled('footer')`
 	width: 100%;
 	display: flex;
 	position: relative;
-	padding-bottom: 118px;
+	padding-bottom: 90px;
 	justify-content: center;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
@@ -33,8 +33,16 @@ export const Wrapper = styled('form')`
 `
 
 export const WrapLinearGradientContact = styled('div')`
-	left: 0;
 	top: -70%;
 	z-index: -1;
+	width: 100vw;
 	position: absolute;
+	svg {
+		width: 100%;
+	}
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			display: 'none',
+		},
+	})}
 `

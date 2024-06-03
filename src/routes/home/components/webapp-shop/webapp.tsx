@@ -34,10 +34,10 @@ export const WebappShop = () => {
 					direction={{ xs: 'column-reverse', md: 'row' }}
 				>
 					<Stack
-						pt='60px'
 						width='100%'
 						maxWidth='580px'
 						component={motion.div}
+						pt={{ sx: '24px', md: '60px' }}
 						style={{
 							opacity: view ? '1' : '0',
 							transform: view ? 'none' : 'translateX(-100vw)',

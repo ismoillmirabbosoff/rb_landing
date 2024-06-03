@@ -1,6 +1,7 @@
 import { styled } from '@mui/material/styles'
 
 export const Container = styled('section')`
+	z-index: 2;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -11,13 +12,13 @@ export const Wrapper = styled('div')`
 	width: 100%;
 	display: flex;
 	align-items: center;
-	padding: 100px 0 90px;
+	padding: 46px 0 90px;
 	flex-direction: column;
 	justify-content: space-between;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
-			padding: '22px 18px 40px',
+			padding: '24px 18px',
 		},
 	})}
 `
@@ -127,15 +128,28 @@ export const WrapMac = styled('div')`
 `
 
 export const WrapMacMobile = styled('div')`
+	bottom: 15px;
 	right: -50px;
-	width: 250px;
+	width: 230px;
+	height: 435px;
 	position: absolute;
-	height: calc(100% - 25px);
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
-			right: 0,
-			top: '5px',
+			right: '-10px',
+			bottom: '7px',
 			width: '100px',
+			height: 'calc(100% - 25px)',
+		},
+	})};
+`
+
+export const WrapMobileOnly = styled('div')`
+	width: 230px;
+	height: 435px;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			width: '200px',
+			height: '400px',
 		},
 	})};
 `

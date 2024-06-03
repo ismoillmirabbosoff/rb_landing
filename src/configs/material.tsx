@@ -131,7 +131,7 @@ export const theme = createTheme({
 			lineHeight: '73px',
 			letterSpacing: '0.564px',
 			[defaultCreateTheme.breakpoints.down('md')]: {
-				fontSize: '17px',
+				fontSize: '22px',
 			},
 		},
 		title20: {
@@ -182,7 +182,7 @@ export const theme = createTheme({
 			WebkitBackgroundClip: 'text',
 			WebkitTextFillColor: 'transparent',
 			[defaultCreateTheme.breakpoints.down('md')]: {
-				fontSize: '24px',
+				fontSize: '30px',
 				lineHeight: '33px',
 			},
 		},
@@ -226,6 +226,7 @@ export const theme = createTheme({
 			[defaultCreateTheme.breakpoints.down('md')]: {
 				fontSize: '14px',
 				fontWeight: 400,
+				lineHeight: '20px',
 			},
 		},
 		title110: {

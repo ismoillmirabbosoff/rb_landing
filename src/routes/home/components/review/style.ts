@@ -4,12 +4,12 @@ import MuiAvatar from '@mui/material/Avatar'
 export const Container = styled('section')`
 	width: 100%;
 	display: flex;
-	padding: 53px 0 190px;
+	padding: 0 0 90px;
 	flex-direction: column;
 	align-items: center;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
-			padding: '40px 0 80px',
+			padding: '24px 0',
 		},
 	})}
 `

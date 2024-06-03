@@ -10,15 +10,14 @@ export const Wrapper = styled('div')`
 	width: 100%;
 	height: 100%;
 	display: flex;
-	min-height: 100vh;
 	align-items: center;
-	padding: 126px 0 172px;
+	padding: 45px 0 90px;
 	flex-direction: column;
 	justify-content: space-between;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
-			padding: '66px 18px 26px',
+			padding: '24px 18px',
 		},
 	})}
 `

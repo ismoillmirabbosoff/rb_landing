@@ -11,6 +11,7 @@ import { IconTelegram } from '@/assets/icons/telegram'
 import { IconMacbookBody } from '@/assets/icons/macbook-body'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import { IconMacbookFooter } from '@/assets/icons/macbook-footer'
+import ImageResponsiveDevice from '@/assets/images/responsive-device.webp'
 import ImageWebappWebsiteShop from '@/assets/images/webapp-website-shop.webp'
 import ImageWebappWebsiteRestaurant from '@/assets/images/webapp-website-restaurant.webp'
 import {
@@ -24,6 +25,7 @@ import {
 	WrapImageBody,
 	WrapMac,
 	WrapMacMobile,
+	WrapMobileOnly,
 } from './style'
 
 export const FlexibleDesign = () => {
@@ -53,11 +55,9 @@ export const FlexibleDesign = () => {
 				<Wrap>
 					<Stack width='100%' flexGrow={1} alignItems='center'>
 						{platform === 'telegram' ? (
-							<Stack
-								sx={{ height: { sx: '400px', md: '600px' }, width: { sx: '200px', md: '300px' } }}
-							>
+							<WrapMobileOnly>
 								<Image fill src={ImageIphone.src} alt='iphone-restaurant' />
-							</Stack>
+							</WrapMobileOnly>
 						) : (
 							<Stack position='relative'>
 								<WrapMac>
@@ -83,7 +83,7 @@ export const FlexibleDesign = () => {
 									<IconMacbookFooter />
 								</WrapMac>
 								<WrapMacMobile>
-									<Image fill src={ImageIphone.src} alt='iphone-restaurant' />
+									<Image fill src={ImageResponsiveDevice.src} alt='iphone-restaurant' />
 								</WrapMacMobile>
 							</Stack>
 						)}

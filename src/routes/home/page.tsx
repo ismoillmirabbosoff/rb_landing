@@ -28,11 +28,11 @@ export const Home = () => {
 			<FlexibleDesign />
 			<WebappRestaurant />
 			<WebappShop />
-			<video id='videoID' playsInline autoPlay loop muted>
+			{/* <video loop muted autoPlay playsInline>
 				<source src={`${mediaBaseURL}/${t('chat_video')}`} type='video/mp4' />
-			</video>
-			<Review />
+			</video> */}
 			<Brands />
+			<Review />
 			<Blogs />
 			<Plans />
 			<Faq />

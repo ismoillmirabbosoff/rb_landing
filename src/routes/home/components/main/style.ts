@@ -34,6 +34,6 @@ export const WrapImageRobosellDark = styled('div')`
 	display: flex;
 	align-items: flex-end;
 	img {
-		min-height: 180px;
+		min-height: 200px;
 	}
 `

@@ -13,7 +13,6 @@ export const Wrapper = styled('div')`
 	display: flex;
 	min-height: 100vh;
 	align-items: center;
-	padding-bottom: 116px;
 	flex-direction: column;
 	justify-content: space-between;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
@@ -24,17 +23,31 @@ export const Wrapper = styled('div')`
 	})}
 `
 
+export const WrapLinearGradient = styled('div')`
+	top: -100%;
+	left: unset;
+	position: absolute;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			top: '-150%',
+			left: '-100%',
+			padding: '0 18px',
+		},
+	})}
+`
+
 export const Content = styled('div')`
 	flex-grow: 1;
 	display: flex;
 	max-width: 850px;
-	padding-top: 145px;
+	padding-top: 45px;
 	align-items: center;
 	margin-bottom: 141px;
 	flex-direction: column;
 	justify-content: center;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
+			paddingTop: '20px',
 			marginBottom: '72px',
 		},
 	})}
@@ -65,11 +78,11 @@ export const WrapCircle = styled(motion.div)`
 	justify-content: center;
 	img {
 		min-width: 306px;
-		min-height: 680px;
+		max-height: 600px;
 		${({ theme }) => ({
 			[theme.breakpoints.down('md')]: {
 				minWidth: '200px',
-				minHeight: '400px',
+				maxHeight: '400px',
 				maxWidth: '200px !important',
 			},
 		})}

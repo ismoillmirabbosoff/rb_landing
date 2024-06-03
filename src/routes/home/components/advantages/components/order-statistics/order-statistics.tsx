@@ -21,7 +21,7 @@ export const OrderStatistics = () => {
 
 	return (
 		<>
-			<Stack flexGrow={1}>
+			<Stack mb='20px'>
 				<Typography mb='6px' variant='title60' component='h5'>
 					{t('platform_report')}
 				</Typography>

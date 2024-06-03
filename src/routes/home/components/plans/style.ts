@@ -12,13 +12,13 @@ export const Wrapper = styled('div')`
 	width: 100%;
 	display: flex;
 	align-items: center;
-	padding-bottom: 100px;
+	padding-bottom: 90px;
 	flex-direction: column;
 	justify-content: space-between;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
-			padding: '0 0 64px',
+			padding: '0 0 24px',
 		},
 	})}
 `

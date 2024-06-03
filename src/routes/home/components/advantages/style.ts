@@ -16,7 +16,7 @@ export const Wrapper = styled('div')`
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
-			padding: '13px 18px 24px',
+			padding: '24px 18px 0',
 		},
 	})}
 `

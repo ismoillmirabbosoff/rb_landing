@@ -1,6 +1,7 @@
 import { styled } from '@mui/material/styles'
 
 export const WrapOrders = styled('div')`
+	flex-grow: 1;
 	border-radius: 9.406px;
 	padding: 10px 16px 35px;
 	background: ${({ theme }) => theme.palette.colors.WHITE};

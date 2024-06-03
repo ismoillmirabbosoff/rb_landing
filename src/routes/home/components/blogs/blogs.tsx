@@ -11,6 +11,7 @@ import { CardBlog } from '@/components/card-blog'
 import { Wrapper, Container, Slider } from './style'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { IconArrowRight } from '@/assets/icons/arrow-right'
+import { ScrollDown } from '@/components/scroll-down'
 
 const animation = { duration: 40000, easing: (t: number) => t }
 
@@ -54,7 +55,8 @@ export const Blogs = () => {
 	})
 
 	return (
-		<Container id='blogs'>
+		<Container>
+			<ScrollDown id='blogs' />
 			<Wrapper>
 				<Typography variant='title30' component='h2'>
 					{t('read_our_blog')}

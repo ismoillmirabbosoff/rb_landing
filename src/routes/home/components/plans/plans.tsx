@@ -30,6 +30,7 @@ import {
 	FormControlLabel,
 	Slider,
 } from './style'
+import { ScrollDown } from '@/components/scroll-down'
 
 const adminBaseURL = process.env.NEXT_PUBLIC_ADMIN_BASE_URL
 
@@ -182,7 +183,8 @@ export const Plans = () => {
 	}
 
 	return (
-		<Container id='plans'>
+		<Container>
+			<ScrollDown id='plans' />
 			<Wrapper>
 				<Stack sx={{ px: { xs: '18px', md: '0' } }}>
 					<Stack position='relative' width='100%' alignItems='center'>

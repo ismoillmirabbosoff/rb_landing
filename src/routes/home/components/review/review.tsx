@@ -13,7 +13,7 @@ export const Review = () => {
 	const { t } = useTranslation('common')
 	const [sliderRef] = useKeenSlider({
 		loop: true,
-		renderMode: 'performance',
+		mode: 'free-snap',
 		breakpoints: {
 			[`(min-width: ${theme.breakpoints.values.md}px)`]: {
 				slides: {

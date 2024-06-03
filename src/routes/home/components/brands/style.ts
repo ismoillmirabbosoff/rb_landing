@@ -12,13 +12,13 @@ export const Wrapper = styled('div')`
 	width: 100%;
 	display: flex;
 	align-items: center;
-	padding-bottom: 236px;
+	padding: 45px 0 90px;
 	flex-direction: column;
 	justify-content: space-between;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
-			padding: '0 0 80px',
+			padding: '24px 0',
 		},
 	})}
 `
@@ -46,6 +46,7 @@ export const Card = styled(motion.li)`
 	padding: 18px 30px;
 	border-radius: 6px;
 	align-items: center;
+	justify-content: center;
 	background: ${({ theme }) => theme.palette.colors.WHITE};
 	border: 1px solid ${({ theme }) => theme.palette.colors.GRAY60};
 	box-shadow: 0px 2px 50px 0px ${({ theme }) => theme.palette.colors.GRAY80};

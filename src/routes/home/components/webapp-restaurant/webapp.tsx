@@ -20,6 +20,7 @@ import {
 	WrapCircle,
 	WrapContent,
 	WrapMobile,
+	WrapLinearGradient,
 } from './style'
 
 const adminBaseURL = process.env.NEXT_PUBLIC_ADMIN_BASE_URL
@@ -41,9 +42,9 @@ export const WebappRestaurant = () => {
 			<Wrapper>
 				<Content>
 					<Stack position='relative'>
-						<Stack top='-100%' position='absolute'>
+						<WrapLinearGradient>
 							<IconLinearGradient />
-						</Stack>
+						</WrapLinearGradient>
 						<Typography align='center' variant='title30'>
 							{t('robosell_is_your_reliable_business_partner')}
 						</Typography>

@@ -45,7 +45,12 @@ export const Faq = () => {
 					{FAQ.map(({ text, title }, i: number) => {
 						const isExpanded = expanded === i
 						return (
-							<Accordion key={i} expanded={isExpanded} onChange={handleChange(i)}>
+							<Accordion
+								key={i}
+								expanded={isExpanded}
+								onChange={handleChange(i)}
+								slotProps={{ transition: { unmountOnExit: true } }}
+							>
 								<AccordionSummary
 									id={`${i}-header`}
 									aria-controls={`${i}-content`}

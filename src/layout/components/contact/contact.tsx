@@ -10,6 +10,7 @@ import LoadingButton from '@mui/lab/LoadingButton'
 import { InputPhone } from '@/components/inputs/input-phone'
 import { Wrapper, Container, WrapLinearGradientContact } from './style'
 import { IconLinearGradientContact } from '@/assets/icons/linear-gradient-contact'
+import { ScrollDown } from '@/components/scroll-down'
 
 export const Contact = () => {
 	const { t } = useTranslation('common')
@@ -17,7 +18,8 @@ export const Contact = () => {
 
 	return (
 		<>
-			<Container id='contact'>
+			<Container>
+				<ScrollDown id='contact' />
 				<WrapLinearGradientContact>
 					<IconLinearGradientContact />
 				</WrapLinearGradientContact>

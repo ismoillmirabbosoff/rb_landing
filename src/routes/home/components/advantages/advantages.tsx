@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
+import { ScrollDown } from '@/components/scroll-down'
 import { TopProducts } from './components/top-products'
 import { TrafficSource } from './components/traffic-source'
 import { OrderStatistics } from './components/order-statistics'
@@ -11,7 +12,8 @@ export const Advantages = () => {
 	const { t } = useTranslation('common')
 
 	return (
-		<Container id='advantages'>
+		<Container>
+			<ScrollDown id='advantages' />
 			<Wrapper>
 				<Typography mb='17px' variant='title' component='h2'>
 					{t('advantages_of_robosell')}
