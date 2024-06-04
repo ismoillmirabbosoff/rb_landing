@@ -4,7 +4,7 @@ import MuiAvatar from '@mui/material/Avatar'
 export const Container = styled('section')`
 	width: 100%;
 	display: flex;
-	padding: 0 0 90px;
+	padding: 0 0 40px;
 	flex-direction: column;
 	align-items: center;
 	${({ theme }) => ({
@@ -20,7 +20,6 @@ export const Wrapper = styled('div')`
 	align-items: center;
 	flex-direction: column;
 	justify-content: space-between;
-	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
 `
 
 export const Card = styled('div')`
@@ -50,22 +49,11 @@ export const Slider = styled('div')`
 	border-radius: 12px;
 	flex-direction: column;
 	.keen-slider {
-		padding: 0;
 		z-index: 2;
+		padding: 50px 0;
 		border-radius: 12px;
 	}
 
-	:after {
-		top: 0;
-		z-index: 1;
-		content: '';
-		width: 100%;
-		height: 100%;
-		border-radius: 12px;
-		position: absolute;
-		background: transparent;
-		box-shadow: 0px 2px 50px 0px ${({ theme }) => theme.palette.colors.GRAY80};
-	}
 	.keen-slider__slide {
 		${({ theme }) => ({
 			[theme.breakpoints.down('md')]: {

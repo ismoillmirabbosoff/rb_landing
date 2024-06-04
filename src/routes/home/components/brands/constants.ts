@@ -1,3 +1,4 @@
+import { type StaticImageData } from 'next/image'
 import ImageBrand1 from '@/assets/images/brand-1.webp'
 import ImageBrand2 from '@/assets/images/brand-2.webp'
 import ImageBrand3 from '@/assets/images/brand-3.webp'
@@ -10,7 +11,12 @@ import ImageBrand9 from '@/assets/images/brand-9.webp'
 import ImageBrand10 from '@/assets/images/brand-10.webp'
 import ImageBrand11 from '@/assets/images/brand-11.webp'
 
-export const BRANDS = [
+export interface BrandProps {
+	title: string
+	logo: StaticImageData
+}
+
+export const BRANDS: BrandProps[] = [
 	{
 		title: 'Jumanji',
 		logo: ImageBrand8,

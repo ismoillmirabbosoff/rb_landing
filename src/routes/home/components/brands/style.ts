@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import MuiAvatar from '@mui/material/Avatar'
 import { styled } from '@mui/material/styles'
 
@@ -12,10 +11,9 @@ export const Wrapper = styled('div')`
 	width: 100%;
 	display: flex;
 	align-items: center;
-	padding: 45px 0 90px;
+	padding: 45px 0 40px;
 	flex-direction: column;
 	justify-content: space-between;
-	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
 			padding: '24px 0',
@@ -23,23 +21,7 @@ export const Wrapper = styled('div')`
 	})}
 `
 
-export const Cards = styled('ul')`
-	gap: 20px;
-	width: 100%;
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	${({ theme }) => ({
-		[theme.breakpoints.down('md')]: {
-			gap: '8px',
-			gridTemplateColumns: 'repeat(3, 1fr)',
-		},
-	})}
-	@media only screen and (max-width: 430px) {
-		grid-template-columns: repeat(2, 1fr);
-	}
-`
-
-export const Card = styled(motion.li)`
+export const Card = styled('li')`
 	gap: 20px;
 	width: 100%;
 	display: flex;
@@ -81,16 +63,10 @@ export const Slider = styled('div')`
 		z-index: 2;
 		border-radius: 12px;
 	}
-
-	:after {
-		top: 0;
-		z-index: 1;
-		content: '';
-		width: 100%;
-		height: 100%;
-		border-radius: 12px;
-		position: absolute;
-		background: transparent;
-		box-shadow: 0px 2px 50px 0px ${({ theme }) => theme.palette.colors.GRAY80};
+	& > .keen-slider:first-child {
+		padding: 50px 0 5px;
+	}
+	& > .keen-slider:last-child {
+		padding: 5px 0 50px;
 	}
 `

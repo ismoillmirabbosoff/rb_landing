@@ -1,41 +1,17 @@
-import { BRANDS } from './constants'
+import { useBrands } from './useBrands'
 import { useTranslation } from 'next-i18next'
 import { stringAvatar } from '@/utils/avatar'
-import { useTheme } from '@mui/material/styles'
-import { useKeenSlider } from 'keen-slider/react'
+import { type BrandProps } from './constants'
 import Typography from '@mui/material/Typography'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import { Card, Cards, Avatar, Wrapper, Container, Slider } from './style'
-
-const animation = { duration: 40000, easing: (t: number) => t }
+import { Card, Avatar, Slider, Wrapper, Container } from './style'
 
 export const Brands = () => {
-	const theme = useTheme()
 	const { t } = useTranslation('common')
-	const matches = useMediaQuery(theme.breakpoints.down('md'))
-	const [sliderRef] = useKeenSlider({
-		loop: matches,
-		renderMode: 'performance',
-		slides: { origin: 'center', perView: 3, spacing: 10 },
-		drag: false,
-		created(s) {
-			s.moveToIdx(5, true, animation)
-		},
-		updated(s) {
-			s.moveToIdx(s.track.details.abs + 5, true, animation)
-		},
-		animationEnded(s) {
-			s.moveToIdx(s.track.details.abs + 5, true, animation)
-		},
-	})
+	const { up, down, arrayFirstHalf, arraySecondHalf } = useBrands()
 
-	const list = () => {
-		return BRANDS.map((b, i) => (
-			<Card
-				key={i}
-				className='keen-slider__slide'
-				whileHover={{ scale: matches ? undefined : 0.9 }}
-			>
+	const list = (data: BrandProps[]) => {
+		return data.map((b, i) => (
+			<Card key={i} className='keen-slider__slide'>
 				<Avatar alt={b.title} src={b?.logo?.src ?? ''} {...stringAvatar(b.title ?? '')} />
 				<Typography variant='title80' component='h4'>
 					{b.title}
@@ -47,23 +23,17 @@ export const Brands = () => {
 	return (
 		<Container>
 			<Wrapper>
-				<Typography
-					component='h2'
-					variant='title'
-					mb={{ xs: '18px', md: '39px' }}
-					lineHeight={{ xs: '30px', md: '67px' }}
-				>
+				<Typography component='h2' variant='title' lineHeight={{ xs: '30px', md: '67px' }}>
 					{t('companies_using_the_robosell_platform')}
 				</Typography>
-				{matches ? (
-					<Slider>
-						<div ref={sliderRef} className='keen-slider'>
-							{list()}
-						</div>
-					</Slider>
-				) : (
-					<Cards>{list()}</Cards>
-				)}
+				<Slider>
+					<div ref={up[0]} className='keen-slider'>
+						{list(arrayFirstHalf)}
+					</div>
+					<div ref={down[0]} className='keen-slider'>
+						{list(arraySecondHalf)}
+					</div>
+				</Slider>
 			</Wrapper>
 		</Container>
 	)

@@ -43,8 +43,8 @@ export const PRICING_PLANS: PricingPlanProps = {
 		type: 'BASIC',
 		price: {
 			TELEGRAM: 200000,
-			WEBSITE: 200000,
-			TELEGRAM_WEBSITE: 300000,
+			WEBSITE: 300000,
+			TELEGRAM_WEBSITE: 400000,
 		},
 		color: 'PURPLE',
 	},
@@ -67,8 +67,8 @@ export const PRICING_PLANS: PricingPlanProps = {
 		employee: 5,
 		price: {
 			TELEGRAM: 400000,
-			WEBSITE: 400000,
-			TELEGRAM_WEBSITE: 600000,
+			WEBSITE: 500000,
+			TELEGRAM_WEBSITE: 700000,
 		},
 		color: 'GREEN',
 	},
@@ -91,8 +91,8 @@ export const PRICING_PLANS: PricingPlanProps = {
 		type: 'ENTERPRISE',
 		price: {
 			TELEGRAM: 700000,
-			WEBSITE: 700000,
-			TELEGRAM_WEBSITE: 900000,
+			WEBSITE: 800000,
+			TELEGRAM_WEBSITE: 1200000,
 		},
 		color: 'ORANGE',
 	},
