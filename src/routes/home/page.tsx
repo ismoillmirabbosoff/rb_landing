@@ -28,9 +28,9 @@ export const Home = () => {
 			<FlexibleDesign />
 			<WebappRestaurant />
 			<WebappShop />
-			{/* <video loop muted autoPlay playsInline>
-				<source src={`${mediaBaseURL}/${t('chat_video')}`} type='video/mp4' />
-			</video> */}
+			<video loop muted autoPlay playsInline>
+				<source src={`${mediaBaseURL}/${t('chat_video')}`} type='video/webm' />
+			</video>
 			<Brands />
 			<Review />
 			<Blogs />
