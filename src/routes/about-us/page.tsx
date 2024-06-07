@@ -11,14 +11,24 @@ export const AboutUs = () => {
 		<Container>
 			<Wrapper>
 				<Stack position='relative'>
-					<Stack top='-200%' position='absolute'>
+					<Stack
+						position='absolute'
+						sx={{
+							top: { xs: '-200%', md: '-250%' },
+							width: { xs: '300px', md: '100%' },
+							svg: {
+								width: '100%',
+								height: '100%',
+							},
+						}}
+					>
 						<IconLinearGradient />
 					</Stack>
 					<Typography align='center' variant='title30'>
 						{t('about_robosell_platform')}
 					</Typography>
 				</Stack>
-				<Typography mt='50px' gap='10px' variant='text140' component={Stack}>
+				<Typography mt={{ xs: '20px', md: '50px' }} gap='10px' variant='text140' component={Stack}>
 					<Typography>
 						{t('robosell_is_a_full_featured_constructor_for_creating_websites_and_telegram_bots')}
 					</Typography>
