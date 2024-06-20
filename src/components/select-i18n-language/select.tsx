@@ -9,7 +9,7 @@ import { type SelectChangeEvent } from '@mui/material/Select'
 import { IconDirectionDown } from '@/assets/icons/direction-down'
 
 export const SelectI18nLanguage = () => {
-	const { push, query, asPath, locale, pathname } = useRouter()
+	const { push, query, asPath, locale, pathname, reload } = useRouter()
 	const [value, setValue] = useState(locale)
 
 	const handleChange = (e: SelectChangeEvent<unknown>) => {
