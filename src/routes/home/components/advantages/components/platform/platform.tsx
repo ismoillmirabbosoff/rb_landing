@@ -1,5 +1,5 @@
 import Stack from '@mui/material/Stack'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
 import { useRef, useState, useEffect } from 'react'
 import { type PlatformsProps } from '@/constants/platform'

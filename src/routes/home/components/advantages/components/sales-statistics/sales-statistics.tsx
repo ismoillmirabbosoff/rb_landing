@@ -1,6 +1,6 @@
 import Stack from '@mui/material/Stack'
 import { WrapIconAdvantage } from './style'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
 import { IconAdvantagesSalesStatisticsOrders } from '@/assets/icons/advantages-sales-statistics-orders'
 import { IconAdvantagesSalesStatisticsEarning } from '@/assets/icons/advantages-sales-statistics-earning'

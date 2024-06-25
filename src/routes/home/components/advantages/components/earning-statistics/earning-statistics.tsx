@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Stack from '@mui/material/Stack'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
 import { useInView } from 'react-intersection-observer'
 import ImageAdvantagesEarningStatistics from '@/assets/images/advantages-earning-statistics.webp'

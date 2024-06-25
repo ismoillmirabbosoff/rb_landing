@@ -10,10 +10,7 @@ import { WebappShop } from './components/webapp-shop'
 import { Instructions } from './components/instructions'
 import { FlexibleDesign } from './components/flexible-design'
 import { WebappRestaurant } from './components/webapp-restaurant'
-
-const Advantages = dynamic(async () => (await import('./components/advantages')).Advantages, {
-	ssr: false,
-})
+import { Advantages } from './components/advantages'
 
 export const Home = () => {
 	return (
