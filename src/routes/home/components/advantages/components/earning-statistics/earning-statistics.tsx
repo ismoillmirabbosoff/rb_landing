@@ -12,7 +12,7 @@ export const EarningStatistics = () => {
 
 	return (
 		<>
-			<Stack flexGrow={1}>
+			<Stack mb='15px' flexGrow={1}>
 				<Typography ref={view.ref} mb='6px' variant='title60' component='h5'>
 					{t('sales_dynamics')}
 				</Typography>
