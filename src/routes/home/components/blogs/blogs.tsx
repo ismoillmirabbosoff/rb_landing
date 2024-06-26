@@ -6,12 +6,13 @@ import { ROUTER } from '@/constants/router'
 import { useTranslation } from 'next-i18next'
 import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
-import { useKeenSlider } from 'keen-slider/react'
 import { CardBlog } from '@/components/card-blog'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { Wrapper, Container, Slider } from './style'
+import { ScrollDown } from '@/components/scroll-down'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { IconArrowRight } from '@/assets/icons/arrow-right'
-import { ScrollDown } from '@/components/scroll-down'
+import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 
 const animation = { duration: 40000, easing: (t: number) => t }
 
@@ -19,40 +20,6 @@ export const Blogs = () => {
 	const { t } = useTranslation('common')
 	const theme = useTheme()
 	const matches = useMediaQuery(theme.breakpoints.down('md'))
-	const [sliderRef] = useKeenSlider({
-		loop: matches,
-		renderMode: 'performance',
-		breakpoints: {
-			[`(min-width: ${theme.breakpoints.values.md}px)`]: {
-				slides: {
-					perView: 2,
-					spacing: 12,
-				},
-			},
-			[`(max-width: ${theme.breakpoints.values.md}px)`]: {
-				slides: {
-					perView: 1.5,
-					spacing: 12,
-				},
-			},
-			[`(min-width: ${theme.breakpoints.values.lg}px)`]: {
-				slides: {
-					perView: 3,
-					spacing: 20,
-				},
-			},
-		},
-		drag: false,
-		created(s) {
-			s.moveToIdx(5, true, animation)
-		},
-		updated(s) {
-			s.moveToIdx(s.track.details.abs + 5, true, animation)
-		},
-		animationEnded(s) {
-			s.moveToIdx(s.track.details.abs + 5, true, animation)
-		},
-	})
 
 	return (
 		<Container>
@@ -69,15 +36,38 @@ export const Blogs = () => {
 				>
 					{t('learn_new_technology')}
 				</Typography>
-				<Slider>
-					<div ref={sliderRef} className='keen-slider'>
+				<div style={{ width: '100%' }}>
+					<Swiper
+						loop={true}
+						speed={7000}
+						spaceBetween={30}
+						slidesPerView={3}
+						modules={[Autoplay, Navigation, Pagination]}
+						autoplay={{
+							delay: 0,
+							stopOnLastSlide: false,
+							pauseOnMouseEnter: true,
+							waitForTransition: true,
+							disableOnInteraction: false,
+						}}
+						breakpoints={{
+							[theme.breakpoints.values.xs]: {
+								spaceBetween: 20,
+								slidesPerView: 1.2,
+							},
+							[theme.breakpoints.values.sm]: {
+								spaceBetween: 30,
+								slidesPerView: 3,
+							},
+						}}
+					>
 						{BLOGS.filter(b => b.isMain).map((b, i: number) => (
-							<div className='keen-slider__slide' key={i}>
+							<SwiperSlide key={i}>
 								<CardBlog {...b} />
-							</div>
+							</SwiperSlide>
 						))}
-					</div>
-				</Slider>
+					</Swiper>
+				</div>
 				<Stack mt={{ xs: '20px', md: '28px' }}>
 					<Button
 						component={Link}

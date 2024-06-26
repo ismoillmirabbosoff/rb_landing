@@ -10,14 +10,13 @@ import { numberFormat } from '@/utils/format'
 import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import RadioGroup from '@mui/material/RadioGroup'
-import { useKeenSlider } from 'keen-slider/react'
 import { IconRemove } from '@/assets/icons/remove'
 import { useState, type SyntheticEvent } from 'react'
 import { IconInfinity } from '@/assets/icons/infinity'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { IconTickSolid } from '@/assets/icons/tick-solid'
 import { IconLinearGradient } from '@/assets/icons/linear-gradient'
-import type { PlanTypeProps, PlatformTypeProps } from '@/types/plan'
+import type { PlanProps, PlanTypeProps, PlatformTypeProps, PricingPlanProps } from '@/types/plan'
 import { TAB_PLANS, PRICING_PLANS, PLAN_PLATFORMS } from '@/constants/plan'
 import {
 	Card,
@@ -31,28 +30,22 @@ import {
 	Slider,
 } from './style'
 import { ScrollDown } from '@/components/scroll-down'
+import { EffectCards } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 const adminBaseURL = process.env.NEXT_PUBLIC_ADMIN_BASE_URL
+
+const rotateArray = (arr: PlanProps[], positions: number) => {
+	return arr.slice(-positions).concat(arr.slice(0, -positions))
+}
 
 export const Plans = () => {
 	const theme = useTheme()
 	const { t } = useTranslation('common')
-	const [currentSlide, setCurrentSlide] = useState(0)
 	const matches = useMediaQuery(theme.breakpoints.down('md'))
 	const [plan, setPlan] = useState<PlanTypeProps>('monthly')
 	const [platform, setPlatform] = useState<PlatformTypeProps>(PLAN_PLATFORMS.TELEGRAM.platform)
-	const [sliderRef] = useKeenSlider<HTMLDivElement>({
-		loop: true,
-		mode: 'free',
-		slides: { origin: 'center', perView: 1.2, spacing: 10 },
-		range: {
-			min: -5,
-			max: 5,
-		},
-		slideChanged(s) {
-			setCurrentSlide(s.track.details.rel)
-		},
-	})
+
 	const handleChangePlan = (_: SyntheticEvent, plan: PlanTypeProps) => {
 		setPlan(plan)
 	}
@@ -107,18 +100,18 @@ export const Plans = () => {
 	}
 
 	const list = () => {
+		const newArr = matches
+			? rotateArray(Object.values(PRICING_PLANS), 2)
+			: Object.values(PRICING_PLANS)
 		return (
 			<>
-				{Object.values(PRICING_PLANS).map((p, index: number) => {
+				{newArr.map((p, index: number) => {
 					const price = p.price[platform]
 					const discountPrice = (price * (100 - TAB_PLANS[plan].discount)) / 100
 
 					return (
-						<Stack key={index} className='keen-slider__slide'>
-							<Card
-								active={index === currentSlide}
-								sx={theme => ({ borderColor: theme.palette.colors[p.color] })}
-							>
+						<SwiperSlide key={index}>
+							<Card sx={theme => ({ borderColor: theme.palette.colors[p.color] })}>
 								<Stack mb='14px' flexGrow={1}>
 									<Stack flexGrow={1}>
 										<Stack direction='row' alignItems='flex-end'>
@@ -175,7 +168,7 @@ export const Plans = () => {
 									{content('access', p.export, 'export', true)}
 								</Stack>
 							</Card>
-						</Stack>
+						</SwiperSlide>
 					)
 				})}
 			</>
@@ -253,11 +246,19 @@ export const Plans = () => {
 						</TabList>
 					</Stack>
 					{matches ? (
-						<Slider>
-							<div ref={sliderRef} className='keen-slider'>
+						<div style={{ padding: '0 20px', width: '100%' }}>
+							<Swiper
+								loop={true}
+								initialSlide={2}
+								effect={'cards'}
+								grabCursor={true}
+								modules={[EffectCards]}
+								className='mySwiper'
+								centeredSlides={true}
+							>
 								{list()}
-							</div>
-						</Slider>
+							</Swiper>
+						</div>
 					) : (
 						<Cards>{list()}</Cards>
 					)}

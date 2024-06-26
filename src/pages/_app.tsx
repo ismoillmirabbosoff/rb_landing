@@ -11,7 +11,10 @@ import { ThemeProvider } from '@mui/material/styles'
 import createEmotionCache from '@/utils/create-emotion-cache'
 import { CacheProvider, type EmotionCache } from '@emotion/react'
 
-import 'keen-slider/keen-slider.min.css'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/effect-cards'
 import '@/styles/globals.css'
 
 const clientSideEmotionCache = createEmotionCache()
