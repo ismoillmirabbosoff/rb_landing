@@ -3,23 +3,19 @@ import Stack from '@mui/material/Stack'
 import { BLOGS } from '@/constants/blog'
 import Button from '@mui/material/Button'
 import { ROUTER } from '@/constants/router'
+import { Wrapper, Container } from './style'
 import { useTranslation } from 'next-i18next'
 import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import { CardBlog } from '@/components/card-blog'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Wrapper, Container, Slider } from './style'
 import { ScrollDown } from '@/components/scroll-down'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import { IconArrowRight } from '@/assets/icons/arrow-right'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
-
-const animation = { duration: 40000, easing: (t: number) => t }
 
 export const Blogs = () => {
 	const { t } = useTranslation('common')
 	const theme = useTheme()
-	const matches = useMediaQuery(theme.breakpoints.down('md'))
 
 	return (
 		<Container>

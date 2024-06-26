@@ -148,10 +148,3 @@ export const WrapLabel = styled('div')`
 		},
 	})};
 `
-
-export const Slider = styled('div')`
-	width: 100%;
-	display: flex;
-	position: relative;
-	flex-direction: column;
-`

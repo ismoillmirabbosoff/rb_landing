@@ -5,19 +5,22 @@ import Radio from '@mui/material/Radio'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 import TabContext from '@mui/lab/TabContext'
+import { EffectCards } from 'swiper/modules'
 import { useTranslation } from 'next-i18next'
 import { numberFormat } from '@/utils/format'
 import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import RadioGroup from '@mui/material/RadioGroup'
 import { IconRemove } from '@/assets/icons/remove'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { useState, type SyntheticEvent } from 'react'
+import { ScrollDown } from '@/components/scroll-down'
 import { IconInfinity } from '@/assets/icons/infinity'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { IconTickSolid } from '@/assets/icons/tick-solid'
 import { IconLinearGradient } from '@/assets/icons/linear-gradient'
-import type { PlanProps, PlanTypeProps, PlatformTypeProps, PricingPlanProps } from '@/types/plan'
 import { TAB_PLANS, PRICING_PLANS, PLAN_PLATFORMS } from '@/constants/plan'
+import type { PlanProps, PlanTypeProps, PlatformTypeProps } from '@/types/plan'
 import {
 	Card,
 	Cards,
@@ -27,11 +30,7 @@ import {
 	WrapLabel,
 	WrapDiscount,
 	FormControlLabel,
-	Slider,
 } from './style'
-import { ScrollDown } from '@/components/scroll-down'
-import { EffectCards } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/react'
 
 const adminBaseURL = process.env.NEXT_PUBLIC_ADMIN_BASE_URL
 
@@ -119,20 +118,13 @@ export const Plans = () => {
 												<Typography
 													mr='5px'
 													variant='title60'
+													whiteSpace='nowrap'
 													sx={theme => ({
 														color: theme.palette.colors.GRAY50,
 														textDecorationLine: 'line-through',
 													})}
 												>
-													{numberFormat(price)}{' '}
-													<Typography
-														fontSize='14px'
-														fontWeight='400'
-														component='span'
-														variant='inherit'
-													>
-														{t('soum')}
-													</Typography>
+													{numberFormat(price)} {t('soum')}
 												</Typography>
 											)}
 											<Typography variant='title70' component='h5'>

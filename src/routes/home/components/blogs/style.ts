@@ -20,10 +20,3 @@ export const Wrapper = styled('div')`
 	justify-content: space-between;
 	max-width: ${({ theme }) => theme.breakpoints.values.lg}px;
 `
-
-export const Slider = styled('div')`
-	width: 100%;
-	display: flex;
-	position: relative;
-	flex-direction: column;
-`
