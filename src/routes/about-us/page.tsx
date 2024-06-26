@@ -24,7 +24,7 @@ export const AboutUs = () => {
 					>
 						<IconLinearGradient />
 					</Stack>
-					<Typography align='center' variant='title30'>
+					<Typography align='center' variant='title30' component='h1'>
 						{t('about_robosell_platform')}
 					</Typography>
 				</Stack>
@@ -37,9 +37,25 @@ export const AboutUs = () => {
 							'with_wobosell_any_entrepreneur_can_create_their_online_business_and_start_accepting',
 						)}
 					</Typography>
-					<Typography variant='title70'>{t('company_mission')}</Typography>
+					<Typography
+						variant='title70'
+						component='h2'
+						sx={{
+							textAlign: { xs: 'center', md: 'start' },
+						}}
+					>
+						{t('company_mission')}
+					</Typography>
 					<Typography>{t('our_mission_is_to_make_life_easier_for_entrepreneurs')}</Typography>
-					<Typography variant='title70'>{t('how_robosell_can_be_beneficial')}</Typography>
+					<Typography
+						variant='title70'
+						component='h2'
+						sx={{
+							textAlign: { xs: 'center', md: 'start' },
+						}}
+					>
+						{t('how_robosell_can_be_beneficial')}
+					</Typography>
 					<Typography>
 						- {t('simplicity_and_speed_create_a_telegram_bot_or_website_in_just_15_minutes')}
 					</Typography>
