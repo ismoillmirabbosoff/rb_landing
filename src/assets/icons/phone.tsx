@@ -8,7 +8,7 @@ export const IconPhone = () => {
 			xmlns='http://www.w3.org/2000/svg'
 			xmlnsXlink='http://www.w3.org/1999/xlink'
 		>
-			<g clip-path='url(#clip0_7297_28816)'>
+			<g clipPath='url(#clip0_7297_28816)'>
 				<g filter='url(#filter0_i_7297_28816)'>
 					<rect y='94.8364' width='4.37712' height='19.8794' rx='0.547141' fill='#454545' />
 					<rect
@@ -17,7 +17,7 @@ export const IconPhone = () => {
 						height='19.8794'
 						rx='0.547141'
 						fill='url(#pattern0_7297_28816)'
-						fill-opacity='0.3'
+						fillOpacity='0.3'
 					/>
 					<rect
 						y='94.8364'
@@ -25,7 +25,7 @@ export const IconPhone = () => {
 						height='19.8794'
 						rx='0.547141'
 						fill='url(#pattern1_7297_28816)'
-						fill-opacity='0.3'
+						fillOpacity='0.3'
 					/>
 				</g>
 				<g filter='url(#filter1_f_7297_28816)'>
@@ -42,14 +42,14 @@ export const IconPhone = () => {
 					<path
 						d='M-0.544922 95.5614C-0.544922 95.2625 -0.302592 95.0201 -0.00366384 95.0201C0.29982 95.0201 0.543994 95.2696 0.537469 95.573L0.192357 111.621C0.188046 111.821 0.0242887 111.982 -0.17624 111.982C-0.379857 111.982 -0.544922 111.816 -0.544922 111.613V95.5614Z'
 						fill='white'
-						fill-opacity='0.8'
+						fillOpacity='0.8'
 					/>
 				</g>
 				<g filter='url(#filter3_f_7297_28816)'>
 					<path
 						d='M-0.179443 96.0232C-0.179443 95.4692 0.269656 95.0201 0.823648 95.0201H1.2928C1.58769 95.0201 1.82674 95.2592 1.82674 95.5541C1.82674 95.6804 1.78198 95.8026 1.7004 95.899L-0.179443 98.1206V96.0232Z'
 						fill='white'
-						fill-opacity='0.8'
+						fillOpacity='0.8'
 					/>
 				</g>
 			</g>
@@ -60,10 +60,10 @@ export const IconPhone = () => {
 				height='19.6971'
 				rx='0.455951'
 				stroke='black'
-				stroke-opacity='0.5'
-				stroke-width='0.18238'
+				strokeOpacity='0.5'
+				strokeWidth='0.18238'
 			/>
-			<g clip-path='url(#clip1_7297_28816)'>
+			<g clipPath='url(#clip1_7297_28816)'>
 				<g filter='url(#filter4_i_7297_28816)'>
 					<rect y='130.949' width='4.37712' height='37.0232' rx='0.547141' fill='#454545' />
 					<rect
@@ -72,7 +72,7 @@ export const IconPhone = () => {
 						height='37.0232'
 						rx='0.547141'
 						fill='url(#pattern2_7297_28816)'
-						fill-opacity='0.3'
+						fillOpacity='0.3'
 					/>
 					<rect
 						y='130.949'
@@ -80,7 +80,7 @@ export const IconPhone = () => {
 						height='37.0232'
 						rx='0.547141'
 						fill='url(#pattern3_7297_28816)'
-						fill-opacity='0.3'
+						fillOpacity='0.3'
 					/>
 				</g>
 				<g filter='url(#filter5_f_7297_28816)'>
@@ -97,14 +97,14 @@ export const IconPhone = () => {
 					<path
 						d='M-0.544922 131.677C-0.544922 131.376 -0.300614 131.131 0.000755787 131.131C0.303265 131.131 0.548043 131.378 0.546426 131.68L0.369411 164.782C0.368066 165.033 0.163781 165.237 -0.0877523 165.237C-0.34024 165.237 -0.544922 165.032 -0.544922 164.779V131.677Z'
 						fill='white'
-						fill-opacity='0.8'
+						fillOpacity='0.8'
 					/>
 				</g>
 				<g filter='url(#filter7_f_7297_28816)'>
 					<path
 						d='M-0.179443 132.135C-0.179443 131.581 0.269656 131.131 0.823648 131.131H1.2928C1.58769 131.131 1.82674 131.371 1.82674 131.665C1.82674 131.792 1.78198 131.914 1.7004 132.01L-0.179443 134.232V132.135Z'
 						fill='white'
-						fill-opacity='0.8'
+						fillOpacity='0.8'
 					/>
 				</g>
 			</g>
@@ -115,10 +115,10 @@ export const IconPhone = () => {
 				height='36.8408'
 				rx='0.455951'
 				stroke='black'
-				stroke-opacity='0.5'
-				stroke-width='0.18238'
+				strokeOpacity='0.5'
+				strokeWidth='0.18238'
 			/>
-			<g clip-path='url(#clip2_7297_28816)'>
+			<g clipPath='url(#clip2_7297_28816)'>
 				<g filter='url(#filter8_i_7297_28816)'>
 					<rect y='177.821' width='4.37712' height='37.0232' rx='0.547141' fill='#454545' />
 					<rect
@@ -127,7 +127,7 @@ export const IconPhone = () => {
 						height='37.0232'
 						rx='0.547141'
 						fill='url(#pattern4_7297_28816)'
-						fill-opacity='0.3'
+						fillOpacity='0.3'
 					/>
 					<rect
 						y='177.821'
@@ -135,7 +135,7 @@ export const IconPhone = () => {
 						height='37.0232'
 						rx='0.547141'
 						fill='url(#pattern5_7297_28816)'
-						fill-opacity='0.3'
+						fillOpacity='0.3'
 					/>
 				</g>
 				<g filter='url(#filter9_f_7297_28816)'>
@@ -152,14 +152,14 @@ export const IconPhone = () => {
 					<path
 						d='M-0.544922 178.549C-0.544922 178.248 -0.300614 178.003 0.000755787 178.003C0.303265 178.003 0.548043 178.249 0.546426 178.552L0.369411 211.654C0.368066 211.905 0.163781 212.108 -0.0877523 212.108C-0.34024 212.108 -0.544922 211.904 -0.544922 211.651V178.549Z'
 						fill='white'
-						fill-opacity='0.8'
+						fillOpacity='0.8'
 					/>
 				</g>
 				<g filter='url(#filter11_f_7297_28816)'>
 					<path
 						d='M-0.179443 179.006C-0.179443 178.452 0.269656 178.003 0.823648 178.003H1.2928C1.58769 178.003 1.82674 178.242 1.82674 178.537C1.82674 178.664 1.78198 178.786 1.7004 178.882L-0.179443 181.104V179.006Z'
 						fill='white'
-						fill-opacity='0.8'
+						fillOpacity='0.8'
 					/>
 				</g>
 			</g>
@@ -170,10 +170,10 @@ export const IconPhone = () => {
 				height='36.8408'
 				rx='0.455951'
 				stroke='black'
-				stroke-opacity='0.5'
-				stroke-width='0.18238'
+				strokeOpacity='0.5'
+				strokeWidth='0.18238'
 			/>
-			<g clip-path='url(#clip3_7297_28816)'>
+			<g clipPath='url(#clip3_7297_28816)'>
 				<g filter='url(#filter12_i_7297_28816)'>
 					<rect
 						width='4.37712'
@@ -188,7 +188,7 @@ export const IconPhone = () => {
 						rx='0.547141'
 						transform='matrix(-1 0 0 1 236.001 156.484)'
 						fill='url(#pattern6_7297_28816)'
-						fill-opacity='0.3'
+						fillOpacity='0.3'
 					/>
 					<rect
 						width='4.37712'
@@ -196,7 +196,7 @@ export const IconPhone = () => {
 						rx='0.547141'
 						transform='matrix(-1 0 0 1 236.001 156.484)'
 						fill='url(#pattern7_7297_28816)'
-						fill-opacity='0.3'
+						fillOpacity='0.3'
 					/>
 				</g>
 				<g filter='url(#filter13_f_7297_28816)'>
@@ -212,14 +212,14 @@ export const IconPhone = () => {
 					<path
 						d='M236.55 157.211C236.55 156.909 236.305 156.665 236.003 156.665C235.701 156.665 235.456 156.91 235.457 157.213L235.636 211.653C235.637 211.905 235.841 212.108 236.093 212.108C236.345 212.108 236.55 211.904 236.55 211.652V157.211Z'
 						fill='white'
-						fill-opacity='0.8'
+						fillOpacity='0.8'
 					/>
 				</g>
 				<g filter='url(#filter15_f_7297_28816)'>
 					<path
 						d='M236.185 157.668C236.185 157.114 235.736 156.665 235.182 156.665H234.713C234.418 156.665 234.179 156.904 234.179 157.199C234.179 157.325 234.224 157.447 234.305 157.544L236.185 159.765V157.668Z'
 						fill='white'
-						fill-opacity='0.8'
+						fillOpacity='0.8'
 					/>
 				</g>
 			</g>
@@ -231,8 +231,8 @@ export const IconPhone = () => {
 				rx='0.455951'
 				transform='matrix(-1 0 0 1 235.818 156.482)'
 				stroke='black'
-				stroke-opacity='0.5'
-				stroke-width='0.18238'
+				strokeOpacity='0.5'
+				strokeWidth='0.18238'
 			/>
 			<g filter='url(#filter16_ii_7297_28816)'>
 				<rect
@@ -250,7 +250,7 @@ export const IconPhone = () => {
 					height='484.402'
 					rx='39.2117'
 					fill='url(#pattern8_7297_28816)'
-					fill-opacity='0.3'
+					fillOpacity='0.3'
 				/>
 				<rect
 					x='1.27856'
@@ -259,7 +259,7 @@ export const IconPhone = () => {
 					height='484.402'
 					rx='39.2117'
 					fill='url(#pattern9_7297_28816)'
-					fill-opacity='0.2'
+					fillOpacity='0.2'
 				/>
 			</g>
 			<g filter='url(#filter17_d_7297_28816)'>
@@ -304,7 +304,7 @@ export const IconPhone = () => {
 					height='2.00618'
 					rx='1.00309'
 					fill='#333333'
-					fill-opacity='0.4'
+					fillOpacity='0.4'
 				/>
 				<rect
 					x='93.152'
@@ -313,7 +313,7 @@ export const IconPhone = () => {
 					height='1.73261'
 					rx='0.866306'
 					stroke='url(#paint0_radial_7297_28816)'
-					stroke-width='0.27357'
+					strokeWidth='0.27357'
 				/>
 				<rect
 					x='93.152'
@@ -322,8 +322,8 @@ export const IconPhone = () => {
 					height='1.73261'
 					rx='0.866306'
 					stroke='url(#paint1_linear_7297_28816)'
-					stroke-opacity='0.4'
-					stroke-width='0.27357'
+					strokeOpacity='0.4'
+					strokeWidth='0.27357'
 				/>
 				<rect
 					x='93.152'
@@ -332,7 +332,7 @@ export const IconPhone = () => {
 					height='1.73261'
 					rx='0.866306'
 					stroke='black'
-					stroke-width='0.27357'
+					strokeWidth='0.27357'
 				/>
 			</g>
 			<mask
@@ -347,8 +347,8 @@ export const IconPhone = () => {
 				height='479'
 			>
 				<path
-					fill-rule='evenodd'
-					clip-rule='evenodd'
+					fillRule='evenodd'
+					clipRule='evenodd'
 					d='M8.49864 23.0003C4.56274 30.7249 4.56274 40.837 4.56274 61.0613V423.341C4.56274 443.566 4.56274 453.678 8.49864 461.402C11.9607 468.197 17.4851 473.721 24.2798 477.183C32.0045 481.119 42.1166 481.119 62.3407 481.119H173.483C193.708 481.119 203.82 481.119 211.544 477.183C218.339 473.721 223.863 468.197 227.325 461.402C231.261 453.678 231.261 443.566 231.261 423.341V61.0612C231.261 40.837 231.261 30.7249 227.325 23.0003C223.863 16.2055 218.339 10.6812 211.544 7.2191C203.82 3.2832 193.708 3.2832 173.483 3.2832H62.3408C42.1166 3.2832 32.0045 3.2832 24.2798 7.2191C17.4851 10.6812 11.9607 16.2055 8.49864 23.0003ZM142.259 3.28342H93.5632C94.0197 3.28342 94.4494 3.49878 94.7226 3.86448L94.8316 4.01025C95.1758 4.47107 95.7174 4.74246 96.2926 4.74246H139.529C140.105 4.74246 140.646 4.47107 140.99 4.01025L141.099 3.86448C141.372 3.49878 141.802 3.28342 142.259 3.28342Z'
 					fill='black'
 				/>
@@ -356,8 +356,8 @@ export const IconPhone = () => {
 			<g mask='url(#mask0_7297_28816)'>
 				<g filter='url(#filter20_i_7297_28816)'>
 					<path
-						fill-rule='evenodd'
-						clip-rule='evenodd'
+						fillRule='evenodd'
+						clipRule='evenodd'
 						d='M8.49864 23.0003C4.56274 30.7249 4.56274 40.837 4.56274 61.0613V423.341C4.56274 443.566 4.56274 453.678 8.49864 461.402C11.9607 468.197 17.4851 473.721 24.2798 477.183C32.0045 481.119 42.1166 481.119 62.3407 481.119H173.483C193.708 481.119 203.82 481.119 211.544 477.183C218.339 473.721 223.863 468.197 227.325 461.402C231.261 453.678 231.261 443.566 231.261 423.341V61.0612C231.261 40.837 231.261 30.7249 227.325 23.0003C223.863 16.2055 218.339 10.6812 211.544 7.2191C203.82 3.2832 193.708 3.2832 173.483 3.2832H62.3408C42.1166 3.2832 32.0045 3.2832 24.2798 7.2191C17.4851 10.6812 11.9607 16.2055 8.49864 23.0003ZM142.259 3.28342H93.5632C94.0197 3.28342 94.4494 3.49878 94.7226 3.86448L95.0504 4.30313C95.257 4.57963 95.5819 4.74246 95.927 4.74246H139.895C140.24 4.74246 140.565 4.57963 140.772 4.30313L141.099 3.86448C141.372 3.49878 141.802 3.28342 142.259 3.28342Z'
 						fill='black'
 					/>
@@ -370,8 +370,8 @@ export const IconPhone = () => {
 						height='477.471'
 						rx='35.9289'
 						stroke='white'
-						stroke-opacity='0.8'
-						stroke-width='0.36476'
+						strokeOpacity='0.8'
+						strokeWidth='0.36476'
 					/>
 				</g>
 			</g>
@@ -383,9 +383,9 @@ export const IconPhone = () => {
 					width='4.3772'
 					height='21.1561'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feColorMatrix
 						in='SourceAlpha'
@@ -422,9 +422,9 @@ export const IconPhone = () => {
 					width='3.6475'
 					height='1.45903'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feGaussianBlur stdDeviation='0.27357' result='effect1_foregroundBlur_7297_28816' />
 				</filter>
@@ -435,9 +435,9 @@ export const IconPhone = () => {
 					width='1.81204'
 					height='17.6908'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feGaussianBlur stdDeviation='0.18238' result='effect1_foregroundBlur_7297_28816' />
 				</filter>
@@ -448,9 +448,9 @@ export const IconPhone = () => {
 					width='3.82991'
 					height='4.92427'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feGaussianBlur stdDeviation='0.45595' result='effect1_foregroundBlur_7297_28816' />
 				</filter>
@@ -461,9 +461,9 @@ export const IconPhone = () => {
 					width='4.3772'
 					height='38.2999'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feColorMatrix
 						in='SourceAlpha'
@@ -500,9 +500,9 @@ export const IconPhone = () => {
 					width='3.6475'
 					height='1.45903'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feGaussianBlur stdDeviation='0.27357' result='effect1_foregroundBlur_7297_28816' />
 				</filter>
@@ -513,9 +513,9 @@ export const IconPhone = () => {
 					width='1.82083'
 					height='34.8346'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feGaussianBlur stdDeviation='0.18238' result='effect1_foregroundBlur_7297_28816' />
 				</filter>
@@ -526,9 +526,9 @@ export const IconPhone = () => {
 					width='3.82991'
 					height='4.92427'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feGaussianBlur stdDeviation='0.45595' result='effect1_foregroundBlur_7297_28816' />
 				</filter>
@@ -539,9 +539,9 @@ export const IconPhone = () => {
 					width='4.3772'
 					height='38.2999'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feColorMatrix
 						in='SourceAlpha'
@@ -578,9 +578,9 @@ export const IconPhone = () => {
 					width='3.6475'
 					height='1.45903'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feGaussianBlur stdDeviation='0.27357' result='effect1_foregroundBlur_7297_28816' />
 				</filter>
@@ -591,9 +591,9 @@ export const IconPhone = () => {
 					width='1.82083'
 					height='34.8346'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feGaussianBlur stdDeviation='0.18238' result='effect1_foregroundBlur_7297_28816' />
 				</filter>
@@ -604,9 +604,9 @@ export const IconPhone = () => {
 					width='3.82991'
 					height='4.92427'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feGaussianBlur stdDeviation='0.45595' result='effect1_foregroundBlur_7297_28816' />
 				</filter>
@@ -617,9 +617,9 @@ export const IconPhone = () => {
 					width='4.37708'
 					height='59.6384'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feColorMatrix
 						in='SourceAlpha'
@@ -656,9 +656,9 @@ export const IconPhone = () => {
 					width='3.64763'
 					height='1.45903'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feGaussianBlur stdDeviation='0.27357' result='effect1_foregroundBlur_7297_28816' />
 				</filter>
@@ -669,9 +669,9 @@ export const IconPhone = () => {
 					width='1.82205'
 					height='56.1731'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feGaussianBlur stdDeviation='0.18238' result='effect1_foregroundBlur_7297_28816' />
 				</filter>
@@ -682,9 +682,9 @@ export const IconPhone = () => {
 					width='3.83003'
 					height='4.92427'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feGaussianBlur stdDeviation='0.45595' result='effect1_foregroundBlur_7297_28816' />
 				</filter>
@@ -695,9 +695,9 @@ export const IconPhone = () => {
 					width='233.264'
 					height='484.402'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feColorMatrix
 						in='SourceAlpha'
@@ -761,9 +761,9 @@ export const IconPhone = () => {
 					width='231.44'
 					height='482.578'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feColorMatrix
 						in='SourceAlpha'
 						type='matrix'
@@ -798,9 +798,9 @@ export const IconPhone = () => {
 					width='228.158'
 					height='479.295'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feGaussianBlur stdDeviation='0.18238' result='effect1_foregroundBlur_7297_28816' />
 				</filter>
@@ -811,9 +811,9 @@ export const IconPhone = () => {
 					width='49.6074'
 					height='2.18861'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feColorMatrix
 						in='SourceAlpha'
@@ -848,9 +848,9 @@ export const IconPhone = () => {
 					width='226.699'
 					height='478.566'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feColorMatrix
 						in='SourceAlpha'
@@ -871,9 +871,9 @@ export const IconPhone = () => {
 					width='230.346'
 					height='481.484'
 					filterUnits='userSpaceOnUse'
-					color-interpolation-filters='sRGB'
+					colorInterpolationFilters='sRGB'
 				>
-					<feFlood flood-opacity='0' result='BackgroundImageFix' />
+					<feFlood floodOpacity='0' result='BackgroundImageFix' />
 					<feBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' />
 					<feGaussianBlur stdDeviation='0.911901' result='effect1_foregroundBlur_7297_28816' />
 				</filter>
@@ -886,7 +886,7 @@ export const IconPhone = () => {
 					gradientTransform='translate(117.644 4.37376) rotate(-179.897) scale(24.2797 37.4291)'
 				>
 					<stop />
-					<stop offset='1' stop-color='white' />
+					<stop offset='1' stopColor='white' />
 				</radialGradient>
 				<linearGradient
 					id='paint1_linear_7297_28816'
@@ -897,7 +897,7 @@ export const IconPhone = () => {
 					gradientUnits='userSpaceOnUse'
 				>
 					<stop />
-					<stop offset='0.520833' stop-color='white' />
+					<stop offset='0.520833' stopColor='white' />
 					<stop offset='1' />
 				</linearGradient>
 				<clipPath id='clip0_7297_28816'>
