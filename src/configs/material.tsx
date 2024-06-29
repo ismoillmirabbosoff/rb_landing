@@ -204,8 +204,8 @@ export const theme = createTheme({
 			letterSpacing: '0.35px',
 			color: palette.colors.BLACK,
 			[defaultCreateTheme.breakpoints.down('md')]: {
-				fontSize: '10px',
-				lineHeight: '10px',
+				fontSize: '12px',
+				lineHeight: '14px',
 			},
 		},
 		title90: {

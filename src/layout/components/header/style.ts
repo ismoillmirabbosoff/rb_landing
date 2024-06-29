@@ -7,8 +7,8 @@ export const Container = styled('div')`
 		min-height: 94px;
 		${({ theme }) => ({
 			[theme.breakpoints.down('md')]: {
-				maxHeight: '64px',
-				minHeight: '64px',
+				maxHeight: '68px',
+				minHeight: '68px',
 			},
 		})}
 	}

@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next'
 import { stringAvatar } from '@/utils/avatar'
+import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { BRANDS, type BrandProps } from './constants'
@@ -7,27 +8,38 @@ import { Card, Avatar, Wrapper, Container } from './style'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 
 export const Brands = () => {
+	const theme = useTheme()
 	const { t } = useTranslation('common')
 	const halfwayThrough = Math.floor(BRANDS.length / 2)
 	const arrayFirstHalf = BRANDS.slice(0, halfwayThrough)
 	const arraySecondHalf = BRANDS.slice(halfwayThrough, BRANDS.length)
 
-	const list = (data: BrandProps[], slidesPerView: number, reverseDirection?: boolean) => {
+	const list = (data: BrandProps[], reverseDirection?: boolean) => {
 		return (
 			<Swiper
 				loop={true}
-				speed={7000}
+				speed={4000}
 				spaceBetween={20}
 				centeredSlides={true}
-				slidesPerView={slidesPerView}
+				slidesPerView={4}
 				modules={[Autoplay, Navigation, Pagination]}
 				autoplay={{
 					delay: 0,
 					reverseDirection,
 					stopOnLastSlide: false,
-					pauseOnMouseEnter: true,
+					pauseOnMouseEnter: false,
 					waitForTransition: true,
 					disableOnInteraction: false,
+				}}
+				breakpoints={{
+					[theme.breakpoints.values.xs]: {
+						spaceBetween: 20,
+						slidesPerView: 3,
+					},
+					[theme.breakpoints.values.sm]: {
+						spaceBetween: 30,
+						slidesPerView: 4,
+					},
 				}}
 			>
 				{data.map((b, i) => (
@@ -36,7 +48,7 @@ export const Brands = () => {
 							<Avatar
 								alt={b.title}
 								src={b?.logo?.src ?? ''}
-								{...stringAvatar(b.title ?? '', { width: '40px', height: '40px' })}
+								{...stringAvatar(b.title ?? '', { width: '50px', height: '50px' })}
 							/>
 							<Typography variant='title80' component='h4' whiteSpace='nowrap'>
 								{b.title}
@@ -60,8 +72,8 @@ export const Brands = () => {
 				>
 					{t('companies_using_the_robosell_platform')}
 				</Typography>
-				<div style={{ width: '100%' }}>{list(arrayFirstHalf, 4.5)}</div>
-				<div style={{ width: '100%' }}>{list(arraySecondHalf, 4, true)}</div>
+				<div style={{ width: '100%' }}>{list(arrayFirstHalf)}</div>
+				<div style={{ width: '100%' }}>{list(arraySecondHalf, true)}</div>
 			</Wrapper>
 		</Container>
 	)
