@@ -129,7 +129,7 @@ export const WrapMac = styled('div')`
 
 export const WrapMacMobile = styled('div')`
 	bottom: 15px;
-	right: -50px;
+	right: -60px;
 	width: 230px;
 	height: 435px;
 	position: absolute;
@@ -141,6 +141,10 @@ export const WrapMacMobile = styled('div')`
 			height: 'calc(100% - 25px)',
 		},
 	})};
+	svg {
+		width: 100%;
+		height: 100%;
+	}
 `
 
 export const WrapMobileOnly = styled('div')`
@@ -152,4 +156,29 @@ export const WrapMobileOnly = styled('div')`
 			height: '400px',
 		},
 	})};
+`
+
+export const ContentPhone = styled('div')`
+	top: 5px;
+	z-index: 1;
+	left: 15px;
+	width: 230px;
+	height: 435px;
+	position: absolute;
+	img {
+		border-radius: 32px;
+		width: calc(100% - 30px) !important;
+		height: calc(100% - 10px) !important;
+	}
+`
+
+export const WrapIsland = styled('div')`
+	top: 10px;
+	left: 38%;
+	z-index: 2;
+	position: absolute;
+	svg {
+		width: 80%;
+		height: 80%;
+	}
 `

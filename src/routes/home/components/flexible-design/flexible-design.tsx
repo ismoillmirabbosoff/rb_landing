@@ -13,6 +13,8 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import { IconMacbookFooter } from '@/assets/icons/macbook-footer'
 import ImageResponsiveDevice from '@/assets/images/responsive-device.webp'
 import ImageWebappWebsiteShop from '@/assets/images/webapp-website-shop.webp'
+import ImagePhoneShop from '@/assets/images/phone-shop.webp'
+import ImagePhoneRes from '@/assets/images/phone-res.webp'
 import ImageWebappWebsiteRestaurant from '@/assets/images/webapp-website-restaurant.webp'
 import {
 	Wrap,
@@ -26,7 +28,11 @@ import {
 	WrapMac,
 	WrapMacMobile,
 	WrapMobileOnly,
+	ContentPhone,
+	WrapIsland,
 } from './style'
+import { IconPhone } from '@/assets/icons/phone'
+import { IconIsland } from '@/assets/icons/island'
 
 export const FlexibleDesign = () => {
 	const { t } = useTranslation('common')
@@ -55,9 +61,27 @@ export const FlexibleDesign = () => {
 				<Wrap>
 					<Stack width='100%' flexGrow={1} alignItems='center'>
 						{platform === 'telegram' ? (
-							<WrapMobileOnly>
-								<Image fill src={ImageIphone.src} alt='iphone-restaurant' />
-							</WrapMobileOnly>
+							<Stack
+								position='relative'
+								sx={{
+									width: '230px',
+									height: '435px',
+								}}
+							>
+								<WrapMacMobile>
+									<WrapIsland>
+										<IconIsland />
+									</WrapIsland>
+									<ContentPhone>
+										{business === 'shop' ? (
+											<Image fill src={ImagePhoneShop.src} alt='phone-shop' />
+										) : (
+											<Image fill src={ImagePhoneRes.src} alt='phone-res' />
+										)}
+									</ContentPhone>
+									<IconPhone />
+								</WrapMacMobile>
+							</Stack>
 						) : (
 							<Stack position='relative'>
 								<WrapMac>
@@ -68,22 +92,28 @@ export const FlexibleDesign = () => {
 												<WrapCamera>
 													<IconCamera />
 												</WrapCamera>
-												<Image
-													fill
-													src={
-														platform === 'shop'
-															? ImageWebappWebsiteShop.src
-															: ImageWebappWebsiteRestaurant.src
-													}
-													alt='res'
-												/>
+												{business === 'shop' ? (
+													<Image fill src={ImageWebappWebsiteShop.src} alt='shop' />
+												) : (
+													<Image fill src={ImageWebappWebsiteRestaurant.src} alt='res' />
+												)}
 											</WrapImage>
 										</WrapImageBody>
 									</Stack>
 									<IconMacbookFooter />
 								</WrapMac>
 								<WrapMacMobile>
-									<Image fill src={ImageResponsiveDevice.src} alt='iphone-restaurant' />
+									<IconPhone />
+									<WrapIsland>
+										<IconIsland />
+									</WrapIsland>
+									<ContentPhone>
+										{business === 'shop' ? (
+											<Image fill src={ImagePhoneShop.src} alt='phone-shop' />
+										) : (
+											<Image fill src={ImagePhoneRes.src} alt='phone-res' />
+										)}
+									</ContentPhone>
 								</WrapMacMobile>
 							</Stack>
 						)}
