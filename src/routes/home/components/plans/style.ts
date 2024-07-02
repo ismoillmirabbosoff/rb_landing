@@ -21,20 +21,6 @@ export const Wrapper = styled('div')`
 			padding: '0 0 24px',
 		},
 	})}
-	.swiper-b {
-		top: calc(50% - 24px);
-		z-index: 10;
-		padding: 0;
-		position: absolute;
-	}
-	.p-custom {
-		left: 20px;
-		right: auto;
-	}
-	.n-custom {
-		left: auto;
-		right: 20px;
-	}
 `
 
 export const Cards = styled('ul')`
@@ -161,4 +147,24 @@ export const WrapLabel = styled('div')`
 			},
 		},
 	})};
+`
+
+export const WrapSlider = styled('div')`
+	width: 100%;
+	padding: 0 20px;
+	position: relative;
+	.swiper-b {
+		top: calc(50% - 24px);
+		z-index: 10;
+		padding: 0;
+		position: absolute;
+	}
+	.p-custom {
+		left: 20px;
+		right: auto;
+	}
+	.n-custom {
+		left: auto;
+		right: 20px;
+	}
 `

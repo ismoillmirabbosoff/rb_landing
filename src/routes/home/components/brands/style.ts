@@ -23,6 +23,7 @@ export const Wrapper = styled('div')`
 
 export const Card = styled('li')`
 	gap: 20px;
+	width: 100%;
 	display: flex;
 	padding: 18px 30px;
 	align-items: center;

@@ -10,15 +10,17 @@ import { numberFormat } from '@/utils/format'
 import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import RadioGroup from '@mui/material/RadioGroup'
+import IconButton from '@mui/material/IconButton'
 import { IconRemove } from '@/assets/icons/remove'
-import { Swiper, SwiperSlide } from 'swiper/react'
 import { ScrollDown } from '@/components/scroll-down'
 import { IconInfinity } from '@/assets/icons/infinity'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { Navigation, EffectCards } from 'swiper/modules'
 import { IconTickSolid } from '@/assets/icons/tick-solid'
-import { useRef, useState, type SyntheticEvent } from 'react'
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
+import { IconDirectionLeft } from '@/assets/icons/direction-left'
 import { IconLinearGradient } from '@/assets/icons/linear-gradient'
+import { useEffect, useRef, useState, type SyntheticEvent } from 'react'
 import { TAB_PLANS, PRICING_PLANS, PLAN_PLATFORMS } from '@/constants/plan'
 import type { PlanProps, PlanTypeProps, PlatformTypeProps } from '@/types/plan'
 import {
@@ -28,11 +30,10 @@ import {
 	Wrapper,
 	Container,
 	WrapLabel,
+	WrapSlider,
 	WrapDiscount,
 	FormControlLabel,
 } from './style'
-import { IconButton } from '@mui/material'
-import { IconDirectionLeft } from '@/assets/icons/direction-left'
 
 const adminBaseURL = process.env.NEXT_PUBLIC_ADMIN_BASE_URL
 
@@ -45,6 +46,7 @@ export const Plans = () => {
 	const navigationPrevRef = useRef(null)
 	const navigationNextRef = useRef(null)
 	const { t } = useTranslation('common')
+	const [swiper, setSwiper] = useState<SwiperClass>()
 	const matches = useMediaQuery(theme.breakpoints.down('md'))
 	const [plan, setPlan] = useState<PlanTypeProps>('monthly')
 	const [platform, setPlatform] = useState<PlatformTypeProps>(PLAN_PLATFORMS.TELEGRAM.platform)
@@ -56,6 +58,18 @@ export const Plans = () => {
 	const handleChangePlatform = (_: SyntheticEvent, platform: string) => {
 		setPlatform(platform as PlatformTypeProps)
 	}
+
+	useEffect(() => {
+		if (swiper) {
+			console.log('Swiper instance:', swiper)
+			// @ts-ignore
+			swiper.params.navigation.prevEl = navigationPrevRef.current
+			// @ts-ignore
+			swiper.params.navigation.nextEl = navigationNextRef.current
+			swiper.navigation.init()
+			swiper.navigation.update()
+		}
+	}, [swiper])
 
 	const content = (
 		type: 'count' | 'access' | 'full',
@@ -242,15 +256,19 @@ export const Plans = () => {
 						</TabList>
 					</Stack>
 					{matches ? (
-						<div style={{ padding: '0 20px', width: '100%', position: 'relative' }}>
+						<WrapSlider>
 							<Swiper
+								observer
 								loop={true}
+								observeParents
+								centeredSlides
 								initialSlide={2}
 								effect={'cards'}
 								grabCursor={true}
-								modules={[Navigation, EffectCards]}
 								className='mySwiper'
-								centeredSlides={true}
+								onSwiper={setSwiper}
+								updateOnWindowResize
+								modules={[Navigation, EffectCards]}
 								navigation={{
 									prevEl: navigationPrevRef.current,
 									nextEl: navigationNextRef.current,
@@ -274,7 +292,7 @@ export const Plans = () => {
 							<IconButton ref={navigationNextRef} className='swiper-b n-custom'>
 								<IconDirectionLeft />
 							</IconButton>
-						</div>
+						</WrapSlider>
 					) : (
 						<Cards>{list()}</Cards>
 					)}
