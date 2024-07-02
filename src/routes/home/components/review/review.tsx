@@ -6,6 +6,8 @@ import Typography from '@mui/material/Typography'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Card, Wrapper, WrapUser, Avatar, Container } from './style'
+import { REVIEWS } from './constants'
+import { Box } from '@mui/material'
 
 export const Review = () => {
 	const theme = useTheme()
@@ -22,20 +24,18 @@ export const Review = () => {
 				>
 					{t('feedback_from_our_partners')}
 				</Typography>
-				<div style={{ width: '100%' }}>
+				<Box style={{ width: '100%' }}>
 					<Swiper
-						loop={true}
-						speed={7000}
-						spaceBetween={30}
-						slidesPerView={2.5}
-						modules={[Autoplay, Navigation, Pagination]}
-						autoplay={{
-							delay: 0,
-							stopOnLastSlide: false,
-							pauseOnMouseEnter: true,
-							waitForTransition: true,
-							disableOnInteraction: false,
-						}}
+						// loop={true}
+						// speed={7000}
+						// modules={[Autoplay, Navigation, Pagination]}
+						// autoplay={{
+						// 	delay: 0,
+						// 	stopOnLastSlide: false,
+						// 	pauseOnMouseEnter: true,
+						// 	waitForTransition: true,
+						// 	disableOnInteraction: false,
+						// }}
 						breakpoints={{
 							[theme.breakpoints.values.xs]: {
 								spaceBetween: 20,
@@ -47,7 +47,7 @@ export const Review = () => {
 							},
 						}}
 					>
-						{Array.from({ length: 6 }, (_, i: number) => (
+						{REVIEWS.map(({ text, owner, company }, i: number) => (
 							<SwiperSlide key={i}>
 								<Card>
 									<Stack>
@@ -55,19 +55,17 @@ export const Review = () => {
 											<IconQuote />
 										</Stack>
 										<Typography maxWidth='440px' variant='text60'>
-											Exceptional service! I couldnt be happier with the results. The team went
-											above and beyond to meet my needs and deliver outstanding outcomes.Exceptional
-											service! I couldnt be happier with the results. The team went
+											{t(text)}
 										</Typography>
 									</Stack>
 									<WrapUser>
 										<Avatar />
 										<Stack justifyContent='center'>
 											<Typography variant='text60' fontWeight='400'>
-												Sarvarbek Erkinjonov
+												{t(owner)}
 											</Typography>
 											<Typography variant='text60' color='colors.GRAY70'>
-												Marketolog of XonXonim
+												{t(company)}
 											</Typography>
 										</Stack>
 									</WrapUser>
@@ -75,7 +73,7 @@ export const Review = () => {
 							</SwiperSlide>
 						))}
 					</Swiper>
-				</div>
+				</Box>
 			</Wrapper>
 		</Container>
 	)

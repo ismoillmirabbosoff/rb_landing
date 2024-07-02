@@ -14,6 +14,12 @@ export const Wrapper = styled('div')`
 	align-items: center;
 	flex-direction: column;
 	justify-content: space-between;
+
+	.swiper-slide {
+		flex-grow: 1;
+		height: auto;
+		display: flex;
+	}
 `
 
 export const Card = styled('div')`

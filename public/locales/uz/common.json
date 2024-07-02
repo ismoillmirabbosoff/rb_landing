@@ -154,5 +154,20 @@
 	"project_Type_selection_choose_the_option_to_create_a_telegram_bot": "Loyiha turini tanlash: Telegram bot yaratish variantini tanlang.",
 	"enter_token_enter_your_bot_token_which_you_can_get_by_creating_a_bot_through_botfather_on_telegram": "Tokenni kiriting: <linkTag>@BotFather</linkTag> orqali Telegram bot yaratib, bot tokeningizni kiriting.",
 	"setup_configure_the_functions_and_commands_of_your_bot_using_the_platform_s_user_friendly_interface": "Sozlash: Qulay interfeys yordamida botingizning funksiyalari va buyruqlarini sozlang.",
-	"launch_after_completing_the_setup_activate_your_bot_and_start_using_it_for_your_business": "Ishga tushirish: Sozlashni yakunlagandan keyin, botingizni faollashtiring va uni biznesingiz uchun foydalanishni boshlang."
+	"launch_after_completing_the_setup_activate_your_bot_and_start_using_it_for_your_business": "Ishga tushirish: Sozlashni yakunlagandan keyin, botingizni faollashtiring va uni biznesingiz uchun foydalanishni boshlang.",
+	"rustam": "Rustam",
+	"cheese_shop": "Pishloq do'koni",
+	"robosell_completely_changed_my_experience_with_online_trading": "Robosell onlayn savdolarimni butunlay o'zgartirdi! Ushbu platforma tufayli men bir necha daqiqada do'konim uchun qulay telegram bot va veb-sayt yaratishga muvaffaq bo'ldim.",
+	"i_have_been_looking_for_a_suitable_tool_for_creating_an_online_store_for_a_long_time": "Men uzoq vaqt davomida onlayn-do'kon yaratish uchun mos bo‘lgan platformani qidirdim va uni topdim. Robosell foydalanish uchun qulay interfeysga ega va mening asosiy yordamchim!",
+	"this_platform_has_helped_us_take_our_customer_service_and_food_delivery_order_management_to_the_next_level": "Ushbu platforma mijozlarimizga xizmat ko'rsatish va ovqat yetkazib berish bo’yicha buyurtmalar boshqaruvini yangi bosqichga olib chiqishimizga yordam berdi.",
+	"thanks_to_robosell_we_have_become_more_flexible_and_respond_to_customer_requests_much_faster": "Robosell bilan biz yanada moslashuvchan bo'ldik va mijozlar so'rovlariga tezroq javob bera boshladik. Platforma telegram boti va buyurtma sayti mijoz bilan tezkor muloqot qilish va xizmat sifatini yaxshilash imkonini yaratdi.",
+	"with_robosell_it_has_become_so_easy_to_manage_our_fast_food_outlet": "Robosell bilan  fastfud shoxobchamizni boshqarish juda oson! Biz shunchaki akkaunt yaratib, unga menyu qo'shdik. Endi mijozlar osongina onlayn buyurtma berishlari mumkin.",
+	"robosell_not_only_makes_it_easy_to_create_an_online_store": "Robosell nafaqat onlayn-do'kon yaratishni osonlashtiradi, balki buyurtmalarni boshqarish va mijozlarga xizmat ko'rsatish uchun ko'plab funktsiyalarni ham taklif qiladi.",
+	"ivan": "Ivan",
+	"i_was_impressed_by_the_speed_and_quality_of_robosell_s_work": "Robosell’ning tezligi va sifati meni hayratda qoldirdi. Bir necha daqiqada do‘konim uchun telegram bot yaratdim va buyurtmalarni qabul qila boshladim. Kichik biznes uchun haqiqiy topilma!",
+	"for_a_long_time_we_have_been_seeking_a_solution_for_online_ordering": "Biz uzoq vaqt davomida onlayn buyurtma berish uchun yechim izlagandik va Robosell biz kutgan natijani berdi.",
+	"moscow_pizza": "Московская пицца",
+	"the_platform_helped_us_create_a_convenient_telegram_bot_and_a_website_for_orders": "Platforma bizga qulay telegram bot va buyurtmalar uchun veb-sayt yaratishda yordam berdi. Bu esa o‘z navbatida ko‘proq mijozlarni jalb qilib, daromadimizni oshirdi.",
+	"as_a_restaurant_owner_i_value_simplicity_and_functionality": "Restoran egasi sifatida men soddalik va funksionallikni qadrlayman. Bu  platforma mijozlarimizga oziq-ovqat buyurtma qilish va yetkazib berish jarayonini tez va qulay qildi.",
+	"artur": "Artur"
 }
