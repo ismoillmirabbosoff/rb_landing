@@ -14,14 +14,14 @@ export const Brands = () => {
 	const arrayFirstHalf = BRANDS.slice(0, halfwayThrough)
 	const arraySecondHalf = BRANDS.slice(halfwayThrough, BRANDS.length)
 
-	const list = (data: BrandProps[], reverseDirection?: boolean) => {
+	const list = (data: BrandProps[], slidesPerView: number, reverseDirection?: boolean) => {
 		return (
 			<Swiper
 				loop={true}
 				speed={4000}
 				spaceBetween={20}
 				centeredSlides={true}
-				slidesPerView={4}
+				slidesPerView={slidesPerView}
 				modules={[Autoplay, Navigation, Pagination]}
 				autoplay={{
 					delay: 0,
@@ -31,25 +31,11 @@ export const Brands = () => {
 					waitForTransition: true,
 					disableOnInteraction: false,
 				}}
-				breakpoints={{
-					[theme.breakpoints.values.xs]: {
-						spaceBetween: 20,
-						slidesPerView: 3,
-					},
-					[theme.breakpoints.values.sm]: {
-						spaceBetween: 30,
-						slidesPerView: 4,
-					},
-				}}
 			>
 				{data.map((b, i) => (
 					<SwiperSlide key={i}>
 						<Card>
-							<Avatar
-								alt={b.title}
-								src={b?.logo?.src ?? ''}
-								{...stringAvatar(b.title ?? '', { width: '50px', height: '50px' })}
-							/>
+							<Avatar alt={b.title} src={b?.logo?.src ?? ''} {...stringAvatar(b.title ?? '')} />
 							<Typography variant='title80' component='h4' whiteSpace='nowrap'>
 								{b.title}
 							</Typography>
@@ -72,8 +58,8 @@ export const Brands = () => {
 				>
 					{t('companies_using_the_robosell_platform')}
 				</Typography>
-				<div style={{ width: '100%' }}>{list(arrayFirstHalf)}</div>
-				<div style={{ width: '100%' }}>{list(arraySecondHalf, true)}</div>
+				<div style={{ width: '100%' }}>{list(arrayFirstHalf, 3.5)}</div>
+				<div style={{ width: '100%' }}>{list(arraySecondHalf, 4, true)}</div>
 			</Wrapper>
 		</Container>
 	)

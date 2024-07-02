@@ -36,12 +36,12 @@ export const Card = styled('li')`
 `
 
 export const Avatar = styled(MuiAvatar)`
-	width: 60px;
-	height: 60px;
+	width: 70px;
+	height: 70px;
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
-			width: '24px',
-			height: '24px',
+			width: '50px',
+			height: '50px',
 			fontSize: '11px',
 		},
 	})}
