@@ -5,7 +5,6 @@ import Radio from '@mui/material/Radio'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 import TabContext from '@mui/lab/TabContext'
-import { EffectCards } from 'swiper/modules'
 import { useTranslation } from 'next-i18next'
 import { numberFormat } from '@/utils/format'
 import { useTheme } from '@mui/material/styles'
@@ -13,11 +12,12 @@ import Typography from '@mui/material/Typography'
 import RadioGroup from '@mui/material/RadioGroup'
 import { IconRemove } from '@/assets/icons/remove'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { useState, type SyntheticEvent } from 'react'
 import { ScrollDown } from '@/components/scroll-down'
 import { IconInfinity } from '@/assets/icons/infinity'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import { Navigation, EffectCards } from 'swiper/modules'
 import { IconTickSolid } from '@/assets/icons/tick-solid'
+import { useRef, useState, type SyntheticEvent } from 'react'
 import { IconLinearGradient } from '@/assets/icons/linear-gradient'
 import { TAB_PLANS, PRICING_PLANS, PLAN_PLATFORMS } from '@/constants/plan'
 import type { PlanProps, PlanTypeProps, PlatformTypeProps } from '@/types/plan'
@@ -31,6 +31,8 @@ import {
 	WrapDiscount,
 	FormControlLabel,
 } from './style'
+import { IconButton } from '@mui/material'
+import { IconDirectionLeft } from '@/assets/icons/direction-left'
 
 const adminBaseURL = process.env.NEXT_PUBLIC_ADMIN_BASE_URL
 
@@ -40,6 +42,8 @@ const rotateArray = (arr: PlanProps[], positions: number) => {
 
 export const Plans = () => {
 	const theme = useTheme()
+	const navigationPrevRef = useRef(null)
+	const navigationNextRef = useRef(null)
 	const { t } = useTranslation('common')
 	const matches = useMediaQuery(theme.breakpoints.down('md'))
 	const [plan, setPlan] = useState<PlanTypeProps>('monthly')
@@ -238,18 +242,38 @@ export const Plans = () => {
 						</TabList>
 					</Stack>
 					{matches ? (
-						<div style={{ padding: '0 20px', width: '100%' }}>
+						<div style={{ padding: '0 20px', width: '100%', position: 'relative' }}>
 							<Swiper
 								loop={true}
 								initialSlide={2}
 								effect={'cards'}
 								grabCursor={true}
-								modules={[EffectCards]}
+								modules={[Navigation, EffectCards]}
 								className='mySwiper'
 								centeredSlides={true}
+								navigation={{
+									prevEl: navigationPrevRef.current,
+									nextEl: navigationNextRef.current,
+								}}
+								onBeforeInit={swiper => {
+									// @ts-expect-error
+									swiper.params.navigation.prevEl = navigationPrevRef.current
+									// @ts-expect-error
+									swiper.params.navigation.nextEl = navigationNextRef.current
+								}}
 							>
 								{list()}
 							</Swiper>
+							<IconButton
+								ref={navigationPrevRef}
+								className='swiper-b p-custom'
+								sx={{ transform: 'rotate(180deg)' }}
+							>
+								<IconDirectionLeft />
+							</IconButton>
+							<IconButton ref={navigationNextRef} className='swiper-b n-custom'>
+								<IconDirectionLeft />
+							</IconButton>
 						</div>
 					) : (
 						<Cards>{list()}</Cards>
