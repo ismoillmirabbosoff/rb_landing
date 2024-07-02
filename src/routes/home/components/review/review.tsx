@@ -26,16 +26,16 @@ export const Review = () => {
 				</Typography>
 				<Box style={{ width: '100%' }}>
 					<Swiper
-						// loop={true}
-						// speed={7000}
-						// modules={[Autoplay, Navigation, Pagination]}
-						// autoplay={{
-						// 	delay: 0,
-						// 	stopOnLastSlide: false,
-						// 	pauseOnMouseEnter: true,
-						// 	waitForTransition: true,
-						// 	disableOnInteraction: false,
-						// }}
+						loop={true}
+						speed={7000}
+						modules={[Autoplay, Navigation, Pagination]}
+						autoplay={{
+							delay: 0,
+							stopOnLastSlide: false,
+							pauseOnMouseEnter: true,
+							waitForTransition: true,
+							disableOnInteraction: false,
+						}}
 						breakpoints={{
 							[theme.breakpoints.values.xs]: {
 								spaceBetween: 20,

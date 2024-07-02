@@ -17,9 +17,9 @@ import { IconInfinity } from '@/assets/icons/infinity'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { Navigation, EffectCards } from 'swiper/modules'
 import { IconTickSolid } from '@/assets/icons/tick-solid'
-import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import { IconDirectionLeft } from '@/assets/icons/direction-left'
 import { IconLinearGradient } from '@/assets/icons/linear-gradient'
+import { Swiper, type SwiperClass, SwiperSlide } from 'swiper/react'
 import { useEffect, useRef, useState, type SyntheticEvent } from 'react'
 import { TAB_PLANS, PRICING_PLANS, PLAN_PLATFORMS } from '@/constants/plan'
 import type { PlanProps, PlanTypeProps, PlatformTypeProps } from '@/types/plan'
@@ -61,7 +61,6 @@ export const Plans = () => {
 
 	useEffect(() => {
 		if (swiper) {
-			console.log('Swiper instance:', swiper)
 			// @ts-ignore
 			swiper.params.navigation.prevEl = navigationPrevRef.current
 			// @ts-ignore

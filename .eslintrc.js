@@ -31,6 +31,7 @@ module.exports = {
 		quotes: ['error', 'single'],
 		'react/display-name': 'off',
 		'prettier/prettier': 'error',
+		'@typescript-eslint/prefer-ts-expect-error': 'off',
 		'no-duplicate-imports': 'error',
 		'react/react-in-jsx-scope': 'off',
 		'react/no-unescaped-entities': 'off',
