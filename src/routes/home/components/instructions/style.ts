@@ -39,6 +39,14 @@ export const WrapPlay = styled(motion.div)`
 	background: ${({ theme }) => theme.palette.colors.WHITE};
 	border: 1.182px solid ${({ theme }) => theme.palette.colors.GRAY190};
 	box-shadow: 0px 7.091px 44.909px ${({ theme }) => theme.palette.colors.GRAY200};
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			padding: '0 12px',
+			minHeight: '55px',
+			minWidth: '200px',
+			marginRight: '15px',
+		},
+	})};
 `
 
 export const WrapContent = styled('div')`
@@ -57,6 +65,11 @@ export const WrapContent = styled('div')`
 			gridRowStart: 2,
 		},
 	})};
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			minHeight: '250px',
+		},
+	})};
 `
 
 interface WrapImageContentProps {
@@ -73,6 +86,12 @@ export const WrapImageContent = styled(motion.div)<WrapImageContentProps>`
 	transition: all 0.5s ease-in-out;
 	transform: ${({ open }) => (open ? 'scale(1.11, 1.15)' : 'scale(1)')};
 	box-shadow: 4.639px -4.639px 28.995px ${({ theme }) => theme.palette.colors.GRAY210};
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			top: '25px',
+			left: '-25px',
+		},
+	})};
 `
 
 export const WrapImage = styled('div')`

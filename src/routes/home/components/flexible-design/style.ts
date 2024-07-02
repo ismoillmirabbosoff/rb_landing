@@ -133,27 +133,16 @@ export const WrapMacMobile = styled('div')`
 	width: 230px;
 	height: 435px;
 	position: absolute;
+	svg {
+		width: 100%;
+		height: 100%;
+	}
 	${({ theme }) => ({
 		[theme.breakpoints.down('md')]: {
 			right: '-10px',
 			bottom: '7px',
 			width: '100px',
 			height: 'calc(100% - 25px)',
-		},
-	})};
-	svg {
-		width: 100%;
-		height: 100%;
-	}
-`
-
-export const WrapMobileOnly = styled('div')`
-	width: 230px;
-	height: 435px;
-	${({ theme }) => ({
-		[theme.breakpoints.down('md')]: {
-			width: '200px',
-			height: '400px',
 		},
 	})};
 `
@@ -170,15 +159,49 @@ export const ContentPhone = styled('div')`
 		width: calc(100% - 30px) !important;
 		height: calc(100% - 10px) !important;
 	}
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			top: '8px',
+			left: '4px',
+			width: '122px',
+			height: 'calc(100% - 8px)',
+			img: {
+				borderRadius: '13px !important',
+				width: '100%',
+				height: '100%',
+			},
+		},
+	})};
 `
 
 export const WrapIsland = styled('div')`
 	top: 10px;
-	left: 38%;
+	left: 37%;
 	z-index: 2;
 	position: absolute;
 	svg {
 		width: 80%;
 		height: 80%;
 	}
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			top: '1px',
+			svg: {
+				width: '40%',
+				height: '40%',
+			},
+		},
+	})};
+`
+
+export const WrapperImage = styled('div')`
+	width: 230px;
+	height: 435px;
+	position: relative;
+	${({ theme }) => ({
+		[theme.breakpoints.down('md')]: {
+			width: '100px',
+			height: '242px',
+		},
+	})};
 `

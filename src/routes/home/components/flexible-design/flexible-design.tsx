@@ -1,38 +1,36 @@
 import Image from 'next/image'
 import Stack from '@mui/material/Stack'
 import { useTranslation } from 'next-i18next'
+import { IconPhone } from '@/assets/icons/phone'
 import Typography from '@mui/material/Typography'
 import { useState, type MouseEvent } from 'react'
 import { IconCamera } from '@/assets/icons/camera'
 import { IconGlobal } from '@/assets/icons/global'
-import ImageIphone from '@/assets/images/iphone.webp'
+import { IconIsland } from '@/assets/icons/island'
 import ToggleButton from '@mui/material/ToggleButton'
 import { IconTelegram } from '@/assets/icons/telegram'
+import ImagePhoneRes from '@/assets/images/phone-res.webp'
+import ImagePhoneShop from '@/assets/images/phone-shop.webp'
 import { IconMacbookBody } from '@/assets/icons/macbook-body'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import { IconMacbookFooter } from '@/assets/icons/macbook-footer'
-import ImageResponsiveDevice from '@/assets/images/responsive-device.webp'
 import ImageWebappWebsiteShop from '@/assets/images/webapp-website-shop.webp'
-import ImagePhoneShop from '@/assets/images/phone-shop.webp'
-import ImagePhoneRes from '@/assets/images/phone-res.webp'
 import ImageWebappWebsiteRestaurant from '@/assets/images/webapp-website-restaurant.webp'
 import {
 	Wrap,
 	Cards,
 	Wrapper,
+	WrapMac,
 	WrapIcon,
 	Container,
 	WrapImage,
 	WrapCamera,
-	WrapImageBody,
-	WrapMac,
-	WrapMacMobile,
-	WrapMobileOnly,
-	ContentPhone,
 	WrapIsland,
+	ContentPhone,
+	WrapImageBody,
+	WrapMacMobile,
+	WrapperImage,
 } from './style'
-import { IconPhone } from '@/assets/icons/phone'
-import { IconIsland } from '@/assets/icons/island'
 
 export const FlexibleDesign = () => {
 	const { t } = useTranslation('common')
@@ -61,18 +59,12 @@ export const FlexibleDesign = () => {
 				<Wrap>
 					<Stack width='100%' flexGrow={1} alignItems='center'>
 						{platform === 'telegram' ? (
-							<Stack
-								position='relative'
-								sx={{
-									width: '230px',
-									height: '435px',
-								}}
-							>
-								<WrapMacMobile>
+							<WrapperImage>
+								<WrapMacMobile className='phone'>
 									<WrapIsland>
 										<IconIsland />
 									</WrapIsland>
-									<ContentPhone>
+									<ContentPhone className='phone'>
 										{business === 'shop' ? (
 											<Image fill src={ImagePhoneShop.src} alt='phone-shop' />
 										) : (
@@ -81,7 +73,7 @@ export const FlexibleDesign = () => {
 									</ContentPhone>
 									<IconPhone />
 								</WrapMacMobile>
-							</Stack>
+							</WrapperImage>
 						) : (
 							<Stack position='relative'>
 								<WrapMac>
