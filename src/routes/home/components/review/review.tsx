@@ -1,13 +1,14 @@
+import Box from '@mui/material/Box'
+import { REVIEWS } from './constants'
 import Stack from '@mui/material/Stack'
 import { useTranslation } from 'next-i18next'
+import { stringAvatar } from '@/utils/avatar'
 import { useTheme } from '@mui/material/styles'
 import { IconQuote } from '@/assets/icons/quote'
 import Typography from '@mui/material/Typography'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Card, Wrapper, WrapUser, Avatar, Container } from './style'
-import { REVIEWS } from './constants'
-import { Box } from '@mui/material'
 
 export const Review = () => {
 	const theme = useTheme()
@@ -59,7 +60,7 @@ export const Review = () => {
 										</Typography>
 									</Stack>
 									<WrapUser>
-										<Avatar />
+										<Avatar {...stringAvatar(owner)} />
 										<Stack justifyContent='center'>
 											<Typography variant='text60' fontWeight='400'>
 												{t(owner)}
