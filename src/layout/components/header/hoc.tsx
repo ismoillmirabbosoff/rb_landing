@@ -15,7 +15,7 @@ export const Hoc = ({ children }: ChildrenProps) => {
 	useEffect(() => {
 		const handleScroll = () => {
 			const moving = window.pageYOffset
-			setValue(position < moving)
+			setValue(moving !== 0 && position < moving)
 			setPosition(moving)
 		}
 		window.addEventListener('scroll', handleScroll)
