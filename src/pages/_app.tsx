@@ -8,6 +8,7 @@ import { AnimatePresence } from 'framer-motion'
 import { appWithTranslation } from 'next-i18next'
 import CssBaseline from '@mui/material/CssBaseline'
 import { ThemeProvider } from '@mui/material/styles'
+import { YandexMetricaProvider } from 'next-yandex-metrica'
 import createEmotionCache from '@/utils/create-emotion-cache'
 import { CacheProvider, type EmotionCache } from '@emotion/react'
 
@@ -40,22 +41,32 @@ function App(props: RbLandingAppProps) {
 				<meta name='msapplication-TileColor' content={COLORS.PURPLE} />
 				<meta name='theme-color' content={COLORS.WHITE} />
 			</Head>
-			<CacheProvider value={emotionCache}>
-				<ThemeProvider theme={theme}>
-					<NextNProgress
-						color={theme.palette.colors.PURPLE}
-						options={{
-							showSpinner: false,
-						}}
-					/>
-					<CssBaseline />
-					<AnimatePresence mode='wait' initial={false}>
-						<Layout>
-							<Component {...pageProps} />
-						</Layout>
-					</AnimatePresence>
-				</ThemeProvider>
-			</CacheProvider>
+			<YandexMetricaProvider
+				tagID={97742397}
+				initParameters={{
+					clickmap: true,
+					webvisor: true,
+					trackLinks: true,
+					accurateTrackBounce: true,
+				}}
+			>
+				<CacheProvider value={emotionCache}>
+					<ThemeProvider theme={theme}>
+						<NextNProgress
+							color={theme.palette.colors.PURPLE}
+							options={{
+								showSpinner: false,
+							}}
+						/>
+						<CssBaseline />
+						<AnimatePresence mode='wait' initial={false}>
+							<Layout>
+								<Component {...pageProps} />
+							</Layout>
+						</AnimatePresence>
+					</ThemeProvider>
+				</CacheProvider>
+			</YandexMetricaProvider>
 		</>
 	)
 }
