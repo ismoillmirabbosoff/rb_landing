@@ -2,6 +2,7 @@ import { gilroy } from '@/utils/fonts'
 import { type AppType } from 'next/app'
 import { type RbLandingAppProps } from './_app'
 import createEmotionCache from '@/utils/create-emotion-cache'
+import { GoogleTagManager } from '@next/third-parties/google'
 import { type ComponentType, type ComponentProps } from 'react'
 import createEmotionServer from '@emotion/server/create-instance'
 import Document, {
@@ -25,6 +26,7 @@ export default function MyDocument({ emotionStyleTags }: MyDocumentProps) {
 				<Main />
 				<NextScript />
 			</body>
+			<GoogleTagManager gtmId='G-9D6W5GJH7Q' />
 		</Html>
 	)
 }
