@@ -8,7 +8,7 @@ import type { ChildrenProps } from '@/types/common'
 export const Layout = ({ children }: ChildrenProps) => {
 	return (
 		<>
-			{/* <Header /> */}
+			<Header />
 			<Stack flexGrow={1}>{children}</Stack>
 			<Try />
 			<Contact />
