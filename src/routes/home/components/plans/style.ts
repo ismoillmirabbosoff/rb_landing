@@ -153,18 +153,8 @@ export const WrapSlider = styled('div')`
 	width: 100%;
 	padding: 0 20px;
 	position: relative;
-	.swiper-b {
-		top: calc(50% - 24px);
-		z-index: 10;
-		padding: 0;
-		position: absolute;
-	}
-	.p-custom {
-		left: 20px;
-		right: auto;
-	}
-	.n-custom {
-		left: auto;
-		right: 20px;
+	.swiper-button-prev,
+	.swiper-button-next {
+		color: ${({ theme }) => theme.palette.colors.BLACK40};
 	}
 `

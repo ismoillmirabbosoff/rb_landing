@@ -10,17 +10,15 @@ import { numberFormat } from '@/utils/format'
 import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import RadioGroup from '@mui/material/RadioGroup'
-import IconButton from '@mui/material/IconButton'
 import { IconRemove } from '@/assets/icons/remove'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { ScrollDown } from '@/components/scroll-down'
+import { useState, type SyntheticEvent } from 'react'
 import { IconInfinity } from '@/assets/icons/infinity'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { Navigation, EffectCards } from 'swiper/modules'
 import { IconTickSolid } from '@/assets/icons/tick-solid'
-import { IconDirectionLeft } from '@/assets/icons/direction-left'
 import { IconLinearGradient } from '@/assets/icons/linear-gradient'
-import { Swiper, type SwiperClass, SwiperSlide } from 'swiper/react'
-import { useEffect, useRef, useState, type SyntheticEvent } from 'react'
 import { TAB_PLANS, PRICING_PLANS, PLAN_PLATFORMS } from '@/constants/plan'
 import type { PlanProps, PlanTypeProps, PlatformTypeProps } from '@/types/plan'
 import {
@@ -43,10 +41,7 @@ const rotateArray = (arr: PlanProps[], positions: number) => {
 
 export const Plans = () => {
 	const theme = useTheme()
-	const navigationPrevRef = useRef(null)
-	const navigationNextRef = useRef(null)
 	const { t } = useTranslation('common')
-	const [swiper, setSwiper] = useState<SwiperClass>()
 	const matches = useMediaQuery(theme.breakpoints.down('md'))
 	const [plan, setPlan] = useState<PlanTypeProps>('monthly')
 	const [platform, setPlatform] = useState<PlatformTypeProps>(PLAN_PLATFORMS.TELEGRAM.platform)
@@ -58,17 +53,6 @@ export const Plans = () => {
 	const handleChangePlatform = (_: SyntheticEvent, platform: string) => {
 		setPlatform(platform as PlatformTypeProps)
 	}
-
-	useEffect(() => {
-		if (swiper) {
-			// @ts-ignore
-			swiper.params.navigation.prevEl = navigationPrevRef.current
-			// @ts-ignore
-			swiper.params.navigation.nextEl = navigationNextRef.current
-			swiper.navigation.init()
-			swiper.navigation.update()
-		}
-	}, [swiper])
 
 	const content = (
 		type: 'count' | 'access' | 'full',
@@ -259,38 +243,18 @@ export const Plans = () => {
 							<Swiper
 								observer
 								loop={true}
+								navigation
 								observeParents
 								centeredSlides
 								initialSlide={2}
 								effect={'cards'}
 								grabCursor={true}
 								className='mySwiper'
-								onSwiper={setSwiper}
 								updateOnWindowResize
 								modules={[Navigation, EffectCards]}
-								navigation={{
-									prevEl: navigationPrevRef.current,
-									nextEl: navigationNextRef.current,
-								}}
-								onBeforeInit={swiper => {
-									// @ts-expect-error
-									swiper.params.navigation.prevEl = navigationPrevRef.current
-									// @ts-expect-error
-									swiper.params.navigation.nextEl = navigationNextRef.current
-								}}
 							>
 								{list()}
 							</Swiper>
-							<IconButton
-								ref={navigationPrevRef}
-								className='swiper-b p-custom'
-								sx={{ transform: 'rotate(180deg)' }}
-							>
-								<IconDirectionLeft />
-							</IconButton>
-							<IconButton ref={navigationNextRef} className='swiper-b n-custom'>
-								<IconDirectionLeft />
-							</IconButton>
 						</WrapSlider>
 					) : (
 						<Cards>{list()}</Cards>
