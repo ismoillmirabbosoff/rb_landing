@@ -67,7 +67,6 @@ export const WrapImage = styled('div')`
 		top: 10%;
 		width: 100%;
 		z-index: -1;
-		height: 2000px;
 		position: absolute;
 	}
 `

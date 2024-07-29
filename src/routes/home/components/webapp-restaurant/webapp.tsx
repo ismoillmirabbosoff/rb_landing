@@ -8,6 +8,7 @@ import { useTranslation } from 'next-i18next'
 import { IconTick } from '@/assets/icons/tick'
 import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
+import { useEffect, useRef, useState } from 'react'
 import ImageIphone from '@/assets/images/iphone.webp'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useInView } from 'react-intersection-observer'
@@ -36,6 +37,29 @@ export const WebappRestaurant = () => {
 	const { t } = useTranslation('common')
 	const matches = useMediaQuery(theme.breakpoints.down('md'))
 	const view = inView.inView || matches
+	const contentRef = useRef<HTMLDivElement | null>(null)
+	const [distance, setDistance] = useState(0)
+
+	useEffect(() => {
+		const updateDistances = () => {
+			if (contentRef.current) {
+				const contentBottom = contentRef.current.getBoundingClientRect().bottom
+				const scrollTop = window.scrollY || document.documentElement.scrollTop
+				const documentHeight = document.documentElement.scrollHeight
+				const bottomDistance = documentHeight - (contentBottom + scrollTop)
+				setDistance(bottomDistance)
+			}
+		}
+
+		updateDistances()
+		window.addEventListener('resize', updateDistances)
+		window.addEventListener('scroll', updateDistances)
+
+		return () => {
+			window.removeEventListener('resize', updateDistances)
+			window.removeEventListener('scroll', updateDistances)
+		}
+	}, [])
 
 	return (
 		<Container>
@@ -59,7 +83,14 @@ export const WebappRestaurant = () => {
 					</Box>
 				</Content>
 				<Box width='100%'>
-					<WrapImage>
+					<WrapImage
+						ref={contentRef}
+						sx={{
+							'.scroll': {
+								height: `${distance}px`,
+							},
+						}}
+					>
 						<div ref={inView.ref} className='scroll' />
 						<WrapMobile variants={variants} animate={view ? 'open' : 'closed'}>
 							<WrapCircle
