@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack'
 import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
 import type { BlogProps } from '@/constants/blog'
-import { Wrapper, Container, WrapImage } from './style'
+import { Wrapper, Container } from './style'
 
 interface BlogPageProps {
 	blog: string
