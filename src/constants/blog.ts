@@ -21,7 +21,7 @@ export interface BlogProps {
 	photo: string
 	title: string
 	isMain: boolean
-	content: Array<{ image: string | null; texts: string[] }>
+	content: Array<{ left?: boolean; right?: boolean; image: string | null; texts: string[] }>
 }
 
 export const BLOGS: BlogProps[] = [
@@ -38,6 +38,7 @@ export const BLOGS: BlogProps[] = [
 				texts: ['the_robosell_uz_platform_was_first_launched_on_january_1_2023'],
 			},
 			{
+				right: true,
 				image: ImageBlog12.src,
 				texts: [
 					'in_addition_robosell_uz_was_one_of_the_first_platforms_to_introduce_the_source_function',
@@ -45,6 +46,7 @@ export const BLOGS: BlogProps[] = [
 				],
 			},
 			{
+				left: true,
 				image: ImageBlog13.src,
 				texts: [
 					'arthur_babajanov_restaurant_jumanji',

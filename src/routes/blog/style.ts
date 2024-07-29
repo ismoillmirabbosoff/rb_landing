@@ -18,13 +18,3 @@ export const Wrapper = styled('div')`
 		},
 	})}
 `
-
-export const WrapImage = styled('div')`
-	padding: 20px 0;
-	width: fit-content;
-	height: fit-content;
-
-	img {
-		object-fit: scale-down;
-	}
-`

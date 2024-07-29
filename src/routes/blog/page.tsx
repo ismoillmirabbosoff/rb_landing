@@ -23,22 +23,65 @@ export const Blog = (props: BlogPageProps) => {
 				<Typography m='10px 0' variant='text150'>
 					{dayjs(blog.date).format('MMMM DD, YYYY')}
 				</Typography>
-				{blog.content.map((c, i) => {
-					return (
-						<div key={i}>
-							{c.texts.map((text, j) => (
-								<Typography key={j}>{t(text)}</Typography>
-							))}
-							{c.image && (
-								<Stack alignItems='center'>
-									<WrapImage>
-										<Image fill src={c.image} alt='blog' />
-									</WrapImage>
-								</Stack>
-							)}
-						</div>
-					)
-				})}
+				<Stack gap='20px' component='ul'>
+					{blog.content.map((c, i) => {
+						return (
+							<Stack
+								key={i}
+								component='li'
+								sx={{ display: 'grid', gridTemplateColumns: c.right || c.left ? '1fr 1fr' : '1fr' }}
+							>
+								{c.left ? (
+									<>
+										{c.image && (
+											<Stack mt='20px' alignItems='center'>
+												<Stack
+													sx={{
+														height: '400px',
+														img: {
+															borderRadius: '10px',
+															objectFit: 'scale-down',
+														},
+													}}
+												>
+													<Image fill src={c.image} alt='blog' />
+												</Stack>
+											</Stack>
+										)}
+										<Stack>
+											{c.texts.map((text, j) => (
+												<Typography key={j}>{t(text)}</Typography>
+											))}
+										</Stack>
+									</>
+								) : (
+									<>
+										<Stack>
+											{c.texts.map((text, j) => (
+												<Typography key={j}>{t(text)}</Typography>
+											))}
+										</Stack>
+										{c.image && (
+											<Stack mt='20px' alignItems='center'>
+												<Stack
+													sx={theme => ({
+														height: '400px',
+														img: {
+															borderRadius: '10px',
+															objectFit: 'scale-down',
+														},
+													})}
+												>
+													<Image fill src={c.image} alt='blog' />
+												</Stack>
+											</Stack>
+										)}
+									</>
+								)}
+							</Stack>
+						)
+					})}
+				</Stack>
 			</Wrapper>
 		</Container>
 	)
