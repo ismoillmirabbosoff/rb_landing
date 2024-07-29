@@ -28,7 +28,7 @@ export const BLOGS: BlogProps[] = [
 	{
 		id: '1',
 		isMain: true,
-		date: dayjs(),
+		date: dayjs().set('year', 2023).set('M', 0).set('date', 1).set('h', 15).set('minute', 30),
 		photo: ImageBlog1.src,
 		title:
 			'robosell_uz_platform_that_changed_the_approach_to_business_management_through_telegram_bots',
@@ -60,7 +60,7 @@ export const BLOGS: BlogProps[] = [
 	{
 		id: '2',
 		isMain: true,
-		date: dayjs(),
+		date: dayjs().set('year', 2024).set('M', 3).set('date', 1).set('h', 11).set('minute', 45),
 		photo: ImageBlog2.src,
 		title: 'second_version_of_robosell_uz_adding_features_and_changing_design',
 		content: [
@@ -89,7 +89,7 @@ export const BLOGS: BlogProps[] = [
 	{
 		id: '3',
 		isMain: true,
-		date: dayjs(),
+		date: dayjs().set('year', 2024).set('M', 3).set('date', 29).set('hour', 9).set('minute', 30),
 		photo: ImageBlog3.src,
 		title: 'How to Start a Business Online Using One Platform',
 		content: [
