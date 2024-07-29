@@ -9,7 +9,7 @@ function saveScrollPos(url: string) {
 function restoreScrollPos(url: string) {
 	const scrollPos = JSON.parse(sessionStorage.getItem(url) as string)
 	if (scrollPos) {
-		window.scrollTo(scrollPos.x, scrollPos.y)
+		window.scrollTo(scrollPos.x as number, scrollPos.y as number)
 	}
 }
 
@@ -19,15 +19,16 @@ export const useScrollRestoration = router => {
 		if ('scrollRestoration' in window.history) {
 			let shouldScrollRestore = false
 			window.history.scrollRestoration = 'manual'
-			restoreScrollPos(router.asPath)
+			restoreScrollPos(router.asPath as string)
 			// @ts-ignore
 			const onBeforeUnload = event => {
-				saveScrollPos(router.asPath)
-				delete event['returnValue']
+				saveScrollPos(router.asPath as string)
+				// @typescript-eslint/no-dynamic-delete
+				delete event.returnValue
 			}
 
 			const onRouteChangeStart = () => {
-				saveScrollPos(router.asPath)
+				saveScrollPos(router.asPath as string)
 			}
 
 			const onRouteChangeComplete = (url: string) => {

@@ -41,6 +41,7 @@ module.exports = {
 		'@typescript-eslint/ban-ts-comment': 'off',
 		'@typescript-eslint/naming-convention': 'off',
 		'@typescript-eslint/no-unused-vars': 'off',
+		'@typescript-eslint/no-dynamic-delete': 'off',
 		'@typescript-eslint/no-misused-promises': 'off',
 		'@typescript-eslint/triple-slash-reference': 'off',
 		'@typescript-eslint/prefer-nullish-coalescing': 'off',
