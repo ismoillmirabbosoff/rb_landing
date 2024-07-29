@@ -10,6 +10,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import { ThemeProvider } from '@mui/material/styles'
 import { YandexMetricaProvider } from 'next-yandex-metrica'
 import createEmotionCache from '@/utils/create-emotion-cache'
+import { useScrollRestoration } from '@/hooks/useScrollRestoration'
 import { CacheProvider, type EmotionCache } from '@emotion/react'
 
 import 'swiper/css'
@@ -25,7 +26,8 @@ export interface RbLandingAppProps extends AppProps {
 }
 
 function App(props: RbLandingAppProps) {
-	const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
+	const { Component, emotionCache = clientSideEmotionCache, pageProps, router } = props
+	useScrollRestoration(router)
 
 	return (
 		<>
