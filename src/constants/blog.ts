@@ -15,13 +15,19 @@ import ImageBlog33 from '@/assets/images/blog-3.3.png'
 import ImageBlog34 from '@/assets/images/blog-3.4.png'
 import ImageBlog35 from '@/assets/images/blog-3.5.png'
 
+export interface BlogContentProps {
+	left?: boolean
+	right?: boolean
+	image: string | null
+	texts: string[]
+}
 export interface BlogProps {
 	id: string
 	date: Dayjs
 	photo: string
 	title: string
 	isMain: boolean
-	content: Array<{ left?: boolean; right?: boolean; image: string | null; texts: string[] }>
+	content: Array<BlogContentProps>
 }
 
 export const BLOGS: BlogProps[] = [

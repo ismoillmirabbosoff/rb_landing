@@ -2,17 +2,21 @@ import dayjs from 'dayjs'
 import Image from 'next/image'
 import Stack from '@mui/material/Stack'
 import { useTranslation } from 'next-i18next'
+import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import type { BlogProps } from '@/constants/blog'
-import { Wrapper, Container } from './style'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import { Content, Wrapper, Container, WrapIamge } from './style'
 
 interface BlogPageProps {
 	blog: string
 }
 
 export const Blog = (props: BlogPageProps) => {
+	const theme = useTheme()
 	const { t } = useTranslation('common')
 	const blog: BlogProps = JSON.parse(props.blog)
+	const matches = useMediaQuery(theme.breakpoints.down('md'))
 
 	return (
 		<Container>
@@ -26,26 +30,14 @@ export const Blog = (props: BlogPageProps) => {
 				<Stack gap='20px' component='ul'>
 					{blog.content.map((c, i) => {
 						return (
-							<Stack
-								key={i}
-								component='li'
-								sx={{ display: 'grid', gridTemplateColumns: c.right || c.left ? '1fr 1fr' : '1fr' }}
-							>
-								{c.left ? (
+							<Content key={i} {...c}>
+								{c.left && !matches ? (
 									<>
 										{c.image && (
 											<Stack mt='20px' alignItems='center'>
-												<Stack
-													sx={{
-														height: '400px',
-														img: {
-															borderRadius: '10px',
-															objectFit: 'scale-down',
-														},
-													}}
-												>
+												<WrapIamge>
 													<Image fill src={c.image} alt='blog' />
-												</Stack>
+												</WrapIamge>
 											</Stack>
 										)}
 										<Stack>
@@ -63,22 +55,14 @@ export const Blog = (props: BlogPageProps) => {
 										</Stack>
 										{c.image && (
 											<Stack mt='20px' alignItems='center'>
-												<Stack
-													sx={theme => ({
-														height: '400px',
-														img: {
-															borderRadius: '10px',
-															objectFit: 'scale-down',
-														},
-													})}
-												>
+												<WrapIamge>
 													<Image fill src={c.image} alt='blog' />
-												</Stack>
+												</WrapIamge>
 											</Stack>
 										)}
 									</>
 								)}
-							</Stack>
+							</Content>
 						)
 					})}
 				</Stack>
