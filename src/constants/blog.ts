@@ -27,7 +27,7 @@ export interface BlogProps {
 	photo: string
 	title: string
 	isMain: boolean
-	content: Array<BlogContentProps>
+	content: BlogContentProps[]
 }
 
 export const BLOGS: BlogProps[] = [
