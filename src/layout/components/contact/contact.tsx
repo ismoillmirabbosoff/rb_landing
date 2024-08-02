@@ -90,14 +90,11 @@ export const Contact = () => {
 			<Dialog fullWidth scroll='body' open={modal.value} onClose={modal.setFalse}>
 				<Stack alignItems='center' p='50px'>
 					<Image fill src='/success.gif' alt='success.gif' />
-					<Stack width='100%' alignItems='center'>
-						<Typography variant='title90' component='h2' align='center'>
-							Title
-						</Typography>
+					<Stack gap='20px' width='100%' alignItems='center'>
 						<Typography align='center' variant='text80' component='h3'>
 							{t('your_request_has_been_successfully_received')}
 						</Typography>
-						<Button onClick={modal.setFalse} fullWidth sx={{ mt: '10px', maxWidth: '212px' }}>
+						<Button onClick={modal.setFalse} fullWidth sx={{ maxWidth: '212px' }}>
 							{t('done')}
 						</Button>
 					</Stack>
