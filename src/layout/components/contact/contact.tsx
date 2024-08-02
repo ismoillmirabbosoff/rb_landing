@@ -7,10 +7,10 @@ import { useTranslation } from 'next-i18next'
 import Typography from '@mui/material/Typography'
 import { Input } from '@/components/inputs/input'
 import LoadingButton from '@mui/lab/LoadingButton'
+import { ScrollDown } from '@/components/scroll-down'
 import { InputPhone } from '@/components/inputs/input-phone'
 import { Wrapper, Container, WrapLinearGradientContact } from './style'
 import { IconLinearGradientContact } from '@/assets/icons/linear-gradient-contact'
-import { ScrollDown } from '@/components/scroll-down'
 
 export const Contact = () => {
 	const { t } = useTranslation('common')
@@ -90,11 +90,15 @@ export const Contact = () => {
 			<Dialog fullWidth scroll='body' open={modal.value} onClose={modal.setFalse}>
 				<Stack alignItems='center' p='50px'>
 					<Image fill src='/success.gif' alt='success.gif' />
-					<Stack gap='20px' width='100%' alignItems='center'>
-						<Typography>Title</Typography>
-						<Typography>Text</Typography>
-						<Button fullWidth sx={{ maxWidth: '212px' }}>
-							Done
+					<Stack width='100%' alignItems='center'>
+						<Typography variant='title90' component='h2' align='center'>
+							Title
+						</Typography>
+						<Typography align='center' variant='text80' component='h3'>
+							{t('your_request_has_been_successfully_received')}
+						</Typography>
+						<Button onClick={modal.setFalse} fullWidth sx={{ mt: '10px', maxWidth: '212px' }}>
+							{t('done')}
 						</Button>
 					</Stack>
 				</Stack>
