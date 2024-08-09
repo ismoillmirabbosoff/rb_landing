@@ -7,6 +7,8 @@ import Typography from '@mui/material/Typography'
 import type { BlogProps } from '@/constants/blog'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { Content, Wrapper, Container, WrapIamge } from './style'
+import { IconLogoKapital } from '@/assets/icons/logo-kapital'
+import { IconLogoRepost } from '@/assets/icons/logo-repost'
 
 interface BlogPageProps {
 	blog: string
@@ -24,6 +26,23 @@ export const Blog = (props: BlogPageProps) => {
 				<Typography component='h1' variant='title150'>
 					{t(blog.title)}
 				</Typography>
+				{blog.id === '3' && (
+					<Stack
+						m='10px 0'
+						gap='15px'
+						direction='row'
+						alignItems='center'
+						sx={{
+							svg: {
+								width: '160px',
+								height: '30px',
+							},
+						}}
+					>
+						<IconLogoKapital />
+						<IconLogoRepost />
+					</Stack>
+				)}
 				<Typography m='10px 0' variant='text150'>
 					{dayjs(blog.date).format('MMMM DD, YYYY')}
 				</Typography>
