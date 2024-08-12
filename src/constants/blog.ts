@@ -99,41 +99,39 @@ export const BLOGS: BlogProps[] = [
 		isMain: true,
 		date: dayjs().set('year', 2024).set('M', 3).set('date', 29).set('hour', 9).set('minute', 30),
 		photo: ImageBlog3.src,
-		title: 'How to Start a Business Online Using One Platform',
+		title: 'how_to_start_a_business_online_using_one_platform',
 		content: [
 			{
 				image: ImageBlog31.src,
-				texts: [
-					'Robosell platformasi biznesga onlayn kirish jarayonini soddalashtiradi, xavflarni kamaytiradi va ishga tushirishni sezilarli darajada tezlashtiradi.',
-				],
+				texts: ['the_robosell_platform_simplifies_the_process_of_entering_a_business_online'],
 			},
 			{
 				image: ImageBlog32.src,
 				texts: [
-					'O‘zbekistonda elektron tijorat jadal sur’atlar bilan o‘sib bormoqda, biroq ko‘plab tadbirkorlar bu borada muvaffaqiyatga erisha olmayaptilar. Bu bilim va imkoniyatlar  o’rtasida bo’shliqni keltirib chiqaradi. Robosell.uz platformasi biznesga onlayn kirish jarayonini soddalashtiradi, xavflarni kamaytiradi va tashkiliy jarayonlarni  sezilarli darajada tezlashtiradi.',
-					'Endi biznesingizni onlayn boshlash uchun dasturchilar yoki kompaniyalarni qidirishingiz, ulardan 15-20 kunlab javob kutishingiz, shuningdek, Telegram bot yoki veb-saytga o‘zgartirish kiritmoqchi bo‘lganingizda har safar dasturchilarga murojaat qilishingiz shart emas.',
+					'e_commerce_is_growing_rapidly_in_uzbekistan',
+					'now_you_dont_have_to_search_for_developers_or_companies_to_start_your_business_online',
 				],
 			},
 			{
 				image: ImageBlog33.src,
 				texts: [
-					'Keling, solishtirib ko‘ramiz: Robosell platformasida Telegram bot hamda veb-sayt yaratishning umumiy oylik narxi 400 000 so‘m (tarifga qarab)ga teng bo‘ladi. Yiliga bu summa 3 840 000 so‘mni tashkil qiladi.',
-					'Agar bu ishni o‘zingiz qilmoqchi bo‘lsangiz: Telegram bot (Web App versiyasi) – 8 mln so’m. Veb-sayt – 25 mln so’mdan -38 mln so’mgacha. Admin paneli – 19 mln so’m. Texnik qo‘llab-quvvatlash – 8 mln so’m/1 yil. Virtual server – 150 000 so‘m/1 oy, yiliga 1 800 000 so‘m. Umumiy hisobda, yiliga taxminan 68 mln so’m ketadi.',
+					'lets_compare_the_total_monthly_cost_of_creating_a_telegram_bot_and_a_website',
+					'if_you_want_to_do_it_yourself_telegram_bot_web_app_version__8_million_soums',
 				],
 			},
 			{
 				image: ImageBlog34.src,
 				texts: [
-					'Robosell platformasi bilan tadbirkor nafaqat pulini, balki asablarini ham saqlaydi, chunki  birinchi urinishdayoq xohlagan narsaga erishishga hech kim kafolat bermaydi. Buning ustiga mijoz xohishini bitta so‘zdan tushunadigan va bajara oladigan jamoani topish – eng qiyin masala.',
-					'Bundan xulosa qilamizki, tadbirkor o’zi ishlab chiqaruvchilarga alohida mablag‘ sarflab yaratgan platformaning’ o‘rniga shu pul evaziga Robocell bilan taxminan 15-17 yil davomida muvaffaqiyatli biznes yuritishi mumkin.',
-					'Hozirda har kuni 50 dan ortiq foydalanuvchiRobosell.uz’da ro’yxatdan o’tib, platformani asta-sekin o’z biznesiga joriy qilmoqda.',
+					'with_the_robosell_platform_an_entrepreneur_saves_not_only_his_money',
+					'we_conclude_from_this_that_an_entrepreneur_can_run_a_successful_business',
+					'currently_more_than_50_users_register_on_roboselluz_every_day_and_introduce_the_platform_to_their_business',
 				],
 			},
 			{
 				image: ImageBlog35.src,
 				texts: [
-					'Ayni paytda platforma orqali siz o’zingizning Telegram botingiz va veb-saytingizni yaratishingiz mumkin. Eng muhimi, biznesni boshqarish, uni ko’plab xizmatlar bilan integratsiya qilish uchun boshqaruv paneliga ega bo’lasiz.',
-					'Foydalanuvchilarimizga yanada qulaylik yaratish uchun biz Call-markazni ishga tushirganmiz. Bu yerda ular nafaqat barcha savollarga javob olishlari, balki yangi akkaunt yaratish va biznesni boshlashda qo‘llab-quvvatlashga ega bo‘ladilar. Kompaniyamiz Genius Quality Agency, Robosell menejerlarini o’qitadi va ularni mijozlarni jalb qilish bo’yicha professional maslahatchilarga aylantiradi.',
+					'at_the_moment_you_can_create_your_own_telegram_bot_and_website_through_the_platform',
+					'in_order_to_make_our_users_more_comfortable_we_have_launched_a_call_center',
 				],
 			},
 		],
