@@ -43,7 +43,7 @@ function App(props: RbLandingAppProps) {
 				<meta name='msapplication-TileColor' content={COLORS.PURPLE} />
 				<meta name='theme-color' content={COLORS.WHITE} />
 			</Head>
-			<YandexMetricaProvider
+			{/* <YandexMetricaProvider
 				tagID={97742397}
 				initParameters={{
 					clickmap: true,
@@ -51,24 +51,24 @@ function App(props: RbLandingAppProps) {
 					trackLinks: true,
 					accurateTrackBounce: true,
 				}}
-			>
-				<CacheProvider value={emotionCache}>
-					<ThemeProvider theme={theme}>
-						<NextNProgress
-							color={theme.palette.colors.PURPLE}
-							options={{
-								showSpinner: false,
-							}}
-						/>
-						<CssBaseline />
-						<AnimatePresence mode='wait' initial={false}>
-							<Layout>
-								<Component {...pageProps} />
-							</Layout>
-						</AnimatePresence>
-					</ThemeProvider>
-				</CacheProvider>
-			</YandexMetricaProvider>
+			> */}
+			<CacheProvider value={emotionCache}>
+				<ThemeProvider theme={theme}>
+					<NextNProgress
+						color={theme.palette.colors.PURPLE}
+						options={{
+							showSpinner: false,
+						}}
+					/>
+					<CssBaseline />
+					<AnimatePresence mode='wait' initial={false}>
+						<Layout>
+							<Component {...pageProps} />
+						</Layout>
+					</AnimatePresence>
+				</ThemeProvider>
+			</CacheProvider>
+			{/* </YandexMetricaProvider> */}
 		</>
 	)
 }
