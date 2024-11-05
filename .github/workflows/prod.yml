@@ -48,12 +48,12 @@ jobs:
       - name: Log in to Server and Restarting Kubernetes
         uses: appleboy/ssh-action@master
         with:
-          host: 167.71.175.66
-          username: root
+          host: 45.55.38.173
+          username: ismoil
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
+          port: 5000
           script: |
-            cd /root/Projects/robosell/prod/landing
+            cd /home/ismoil/Projects/robo
             ls
             kubectl delete -f k8s.yaml
             kubectl apply -f k8s.yaml

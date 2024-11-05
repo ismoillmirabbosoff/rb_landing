@@ -2,22 +2,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: prodlanding
-  namespace: prod
+  name: landing
+  namespace: frontend
   labels:
-    app: prodlanding
+    app: landing
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: prodlanding
+      app: landing
   template:
     metadata:
       labels:
-        app: prodlanding
+        app: landing
     spec:
       containers:
-        - name: prodlanding
+        - name: landing
           image: ghcr.io/robosell-organization/rb-landing:main
           ports:
             - containerPort: 3000
@@ -35,11 +35,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: prodlanding
-  namespace: prod
+  name: landing
+  namespace: frontend
 spec:
   selector:
-    app: prodlanding
+    app: landing
   type: ClusterIP
   ports:
     - protocol: TCP
